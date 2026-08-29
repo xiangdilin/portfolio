@@ -37,11 +37,10 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 
 **My contributions**
 
-* Reproduced and implemented an existing **Neural NMF** approach
 * Developed helper functions based on feature similarity to improve the method
-* Applied **semi-supervised NMF** to investigate anomalous patient groups
 * Contributed to network-based analysis using patient similarity and community structure
-* Explored a **Fair NMF** formulation for more equitable low-dimensional representations
+* Constructed and analyzed a **patient similarity network**
+* Implemented a **multiplex community detection algorithm** to identify interpretable patient communities
 
 **Tech:** Python · NMF · Neural NMF · Semi-Supervised Learning · Logistic Regression · SVM · Network Analysis
 

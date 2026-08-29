@@ -103,4 +103,6 @@ The complete toolbox demonstrates the versatility of classical image processing 
 
 ## Report
 
-[View the full project report](./report.pdf)
+[📄 Download the Full Report (PDF)](./report.pdf)
+
+> For the best viewing experience, please download the PDF.

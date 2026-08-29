@@ -83,6 +83,6 @@ The combination of matrix factorization, classification, anomaly detection, and 
 
 ## Report
 
-[📄 Download the Full Report (PDF)](./report.pdf)
+[📄 Download the Full Report (PDF)](./REU_2023_AI_for_Health.pdf)
 
 > For the best viewing experience, please download the PDF.

@@ -103,6 +103,6 @@ The complete toolbox demonstrates the versatility of classical image processing 
 
 ## Report
 
-[📄 Download the Full Report (PDF)](./report.pdf)
+[📄 Download the Full Report (PDF)](./Artificial_Painting_Toolbox.pdf)
 
 > For the best viewing experience, please download the PDF.

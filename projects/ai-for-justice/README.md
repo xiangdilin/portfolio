@@ -71,6 +71,6 @@ The project identified several limitations, including dataset size and coverage.
 
 ## Report
 
-[📄 Download the Full Report (PDF)](./report.pdf)
+[📄 Download the Full Report (PDF)](./REU_2024_AI_for_Justice.pdf)
 
 > For the best viewing experience, please download the PDF.

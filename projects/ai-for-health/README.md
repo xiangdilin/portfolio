@@ -61,12 +61,9 @@ The study also explored **Fair NMF**, demonstrating how incorporating subgroup c
 - Explored and reproduced machine learning algorithms from the research literature for Lyme disease data analysis
 - Implemented and evaluated **NMF-based methods** for latent pattern discovery
 - Developed two helper functions based on **feature similarity** to improve upon Neural NMF
-- Applied **Logistic Regression and SVM** for patient classification
-- Implemented **anomaly detection** to identify patients with uncommon symptom profiles
 - Applied **semi-supervised NMF** to analyze anomalous patient groups
 - Constructed and analyzed a **patient similarity network**
 - Implemented a **multiplex community detection algorithm** to identify interpretable patient communities
-- Explored **Fair NMF** for more equitable low-dimensional representations across patient subgroups
 
 ## Technologies & Methods
 

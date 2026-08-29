@@ -71,4 +71,6 @@ The project identified several limitations, including dataset size and coverage.
 
 ## Report
 
-[View the full research report](./report.pdf)
+[📄 Download the Full Report (PDF)](./report.pdf)
+
+> For the best viewing experience, please download the PDF.

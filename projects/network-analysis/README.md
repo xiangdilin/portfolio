@@ -116,15 +116,8 @@ The results demonstrate that incorporating temporal information can lead to subs
 
 The combination of community detection and epidemic simulation also provided a framework for studying how structural properties of wildlife contact networks influence disease propagation.
 
-## Team
-
-- **Zi Zhu**
-- **You Wu**
-- **Dakota Lin** — Community Detection
-- **Yizhuo Chang**
-- **Stephanie Su**
-- **Guolei Mao**
-
 ## Report
 
-[View the full research report](./report.pdf)
+[📄 Download the Full Report (PDF)](./Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)
+
+> For the best viewing experience, please download the PDF.

@@ -2,6 +2,12 @@
 
 A research project investigating community structures and temporal network dynamics in avian contact networks, with applications to epidemic simulation and disease-spread prediction.
 
+**You can find the project writeup PDF in this repo.** 
+
+**Visit our drive for code implementation and relevant `.py` & `.ipynb` files: https://drive.google.com/drive/folders/1itn32cpfIFIWM-eH7Fjp2XWq_FvS_0AE**
+
+**Code implementation contributed solely by myself is located at: https://drive.google.com/drive/folders/19VV5W8KC0sJTmm-RpShi_5Mw0CC7CrVX**
+
 ## Overview
 
 Understanding how disease spreads through wildlife populations requires analyzing not only who interacts with whom, but also **when those interactions occur**. Traditional static network representations can lose important temporal information and may provide an incomplete picture of the structure through which infections spread.

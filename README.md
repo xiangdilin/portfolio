@@ -4,6 +4,8 @@ Welcome! I’m **Dakota**, a M.S. student at **Stanford’s Institute for Comput
 
 This repository showcases selected projects spanning **machine learning, natural language processing, network analysis, image processing, and data-driven modeling**. My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions.
 
+For code implementation, please visit the project specific pages in this repo. For the UCLA REU projects (AI for justice and health), the actual data will not be available here for confidential reasons. 
+
 ## Projects
 
 ### 1. AI for Justice — LLM Embeddings & Semi-Supervised NMF

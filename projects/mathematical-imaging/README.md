@@ -2,6 +2,8 @@
 
 A MATLAB-based image processing project that explores how mathematical and computational techniques can be used to transform photographs into different artistic styles.
 
+**You can find the project writeup PDF in this repo. Visit our drive for code implementation and relevant `.py` & `.ipynb` files: https://drive.google.com/drive/folders/1CBeuyZd3X2Oc---hu0VKI8YonJtwGk11**
+
 ## Overview
 
 This project investigates the use of classical image processing techniques to generate five artificial painting effects:
@@ -16,7 +18,7 @@ The project combines edge detection, filtering, histogram analysis, gradient ori
 
 ## My Contribution
 
-I primarily developed and analyzed the **Oil Painting Effect**, with additional contributions to the initial setup and evaluation of the **Van Gogh's Stroke Style**.
+I primarily developed and analyzed the **Oil Painting Effect**, with additional contributions to the initial setup and evaluation of the **Van Gogh's Stroke Style**. 
 
 ### Oil Painting Effect
 

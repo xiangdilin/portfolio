@@ -1,39 +1,106 @@
 # Artificial Painting Toolbox
 
-A project exploring multiple algorithms based on image processing techniques to generate artificial painting-style effects using MATLAB and Mathematica.
+A MATLAB-based image processing project that explores how mathematical and computational techniques can be used to transform photographs into different artistic styles.
 
 ## Overview
 
-Artistic creations are generally difficult to mimic or duplicate digitally. However, a close observation of the features that critically build an artificial painting provided us with inspiration for developing painting-like effects to apply to existing images. We aimed to test and evaluate the feasibility of our artificial painting toolbox in a general case.
+This project investigates the use of classical image processing techniques to generate five artificial painting effects:
 
-The project focused on generating five unique artistic touches: pencil sketch, comic, oil painting, the Van Gogh style, and the Cubism-like effect.
+- Pencil Sketch
+- Comic
+- Oil Painting
+- Van Gogh's Stroke Style
+- Cubism
 
-## Methods
+The project combines edge detection, filtering, histogram analysis, gradient orientation, image blending, triangulation, and color manipulation to create visually distinct artistic effects from ordinary photographs.
 
-Our team explored several mathematical and computational approaches:
+## My Contribution
 
-### Smoothing and Edge Detection
-* **Pencil Sketch Effect:** Achieved by applying a 6x6 8-connected Laplacian kernel for edge detection, followed by color inversion and contrast stretching.
-* **Comic-Like Effect:** Used a bilateral filter to blur images while preserving edges, a Sobel operator for outlining, and enhanced color saturation.
+I primarily developed and analyzed the **Oil Painting Effect**, with additional contributions to the initial setup and evaluation of the **Van Gogh's Stroke Style**.
 
-### Oil Painting and Van Gogh Styles
-* **Oil Painting Effect:** Relies on histogram calculation within an a x b neighborhood to replace pixels with the most frequently occurring value, unifying the region to look like a stroke.
-* **Van Gogh's Stroke Style:** Utilizes gradient orientation filters to generate line segments, and square box kernels to smooth unconnected line segments to mimic spiral brushstrokes.
+### Oil Painting Effect
 
-### Cubism-Like Effect
-* **Triangulation:** Applied a Delaunay triangulation algorithm to edges found via a Sobel operator to form non-intersecting triangles.
-* **Coloring:** Mapped the original image colors at the centroid of each generated triangle to color it in.
+I implemented an efficient histogram-based algorithm to generate localized brush-stroke patterns while preserving the major visual features of the input image.
 
-## My Contributions
+The algorithm works by:
 
-* Explored and developed algorithms for the **Oil Painting** and **Van Gogh stroke** effects
-* Implemented the **Oil Painting Effect** by calculating the histogram of R, G, and B values within a chosen a x b neighborhood and assigning the maximum pixel value to the region to create a uniform stroke-like pattern.
-* Identified limitations in handling sharp edges in the oil painting algorithm and researched improvements, leading to the initial setup and evaluation of the **Van Gogh's stroke effect**.
-* Handled gradient orientation maps (calculating the orientation angle theta = arctan(-Gx/Gy)) and applied a square box kernel to smooth unconnected line segments.
+1. Defining a local neighborhood around each pixel
+2. Computing RGB histograms within each neighborhood
+3. Identifying the most frequently occurring pixel values
+4. Replacing pixels in the neighborhood with the dominant values
+5. Repeating this process across the image to produce a stroke-like texture
 
-## Technologies & Results
+This approach creates an oil-painting effect using relatively simple image processing operations without computationally intensive optimization.
 
-* **Programming:** MATLAB, Wolfram Mathematica
-* **Mathematical Methods:** Bilateral filtering, gradient filters, Euclidean norms, Delaunay triangulation, histogram calculation
+### Van Gogh's Stroke Style
 
-The algorithms performed well across various generic photographs, demonstrating the immense potential and versatility of digital image processing techniques in creating diverse artistic styles.
+I also contributed to the initial development and evaluation of the Van Gogh-inspired stroke effect.
+
+The approach extends the oil painting effect by incorporating **gradient orientation** to determine the direction of artificial brush strokes. Stroke segments are generated according to local image gradients and subsequently smoothed and blended with the original image.
+
+This approach helps address some limitations of the basic oil painting algorithm, particularly its performance around sharp edges and uniform regions.
+
+## Technical Approach
+
+### Oil Painting
+
+**Key techniques:**
+
+- RGB histogram calculation
+- Local neighborhood processing
+- Dominant pixel selection
+- Image manipulation
+- Stroke-like texture generation
+
+The oil painting algorithm is lightweight and computationally efficient, while producing visually recognizable painting-like textures.
+
+### Van Gogh Stroke Effect
+
+**Key techniques:**
+
+- Gradient orientation
+- Image resizing and grayscale conversion
+- Gradient-based stroke generation
+- Line segment generation
+- Box-kernel smoothing
+- Image blending
+- Contrast and saturation adjustment
+
+Gradient orientation was used to align artificial strokes with the dominant local directions of the image, producing a more structured brush-stroke appearance.
+
+## Other Effects
+
+The complete toolbox also includes three additional image processing effects developed by other team members:
+
+- **Pencil Sketch:** Laplacian edge detection, color inversion, and contrast stretching
+- **Comic:** Bilateral filtering, Sobel edge detection, and color adjustment
+- **Cubism:** Gaussian smoothing, Sobel edge detection, Delaunay triangulation, and color mapping
+
+Together, these methods demonstrate how different combinations of fundamental image processing techniques can produce substantially different artistic styles.
+
+## Technologies
+
+**Programming:** MATLAB
+
+**Image Processing:** Edge Detection, Histogram Analysis, Bilateral Filtering, Gaussian Filtering, Gradient Orientation
+
+**Mathematical Techniques:** Convolution, Local Feature Analysis, Image Blending, Delaunay Triangulation
+
+## Results
+
+The oil painting algorithm successfully generated stroke-like patterns from a variety of input images. However, the basic approach has limitations around sharp edges and uniform-color regions.
+
+The Van Gogh-inspired extension improved the visual quality by incorporating gradient-based stroke directions and smoothing, producing more structured and continuous brush strokes.
+
+The complete toolbox demonstrates the versatility of classical image processing techniques for computational art and visual transformation.
+
+## Team
+
+- **Dakota Lin** — Oil Painting Effect; initial setup and evaluation of Van Gogh's Stroke Style
+- **Sherry Zhou** — Pencil Sketch and Comic Effects
+- **Martin Zhang** — Van Gogh's Stroke Style
+- **Brandon Vuong** — Cubism-like Effect
+
+## Report
+
+[View the full project report](./report.pdf)

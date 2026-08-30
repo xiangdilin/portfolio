@@ -86,7 +86,7 @@ The combination of matrix factorization, classification, anomaly detection, and 
 ## Contributors
 Xinyu Dong, Haowen Geng, Nika Jafar Nia, Abby Hultquist, Aoxi Li, Dakota Lin, Jingyi Liu, Chelsea Nguyen (Alphabetical order of last names).
 
-Special thanks to our PI Prof. Deanna Needell, Mentor Dr. Lara Kassab, and consultant CEO Lorraine Johnson ([LymeDisease.org](https://www.lymedisease.org/)). 
+Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Lara Kassab (UCLA Math), and consultant CEO Lorraine Johnson ([LymeDisease.org](https://www.lymedisease.org/)). 
 
 ## Report
 

@@ -130,3 +130,7 @@ Zi Zhu, You Wu, Dakota Lin, Yizhuo Chang, Stephanie Su, Guolei Mao
 [📄 Download the Full Report (PDF)](./Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)
 
 > For the best viewing experience, please download the PDF.
+
+## License
+
+This project is licensed under the MIT License. 

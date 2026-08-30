@@ -2,7 +2,9 @@
 
 A MATLAB-based image processing project that explores how mathematical and computational techniques can be used to transform photographs into different artistic styles.
 
-**You can find the project writeup PDF in this repo. Visit our drive for code implementation files in PDF: https://drive.google.com/drive/folders/1CBeuyZd3X2Oc---hu0VKI8YonJtwGk11**
+**You can find the project writeup PDF in this repo through either the navigation sidebar or a link at the end of this README.** 
+
+**Visit our drive for code implementation files in PDF: [Drive](https://drive.google.com/drive/folders/1CBeuyZd3X2Oc---hu0VKI8YonJtwGk11)**
 
 ## Overview
 
@@ -96,7 +98,7 @@ The Van Gogh-inspired extension improved the visual quality by incorporating gra
 
 The complete toolbox demonstrates the versatility of classical image processing techniques for computational art and visual transformation.
 
-## Team
+## Contributors
 
 - **Dakota Lin** — Oil Painting Effect; initial setup and evaluation of Van Gogh's Stroke Style
 - **Sherry Zhou** — Pencil Sketch and Comic Effects

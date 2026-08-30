@@ -83,7 +83,9 @@ Anomaly detection methods identified patients with unusual symptom profiles, whi
 For fair dimensionality reduction, the proposed **Fair NMF** algorithm demonstrated improved subgroup convergence and lower-rank representations compared with vanilla NMF and early stopping. Together, these results demonstrate the potential of combining matrix factorization, classification, anomaly detection, network analysis, and fairness-aware dimensionality reduction for analyzing complex Lyme disease data.
 
 ## Contributors
-Xinyu Dong, Haowen Geng, Nika Jafar Nia, Abby Hultquist, Aoxi Li, Dakota Lin, Jingyi Liu, Chelsea Nguyen (Alphabetical order of last names).
+Xinyu Dong, Haowen Geng, Nika Jafar Nia, Abby Hultquist, Aoxi Li, Dakota Lin, Jingyi Liu, Chelsea Nguyen.
+
+> Listed in alphabetical order by last name.
 
 Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Lara Kassab (UCLA Math), and consultant CEO Lorraine Johnson ([LymeDisease.org](https://www.lymedisease.org/)). 
 

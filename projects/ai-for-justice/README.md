@@ -71,6 +71,11 @@ Our experiments suggest that Kernel SSNMF can improve classification performance
 
 The project identified several limitations, including dataset size and coverage. Future work could expand the dataset, improve representation of legal case information, and further investigate methods for improving model interpretability and fairness.
 
+## Contributors
+**Team:** Anshuman Singh, Dakota Lin, Shreya Balaji, Kyle Torres. 
+
+Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Minxin Zhang (UCLA Math), and our consultants Mike Semanchik ([The Innocence Center](https://theinnocencecenter.org/)) and Marissa Bluestine ([Quattrone at UPenn Law](https://www.law.upenn.edu/institutes/quattronecenter/)). 
+
 ## Report
 
 [📄 Download the Full Report (PDF)](./REU_2024_AI_for_Justice.pdf)

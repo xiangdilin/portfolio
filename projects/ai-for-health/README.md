@@ -2,6 +2,8 @@
 
 A research project exploring machine learning and mathematical methods to identify patterns, classify patient groups, and detect atypical symptom profiles in Lyme disease survey data.
 
+**You can find the project writeup PDF in this repo through either the navigation sidebar or a link at the end of this README.**
+
 ## Overview
 
 Lyme disease can present with a wide range of symptoms and disease manifestations, making it challenging to identify meaningful patterns across patients. In this project, we analyzed survey data collected from individuals affected by Lyme disease and applied a variety of machine learning and mathematical techniques to uncover latent patterns and distinguish different patient groups.

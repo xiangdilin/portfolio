@@ -12,9 +12,7 @@ A research project investigating community structures and temporal network dynam
 
 Understanding how disease spreads through wildlife populations requires analyzing not only who interacts with whom, but also **when those interactions occur**. Traditional static network representations can lose important temporal information and may provide an incomplete picture of the structure through which infections spread.
 
-In this project, we analyzed the **Aves Wildbird Network (AWN)** dataset, which records interactions among wild birds across six consecutive days. We investigated community structures in the network and examined how these structures relate to simulated disease spread.
-
-The project combined **single-layer and multilayer community detection** with temporal network analysis and infection simulations.
+In this project, we analyzed temporal contact networks of wild birds to investigate how network structure and node centrality influence epidemic spread. Applied single- and multilayer community detection methods, including Louvain, Leiden, and Weighted Simultaneous Symmetric Non-Negative Matrix Tri-Factorization (WSSNMTF), to characterize community structures across time. Developed Time-Weighted Degree Centrality (TWDC) and TWDC with Decay to incorporate both interaction weights and temporal dynamics, and evaluated their effectiveness through SI-model infection simulations on a synthetic 100-day network. Results showed that temporal centrality measures better predicted disease-spreading potential than static centrality measures, while high-centrality nodes within communities led to faster simulated outbreaks.
 
 ## My Contribution
 

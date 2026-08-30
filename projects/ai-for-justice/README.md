@@ -6,9 +6,9 @@ A research project investigating the use of machine learning and AI to support i
 
 ## Overview
 
-Wrongful convictions are a persistent challenge in the U.S. criminal justice system, with systemic disparities disproportionately affecting minority groups. This project explores how AI can provide transparent, data-driven tools to assist innocence organizations with case investigation by summarizing case data, identifying relevant features, and supporting complex searches.
+Wrongful convictions are a persistent challenge in the U.S. criminal justice system, with systemic disparities disproportionately affecting minority groups. This project investigates the use of AI and machine learning to support innocence organizations in identifying patterns and key features associated with wrongful convictions. We developed a data-driven framework that combines legal document embeddings with Non-Negative Matrix Factorization (NMF)-based methods to classify exonerated and non-exonerated cases.
 
-Working with guidance from the Innocence Center, we constructed a dataset of **140 murder cases across 39 U.S. states**, including both exonerated and non-exonerated cases. Exonerated cases were sourced from the National Registry of Exonerations, while non-exonerated cases were selected to maintain geographic diversity and match the states represented in the exonerated cases.
+The dataset contains 140 murder cases from 39 U.S. states, including both exonerated and non-exonerated cases. Our work focuses on developing reliable and transparent computational methods that can assist with legal case analysis and appeal investigations.
 
 ## Research Objectives
 
@@ -20,28 +20,33 @@ Working with guidance from the Innocence Center, we constructed a dataset of **1
 
 ## Methods
 
-We implemented and evaluated several Nonnegative Matrix Factorization (NMF) and semi-supervised learning approaches:
+1. **Data Preparation**
+   - Compiled a dataset of 140 murder cases from 39 U.S. states, including exonerated and non-exonerated cases.
+   - Converted open-source legal documents into text embeddings for downstream analysis.
 
-- **Semi-NMF**
-- **Convex NMF**
-- **Semi-Supervised NMF (SSNMF)**
-- **Kernel SSNMF** — a novel extension developed in this project
+2. **NMF-Based Modeling**
+   - Implemented existing methods including **Semi-NMF, Convex NMF, and SSNMF**.
+   - Extended SSNMF with kernel methods to develop **Kernel SSNMF** for high-dimensional data.
 
-Because the dataset contains both mixed-sign and nonnegative features, the algorithms were adapted to accommodate different data characteristics. We also developed **convergence proofs** for the implemented algorithms to establish their theoretical reliability.
+3. **Theoretical Analysis**
+   - Established convergence results for the proposed algorithms.
 
-For evaluation, the learned representations were used for:
+4. **Classification**
+   - Developed a feature-matrix reconstruction approach for classification using Convex NMF and Kernel SSNMF.
+   - Evaluated classification performance using **Support Vector Machines (SVM)**.
 
-- Feature matrix reconstruction
-- Case classification
-- SVM-based downstream classification
-- Performance comparison across different numbers of topics
-- Evaluation on both gene expression data and **LLM embedding representations**
+5. **Experimental Evaluation**
+   - Tested the methods on high-dimensional benchmark datasets, including genomic data, as well as legal text embeddings.
+   - Compared Kernel SSNMF against existing NMF-based approaches.
 
 ## Key Findings
 
-**Kernel SSNMF consistently outperformed Convex NMF and SSNMF in classification tasks**, particularly when applied with polynomial kernels.
-
-The results demonstrated improved classification accuracy across different numbers of topics on both gene expression data and LLM embedding datasets, suggesting that kernelized semi-supervised NMF can provide useful representations for complex, heterogeneous datasets.
+- Developed a framework for converting open-source legal documents into **text embeddings** for classification.
+- Introduced **Kernel Semi-Supervised Non-Negative Matrix Factorization (Kernel SSNMF)** for high-dimensional data analysis and classification.
+- Proved the **convergence** of the proposed algorithm.
+- Developed a **feature reconstruction-based classification approach** for Convex NMF and Kernel SSNMF.
+- Kernel SSNMF **outperformed SSNMF and Convex NMF** on classification tasks involving high-dimensional datasets and LLM embeddings.
+- **Polynomial kernels** consistently achieved higher classification accuracy across different numbers of topics.
 
 ## My Contributions
 
@@ -55,21 +60,22 @@ The results demonstrated improved classification accuracy across different numbe
 
 ## Technologies & Methods
 
-**Programming:** Python
+## Technologies & Methods
 
-**Machine Learning:** NMF, Semi-Supervised Learning, Kernel Methods, SVM, Classification
+**Machine Learning**: Semi-NMF, Convex NMF, SSNMF, Kernel SSNMF, Support Vector Machine (SVM)
 
-**AI / NLP:** LLM Embeddings
+**Natural Language Processing**: Legal document embeddings, LLM embeddings
 
-**Mathematical Methods:** Matrix Factorization, Optimization, Convergence Analysis
+**Mathematical Methods**: Non-Negative Matrix Factorization, Kernel methods, Matrix reconstruction, Convergence analysis
 
-**Data:** Legal Case Data, Gene Expression Data, Text Embeddings
+**Datasets**: Exonerated and non-exonerated legal cases, UCI Genomic Data, GEMLeR Colon Kidney Data
 
 ## Results
+Our experiments evaluated the proposed Kernel SSNMF method on publicly available high-dimensional datasets and legal text embeddings. The results showed that Kernel SSNMF consistently achieved better classification performance than both SSNMF and Convex NMF.
 
-Our experiments suggest that Kernel SSNMF can improve classification performance over existing NMF-based approaches, particularly with polynomial kernels. The study also highlights opportunities for using AI and machine learning to develop more transparent and effective tools for legal case investigation.
+In particular, **polynomial kernels produced consistently higher accuracy across different numbers of topics**. These results demonstrate the potential of Kernel SSNMF for classification tasks involving high-dimensional data, including LLM-based legal document embeddings.
 
-The project identified several limitations, including dataset size and coverage. Future work could expand the dataset, improve representation of legal case information, and further investigate methods for improving model interpretability and fairness.
+We also identified several limitations, including dataset size and coverage. Future work could expand the dataset, improve representation of legal case information, and further investigate methods for improving model interpretability and fairness.
 
 ## Contributors
 **Team:** Anshuman Singh, Dakota Lin, Shreya Balaji, Kyle Torres. 

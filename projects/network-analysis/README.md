@@ -14,111 +14,54 @@ Understanding how disease spreads through wildlife populations requires analyzin
 
 In this project, we analyzed temporal contact networks of wild birds to investigate how network structure and node centrality influence epidemic spread. Applied single- and multilayer community detection methods, including Louvain, Leiden, and Weighted Simultaneous Symmetric Non-Negative Matrix Tri-Factorization (WSSNMTF), to characterize community structures across time. Developed Time-Weighted Degree Centrality (TWDC) and TWDC with Decay to incorporate both interaction weights and temporal dynamics, and evaluated their effectiveness through SI-model infection simulations on a synthetic 100-day network. Results showed that temporal centrality measures better predicted disease-spreading potential than static centrality measures, while high-centrality nodes within communities led to faster simulated outbreaks.
 
-## My Contribution
+## My Contributions
 
-I was responsible for **all community detection components** of the project, including the implementation, analysis, and evaluation of both single-layer and multilayer community detection methods.
+I was primarily responsible for the project's **community detection analysis**, including both single-layer and multilayer approaches.
 
-### Single-Layer Community Detection
+- Implemented and analyzed **single-layer community detection** using Louvain and Leiden algorithms.
+- Evaluated community partitions using **modularity** and investigated how the number of communities affected the resulting network structure.
+- Implemented and analyzed **Weighted Simultaneous Symmetric Non-Negative Matrix Tri-Factorization (WSSNMTF)** for multilayer community detection, treating interactions observed on different days as separate network layers.
+- Investigated the differences between static and multilayer community structures and analyzed their interpretability in the context of the three observation locations.
+- Analyzed how **community modularity changed during simulated epidemic outbreaks** and connected these structural changes to the progression of infection.
+- Contributed to the analysis of how community structure could be incorporated into the evaluation of temporal centrality measures and epidemic simulations.
 
-I implemented and evaluated multiple community detection approaches on aggregated avian contact networks:
+The community detection work provided the structural foundation for the later analysis of **temporal centrality and epidemic spread**, allowing us to investigate not only which birds were important for transmission, but also how their positions within network communities influenced outbreak dynamics.
 
-- **Louvain Algorithm**
-- **Leiden Algorithm**
-  - ModularityVertexPartition
-  - RBConfigurationVertexPartition
+## Community Detection
 
-For the baseline analysis, interactions across the six-day observation period were aggregated into a weighted network. I evaluated different numbers of communities using **modularity** and compared the resulting community structures.
+We investigated the community structure of the Aves Wildbird Network using both **single-layer and multilayer community detection** approaches.
 
-The baseline analysis found that partitions with **six communities** generally achieved the highest modularity among the single-layer methods.
+For single-layer analysis, we aggregated interactions across the six observed days and evaluated community partitions using modularity. We applied the **Louvain** and **Leiden** algorithms to identify densely connected groups of birds and examined how the number of detected communities affected modularity. The baseline analysis generally favored a six-community partition when interactions were aggregated across time.
 
-### Multilayer Community Detection
+To preserve the temporal structure of the network, we also applied **Weighted Simultaneous Symmetric Non-Negative Matrix Tri-Factorization (WSSNMTF)** to model the daily interaction networks as separate layers. The method jointly factorizes the adjacency matrices of different days while learning a shared community indicator matrix, allowing community structure to be inferred across multiple network layers.
 
-To preserve the temporal structure of the original data, I also analyzed the network using **Weighted Simultaneous Symmetric Non-Negative Matrix Tri-Factorization (WSSNMTF)**.
+The multilayer analysis produced different community structures from the static baseline. In particular, a three-community partition was relatively more meaningful under WSSNMTF, consistent with the three locations represented in the original dataset. This comparison highlighted how preserving temporal and multilayer structure can lead to different interpretations of network organization.
 
-Instead of aggregating interactions across time, each observation day was treated as a separate network layer. WSSNMTF jointly factorizes these layers using a shared community indicator matrix:
+We further examined how community structure changed during simulated disease outbreaks. As infection spread through the network, modularity decreased substantially, particularly during the early stages of the outbreak, suggesting that epidemic spread was associated with changes in the network's community organization.
 
-\[
-A^{(i)} \approx HS^{(i)}H^T
-\]
+## Temporal Centrality
 
-This approach allowed us to investigate community structures while retaining information about interactions across different days.
+We compared traditional network centrality measures with temporal centrality measures that explicitly account for the timing of interactions. Because the same pair of birds may interact with different weights at different times, aggregating these interactions into a static network can discard important temporal information.
 
-The multilayer analysis suggested that a **three-community structure** was more meaningful than the six-community structure identified by the single-layer baseline, illustrating how temporal information can substantially affect inferred network structure.
+The project developed **Time-Weighted Degree Centrality (TWDC)**, which incorporates both interaction strength and temporal distance. We further introduced **TWDC with Decay**, a recursive extension that incorporates the centrality of neighboring nodes from previous time steps while applying a temporal decay factor.
 
-## Community Detection Analysis
+Across the experiments, TWDC and TWDC with Decay showed stronger relationships with the infection index than the other evaluated centrality measures, demonstrating the value of incorporating temporal information when identifying potentially influential nodes in dynamic contact networks.
 
-We compared community structures using modularity and examined how the detected communities changed during simulated disease outbreaks.
+## Epidemic Simulation
 
-One important finding was the difference between static and multilayer approaches:
+To evaluate the relationship between network structure and disease transmission, we constructed a synthetic **100-day temporal network** based on the original six-day Aves Wildbird Network dataset while preserving the observed daily numbers of nodes and edges.
 
-- **Single-layer methods:** Aggregating interactions across time generally favored a six-community partition.
-- **Multilayer WSSNMTF:** Preserving daily network layers suggested a three-community structure.
-- This difference demonstrates the potential information loss associated with collapsing a temporal network into a static representation.
+We simulated disease transmission using an **SI model**, selecting one or more initial infected birds and propagating infection through temporal interactions. The probability of transmission was proportional to the interaction weight and an infection-rate parameter. We introduced an **infection index** based on the timing of massive infection to quantify how effectively each node could initiate an outbreak.
 
-We also investigated how **modularity changed during epidemic simulations**. A substantial decrease in modularity was observed during the early stages of infection, particularly around Days 1–2, coinciding with a rapid increase in the number of infected birds.
-
-These results suggest a relationship between the evolution of community structure and the progression of an epidemic.
-
-## Disease Spread Simulation
-
-The community structures identified through the above methods were subsequently used in epidemic simulations.
-
-The simulation was performed on a synthetic 100-day extension of the original AWN dataset. Initial infected nodes ("patient zero") were selected under different strategies, and infection propagated through network interactions according to edge weights and an infection-rate parameter.
-
-We compared simulations initialized with:
-
-- High-centrality nodes within detected communities
-- Randomly selected nodes across the network
-
-This allowed us to investigate how network structure and node importance influence epidemic progression.
-
-## Key Findings
-
-- Static community detection methods identified strong community structures in the avian contact network, with six communities generally producing the highest modularity.
-- Multilayer community detection produced different structural insights, with three communities appearing relatively more meaningful when temporal layers were preserved.
-- The discrepancy between static and multilayer results highlights the importance of **temporal information in network community detection**.
-- Network modularity decreased substantially during the early stages of simulated infection, coinciding with rapid disease spread.
-- Community structure provided an additional framework for evaluating the effectiveness of temporal centrality measures in predicting epidemic progression.
-
-## Technical Methods
-
-**Community Detection**
-- Louvain
-- Leiden
-- Modularity Optimization
-- Resolution-based Community Detection
-- WSSNMTF
-- Multilayer Community Detection
-
-**Network Analysis**
-- Weighted Graphs
-- Temporal Networks
-- Community Structure
-- Modularity
-- Node Centrality
-
-**Epidemic Modeling**
-- SI Infection Model
-- Random-Walk-Based Infection Simulation
-- Infection Progression Analysis
-
-**Mathematical Methods**
-- Non-Negative Matrix Factorization
-- Matrix Tri-Factorization
-- Optimization
-- Graph Theory
-
-## Dataset
-
-The project uses the **Aves Wildbird Network (AWN)** dataset, which records interactions between wild birds across six consecutive days.
-
-Because the original observation period was short, we generated a synthetic 100-day network while preserving the approximate daily distribution of nodes and edges. This extended dataset was used for epidemic simulations.
+The simulations were subsequently used to evaluate whether nodes identified as highly central within their communities were more effective at initiating outbreaks than randomly selected nodes.
 
 ## Results
 
-The results demonstrate that incorporating temporal information can lead to substantially different conclusions about community structure compared with static network analysis.
+The experiments demonstrated three main findings:
 
-The combination of community detection and epidemic simulation also provided a framework for studying how structural properties of wildlife contact networks influence disease propagation.
+- **Temporal information matters:** Temporal centrality measures generally correlated more strongly with the infection index than static centrality measures.
+- **Community structure affects epidemic dynamics:** Modularity decreased substantially during the early stages of simulated outbreaks, indicating changes in network organization as infection spread.
+- **High-centrality nodes accelerate outbreaks:** Simulations initialized with high-TWDC nodes from different communities reached major infection milestones faster than simulations using randomly selected initial infected nodes, supporting TWDC as a useful measure of disease-spreading potential.
 
 ## Contributors
 Zi Zhu, You Wu, Dakota Lin, Yizhuo Chang, Stephanie Su, Guolei Mao

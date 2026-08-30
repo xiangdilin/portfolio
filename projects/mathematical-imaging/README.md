@@ -82,7 +82,7 @@ Together, these methods demonstrate how different combinations of fundamental im
 
 ## Technologies
 
-**Programming:** MATLAB
+**Programming:** MATLAB, Mathematica
 
 **Image Processing:** Edge Detection, Histogram Analysis, Bilateral Filtering, Gaussian Filtering, Gradient Orientation
 

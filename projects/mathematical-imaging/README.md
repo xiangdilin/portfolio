@@ -110,3 +110,7 @@ The complete toolbox demonstrates the versatility of classical image processing 
 [📄 Download the Full Report (PDF)](./Artificial_Painting_Toolbox.pdf)
 
 > For the best viewing experience, please download the PDF.
+
+## License
+
+This project is licensed under the MIT License. 

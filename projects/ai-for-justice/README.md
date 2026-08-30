@@ -2,6 +2,8 @@
 
 A research project investigating the use of machine learning and AI to support innocence organizations in identifying patterns associated with wrongful convictions.
 
+**You can find the project writeup PDF in this repo through either the navigation sidebar or a link at the end of this README.**
+
 ## Overview
 
 Wrongful convictions are a persistent challenge in the U.S. criminal justice system, with systemic disparities disproportionately affecting minority groups. This project explores how AI can provide transparent, data-driven tools to assist innocence organizations with case investigation by summarizing case data, identifying relevant features, and supporting complex searches.

@@ -6,57 +6,50 @@ A research project exploring machine learning and mathematical methods to identi
 
 ## Overview
 
-Lyme disease can present with a wide range of symptoms and disease manifestations, making it challenging to identify meaningful patterns across patients. In this project, we analyzed survey data collected from individuals affected by Lyme disease and applied a variety of machine learning and mathematical techniques to uncover latent patterns and distinguish different patient groups.
+Lyme disease can present with a wide range of symptoms and disease manifestations, making it challenging to identify meaningful patterns across patients. This project explores Lyme disease patient data using mathematical and machine learning techniques to uncover symptom patterns, predict disease characteristics, detect unusual patient profiles, and develop fairer low-dimensional representations.
 
-The study focused on identifying symptom patterns associated with neurological manifestations, differentiating chronic and early Lyme disease cases, predicting the timing of diagnosis relative to symptom onset, and identifying patients with uncommon or extreme symptom profiles.
+Using survey data from MyLymeData, we applied Non-Negative Matrix Factorization (NMF), classification methods, anomaly detection, network analysis, and fair dimensionality reduction. The project combines unsupervised and supervised learning to investigate patterns associated with disease status, neurological manifestations, and unusual symptom profiles.
 
 ## Research Objectives
 
-- Discover latent patterns in Lyme disease symptoms
-- Identify features associated with neurological manifestations
-- Classify patients into chronic vs. early Lyme disease groups
-- Predict whether diagnosis occurred before or after one year from symptom onset
-- Detect patients with unusual or extreme symptom profiles
-- Develop interpretable low-dimensional representations of patient data
-- Explore fairness in dimensionality reduction across different patient subgroups
+- Identify underlying **symptom patterns** among Lyme disease patients using unsupervised NMF.
+- Predict **neurological manifestations** and distinguish between different patient groups using supervised learning.
+- Classify patients based on characteristics such as **chronic vs. early Lyme disease** and time to diagnosis.
+- Detect patients with **unusual or extreme symptom profiles** using anomaly detection.
+- Explore relationships among patients through **network-based community detection**.
+- Develop a **fair dimensionality reduction** method that produces more equitable low-dimensional representations across patient subgroups.
 
 ## Methods
 
-We explored several machine learning and mathematical approaches:
+1. **Symptom Pattern Discovery**
+   - Applied unsupervised **Non-Negative Matrix Factorization (NMF)** to extract underlying symptom patterns and reduce the dimensionality of the patient data.
 
-### Nonnegative Matrix Factorization
+2. **Classification**
+   - Applied **Logistic Regression, SVM, and Semi-Supervised NMF (SSNMF)** to classify Lyme disease patients.
+   - Studied distinctions between chronic and early Lyme patients and predicted neurological manifestations.
 
-- **NMF** for uncovering latent symptom patterns
-- **Neural NMF** for nonlinear representation learning
-- **Semi-Supervised NMF** for analyzing anomalous patient groups
-- **Fair NMF** for obtaining lower-dimensional representations across different subgroups
+3. **Anomaly Detection**
+   - Used **Isolation Forest (iForest)** and **Local Outlier Factor (LOF)** to identify patients with unusual symptom profiles.
+   - Applied supervised NMF to further investigate patterns associated with detected anomalies.
 
-### Classification
+4. **Network Analysis**
+   - Constructed a patient network and applied **multiplex community detection** to identify groups of patients with shared characteristics.
 
-We applied supervised learning methods including:
+5. **Neural NMF**
+   - Developed two feature-similarity-based helper functions to improve the performance of **Neural NMF**.
 
-- **Logistic Regression**
-- **Support Vector Machines (SVM)**
-
-These models were used to distinguish chronic vs. early Lyme disease cases and predict the timing of diagnosis relative to symptom onset.
-
-### Anomaly Detection
-
-Anomaly detection was used to identify patients with uncommon symptom profiles. These cases were subsequently analyzed using semi-supervised NMF to investigate whether meaningful patterns could be identified within atypical patient groups.
-
-### Patient Network Analysis
-
-We constructed a patient similarity network based on symptom and feature similarity and applied a **multiplex community detection algorithm** to identify interpretable patient communities.
+6. **Fair Dimensionality Reduction**
+   - Proposed **Fair NMF**, an NMF-based approach designed to reduce disparities between subgroups in low-dimensional representations.
+   - Explored rescaling, a weighted-average dictionary matrix, and an early-stopping strategy based on subgroup loss convergence.
 
 ## Key Findings
 
-NMF revealed underlying patterns in the survey data that provided insight into Lyme disease symptoms, including patterns associated with neurological manifestations.
-
-Classification models achieved strong performance in distinguishing **chronic vs. early Lyme disease** and predicting whether diagnosis occurred before or after one year from symptom onset.
-
-Anomaly detection identified patients with uncommon symptom profiles, which were further analyzed using semi-supervised NMF to uncover additional structure within these atypical cases.
-
-The study also explored **Fair NMF**, demonstrating how incorporating subgroup considerations into matrix factorization can produce lower-dimensional representations with improved fairness across different groups.
+- **Symptom Patterns:** NMF revealed underlying patterns in Lyme disease symptoms and identified patterns associated with neurological manifestations.
+- **Classification:** Logistic Regression, SVM, and SSNMF successfully differentiated patient groups, including chronic vs. early Lyme patients and patients based on time to diagnosis.
+- **Anomaly Detection:** Isolation Forest and LOF identified patients with unusual symptom profiles, which were further analyzed using supervised NMF.
+- **Patient Networks:** Multiplex community detection provided an interpretable representation of relationships and shared characteristics among patients.
+- **Neural NMF:** Feature-similarity-based helper functions improved the performance of the Neural NMF approach.
+- **Fair NMF:** The proposed Fair NMF algorithm achieved better subgroup convergence while maintaining lower-rank representations compared with vanilla NMF and early stopping.
 
 ## My Contributions
 
@@ -71,17 +64,23 @@ The study also explored **Fair NMF**, demonstrating how incorporating subgroup c
 
 **Programming:** Python
 
-**Machine Learning:** NMF, Neural NMF, Semi-Supervised Learning, Fair NMF, Logistic Regression, SVM, Anomaly Detection
+**Machine Learning**: Non-Negative Matrix Factorization (NMF), Semi-Supervised NMF (SSNMF), Neural NMF, Logistic Regression, Support Vector Machine (SVM)
 
-**Network Analysis:** Patient Similarity Networks, Community Detection, Multiplex Networks
+**Anomaly Detection**: Isolation Forest, Local Outlier Factor (LOF)
 
-**Mathematical Methods:** Matrix Factorization, Dimensionality Reduction, Feature Similarity
+**Network Analysis**: Patient Similarity Networks, Community Detection, Multiplex Networks
 
-**Data:** [MyLymeData](https://www.lymedisease.org/mylymedata-lyme-disease-research/)
+**Fair Machine Learning**: Fair NMF, Fair Dimensionality Reduction, Subgroup Loss Analysis
+
+**Data**: [MyLymeData](https://www.lymedisease.org/mylymedata-lyme-disease-research/)
 
 ## Results
 
-The combination of matrix factorization, classification, anomaly detection, and network analysis provided complementary perspectives on the Lyme disease survey data. The results demonstrate how mathematical and machine learning techniques can be combined to uncover latent structure, identify atypical cases, and produce interpretable representations of complex health-related data.
+Our experiments demonstrated that NMF-based methods can effectively uncover meaningful structure in high-dimensional Lyme disease patient data. Unsupervised NMF revealed symptom patterns, while supervised NMF and conventional classification methods enabled the prediction of patient characteristics and neurological manifestations.
+
+Anomaly detection methods identified patients with unusual symptom profiles, which could then be further investigated using supervised NMF. We also developed a patient network with multiplex community detection to provide additional insight into shared patient characteristics.
+
+For fair dimensionality reduction, the proposed **Fair NMF** algorithm demonstrated improved subgroup convergence and lower-rank representations compared with vanilla NMF and early stopping. Together, these results demonstrate the potential of combining matrix factorization, classification, anomaly detection, network analysis, and fairness-aware dimensionality reduction for analyzing complex Lyme disease data.
 
 ## Contributors
 Xinyu Dong, Haowen Geng, Nika Jafar Nia, Abby Hultquist, Aoxi Li, Dakota Lin, Jingyi Liu, Chelsea Nguyen (Alphabetical order of last names).

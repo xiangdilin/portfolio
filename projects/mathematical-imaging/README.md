@@ -2,7 +2,7 @@
 
 A MATLAB-based image processing project that explores how mathematical and computational techniques can be used to transform photographs into different artistic styles.
 
-**You can find the project writeup PDF in this repo. Visit our drive for code implementation and relevant `.py` & `.ipynb` files: https://drive.google.com/drive/folders/1CBeuyZd3X2Oc---hu0VKI8YonJtwGk11**
+**You can find the project writeup PDF in this repo. Visit our drive for code implementation files in PDF: https://drive.google.com/drive/folders/1CBeuyZd3X2Oc---hu0VKI8YonJtwGk11**
 
 ## Overview
 
@@ -100,7 +100,7 @@ The complete toolbox demonstrates the versatility of classical image processing 
 
 - **Dakota Lin** — Oil Painting Effect; initial setup and evaluation of Van Gogh's Stroke Style
 - **Sherry Zhou** — Pencil Sketch and Comic Effects
-- **Martin Zhang** — Van Gogh's Stroke Style
+- **Martin Zhang** — Development of Van Gogh's Stroke Style
 - **Brandon Vuong** — Cubism-like Effect
 
 ## Report

@@ -23,7 +23,7 @@ I implemented and evaluated **Semi-NMF, Convex NMF, SSNMF, and Kernel SSNMF**, i
 * Conducted SVM-based classification and model evaluation
 * Analyzed model performance and interpretability in the context of wrongful-conviction investigations
 
-**Tech:** Python · Machine Learning · NMF · Semi-Supervised Learning · LLM Embeddings · SVM
+**Tech:** Python · Machine Learning · Dimensionality Reduction · Kernel Methods · LLM Embeddings · SVM
 
 📄 **[Download the Full Report (PDF)](./projects/ai-for-justice/REU_2024_AI_for_Justice.pdf)**
 
@@ -44,7 +44,7 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 * Constructed and analyzed a **patient similarity network**
 * Implemented a **multiplex community detection algorithm** to identify interpretable patient communities
 
-**Tech:** Python · NMF · Neural NMF · Semi-Supervised Learning · Logistic Regression · SVM · Network Analysis
+**Tech:** Python · NMF · Neural NMF · Anomaly Detection · Logistic Regression · Classification · Network Analysis
 
 📄 **[Download the Full Report (PDF)](./projects/ai-for-health/REU_2023_AI_for_Health.pdf)**
 
@@ -67,7 +67,7 @@ The project combined **Louvain and Leiden community detection**, multilayer **WS
 * Analyzed the relationship between community structure, modularity, and epidemic spread
 * Contributed to methodology and data analysis
 
-**Tech:** Python · NetworkX · Community Detection · Louvain · Leiden · NMTF · Temporal Networks · Epidemic Simulation
+**Tech:** Python · NetworkX · Community Detection · Louvain · Leiden · NMTF · Centrality Measures · Epidemic Simulation
 
 📄 **[Download the Full Report (PDF)](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)**
 
@@ -102,7 +102,7 @@ The project explored how classical image-processing techniques can reproduce vis
 * **Natural Language Processing:** LLM Embeddings · Topic Modeling · Representation Learning
 * **Network Science:** Community Detection · Centrality · Temporal Networks · Network Epidemiology
 * **Computational Methods:** Numerical Methods · Optimization · Mathematical Modeling
-* **Programming:** Python · MATLAB · R · SQL
+* **Programming:** Python · MATLAB · SQL · R
 
 ## Tools & Libraries
 

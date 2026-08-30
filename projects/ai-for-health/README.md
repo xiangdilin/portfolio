@@ -77,11 +77,16 @@ The study also explored **Fair NMF**, demonstrating how incorporating subgroup c
 
 **Mathematical Methods:** Matrix Factorization, Dimensionality Reduction, Feature Similarity
 
-**Data:** Lyme Disease Survey Data
+**Data:** [MyLymeData](https://www.lymedisease.org/mylymedata-lyme-disease-research/)
 
 ## Results
 
 The combination of matrix factorization, classification, anomaly detection, and network analysis provided complementary perspectives on the Lyme disease survey data. The results demonstrate how mathematical and machine learning techniques can be combined to uncover latent structure, identify atypical cases, and produce interpretable representations of complex health-related data.
+
+## Contributors
+XINYU DONG, HAOWEN GENG, NIKA JAFAR NIA, ABBY HULTQUIST, AOXI LI, DAKOTA LIN, JINGYI LIU, CHELSEA NGUYEN (Alphabetical order of last names).
+
+Special thanks to our PI Prof. Deanna Needell, Mentor Dr. Lara Kassab, and consultant CEO Lorraine Johnson ([LymeDisease.org](https://www.lymedisease.org/)). 
 
 ## Report
 

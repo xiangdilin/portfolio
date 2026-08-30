@@ -1,6 +1,6 @@
 # Dakota Xiangdi Lin's Portfolio
 
-Welcome! I’m Dakota, a M.S. student at Stanford University Institute for Computational and Mathematical Engineering (ICME) graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
+Welcome! I’m Dakota, a M.S. student at **Stanford University Institute for Computational and Mathematical Engineering (ICME)** graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
 
 This repository showcases selected projects spanning **machine learning, natural language processing, network analysis, image processing, and data-driven modeling**. My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions.
 

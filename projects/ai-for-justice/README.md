@@ -62,6 +62,8 @@ The dataset contains 140 murder cases from 39 U.S. states, including both exoner
 
 ## Technologies & Methods
 
+**Programming**: Python
+
 **Machine Learning**: Semi-NMF, Convex NMF, SSNMF, Kernel SSNMF, Support Vector Machine (SVM)
 
 **Natural Language Processing**: Legal document embeddings, LLM embeddings

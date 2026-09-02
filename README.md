@@ -4,7 +4,7 @@ Welcome! I’m Dakota, a M.S. student at **Stanford University Institute for Com
 
 This repository showcases selected projects spanning **machine learning, natural language processing, network analysis, image processing, and data-driven modeling**. My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions.
 
-For code implementations (except for the UCLA REU projects), please visit the project-specific pages in this repository.
+For the best viewing experience of the project writeups, please download the PDFs. For code implementations (except for the UCLA REU projects), please visit the project-specific pages in this repository.
 
 ## Projects
 

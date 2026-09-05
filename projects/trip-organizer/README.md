@@ -16,6 +16,8 @@ The project turns a multi-day itinerary — including international flights, ren
 
 The site is hosted on Cloudflare Workers and automatically redeploys whenever the connected GitHub repository is updated.
 
+![California Stanford Move-in Trip preview](assets/preview.png)
+
 ---
 
 ## Overview

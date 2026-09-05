@@ -95,6 +95,35 @@ The project explored how classical image-processing techniques can reproduce vis
 
 ---
 
+### 5. California · Stanford Move-in Trip — Bilingual Travel Dashboard
+
+**Focus:** Front-End Development · Product Design · Time-Zone-Aware Scheduling · Data Privacy · Deployment
+
+Designed and deployed a bilingual, mobile-first travel dashboard for a real California relocation and Stanford move-in journey. The site consolidates international flights, rental cars, hotel stays, moving logistics, university housing check-in, parking reminders, and Bay Area day trips into a single lightweight web application.
+
+The project was designed around real travel constraints, including fixed flight times, cross-time-zone scheduling, long-distance driving, university move-in logistics, attraction reservations, and public-facing privacy requirements.
+
+**My contributions**
+
+* Designed the overall information architecture and mobile-first interface
+* Implemented a live **next-event countdown** with time-zone-safe timestamps
+* Built a **Chinese / English language switch** with persistent browser preferences
+* Created custom **inline SVG route visualizations** and daily itinerary maps
+* Integrated one-click **Google Maps navigation** for locations and multi-stop routes
+* Implemented automatic **light / dark theme switching** based on local device time
+* Structured confirmed reservations, tentative plans, and action items into a clear travel workflow
+* Designed the public version to exclude sensitive information such as booking references, ID numbers, access codes, and exact apartment details
+* Connected the repository to **Cloudflare Workers** for automatic deployment from GitHub
+
+**Tech:** HTML · CSS · Vanilla JavaScript · SVG · Google Maps · GitHub · Cloudflare Workers
+
+🌐 **[View the Live Site](https://california-trip-2026.xiangdi-lin.workers.dev)**
+
+💻 **[View the Project Repository](./projects/california-stanford-trip/)**
+
+![California Stanford Move-in Trip Preview](./projects/trip-organizer/assets/preview.png)
+---
+
 ## Technical Interests
 
 * **Machine Learning:** Supervised Learning · Semi-Supervised Learning · Matrix Factorization · Classification · Anomaly Detection

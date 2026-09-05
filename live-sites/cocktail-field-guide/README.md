@@ -11,7 +11,7 @@ A bilingual interactive cocktail guide for exploring classic and modern drinks b
 
 **[View the deployed site](https://my-cocktails.xiangdi-lin.workers.dev/)**
 
-<!-- ![Cocktail Field Guide preview](assets/preview.png) -->
+![Cocktail Field Guide preview](assets/preview.png)
 
 ---
 

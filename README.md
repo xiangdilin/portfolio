@@ -2,7 +2,9 @@
 
 Welcome! I’m Dakota, a M.S. student at **Stanford University Institute for Computational and Mathematical Engineering (ICME)** graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
 
-This repository showcases selected projects spanning **machine learning, natural language processing, network analysis, image processing, data-driven modeling, and interactive web applications**. My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions.
+My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions. This repository showcases selected projects spanning machine learning, natural language processing, network analysis, image processing, and data-driven modeling.
+
+It also includes interactive web applications I built out of personal interest and for my own use.
 
 **📌 For the best viewing experience of the project writeups, please download the PDFs.**
 
@@ -50,7 +52,54 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 
 ---
 
-### 3. California · Stanford Move-in Trip — Bilingual Travel Dashboard
+### 3. Temporal Avian Contact Networks — Community Detection & Epidemic Simulation
+
+**Focus:** Network Science · Community Detection · Temporal Networks · Epidemic Simulation
+
+Analyzed temporal contact networks of wild birds to investigate how network structure and node importance influence disease transmission. Using the **Aves Wildbird Network (AWN)** dataset, we studied both single-layer and multilayer community structures and evaluated their relationship with simulated disease outbreaks.
+
+The project combined **Louvain and Leiden community detection**, multilayer **WSSNMTF**, temporal centrality measures, and infection simulations. We also developed **Time-Weighted Degree Centrality (TWDC)** and a recursive version with temporal decay to better capture the importance of nodes in dynamic networks.
+
+**My contributions**
+
+* Led the **community detection** component of the project
+* Implemented and evaluated **Louvain and Leiden** algorithms
+* Investigated single-layer vs. multilayer community structures
+* Applied **WSSNMTF** to identify communities across temporal network layers
+* Analyzed the relationship between community structure, modularity, and epidemic spread
+* Contributed to methodology and data analysis
+
+**Tech:** Python · NetworkX · Community Detection · Louvain · Leiden · NMTF · Centrality Measures · Epidemic Simulation
+
+📄 **[Download the Full Report (PDF)](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)**
+
+---
+
+### 4. Artificial Painting Toolbox — Image Processing in MATLAB
+
+**Focus:** Image Processing · Computer Vision · Mathematical Modeling
+
+Developed an image-processing toolbox that transforms photographs into different artistic styles, including **pencil sketch, comic, oil painting, Van Gogh-inspired strokes, and Cubism-like effects**.
+
+The project explored how classical image-processing techniques can reproduce visual characteristics of traditional artistic media without relying on deep learning or neural style transfer.
+
+**My contributions**
+
+* Implemented and analyzed the **oil painting effect**
+* Used local RGB histograms to identify dominant colors and generate brush-like regions
+* Investigated improvements to reduce artifacts around sharp edges and uniform regions
+* Contributed to the initial development and evaluation of the **Van Gogh-inspired stroke effect**
+* Applied image-processing techniques including filtering, color manipulation, and local neighborhood analysis
+
+**Tech:** MATLAB · Image Processing · Histogram Analysis · Filtering · Edge Detection · Color Manipulation
+
+📄 **[Download the Full Report (PDF)](./projects/mathematical-imaging/Artificial_Painting_Toolbox.pdf)**
+
+---
+
+## Live Sites
+
+### 1. California · Stanford Move-in Trip — Bilingual Travel Dashboard
 
 **Focus:** Front-End Development · Product Design · Interactive Maps · Time-Zone-Aware Scheduling · Deployment
 
@@ -79,52 +128,35 @@ The project was built around real travel constraints, including fixed flight sch
 
 🌐 **[View the Live Site](https://california-trip-2026.xiangdi-lin.workers.dev)**
 
-![California Stanford Move-in Trip Preview](./projects/trip-organizer/assets/preview.png)
-
 ---
 
-### 4. Temporal Avian Contact Networks — Community Detection & Epidemic Simulation
+### 2. Cocktail Field Guide — Bilingual Interactive Cocktail Menu
 
-**Focus:** Network Science · Community Detection · Temporal Networks · Epidemic Simulation
+**Focus:** Front-End Development · Product Design · Information Architecture · Interactive Filtering · Visual Design · Deployment
 
-Analyzed temporal contact networks of wild birds to investigate how network structure and node importance influence disease transmission. Using the **Aves Wildbird Network (AWN)** dataset, we studied both single-layer and multilayer community structures and evaluated their relationship with simulated disease outbreaks.
+Designed and deployed a bilingual interactive cocktail guide for exploring classic and modern drinks by base spirit, flavor profile, and occasion. The site combines structured cocktail information with a vintage-inspired midnight editorial aesthetic, presenting each drink through an irregular pinned-note layout with custom illustrations, decorative typography, and animated interactions.
 
-The project combined **Louvain and Leiden community detection**, multilayer **WSSNMTF**, temporal centrality measures, and infection simulations. We also developed **Time-Weighted Degree Centrality (TWDC)** and a recursive version with temporal decay to better capture the importance of nodes in dynamic networks.
+The project was built as a lightweight personal-use web tool, with an emphasis on fast browsing, visual discovery, responsive design, and a consistent bilingual experience without requiring a backend or database.
 
-**My contributions**
+**Key features**
 
-* Led the **community detection** component of the project
-* Implemented and evaluated **Louvain and Leiden** algorithms
-* Investigated single-layer vs. multilayer community structures
-* Applied **WSSNMTF** to identify communities across temporal network layers
-* Analyzed the relationship between community structure, modularity, and epidemic spread
-* Contributed to methodology and data analysis
+* Curated and structured a collection of **70+ classic and modern cocktails** with recipes, preparation methods, glassware, garnish, flavor profiles, and recommended occasions
+* Implemented **popularity-based ordering** so more widely recognized cocktails appear earlier in both the main menu and search results
+* Added multi-dimensional filtering by **base spirit, flavor, and occasion**, with expandable secondary filters for less common categories
+* Built a **random cocktail selector** for quickly deciding what to drink
+* Implemented search across cocktail names, ingredients, spirits, flavor tags, and occasion tags
+* Built a persistent **Chinese / English language switch**, with a Chinese-English mixed interface and a fully English version
+* Designed custom lightweight **SVG cocktail illustrations** for multiple glass styles
+* Created an irregular **pinned-note / scrapbook layout** using varied paper tones, tape, pushpins, decorative strokes, and editorial typography
+* Added detailed cocktail views with recipes, serving information, preparation steps, recommended occasions, and visual flavor ratings
+* Implemented scroll-triggered reveal animations, staggered card entrances, modal transitions, and subtle hand-drawn decoration effects
+* Designed the interface to remain fully responsive and usable across desktop and mobile
+* Kept the project lightweight using only static front-end technologies with no authentication, database, or external API dependency
+* Connected GitHub to **Cloudflare Workers** for public deployment
 
-**Tech:** Python · NetworkX · Community Detection · Louvain · Leiden · NMTF · Centrality Measures · Epidemic Simulation
+**Tech:** HTML · CSS · Vanilla JavaScript · SVG · Google Fonts · GitHub · Cloudflare Workers
 
-📄 **[Download the Full Report (PDF)](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)**
-
----
-
-### 5. Artificial Painting Toolbox — Image Processing in MATLAB
-
-**Focus:** Image Processing · Computer Vision · Mathematical Modeling
-
-Developed an image-processing toolbox that transforms photographs into different artistic styles, including **pencil sketch, comic, oil painting, Van Gogh-inspired strokes, and Cubism-like effects**.
-
-The project explored how classical image-processing techniques can reproduce visual characteristics of traditional artistic media without relying on deep learning or neural style transfer.
-
-**My contributions**
-
-* Implemented and analyzed the **oil painting effect**
-* Used local RGB histograms to identify dominant colors and generate brush-like regions
-* Investigated improvements to reduce artifacts around sharp edges and uniform regions
-* Contributed to the initial development and evaluation of the **Van Gogh-inspired stroke effect**
-* Applied image-processing techniques including filtering, color manipulation, and local neighborhood analysis
-
-**Tech:** MATLAB · Image Processing · Histogram Analysis · Filtering · Edge Detection · Color Manipulation
-
-📄 **[Download the Full Report (PDF)](./projects/mathematical-imaging/Artificial_Painting_Toolbox.pdf)**
+🌐 **[View the Live Site](https://my-cocktails.xiangdi-lin.workers.dev/)**
 
 ---
 

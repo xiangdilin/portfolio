@@ -2,7 +2,7 @@
 
 Welcome! I’m Dakota, a M.S. student at **Stanford University Institute for Computational and Mathematical Engineering (ICME)** graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
 
-This repository showcases selected projects spanning **machine learning, natural language processing, network analysis, image processing, and data-driven modeling**. My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions.
+This repository showcases selected projects spanning **machine learning, natural language processing, network analysis, image processing, data-driven modeling, and interactive web applications**. My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions.
 
 For the best viewing experience of the project writeups, please download the PDFs. For code implementations (except for the UCLA REU projects), please visit the project-specific pages in this repository.
 
@@ -73,8 +73,6 @@ The project was designed around real travel constraints, including fixed flight 
 **Tech:** HTML · CSS · Vanilla JavaScript · SVG · Google Maps · GitHub · Cloudflare Workers
 
 🌐 **[View the Live Site](https://california-trip-2026.xiangdi-lin.workers.dev)**
-
-💻 **[View the Project Repository](./projects/california-stanford-trip/)**
 
 ![California Stanford Move-in Trip Preview](./projects/trip-organizer/assets/preview.png)
 

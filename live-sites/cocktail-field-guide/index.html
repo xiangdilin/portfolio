@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>document.documentElement.classList.add('motion-ready');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+  <meta name="description" content="一个简洁、双语的夜间鸡尾酒图鉴：按基酒、风味和场景探索，或者随机摇一杯。" />
+  <title>今晚喝什么？ | Cocktail Field Guide</title>
+  <style>
+    :root {
+      --bg:#08101d; --bg2:#0b1424; --paper:#101b2d; --paper2:#0d1727;
+      --ink:#e9edf4; --muted:#99a8bb; --faint:#687990; --line:rgba(201,214,232,.18);
+      --line-strong:rgba(215,226,240,.34); --silver:#b8c7d9; --blue:#849dbd;
+      --accent:#9dafc7; --warm:#b78967; --shadow:0 24px 70px rgba(0,0,0,.34);
+      --display:"Cinzel Decorative","Marcellus SC","Cormorant Garamond",Georgia,serif;
+      --serif:"Cormorant Garamond","Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+      --body-serif:"Alegreya","Cormorant Garamond","Iowan Old Style",Georgia,serif;
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);font-family:var(--sans);min-height:100vh;background:
+      radial-gradient(circle at 12% 7%,rgba(87,112,151,.19),transparent 29%),
+      radial-gradient(circle at 90% 2%,rgba(96,121,156,.10),transparent 24%),
+      linear-gradient(180deg,#09111f 0%,#07101b 48%,#08101d 100%)}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.28;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.016) 0,rgba(255,255,255,.016) 1px,transparent 1px,transparent 4px)}
+    button,input{font:inherit}button{color:inherit}a{color:inherit}.page-shell{width:min(1260px,calc(100% - 112px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(7,15,27,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .topbar-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:baseline;gap:12px;white-space:nowrap}.brand strong{font:500 1.24rem/1 var(--serif);letter-spacing:.02em}.brand span,.eyebrow,.filter-label,.base-label,.folio,.modal-kicker{font-family:var(--mono)}.brand span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+    .nav-actions{display:flex;gap:8px;align-items:center}.nav-link{padding:8px 11px;text-decoration:none;color:var(--muted);font-size:.86rem;letter-spacing:.04em;border-bottom:1px solid transparent}.nav-link:hover{color:var(--ink);border-color:var(--line-strong)}
+    .lang-switch{border:1px solid var(--line);display:flex;padding:2px}.lang-switch button{border:0;background:transparent;padding:7px 10px;cursor:pointer;font:700 .72rem/1 var(--mono);color:var(--muted)}.lang-switch button.active{background:var(--ink);color:var(--bg)}
+    .hero{position:relative;padding:124px 0 92px;display:grid;grid-template-columns:1.18fr .82fr;gap:72px;align-items:center;border-bottom:3px double var(--line-strong)}
+    .hero:before{content:"✦";position:absolute;left:50%;bottom:-11px;transform:translateX(-50%);background:var(--bg);padding:0 14px;color:var(--silver);font-size:.8rem}.hero:after{content:"VOL. I  ·  AFTER DARK";position:absolute;right:0;top:52px;font:600 .65rem/1 var(--mono);letter-spacing:.25em;color:rgba(184,199,217,.55)}
+    .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.69rem;color:var(--silver);margin-bottom:22px}.hero h1{font:500 clamp(3.7rem,7.2vw,7rem)/.88 var(--serif);letter-spacing:-.052em;margin:0;max-width:800px;text-wrap:balance}.hero p{max-width:690px;margin:28px 0 0;color:var(--muted);font:400 1.08rem/1.9 var(--sans)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.primary-btn,.secondary-btn{min-height:44px;padding:11px 18px;cursor:pointer;transition:.2s ease;text-decoration:none;border-radius:0;letter-spacing:.04em}.primary-btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg)}.secondary-btn{border:1px solid var(--line-strong);background:transparent}.primary-btn:hover,.secondary-btn:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(0,0,0,.24)}
+    .hero-art{min-height:430px;display:grid;place-items:center;position:relative;border:1px solid var(--line);outline:1px solid rgba(204,218,237,.07);outline-offset:-10px}.hero-art:before,.hero-art:after{position:absolute;color:rgba(184,199,217,.5);font-size:1rem}.hero-art:before{content:"❦";top:16px;left:20px}.hero-art:after{content:"❦";bottom:16px;right:20px;transform:rotate(180deg)}.hero-art .orb{position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(130,157,192,.21),rgba(58,78,111,.07) 56%,transparent 70%)}.hero-glass{width:230px;z-index:2;filter:drop-shadow(0 28px 30px rgba(0,0,0,.24))}
+    section{padding:74px 0}.section-head{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(320px,1fr);align-items:end;gap:56px;margin-bottom:34px}.section-head>div{position:relative;padding-top:20px}.section-head>div:before{content:"THE NIGHT MENU · 01";position:absolute;top:0;left:0;font:600 .62rem/1 var(--mono);letter-spacing:.18em;color:var(--faint)}#random .section-head>div:before{content:"HOUSE SELECTION · 00"}.section-head h2{font:500 clamp(2.4rem,4.3vw,4.2rem)/1 var(--serif);letter-spacing:-.035em;margin:0}.section-head p{margin:0;color:var(--muted);line-height:1.82;max-width:620px}.section-head:after{content:"";grid-column:1/-1;height:1px;background:linear-gradient(90deg,var(--line-strong),var(--line),transparent)}
+    .random-card{position:relative;display:grid;grid-template-columns:310px 1fr;gap:46px;align-items:center;padding:44px;background:linear-gradient(145deg,rgba(18,30,49,.9),rgba(11,21,36,.82));border:3px double var(--line-strong);box-shadow:var(--shadow)}.random-card:before{content:"HOUSE POUR";position:absolute;top:18px;right:22px;font:600 .62rem/1 var(--mono);letter-spacing:.2em;color:var(--faint)}.random-card:after{content:"✦  ✦  ✦";position:absolute;left:50%;bottom:15px;transform:translateX(-50%);font-size:.55rem;letter-spacing:.8em;color:rgba(184,199,217,.4)}
+    .random-illustration{min-height:292px;display:grid;place-items:center;border:1px solid var(--line);outline:1px solid rgba(255,255,255,.045);outline-offset:-9px;background:rgba(255,255,255,.018)}.random-illustration svg{width:165px;height:205px}.random-copy h3{font:500 clamp(2.35rem,5vw,4.2rem)/.98 var(--serif);letter-spacing:-.04em;margin:8px 0 11px}.subtitle{font:600 .68rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--silver)}.random-copy p{color:var(--muted);line-height:1.8}.recipe-mini{margin:18px 0 22px;padding:0;list-style:none;max-width:560px}.recipe-mini li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dotted var(--line-strong);font-family:var(--serif)}
+    .tags{display:flex;flex-wrap:wrap;gap:0;margin:15px 0 18px}.tag{font-size:.72rem;letter-spacing:.06em;color:#c7d2e1;padding:4px 9px 4px 0;margin-right:9px;text-transform:uppercase}.tag:not(:last-child):after{content:"·";margin-left:9px;color:var(--faint)}
+    .controls{position:relative;border:3px double var(--line-strong);background:rgba(11,21,36,.62);padding:28px 30px 24px;margin-bottom:34px}.controls:before{content:"FILTER INDEX";position:absolute;top:-8px;left:22px;background:var(--bg);padding:0 10px;font:600 .61rem/1 var(--mono);letter-spacing:.18em;color:var(--faint)}.search-row{margin-bottom:22px}.search-row input{width:100%;border:0;border-bottom:1px solid var(--line-strong);background:transparent;padding:12px 2px;color:var(--ink);outline:none;font-family:var(--serif);font-size:1.05rem}.search-row input:focus{border-color:var(--silver)}input::placeholder{color:#73839a}.filter-group{display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:start;padding:13px 0;border-top:1px solid rgba(204,217,234,.10)}.filter-label{color:var(--faint);font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;padding-top:7px}.filter-options{display:flex;flex-wrap:wrap;gap:3px 18px}.filter-btn{border:0;background:transparent;padding:5px 0;cursor:pointer;color:var(--muted);font-family:var(--serif);font-size:.96rem;border-bottom:1px solid transparent}.filter-btn:hover{color:var(--ink)}.filter-btn.active{color:var(--ink);border-color:var(--silver)}
+    .more-filters{display:none;margin-top:2px;padding-top:3px}.more-filters.open{display:block}.more-toggle-row{display:flex;align-items:center;justify-content:center;border-top:1px solid rgba(204,217,234,.10);padding-top:16px;margin-top:4px}.more-toggle{border:0;background:transparent;color:var(--silver);font:600 .67rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;padding:6px 12px}.more-toggle:after{content:" +"}.more-toggle.open:after{content:" −"}.filter-meta{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-top:18px;margin-top:8px;border-top:1px solid var(--line);color:var(--faint);font:600 .66rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}.text-btn{border:0;background:transparent;color:var(--silver);cursor:pointer;text-decoration:none;font:inherit;letter-spacing:inherit;text-transform:inherit}.text-btn:hover{text-decoration:underline;text-underline-offset:4px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line-strong);border-left:1px solid var(--line);margin-top:20px}.cocktail-card{position:relative;min-height:520px;padding:27px 26px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.012);cursor:pointer;transition:background .22s ease}.cocktail-card:hover{background:rgba(122,149,186,.07)}.cocktail-card:before{content:attr(data-folio);position:absolute;top:23px;right:24px;font:600 .61rem/1 var(--mono);letter-spacing:.12em;color:var(--faint)}.cocktail-card:after{content:"❦";position:absolute;left:25px;bottom:19px;color:rgba(184,199,217,.28);font-size:.78rem}.card-art{height:190px;display:grid;place-items:center;margin:26px 0 24px;border-bottom:1px solid var(--line)}.card-art svg{width:88px;height:118px}.card-title{display:block}.card-title h3{margin:0;font:500 1.55rem/1.06 var(--serif);letter-spacing:-.02em}.base-label{display:inline-block;margin-top:8px;color:var(--faint);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase}.card-en{color:var(--muted);margin:7px 0 10px;font:italic .9rem/1.4 var(--serif)}.card-desc{color:var(--muted);line-height:1.68;font-size:.91rem}.empty{padding:50px;text-align:center;color:var(--muted);border:1px dashed var(--line);margin-top:22px}
+    .modal-backdrop{position:fixed;inset:0;background:radial-gradient(circle at 50% 20%,rgba(95,118,171,.15),transparent 24%),rgba(2,7,14,.84);backdrop-filter:blur(11px);z-index:50;display:none;padding:28px;overflow:auto}.modal-backdrop.open,.modal-backdrop.closing{display:grid;place-items:center}.modal{width:min(1120px,100%);position:relative;color:var(--ink);background:
+      radial-gradient(circle at 12% 18%,rgba(88,163,161,.13),transparent 24%),
+      radial-gradient(circle at 87% 16%,rgba(115,108,187,.15),transparent 28%),
+      linear-gradient(180deg,#101b2f,#0a1324 68%,#09101d);border:1px solid rgba(169,201,223,.28);outline:1px solid rgba(115,108,187,.18);outline-offset:-12px;box-shadow:0 35px 100px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.03);position:relative;overflow:hidden}.modal:before,.modal:after{position:absolute;pointer-events:none}.modal:before{content:"";inset:22px;border:1px solid rgba(169,201,223,.10)}.modal:after{content:"☾   ✦   ❦   ✦   ☾";left:50%;bottom:12px;transform:translateX(-50%);color:rgba(169,201,223,.35);letter-spacing:1.1em;font-size:.72rem}.modal-top{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid rgba(169,201,223,.14);font:600 .64rem/1 "Marcellus SC",var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#94a8c4;background:linear-gradient(90deg,rgba(255,255,255,.025),transparent)}.close-btn{width:38px;height:38px;border:1px solid rgba(169,201,223,.22);background:rgba(255,255,255,.025);cursor:pointer;color:var(--ink);font-size:1.1rem}.close-btn:hover{background:rgba(255,255,255,.06)}.modal-body{display:grid;grid-template-columns:340px 1fr;gap:0;padding:0}.modal-art{position:relative;display:grid;place-items:center;min-height:620px;padding:54px 22px;border-right:1px solid rgba(169,201,223,.12);background:
+      radial-gradient(circle at center,color-mix(in srgb,var(--modal-accent, #849dbd) 16%, transparent),transparent 34%),
+      linear-gradient(180deg,rgba(255,255,255,.02),transparent 50%,rgba(255,255,255,.015));overflow:hidden}.modal-art:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;border:1px solid rgba(169,201,223,.16);box-shadow:0 0 0 18px rgba(255,255,255,.025),0 0 0 54px color-mix(in srgb,var(--modal-accent, #849dbd) 6%, transparent)}.modal-art:after{content:"✦     ☾     ✦";position:absolute;top:26px;left:50%;transform:translateX(-50%);letter-spacing:1em;color:rgba(169,201,223,.42);font-size:.74rem}.modal-art svg{width:180px;height:240px;position:relative;z-index:2;filter:drop-shadow(0 24px 28px rgba(0,0,0,.26))}.modal-side-note{position:absolute;left:18px;bottom:18px;writing-mode:vertical-rl;text-orientation:mixed;font:600 .62rem/1 "Marcellus SC",var(--mono);letter-spacing:.16em;color:rgba(169,201,223,.46);text-transform:uppercase}.modal-copy{position:relative;padding:42px 42px 40px}.modal-copy:before{content:"";position:absolute;top:22px;right:26px;width:92px;height:92px;border:1px solid rgba(169,201,223,.08);border-radius:50%;box-shadow:0 0 0 14px rgba(255,255,255,.012)}.modal-kicker{display:flex;align-items:center;justify-content:space-between;gap:16px;font:600 .64rem/1 "Marcellus SC",var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#92abc6}.modal-kicker span:last-child{opacity:.75}.modal-copy h3{font:500 clamp(2.8rem,5vw,4.5rem)/.94 var(--display);letter-spacing:.03em;margin:14px 0 0;text-transform:uppercase}.modal-en{margin:10px 0 14px;color:#d3dce7;font:italic 1.1rem/1.45 var(--serif)}.modal-intro{max-width:680px;color:#b5c0cf;line-height:1.86;margin:10px 0 0}.modal-copy .tags{margin:12px 0 18px;padding-bottom:16px;border-bottom:1px solid rgba(169,201,223,.12)}.modal-copy .tag{color:#d5dfe9}.modal-rule{display:flex;align-items:center;gap:12px;margin:18px 0 22px;color:rgba(169,201,223,.5);font-size:.72rem;letter-spacing:.55em}.modal-rule:before,.modal-rule:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(169,201,223,.22),transparent)}.modal-rule:after{background:linear-gradient(90deg,transparent,rgba(169,201,223,.22))}
+    .detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:8px}.detail-box{position:relative;padding:18px 18px 18px;border:1px solid rgba(169,201,223,.15);background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,.012));overflow:hidden}.detail-box:before{content:"";position:absolute;inset:8px;border:1px solid rgba(169,201,223,.05);pointer-events:none}.detail-box.full{grid-column:1/-1}.detail-box h4{margin:0 0 12px;font:600 .68rem/1 "Marcellus SC",var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#8ca7c4}.detail-box p,.detail-box ul{margin:0;line-height:1.72;color:#dde5ee}.detail-box ul{list-style:none;padding-left:0}.detail-box li{display:flex;justify-content:space-between;gap:18px;padding:7px 0;border-bottom:1px dotted rgba(169,201,223,.18);font-family:var(--serif);font-size:1rem}.detail-box li:last-child{border-bottom:0}.service-list{display:grid;gap:10px}.service-row{display:grid;grid-template-columns:96px 1fr;gap:10px}.service-row span:first-child{color:#8fa3b9;font:600 .64rem/1 "Marcellus SC",var(--mono);letter-spacing:.14em;text-transform:uppercase;padding-top:4px}.occasion-cloud{display:flex;flex-wrap:wrap;gap:8px 14px}.occasion-cloud .tag{padding:0;margin-right:0}.occasion-cloud .tag:after{display:none}.flavor-list{display:grid;gap:10px}.flavor-row{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;color:#dce5ef}.dots{letter-spacing:.09em;color:color-mix(in srgb,var(--modal-accent, #849dbd) 46%, #eef5ff)}.dots .off{opacity:.18}.recipe-note{margin-top:14px;color:#8da0b6;font:italic .97rem/1.6 var(--serif)}
+
+    footer{padding:80px 0 54px;color:var(--faint)}.footer-inner{border-top:3px double var(--line-strong);padding-top:24px;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:.78rem;line-height:1.6}
+    ::selection{background:#aabbd0;color:#08101d}
+    @media(max-width:980px){.page-shell{width:min(100% - 54px,1260px)}.hero{grid-template-columns:1fr;gap:45px;padding-top:96px}.hero-art{min-height:320px}.random-card{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.modal-body{grid-template-columns:1fr}.modal-art{min-height:250px;border-right:0;border-bottom:1px solid var(--line)}.nav-link{display:none}}
+    @media(max-width:660px){.page-shell{width:min(100% - 30px,1260px)}.topbar-inner{min-height:62px}.brand span{display:none}.hero{padding:72px 0 60px}.hero:after{top:28px}.hero h1{font-size:3.6rem}.hero p{font-size:1rem}.hero-art{min-height:260px}.hero-glass{width:165px}.hero-art .orb{width:220px;height:220px}section{padding:54px 0}.section-head{grid-template-columns:1fr;gap:18px}.section-head:after{margin-top:4px}.random-card{padding:28px 20px 34px;gap:25px}.random-illustration{min-height:230px}.controls{padding:25px 18px 20px}.filter-group{grid-template-columns:1fr;gap:5px}.filter-label{padding-top:0}.grid{grid-template-columns:1fr}.cocktail-card{min-height:0;padding:24px 22px 37px}.card-art{height:170px}.modal-backdrop{padding:10px}.modal-body{grid-template-columns:1fr}.modal-art{min-height:300px;padding:48px 20px;border-right:0;border-bottom:1px solid rgba(169,201,223,.12)}.modal-copy{padding:26px 18px 34px}.detail-grid{grid-template-columns:1fr}.modal-copy h3{font-size:2.35rem}.service-row,.flavor-row{grid-template-columns:82px 1fr}}
+  
+
+    /* --- Art direction pass: Midnight Deco Zine --- */
+    :root{
+      --violet:#736cbb; --teal:#58a3a1; --ice:#a9c9df; --rose:#a85d78;
+      --indigo:#373f7c; --gold:#c59a62; --moon:#d7e3ee;
+    }
+    body{
+      background:
+        radial-gradient(circle at 8% 5%,rgba(68,78,145,.28),transparent 25%),
+        radial-gradient(circle at 92% 18%,rgba(35,104,113,.20),transparent 22%),
+        radial-gradient(circle at 52% 52%,rgba(73,53,110,.14),transparent 32%),
+        linear-gradient(180deg,#070c19 0%,#0a1021 44%,#07101b 100%);
+    }
+    body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;background-image:
+      radial-gradient(circle at 15% 22%,rgba(255,255,255,.52) 0 1px,transparent 1.5px),
+      radial-gradient(circle at 78% 12%,rgba(255,255,255,.38) 0 1px,transparent 1.5px),
+      radial-gradient(circle at 62% 38%,rgba(137,194,213,.48) 0 1px,transparent 1.5px),
+      radial-gradient(circle at 31% 70%,rgba(255,255,255,.32) 0 1px,transparent 1.5px);
+      background-size:190px 190px,260px 260px,230px 230px,310px 310px}
+    .page-shell{width:min(1320px,calc(100% - 148px))}
+    .topbar{background:rgba(5,10,22,.78);border-bottom:1px solid rgba(185,207,231,.14)}
+    .topbar:after{content:"";display:block;height:2px;background:linear-gradient(90deg,transparent,rgba(88,163,161,.35),rgba(115,108,187,.45),rgba(197,154,98,.28),transparent)}
+    .brand:before{content:"✦";color:var(--teal);font-size:.7rem;margin-right:1px}.brand strong{letter-spacing:.035em}
+    .nav-link{position:relative}.nav-link:after{content:"";position:absolute;left:50%;right:50%;bottom:3px;height:1px;background:linear-gradient(90deg,var(--teal),var(--violet));transition:.22s}.nav-link:hover:after{left:10px;right:10px}
+
+    .hero{min-height:720px;padding:132px 0 112px;gap:92px;overflow:visible}
+    .hero:before{content:"✦   ◇   ✦";bottom:-10px;letter-spacing:.75em;color:rgba(169,201,223,.65)}
+    .hero:after{color:rgba(169,201,223,.72)}
+    .hero-copy{position:relative;z-index:2}
+    .hero-copy:before{content:"";position:absolute;width:80px;height:80px;border:1px solid rgba(88,163,161,.23);border-radius:50%;left:-34px;top:-38px;box-shadow:inset 0 0 0 8px rgba(115,108,187,.03)}
+    .eyebrow{color:#9bbdcc}.eyebrow:before{content:"☾";font-size:.95rem;margin-right:10px;color:#b6c9df}
+    .hero h1{text-shadow:0 6px 34px rgba(74,79,151,.18)}
+    .hero h1 em{font-weight:400;color:var(--ice)}
+    .hero p{max-width:650px;color:#aebdce}
+    .primary-btn{background:linear-gradient(135deg,#dce8ef,#a9c9df);border-color:#c6dce8;color:#07101b;box-shadow:0 8px 28px rgba(70,113,142,.18)}
+    .primary-btn:hover{box-shadow:0 12px 34px rgba(83,148,163,.25)}
+    .secondary-btn{border-color:rgba(169,201,223,.35);background:rgba(69,78,136,.06)}
+
+    .hero-art{min-height:500px;border:1px solid rgba(169,201,223,.25);background:
+      radial-gradient(circle at 50% 48%,rgba(115,108,187,.18),transparent 34%),
+      linear-gradient(150deg,rgba(255,255,255,.025),rgba(88,163,161,.035));
+      box-shadow:inset 0 0 60px rgba(29,45,81,.26),0 30px 80px rgba(0,0,0,.22)}
+    .hero-art:before{content:"✦";font-size:1.15rem;color:#8fc0c1}.hero-art:after{content:"☾";font-size:1.4rem;color:#8b83c2;transform:none}
+    .hero-art .orb{width:360px;height:360px;border:1px solid rgba(169,201,223,.12);background:
+      radial-gradient(circle at 38% 36%,rgba(169,201,223,.24),transparent 18%),
+      radial-gradient(circle,rgba(58,87,128,.18),rgba(115,108,187,.06) 55%,transparent 70%)}
+    .hero-art .orb:before,.hero-art .orb:after{content:"";position:absolute;border:1px solid rgba(88,163,161,.16);border-radius:50%;inset:-26px}.hero-art .orb:after{inset:-56px;border-color:rgba(115,108,187,.10)}
+    .hero-glass{width:246px;filter:drop-shadow(0 28px 34px rgba(0,0,0,.33)) drop-shadow(0 0 26px rgba(88,163,161,.12))}
+    .constellation{position:absolute;inset:0;pointer-events:none}.constellation i{position:absolute;font-style:normal;color:rgba(204,222,236,.72);font-size:.5rem;text-shadow:0 0 10px rgba(169,201,223,.7)}
+    .constellation i:nth-child(1){left:12%;top:21%}.constellation i:nth-child(2){right:16%;top:28%;font-size:.8rem;color:#78b4b0}.constellation i:nth-child(3){left:19%;bottom:23%;color:#8b83c2}.constellation i:nth-child(4){right:23%;bottom:18%}.constellation i:nth-child(5){right:9%;top:51%;font-size:.7rem;color:#c59a62}
+    .botanical{position:absolute;width:76px;height:112px;opacity:.45}.botanical.left{left:-20px;bottom:35px;transform:rotate(-17deg)}.botanical.right{right:-16px;top:52px;transform:rotate(160deg)}
+
+    section{position:relative;padding:94px 0}
+    #random:before,#library:before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:100vw;height:100%;z-index:-1;pointer-events:none}
+    #random:before{background:linear-gradient(180deg,rgba(43,39,86,.08),rgba(21,69,77,.06),transparent)}
+    #library:before{background:radial-gradient(circle at 8% 14%,rgba(115,108,187,.08),transparent 24%),radial-gradient(circle at 92% 40%,rgba(88,163,161,.07),transparent 22%)}
+    .section-head{gap:70px;margin-bottom:44px}.section-head>div:before{color:#7189a5}.section-head h2{position:relative;display:inline-block}.section-head h2:after{content:"✦";font-size:.65rem;color:var(--teal);position:absolute;right:-28px;top:7px}.section-head:after{height:3px;background:linear-gradient(90deg,rgba(169,201,223,.3),rgba(88,163,161,.28),rgba(115,108,187,.20),transparent)}
+
+    .random-card{grid-template-columns:360px 1fr;gap:58px;padding:54px;border:1px solid rgba(169,201,223,.28);outline:1px solid rgba(115,108,187,.15);outline-offset:-12px;background:
+      radial-gradient(circle at 12% 30%,rgba(88,163,161,.16),transparent 24%),
+      radial-gradient(circle at 88% 76%,rgba(115,108,187,.17),transparent 28%),
+      linear-gradient(145deg,rgba(19,31,55,.94),rgba(10,18,35,.92));overflow:hidden}
+    .random-card:before{content:"HOUSE POUR  ·  FORTUNE No. 01";color:#8bb6bd}.random-card:after{content:"✦  ◇  ☾  ◇  ✦";color:rgba(169,201,223,.46)}
+    .random-card .random-illustration{position:relative;filter:drop-shadow(0 0 26px color-mix(in srgb,var(--card-accent) 18%, transparent));min-height:340px;border:0;background:radial-gradient(circle,rgba(255,255,255,.035),transparent 60%)}
+    .random-card .random-illustration:before{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(88,163,161,.18);border-radius:50%;box-shadow:0 0 0 18px rgba(115,108,187,.025),0 0 0 44px rgba(169,201,223,.02)}
+    .random-card .random-illustration:after{content:"☾   ✦";position:absolute;top:18px;left:18px;font-family:var(--serif);letter-spacing:1.2em;color:rgba(169,201,223,.55)}
+    .random-copy h3{color:#eef4f8}.random-copy .subtitle{color:#8fc0c1}.recipe-mini li{border-bottom-color:rgba(169,201,223,.16)}
+
+    .controls{border:1px solid rgba(169,201,223,.24);outline:1px solid rgba(115,108,187,.12);outline-offset:-9px;background:
+      linear-gradient(90deg,rgba(115,108,187,.035),transparent 20%,transparent 80%,rgba(88,163,161,.035)),rgba(8,17,33,.72);padding:34px 40px 29px}
+    .controls:before{content:"✦  FILTER INDEX  ✦";color:#7fa7b3;background:#08101d}.search-row input{font-size:1.16rem;border-bottom-color:rgba(169,201,223,.26)}
+    .filter-group{padding:15px 0}.filter-btn{position:relative;color:#9cacbf}.filter-btn.active{color:#e8f0f5;border-color:var(--teal)}.filter-btn.active:before{content:"✦";font-size:.47rem;color:var(--teal);position:absolute;left:-11px;top:9px}
+    .more-filters.open{margin:8px -12px 0;padding:11px 18px 6px;border:1px solid rgba(115,108,187,.18);background:linear-gradient(135deg,rgba(115,108,187,.045),rgba(88,163,161,.028))}
+
+    .grid{border:0;gap:22px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .cocktail-card{--card-accent:#849dbd;min-height:540px;padding:28px 28px 34px;border:1px solid rgba(169,201,223,.15);background:
+      radial-gradient(circle at 84% 16%,color-mix(in srgb,var(--card-accent) 20%, transparent),transparent 30%),
+      linear-gradient(160deg,rgba(255,255,255,.022),rgba(255,255,255,.006));overflow:hidden;transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease,background .28s ease}
+    .cocktail-card:nth-child(4n+2){transform:translateY(10px)}.cocktail-card:nth-child(4n+2):hover{transform:translateY(4px)}
+    .cocktail-card:nth-child(4n+3){background:radial-gradient(circle at 16% 18%,color-mix(in srgb,var(--card-accent) 18%, transparent),transparent 27%),linear-gradient(155deg,rgba(255,255,255,.02),rgba(255,255,255,.004))}
+    .cocktail-card:hover{transform:translateY(-7px);border-color:color-mix(in srgb,var(--card-accent) 50%, rgba(169,201,223,.22));box-shadow:0 24px 50px rgba(0,0,0,.22),inset 0 0 40px color-mix(in srgb,var(--card-accent) 7%, transparent)}
+    .cocktail-card:before{color:color-mix(in srgb,var(--card-accent) 72%, #b8c7d9)}
+    .cocktail-card:after{content:"✦  ·  ❦";color:color-mix(in srgb,var(--card-accent) 52%, transparent);letter-spacing:.55em}
+    .card-art{position:relative;height:205px;margin:30px 0 25px;border:0}.card-art:before{content:"";position:absolute;width:150px;height:150px;border:1px solid color-mix(in srgb,var(--card-accent) 28%, transparent);border-radius:50%;box-shadow:0 0 0 14px color-mix(in srgb,var(--card-accent) 4%, transparent)}.card-art:after{content:"✦";position:absolute;right:18%;top:18%;font-size:.55rem;color:color-mix(in srgb,var(--card-accent) 66%, #cbd8e4)}
+    .card-art svg{width:102px;height:136px;position:relative;z-index:1;filter:drop-shadow(0 15px 20px rgba(0,0,0,.18))}.card-title{padding-top:14px;border-top:1px solid rgba(169,201,223,.14)}
+    .card-title h3{font-size:1.62rem}.base-label{color:color-mix(in srgb,var(--card-accent) 72%, #9aaabd)}.card-en{color:#9eafc0}.card-desc{color:#a9b8c8}.tag{color:#bac9d6}.tag:not(:last-child):after{color:color-mix(in srgb,var(--card-accent) 60%, #687990)}
+
+    .modal{border:1px solid rgba(169,201,223,.3);outline:1px solid rgba(115,108,187,.18);outline-offset:-11px;background:radial-gradient(circle at 85% 12%,rgba(115,108,187,.12),transparent 26%),linear-gradient(180deg,#111d30,#0a1525)}
+    .modal:before{content:"☾";color:#819bc0}.modal:after{content:"✦";color:#6fa8a6;transform:none}.modal-art{position:relative;background:radial-gradient(circle,rgba(88,163,161,.07),transparent 58%)}.modal-art:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;border:1px solid rgba(169,201,223,.12);box-shadow:0 0 0 22px rgba(115,108,187,.025)}
+    .modal-art svg{position:relative;z-index:1}
+    footer{position:relative;overflow:hidden}footer:before{content:"☾   ✦   ❦   ✦   ☾";display:block;text-align:center;margin-bottom:20px;color:rgba(169,201,223,.34);letter-spacing:1.3em}
+
+
+
+    /* Pinned-note board redesign */
+    #library{position:relative}
+    #library .section-head{margin-bottom:42px}
+    #library .section-head h2{letter-spacing:-.04em}
+    .controls{overflow:hidden}
+    .controls:after{content:"☾   ✦   ❦   ✦   ☾";display:block;text-align:center;margin-top:14px;color:rgba(169,201,223,.34);letter-spacing:1.05em;font-size:.74rem}
+    .grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 28px;padding:54px 30px 48px;margin-top:24px;border:1px solid rgba(169,201,223,.18);outline:1px solid rgba(115,108,187,.12);outline-offset:-12px;background:
+      radial-gradient(circle at 16% 10%,rgba(88,163,161,.09),transparent 20%),
+      radial-gradient(circle at 84% 14%,rgba(115,108,187,.10),transparent 24%),
+      radial-gradient(circle at 50% 88%,rgba(169,201,223,.05),transparent 28%),
+      linear-gradient(180deg,rgba(10,18,35,.96),rgba(8,15,28,.98));
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.02),0 26px 70px rgba(0,0,0,.22);overflow:hidden}
+    .grid:before{content:"PINNED FAVORITES · NIGHT BOARD";position:absolute;top:15px;left:50%;transform:translateX(-50%);padding:0 14px;background:#0a1323;color:rgba(169,201,223,.55);font:600 .6rem/1 var(--mono);letter-spacing:.24em}
+    .grid:after{content:"✦    ☾    ✦";position:absolute;left:50%;bottom:14px;transform:translateX(-50%);color:rgba(169,201,223,.36);letter-spacing:1.2em;font-size:.7rem}
+
+    .cocktail-card{--card-accent:#849dbd;--tilt:-1deg;--note-bg:#d9e5ef;--note-bg2:#cfdceb;--note-line:rgba(24,36,52,.16);--note-ink:#162133;--note-meta:#50657d;position:relative;min-height:545px;padding:38px 30px 44px;border:1px solid var(--note-line);color:var(--note-ink);background:
+      linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.08)),
+      repeating-linear-gradient(0deg,transparent 0,transparent 30px,rgba(16,27,44,.026) 30px,rgba(16,27,44,.026) 31px),
+      linear-gradient(155deg,var(--note-bg),var(--note-bg2));
+      clip-path:polygon(3% 1%,97% 0,100% 11%,97.5% 98%,7% 100%,0 90%,1.4% 9%);
+      box-shadow:0 6px 0 rgba(255,255,255,.16) inset,0 16px 24px rgba(3,10,19,.18),0 34px 56px rgba(0,0,0,.24),12px 16px 0 rgba(5,11,22,.18);
+      transform:rotate(var(--tilt));overflow:visible;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+    .cocktail-card.note-a{clip-path:polygon(3% 1%,97% 0,100% 10%,98% 96%,8% 100%,0 90%,1% 8%);border-radius:20px 16px 26px 14px/16px 20px 18px 24px}
+    .cocktail-card.note-b{clip-path:polygon(2% 4%,96% 0,100% 13%,96% 100%,4% 97%,0 86%,1% 14%);border-radius:16px 28px 16px 22px/24px 18px 20px 22px}
+    .cocktail-card.note-c{clip-path:polygon(4% 0,100% 3%,98% 14%,100% 90%,93% 100%,2% 97%,0 9%);border-radius:24px 16px 24px 18px/18px 16px 26px 16px}
+    .cocktail-card.note-d{clip-path:polygon(2% 1%,95% 2%,100% 15%,98% 100%,10% 98%,0 89%,2% 10%);border-radius:18px 20px 28px 16px/20px 24px 18px 20px}
+    .cocktail-card.note-e{clip-path:polygon(1% 5%,97% 0,100% 11%,96% 98%,6% 100%,0 88%,0 15%);border-radius:26px 14px 18px 24px/20px 16px 24px 18px}
+    .cocktail-card.note-f{clip-path:polygon(4% 0,98% 4%,100% 12%,97% 95%,10% 100%,0 90%,2% 8%);border-radius:15px 22px 17px 28px/18px 25px 16px 22px}
+    .cocktail-card:nth-child(4n+2),.cocktail-card:nth-child(4n+3){transform:rotate(var(--tilt))}
+    .cocktail-card:hover,.cocktail-card:nth-child(4n+2):hover{transform:translateY(-10px) rotate(var(--tilt));box-shadow:0 6px 0 rgba(255,255,255,.16) inset,0 22px 32px rgba(3,10,19,.2),0 42px 72px rgba(0,0,0,.28),14px 18px 0 rgba(5,11,22,.18);border-color:color-mix(in srgb,var(--card-accent) 36%, var(--note-line))}
+    .cocktail-card:before{content:attr(data-folio);position:absolute;top:16px;right:20px;color:var(--note-meta);font:600 .64rem/1 var(--mono);letter-spacing:.14em}
+    .cocktail-card:after{content:"❦   ✦";position:absolute;left:24px;bottom:16px;color:color-mix(in srgb,var(--card-accent) 45%, rgba(0,0,0,.2));letter-spacing:.6em;font-size:.72rem}
+
+    .note-pin,.note-tape{position:absolute;display:none;pointer-events:none}
+    .note-pin{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f8fbff 0 16%,#8ea5bf 17% 54%,#4a5e79 55% 100%);box-shadow:0 2px 1px rgba(255,255,255,.45) inset,0 7px 12px rgba(0,0,0,.18)}
+    .pin-top .note-pin{display:block;top:-11px;left:50%;transform:translateX(-50%)}
+    .pin-left .note-pin{display:block;top:14px;left:18px}
+    .pin-right .note-pin{display:block;top:18px;right:18px}
+    .note-tape{height:25px;background:linear-gradient(180deg,rgba(244,248,252,.72),rgba(193,210,223,.34));border:1px solid rgba(104,124,145,.22);box-shadow:0 5px 10px rgba(0,0,0,.08);opacity:.95;backdrop-filter:blur(2px)}
+    .tape-top .tape-one{display:block;width:74px;top:-10px;left:50%;transform:translateX(-50%) rotate(-4deg)}
+    .tape-cross .tape-one{display:block;width:64px;top:-11px;left:16px;transform:rotate(-20deg)}
+    .tape-cross .tape-two{display:block;width:64px;top:-11px;right:16px;transform:rotate(20deg)}
+    .tape-corner .tape-one{display:block;width:58px;top:8px;right:-10px;transform:rotate(32deg)}
+
+    .card-art{position:relative;height:205px;margin:14px 0 22px;border:0}
+    .card-art:before{content:"";position:absolute;inset:14px 30px 26px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--card-accent) 45%, #11233b) 0,rgba(17,35,59,.92) 58%,transparent 59%);box-shadow:0 0 0 1px color-mix(in srgb,var(--card-accent) 28%, transparent),0 0 0 14px color-mix(in srgb,var(--card-accent) 5%, transparent)}
+    .card-art:after{content:"✦";position:absolute;right:16%;top:14%;font-size:.62rem;color:color-mix(in srgb,var(--card-accent) 62%, #f8fafd)}
+    .card-art svg{width:110px;height:144px;position:relative;z-index:1;filter:drop-shadow(0 14px 18px rgba(0,0,0,.18))}
+    .card-title{padding-top:16px;border-top:1px solid var(--note-line)}
+    .card-title h3{margin:0;font:500 1.66rem/1.05 var(--serif);letter-spacing:-.02em;color:var(--note-ink)}
+    .base-label{display:inline-block;margin-top:8px;color:var(--note-meta);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase}
+    .card-en{margin:7px 0 11px;color:rgba(15,24,36,.74);font:italic .94rem/1.42 var(--serif)}
+    .tag{color:rgba(15,24,36,.82);font-size:.73rem;letter-spacing:.08em}.tag:not(:last-child):after{color:color-mix(in srgb,var(--card-accent) 58%, rgba(20,32,48,.36))}
+    .card-desc{color:rgba(15,24,36,.84);line-height:1.7;font-size:.93rem}
+
+    
+
+    /* Decorative typography + note refinements */
+    .brand strong{font-family:var(--display);font-weight:700;letter-spacing:.06em}
+    .hero h1,.section-head h2{font-family:var(--display);font-weight:400;letter-spacing:.02em;text-transform:uppercase}
+    .random-copy h3,.modal-copy h3,.card-title h3{font-family:var(--serif);font-weight:600}
+    .eyebrow,.hero:after,.section-head>div:before,.controls:before,.grid:before,.brand span{font-family:"Marcellus SC",var(--mono)}
+
+    .cocktail-card,.cocktail-card.note-a,.cocktail-card.note-b,.cocktail-card.note-c,.cocktail-card.note-d,.cocktail-card.note-e,.cocktail-card.note-f{
+      background:
+      linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.16)),
+      radial-gradient(circle at 18% 15%,rgba(255,255,255,.23),transparent 34%),
+      radial-gradient(circle at 82% 82%,rgba(255,255,255,.12),transparent 28%),
+      repeating-linear-gradient(0deg,transparent 0,transparent 28px,rgba(16,27,44,.035) 28px,rgba(16,27,44,.035) 29px),
+      linear-gradient(155deg,var(--note-bg),var(--note-bg2)) !important;
+      background-blend-mode:normal,screen,normal,normal,normal;
+      color:var(--note-ink);
+    }
+    .cocktail-card .card-en,.cocktail-card .card-desc,.cocktail-card .tag,.cocktail-card .base-label{color:inherit}
+    .cocktail-card .card-en{color:rgba(20,31,46,.78)}
+    .cocktail-card .card-desc{color:rgba(18,29,43,.86)}
+    .cocktail-card .tag{color:rgba(18,29,43,.88)}
+    .cocktail-card .base-label{color:var(--note-meta)}
+    .cocktail-card:before{color:var(--note-meta)}
+
+    .card-art{display:flex;justify-content:center;align-items:center}
+    .card-art:before{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%);width:160px;height:160px}
+    .card-art svg{display:block;margin:0 auto;transform-origin:center center}
+
+
+    .card-title{position:relative;padding-bottom:10px}
+    .title-deco{display:block;width:100%;height:34px;margin:7px 0 2px;overflow:visible;color:var(--card-accent);opacity:.88}
+    .title-deco path,.title-deco circle,.title-deco ellipse{vector-effect:non-scaling-stroke}
+    .title-deco .ink-stroke{fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+    .title-deco .ink-faint{fill:none;stroke:currentColor;stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;opacity:.58}
+    .title-deco .ink-dot{fill:currentColor;opacity:.72}
+    .card-title h3{position:relative;z-index:1}
+    .cocktail-card:hover .title-deco{opacity:1;filter:drop-shadow(0 1px 0 rgba(255,255,255,.18))}
+
+    /* Modal viewport fix: keep the whole ornate page reachable */
+    .modal-backdrop{align-items:start!important;justify-items:center!important;overscroll-behavior:contain}
+    .modal-backdrop.open{display:block!important}
+    .modal{max-height:calc(100dvh - 56px);overflow:auto;margin:0 auto;scrollbar-width:thin;scrollbar-color:rgba(169,201,223,.38) rgba(255,255,255,.03)}
+    .modal::-webkit-scrollbar{width:9px}.modal::-webkit-scrollbar-track{background:rgba(255,255,255,.025)}.modal::-webkit-scrollbar-thumb{background:rgba(169,201,223,.30);border:2px solid transparent;background-clip:padding-box}
+    .modal-top{position:sticky;top:0;z-index:12;background:rgba(10,19,35,.94);backdrop-filter:blur(12px)}
+    .modal-body{align-items:start}
+    .modal-art{align-self:start}
+    @media(max-width:980px){.modal{max-height:calc(100dvh - 36px)}.modal-art{min-height:320px!important}}
+    @media(max-width:660px){.modal{max-height:calc(100dvh - 20px)}.modal-backdrop{padding:10px!important}.modal-art{min-height:260px!important}.title-deco{height:30px}}
+
+@media(max-width:980px){.page-shell{width:min(100% - 64px,1320px)}.hero{min-height:0}.random-card{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:48px 22px 42px;gap:24px 22px}.cocktail-card,.cocktail-card:nth-child(4n+2),.cocktail-card:nth-child(4n+3){transform:rotate(var(--tilt));min-height:500px}}
+    @media(max-width:660px){.page-shell{width:min(100% - 34px,1320px)}.hero{padding-top:88px}.hero-art{min-height:330px}.hero-copy:before,.botanical{display:none}.random-card{padding:34px 22px}.controls{padding:29px 20px 24px}.grid{grid-template-columns:1fr;gap:18px;padding:44px 16px 36px}.cocktail-card,.cocktail-card:nth-child(4n+2),.cocktail-card:nth-child(4n+3),.cocktail-card:hover{min-height:0;transform:none;clip-path:none;border-radius:20px;padding:34px 24px 42px}.grid:before{top:12px}.note-tape,.note-pin{transform:none !important}}
+
+
+
+    /* Editorial body typography + midnight paper palette */
+    .hero p,
+    .section-head p,
+    .random-copy p,
+    .card-desc,
+    .modal-intro,
+    .detail-box p,
+    .detail-box li,
+    .recipe-note,
+    .service-row > div,
+    .footer-inner{
+      font-family:var(--body-serif);
+      font-weight:400;
+      letter-spacing:.008em;
+    }
+    .hero p{font-size:1.15rem;line-height:1.88;color:#afbdcc}
+    .section-head p{font-size:1.06rem;line-height:1.82;color:#a9b8c8}
+    .random-copy p{font-size:1.04rem;line-height:1.82;color:#b3c0cf}
+    .card-desc{font-size:1rem;line-height:1.66;letter-spacing:.003em}
+    .modal-intro{font-size:1.08rem;line-height:1.78;color:#bec9d6}
+    .detail-box p,.detail-box li{font-size:1.02rem;line-height:1.7}
+    .recipe-note{font-size:1rem}
+    .footer-inner{font-size:.9rem;line-height:1.65}
+
+    .cocktail-card,.cocktail-card.note-a,.cocktail-card.note-b,.cocktail-card.note-c,.cocktail-card.note-d,.cocktail-card.note-e,.cocktail-card.note-f{
+      background:
+        radial-gradient(circle at 18% 13%,rgba(255,255,255,.105),transparent 31%),
+        radial-gradient(circle at 78% 82%,rgba(5,12,22,.10),transparent 34%),
+        repeating-linear-gradient(93deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px),
+        repeating-linear-gradient(0deg,transparent 0 30px,rgba(241,247,251,.022) 30px 31px),
+        linear-gradient(155deg,var(--note-bg),var(--note-bg2)) !important;
+      background-blend-mode:screen,multiply,overlay,normal,normal;
+      color:var(--note-ink);
+      border-color:var(--note-line);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        inset 0 -18px 35px rgba(7,13,23,.08),
+        0 15px 26px rgba(0,0,0,.18),
+        0 28px 54px rgba(0,0,0,.22),
+        10px 13px 0 rgba(3,8,17,.13);
+    }
+    .cocktail-card:hover,.cocktail-card:nth-child(4n+2):hover{
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        inset 0 -18px 35px rgba(7,13,23,.08),
+        0 22px 34px rgba(0,0,0,.20),
+        0 40px 68px rgba(0,0,0,.25),
+        12px 15px 0 rgba(3,8,17,.13);
+    }
+    .cocktail-card .card-title{border-top-color:rgba(240,246,250,.13)}
+    .cocktail-card .card-title h3{color:var(--note-ink);text-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .cocktail-card .card-en{color:color-mix(in srgb,var(--note-ink) 78%, transparent)}
+    .cocktail-card .card-desc{color:color-mix(in srgb,var(--note-ink) 88%, transparent)}
+    .cocktail-card .tag{color:color-mix(in srgb,var(--note-ink) 84%, transparent)}
+    .cocktail-card .base-label,.cocktail-card:before{color:var(--note-meta)}
+    .cocktail-card .tag:not(:last-child):after{color:color-mix(in srgb,var(--card-accent) 60%, var(--note-meta))}
+    .title-deco{color:color-mix(in srgb,var(--card-accent) 62%, var(--note-ink));opacity:.9}
+    .note-tape{background:linear-gradient(180deg,rgba(220,231,239,.50),rgba(168,186,199,.22));border-color:rgba(210,225,235,.16);opacity:.82}
+    .note-pin{filter:saturate(.7) brightness(.92)}
+
+    /* Motion system: opening a midnight cocktail folio */
+    html.motion-ready .hero .eyebrow,
+    html.motion-ready .hero h1,
+    html.motion-ready .hero p,
+    html.motion-ready .hero-actions,
+    html.motion-ready .hero-art{opacity:0;transform:translateY(22px)}
+    html.motion-ready body.motion-loaded .hero .eyebrow{animation:heroReveal .72s .08s cubic-bezier(.2,.7,.2,1) forwards}
+    html.motion-ready body.motion-loaded .hero h1{animation:heroReveal .88s .18s cubic-bezier(.2,.7,.2,1) forwards}
+    html.motion-ready body.motion-loaded .hero p{animation:heroReveal .78s .32s cubic-bezier(.2,.7,.2,1) forwards}
+    html.motion-ready body.motion-loaded .hero-actions{animation:heroReveal .72s .46s cubic-bezier(.2,.7,.2,1) forwards}
+    html.motion-ready body.motion-loaded .hero-art{animation:heroArtReveal 1s .26s cubic-bezier(.16,.75,.18,1) forwards}
+    html.motion-ready body.motion-loaded .hero-art .constellation i{animation:starTwinkle 2.8s ease-in-out infinite alternate}
+    html.motion-ready body.motion-loaded .hero-art .constellation i:nth-child(2){animation-delay:.35s}
+    html.motion-ready body.motion-loaded .hero-art .constellation i:nth-child(3){animation-delay:.7s}
+    html.motion-ready body.motion-loaded .hero-art .constellation i:nth-child(4){animation-delay:1.05s}
+    html.motion-ready body.motion-loaded .hero-art .constellation i:nth-child(5){animation-delay:1.4s}
+    @keyframes heroReveal{to{opacity:1;transform:translateY(0)}}
+    @keyframes heroArtReveal{0%{opacity:0;transform:translateY(28px) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes starTwinkle{from{opacity:.38;transform:scale(.92)}to{opacity:.95;transform:scale(1.08)}}
+
+    .reveal-on-scroll{opacity:0;transform:translateY(28px);transition:opacity .78s cubic-bezier(.2,.7,.2,1),transform .78s cubic-bezier(.2,.7,.2,1)}
+    .reveal-on-scroll.is-visible{opacity:1;transform:translateY(0)}
+    .section-head.reveal-on-scroll:after{transform:scaleX(0);transform-origin:left;transition:transform 1s .14s cubic-bezier(.2,.7,.2,1)}
+    .section-head.reveal-on-scroll.is-visible:after{transform:scaleX(1)}
+
+    .cocktail-card.motion-card{opacity:0;transform:translateY(34px) rotate(calc(var(--tilt) * 1.7)) scale(.985)}
+    .cocktail-card.motion-card.is-visible{animation:notePinIn .72s cubic-bezier(.16,.78,.22,1) forwards;animation-delay:var(--reveal-delay,0ms)}
+    .cocktail-card.motion-card.is-visible .note-pin,
+    .cocktail-card.motion-card.is-visible .note-tape{animation:attachmentDrop .38s ease-out both;animation-delay:calc(var(--reveal-delay,0ms) + 220ms)}
+    .cocktail-card.motion-card.is-visible .title-deco .ink-stroke{stroke-dasharray:300;stroke-dashoffset:300;animation:drawStroke 1.05s ease-out forwards;animation-delay:calc(var(--reveal-delay,0ms) + 280ms)}
+    .cocktail-card.motion-card.is-visible .title-deco .ink-faint{stroke-dasharray:160;stroke-dashoffset:160;animation:drawStroke .82s ease-out forwards;animation-delay:calc(var(--reveal-delay,0ms) + 390ms)}
+    @keyframes notePinIn{0%{opacity:0;transform:translateY(34px) rotate(calc(var(--tilt) * 1.7)) scale(.985)}68%{opacity:1;transform:translateY(-5px) rotate(var(--tilt)) scale(1.006)}100%{opacity:1;transform:translateY(0) rotate(var(--tilt)) scale(1)}}
+    @keyframes attachmentDrop{from{opacity:0}to{opacity:.95}}
+    @keyframes drawStroke{to{stroke-dashoffset:0}}
+
+    .random-card.random-refresh{animation:randomSwap .48s cubic-bezier(.2,.72,.2,1)}
+    .random-card.random-refresh .random-illustration{animation:randomGlass .56s cubic-bezier(.18,.75,.2,1)}
+    .random-card.random-refresh .random-copy{animation:randomCopy .5s .07s both cubic-bezier(.18,.75,.2,1)}
+    @keyframes randomSwap{0%{opacity:.35;transform:translateY(8px) scale(.992)}100%{opacity:1;transform:none}}
+    @keyframes randomGlass{0%{opacity:0;transform:scale(.9) rotate(-2deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+    @keyframes randomCopy{0%{opacity:0;transform:translateX(14px)}100%{opacity:1;transform:none}}
+
+    .more-filters{display:grid!important;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .42s cubic-bezier(.2,.7,.2,1),opacity .3s ease,margin .42s ease,padding .42s ease,border-color .3s ease;overflow:hidden;margin-top:0!important;padding-top:0!important;padding-bottom:0!important;border-color:transparent!important}
+    .more-filters>*{min-height:0;overflow:hidden}
+    .more-filters.open{grid-template-rows:1fr;opacity:1;margin-top:8px!important;padding-top:11px!important;padding-bottom:6px!important;border-color:rgba(115,108,187,.18)!important}
+
+    .modal-backdrop{opacity:0;transition:opacity .28s ease}
+    .modal-backdrop.open{opacity:1}
+    .modal{transform:translateY(22px) scale(.985);opacity:0;transition:transform .38s cubic-bezier(.18,.75,.2,1),opacity .32s ease}
+    .modal-backdrop.open .modal{transform:translateY(0) scale(1);opacity:1}
+    .modal-backdrop.open .modal-art{animation:modalArtEnter .54s .06s both cubic-bezier(.18,.75,.2,1)}
+    .modal-backdrop.open .modal-copy{animation:modalCopyEnter .54s .12s both cubic-bezier(.18,.75,.2,1)}
+    @keyframes modalArtEnter{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
+    @keyframes modalCopyEnter{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto!important}
+      *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+      .reveal-on-scroll,.cocktail-card.motion-card,html.motion-ready .hero .eyebrow,html.motion-ready .hero h1,html.motion-ready .hero p,html.motion-ready .hero-actions,html.motion-ready .hero-art{opacity:1!important;transform:none!important}
+      .title-deco .ink-stroke,.title-deco .ink-faint{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+    }
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
+      <div class="brand">
+        <strong id="brandTitle">今晚喝什么？</strong>
+        <span>Cocktail Field Guide</span>
+      </div>
+      <nav class="nav-actions">
+        <a class="nav-link" href="#random" id="navRandom">随机一杯</a>
+        <a class="nav-link" href="#library" id="navLibrary">全部酒款</a>
+        <div class="lang-switch" aria-label="Language switch">
+          <button id="langZh" class="active" type="button">中</button>
+          <button id="langEn" type="button">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-shell">
+      <section class="hero">
+        <div>
+          <div class="eyebrow" id="heroEyebrow">Personal Cocktail Guide</div>
+          <h1 id="heroTitle">今晚喝什么？</h1>
+          <p id="heroSubtitle">从基酒、风味和场景里找一杯，或者直接交给随机。一本适合夜晚慢慢翻的双语鸡尾酒图鉴。</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="heroRandomBtn">🎲 随机摇一杯</button>
+            <a class="secondary-btn" id="heroExploreBtn" href="#library">浏览全部酒款</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb"></div>
+          <div class="constellation"><i>✦</i><i>✧</i><i>◇</i><i>✦</i><i>✧</i></div>
+          <svg class="botanical left" viewBox="0 0 80 120"><path d="M56 111C38 82 31 49 35 10M35 35C22 30 14 22 9 12M34 54C49 48 59 39 66 27M38 76C23 71 15 63 8 52" fill="none" stroke="#73a7a6" stroke-width="1.4"/><ellipse cx="17" cy="24" rx="8" ry="4" transform="rotate(34 17 24)" fill="none" stroke="#73a7a6"/><ellipse cx="57" cy="39" rx="8" ry="4" transform="rotate(-42 57 39)" fill="none" stroke="#8c84c2"/></svg>
+          <svg class="botanical right" viewBox="0 0 80 120"><path d="M56 111C38 82 31 49 35 10M35 35C22 30 14 22 9 12M34 54C49 48 59 39 66 27M38 76C23 71 15 63 8 52" fill="none" stroke="#887fc1" stroke-width="1.4"/><ellipse cx="17" cy="24" rx="8" ry="4" transform="rotate(34 17 24)" fill="none" stroke="#887fc1"/><ellipse cx="57" cy="39" rx="8" ry="4" transform="rotate(-42 57 39)" fill="none" stroke="#c09a68"/></svg>
+          <svg class="hero-glass" viewBox="0 0 220 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M42 55H178L146 137C140 153 126 164 110 164C94 164 80 153 74 137L42 55Z" stroke="#dce6f3" stroke-width="4"/>
+            <path d="M110 164V244" stroke="#dce6f3" stroke-width="4" stroke-linecap="round"/>
+            <path d="M76 246H144" stroke="#dce6f3" stroke-width="4" stroke-linecap="round"/>
+            <path d="M58 84H162L145 132C139 148 126 158 110 158C94 158 81 148 75 132L58 84Z" fill="#8ca6c7" fill-opacity="0.35"/>
+            <circle cx="129" cy="92" r="10" fill="#9eb3cf"/>
+            <path d="M130 82L148 63" stroke="#6f89ab" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </section>
+
+      <section id="random">
+        <div class="section-head">
+          <div><h2 id="randomTitle">随机一杯</h2></div>
+          <p id="randomIntro">不想做决定的时候，就把今晚交给概率。每次点击都会从当前筛选结果里随机选择一杯。</p>
+        </div>
+        <div class="random-card" id="randomCard"></div>
+      </section>
+
+      <section id="library">
+        <div class="section-head">
+          <div><h2 id="libraryTitle">今晚的酒单</h2></div>
+          <p id="libraryIntro">按基酒、风味或场景慢慢找，也可以直接搜索酒名或配料。</p>
+        </div>
+
+        <div class="controls">
+          <div class="search-row">
+            <input id="searchInput" type="search" autocomplete="off" placeholder="搜索酒名、基酒或配料" />
+          </div>
+          <div class="filter-group">
+            <div class="filter-label" id="baseLabel">按基酒</div>
+            <div class="filter-options" id="baseFilters"></div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-label" id="flavorLabel">按风味</div>
+            <div class="filter-options" id="flavorFilters"></div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-label" id="occasionLabel">按场景</div>
+            <div class="filter-options" id="occasionFilters"></div>
+          </div>
+          <div class="more-filters" id="moreFilters">
+            <div class="filter-group">
+              <div class="filter-label" id="moreFlavorLabel">更多风味</div>
+              <div class="filter-options" id="moreFlavorFilters"></div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-label" id="moreBaseLabel">更多基酒</div>
+              <div class="filter-options" id="moreBaseFilters"></div>
+            </div>
+          </div>
+          <div class="more-toggle-row"><button class="more-toggle" id="moreToggle" type="button">更多筛选</button></div>
+          <div class="filter-meta">
+            <span id="resultCount"></span>
+            <button class="text-btn" id="clearFilters" type="button">清除筛选</button>
+          </div>
+        </div>
+
+        <div class="grid" id="cocktailGrid"></div>
+        <div class="empty" id="emptyState" hidden></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="page-shell footer-inner">
+      <div id="footerNote">Tonight’s Pour · 自用 / 小范围分享的双语鸡尾酒图鉴</div>
+      <div id="responsibilityNote">请理性饮酒。本页面内容仅供达到当地法定饮酒年龄的成年人参考。</div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-top">
+        <div id="modalLabel">Cocktail Details</div>
+        <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const cocktails = [
+      {
+        id: 'negroni', popularity:100, zh: '尼格罗尼', en: 'Negroni', base: 'gin', color: '#b75d47',
+        flavors: ['bitter','herbal','strong'], occasions: ['aperitif','slow'],
+        descZh: '金酒、金巴利和甜味美思组成的经典苦甜型鸡尾酒，草本感鲜明，适合晚餐前慢慢喝。',
+        descEn: 'A classic bittersweet aperitif built on gin, Campari, and sweet vermouth, with a bold herbal edge and a slow-sipping character.',
+        ingredientsZh: ['金酒 30 ml','金巴利 30 ml','甜味美思 30 ml'],
+        ingredientsEn: ['Gin 30 ml','Campari 30 ml','Sweet vermouth 30 ml'],
+        methodZh: '所有材料加冰搅拌，滤入装有大冰块的古典杯，橙皮装饰。',
+        methodEn: 'Stir all ingredients with ice, strain over a large cube in a rocks glass, and garnish with an orange peel.',
+        glassZh: '古典杯', glassEn: 'Rocks glass', garnishZh: '橙皮', garnishEn: 'Orange peel',
+        profile: {sweet:2,sour:1,bitter:5,strong:4,fresh:2}, art:'rocks'
+      },
+      {
+        id: 'martini', popularity:97, zh: '马天尼', en: 'Martini', base: 'gin', color: '#d8d0a9',
+        flavors: ['dry','strong','herbal'], occasions: ['date','slow'],
+        descZh: '极简而锋利的经典配方，酒感清晰，干净、冷冽，适合喜欢纯粹结构的人。',
+        descEn: 'Minimal, cold, and sharply structured, the Martini is for drinkers who enjoy a clean, spirit-forward pour with almost no disguise.',
+        ingredientsZh: ['金酒 60 ml','干味美思 10 ml'], ingredientsEn: ['Gin 60 ml','Dry vermouth 10 ml'],
+        methodZh: '加冰充分搅拌，滤入冰镇马天尼杯，以橄榄或柠檬皮装饰。', methodEn: 'Stir well with ice, strain into a chilled Martini glass, and garnish with an olive or lemon twist.',
+        glassZh:'马天尼杯', glassEn:'Martini glass', garnishZh:'橄榄 / 柠檬皮', garnishEn:'Olive / lemon twist',
+        profile:{sweet:1,sour:1,bitter:1,strong:5,fresh:2}, art:'martini'
+      },
+      {
+        id:'gin-tonic', popularity:83, zh:'金汤力', en:'Gin & Tonic', base:'gin', color:'#d5dcb8',
+        flavors:['refreshing','herbal','bitter'], occasions:['summer','party'],
+        descZh:'清爽、利落、带一点汤力水的苦味，是非常轻松耐喝的高球型选择。',
+        descEn:'Crisp, easygoing, and lightly bitter from tonic, this highball is one of the simplest ways to let a good gin shine.',
+        ingredientsZh:['金酒 45 ml','汤力水 120 ml'], ingredientsEn:['Gin 45 ml','Tonic water 120 ml'],
+        methodZh:'高球杯加满冰，倒入金酒和汤力水，轻轻搅拌，以青柠角装饰。', methodEn:'Fill a highball with ice, add gin and tonic, stir gently, and garnish with a lime wedge.',
+        glassZh:'高球杯', glassEn:'Highball', garnishZh:'青柠角', garnishEn:'Lime wedge',
+        profile:{sweet:1,sour:1,bitter:3,strong:2,fresh:5}, art:'highball'
+      },
+      {
+        id:'gimlet', popularity:88, zh:'吉姆雷特', en:'Gimlet', base:'gin', color:'#b9cf8f',
+        flavors:['sour','refreshing'], occasions:['summer','date'],
+        descZh:'金酒和青柠构成的干净酸爽组合，结构简单，但非常考验比例和平衡。',
+        descEn:'A clean, tart meeting of gin and lime: simple on paper, but all about balance, chill, and precision.',
+        ingredientsZh:['金酒 60 ml','青柠汁 25 ml','糖浆 15 ml'], ingredientsEn:['Gin 60 ml','Lime juice 25 ml','Simple syrup 15 ml'],
+        methodZh:'所有材料加冰摇匀，双重过滤入冰镇鸡尾酒杯。', methodEn:'Shake all ingredients with ice and double-strain into a chilled cocktail glass.',
+        glassZh:'鸡尾酒杯', glassEn:'Cocktail glass', garnishZh:'青柠皮', garnishEn:'Lime twist',
+        profile:{sweet:2,sour:4,bitter:1,strong:4,fresh:4}, art:'coupe'
+      },
+      {
+        id:'tom-collins', popularity:70, zh:'汤姆柯林斯', en:'Tom Collins', base:'gin', color:'#e8d6a1',
+        flavors:['sour','refreshing'], occasions:['summer','party'],
+        descZh:'像一杯更成熟的柠檬苏打，酸甜、清爽、气泡感强，很适合炎热天气。',
+        descEn:'Think of it as a grown-up sparkling lemonade: bright, citrusy, bubbly, and made for warm weather.',
+        ingredientsZh:['金酒 45 ml','柠檬汁 30 ml','糖浆 15 ml','苏打水 60 ml'], ingredientsEn:['Gin 45 ml','Lemon juice 30 ml','Simple syrup 15 ml','Soda water 60 ml'],
+        methodZh:'前三种材料加冰摇匀，倒入高球杯，加冰后补苏打水。', methodEn:'Shake the first three ingredients with ice, strain into a highball over ice, and top with soda.',
+        glassZh:'柯林斯杯', glassEn:'Collins glass', garnishZh:'柠檬片', garnishEn:'Lemon wheel',
+        profile:{sweet:2,sour:4,bitter:1,strong:2,fresh:5}, art:'highball'
+      },
+      {
+        id:'french-75', popularity:78, zh:'法兰西 75', en:'French 75', base:'sparkling', color:'#e4d38e',
+        flavors:['refreshing','sour','fruity'], occasions:['date','party'],
+        descZh:'金酒、柠檬和起泡酒带来轻盈明亮的酸爽感，看起来优雅，实际后劲并不小。',
+        descEn:'Bright and celebratory, with gin, lemon, and sparkling wine; elegant in the glass, but deceptively potent.',
+        ingredientsZh:['金酒 30 ml','柠檬汁 15 ml','糖浆 15 ml','起泡酒 60 ml'], ingredientsEn:['Gin 30 ml','Lemon juice 15 ml','Simple syrup 15 ml','Sparkling wine 60 ml'],
+        methodZh:'除起泡酒外加冰摇匀，滤入香槟杯，再补起泡酒。', methodEn:'Shake everything except the sparkling wine with ice, strain into a flute, and top with sparkling wine.',
+        glassZh:'香槟杯', glassEn:'Flute', garnishZh:'柠檬皮', garnishEn:'Lemon twist',
+        profile:{sweet:2,sour:3,bitter:1,strong:3,fresh:5}, art:'flute'
+      },
+      {
+        id:'old-fashioned', popularity:98, zh:'古典', en:'Old Fashioned', base:'whiskey', color:'#b96f35',
+        flavors:['strong','sweet'], occasions:['after','slow','winter'],
+        descZh:'威士忌主导、微甜、微苦，几乎没有多余修饰，是经典的慢饮型酒款。',
+        descEn:'Whiskey first, lightly sweetened and gently bittered, with almost nothing standing between you and the spirit itself.',
+        ingredientsZh:['波本或黑麦威士忌 60 ml','糖浆 7.5 ml','安格仕苦精 2 dash'], ingredientsEn:['Bourbon or rye 60 ml','Simple syrup 7.5 ml','Angostura bitters 2 dashes'],
+        methodZh:'杯中加冰搅拌至冷却，橙皮挤香后装饰。', methodEn:'Stir with ice until chilled, then express an orange peel over the drink and garnish.',
+        glassZh:'古典杯', glassEn:'Rocks glass', garnishZh:'橙皮', garnishEn:'Orange peel',
+        profile:{sweet:2,sour:1,bitter:2,strong:5,fresh:1}, art:'rocks'
+      },
+      {
+        id:'manhattan', popularity:91, zh:'曼哈顿', en:'Manhattan', base:'whiskey', color:'#9d4e3f',
+        flavors:['strong','herbal','sweet'], occasions:['date','after','slow'],
+        descZh:'黑麦或波本配甜味美思，圆润、温暖、带香料感，是典型晚间慢饮。',
+        descEn:'Warm, polished, and gently spiced, the Manhattan pairs whiskey with sweet vermouth for a classic late-evening sip.',
+        ingredientsZh:['黑麦或波本威士忌 60 ml','甜味美思 30 ml','安格仕苦精 2 dash'], ingredientsEn:['Rye or bourbon 60 ml','Sweet vermouth 30 ml','Angostura bitters 2 dashes'],
+        methodZh:'加冰搅拌，滤入冰镇鸡尾酒杯，樱桃装饰。', methodEn:'Stir with ice, strain into a chilled cocktail glass, and garnish with a cherry.',
+        glassZh:'鸡尾酒杯', glassEn:'Cocktail glass', garnishZh:'鸡尾酒樱桃', garnishEn:'Cocktail cherry',
+        profile:{sweet:3,sour:1,bitter:2,strong:5,fresh:1}, art:'coupe'
+      },
+      {
+        id:'whiskey-sour', popularity:92, zh:'威士忌酸', en:'Whiskey Sour', base:'whiskey', color:'#d6b15d',
+        flavors:['sour','sweet'], occasions:['date','party'],
+        descZh:'酸甜平衡、威士忌存在感明确；加入蛋白后口感会更柔和绵密。',
+        descEn:'Balanced between citrus, sweetness, and whiskey warmth; egg white adds a soft, silky texture when used.',
+        ingredientsZh:['威士忌 60 ml','柠檬汁 30 ml','糖浆 20 ml','蛋白（可选）'], ingredientsEn:['Whiskey 60 ml','Lemon juice 30 ml','Simple syrup 20 ml','Egg white (optional)'],
+        methodZh:'如使用蛋白先干摇，再加冰摇匀，滤入古典杯。', methodEn:'If using egg white, dry-shake first, then shake with ice and strain into a rocks glass.',
+        glassZh:'古典杯', glassEn:'Rocks glass', garnishZh:'柠檬皮 / 樱桃', garnishEn:'Lemon peel / cherry',
+        profile:{sweet:3,sour:4,bitter:1,strong:3,fresh:3}, art:'rocks'
+      },
+      {
+        id:'boulevardier', popularity:82, zh:'林荫大道', en:'Boulevardier', base:'whiskey', color:'#a34f3f',
+        flavors:['bitter','herbal','strong'], occasions:['aperitif','winter','slow'],
+        descZh:'可以理解为威士忌版本的尼格罗尼，苦甜和草本感更深、更温暖。',
+        descEn:'Essentially a whiskey-led Negroni, with deeper warmth, bitterness, and a richer herbal finish.',
+        ingredientsZh:['波本或黑麦威士忌 45 ml','金巴利 30 ml','甜味美思 30 ml'], ingredientsEn:['Bourbon or rye 45 ml','Campari 30 ml','Sweet vermouth 30 ml'],
+        methodZh:'加冰搅拌，滤入装有大冰块的古典杯。', methodEn:'Stir with ice and strain over a large cube in a rocks glass.',
+        glassZh:'古典杯', glassEn:'Rocks glass', garnishZh:'橙皮', garnishEn:'Orange peel',
+        profile:{sweet:2,sour:1,bitter:5,strong:5,fresh:1}, art:'rocks'
+      },
+      {
+        id:'paper-plane', popularity:69, zh:'纸飞机', en:'Paper Plane', base:'whiskey', color:'#de8d52',
+        flavors:['sour','bitter','fruity'], occasions:['date','after'],
+        descZh:'波本、阿佩罗、阿玛罗和柠檬等量组合，酸、苦、甜非常均衡，入口轻快。',
+        descEn:'Equal parts bourbon, Aperol, amaro, and lemon create a remarkably balanced drink: tart, bittersweet, and effortlessly lively.',
+        ingredientsZh:['波本威士忌 22.5 ml','阿佩罗 22.5 ml','阿玛罗 22.5 ml','柠檬汁 22.5 ml'], ingredientsEn:['Bourbon 22.5 ml','Aperol 22.5 ml','Amaro 22.5 ml','Lemon juice 22.5 ml'],
+        methodZh:'所有材料加冰摇匀，双重过滤入冰镇鸡尾酒杯。', methodEn:'Shake all ingredients with ice and double-strain into a chilled cocktail glass.',
+        glassZh:'鸡尾酒杯', glassEn:'Cocktail glass', garnishZh:'无 / 柠檬皮', garnishEn:'None / lemon twist',
+        profile:{sweet:2,sour:4,bitter:3,strong:3,fresh:4}, art:'coupe'
+      },
+      {
+        id:'daiquiri', popularity:95, zh:'戴吉利', en:'Daiquiri', base:'rum', color:'#d6dfa7',
+        flavors:['sour','refreshing'], occasions:['summer','date'],
+        descZh:'白朗姆、青柠和糖的经典三件套，干净酸爽，是最能看出朗姆品质的配方之一。',
+        descEn:'White rum, lime, and sugar in their purest form: crisp, tart, and one of the best ways to judge the quality of a rum.',
+        ingredientsZh:['白朗姆 60 ml','青柠汁 30 ml','糖浆 20 ml'], ingredientsEn:['White rum 60 ml','Lime juice 30 ml','Simple syrup 20 ml'],
+        methodZh:'所有材料加冰摇匀，双重过滤入冰镇鸡尾酒杯。', methodEn:'Shake with ice and double-strain into a chilled cocktail glass.',
+        glassZh:'鸡尾酒杯', glassEn:'Cocktail glass', garnishZh:'青柠皮', garnishEn:'Lime twist',
+        profile:{sweet:2,sour:5,bitter:1,strong:4,fresh:5}, art:'coupe'
+      },
+      {
+        id:'mojito', popularity:89, zh:'莫吉托', en:'Mojito', base:'rum', color:'#b9d596',
+        flavors:['refreshing','herbal','sour'], occasions:['summer','party'],
+        descZh:'薄荷、青柠和气泡让它极度清爽，是最典型的夏日长饮之一。',
+        descEn:'Mint, lime, and bubbles make this one of the quintessential summer highballs: bright, cooling, and easy to drink.',
+        ingredientsZh:['白朗姆 50 ml','青柠汁 25 ml','糖浆 15 ml','薄荷叶','苏打水'], ingredientsEn:['White rum 50 ml','Lime juice 25 ml','Simple syrup 15 ml','Mint leaves','Soda water'],
+        methodZh:'薄荷轻压出香，与其他材料和碎冰一起加入高球杯，最后补苏打水。', methodEn:'Gently press the mint, add the remaining ingredients with crushed ice, and finish with soda water.',
+        glassZh:'高球杯', glassEn:'Highball', garnishZh:'薄荷枝', garnishEn:'Mint sprig',
+        profile:{sweet:2,sour:4,bitter:1,strong:2,fresh:5}, art:'highball'
+      },
+      {
+        id:'mai-tai', popularity:77, zh:'迈泰', en:'Mai Tai', base:'rum', color:'#d88a45',
+        flavors:['fruity','sour','strong'], occasions:['party','summer'],
+        descZh:'朗姆风味很核心，同时有柑橘、杏仁和热带感；好的迈泰并不是单纯的甜果汁。',
+        descEn:'Rum-forward beneath layers of citrus, almond, and tropical character; a good Mai Tai is far more than a sweet fruit drink.',
+        ingredientsZh:['陈年朗姆 60 ml','橙味利口酒 15 ml','青柠汁 30 ml','杏仁糖浆 15 ml'], ingredientsEn:['Aged rum 60 ml','Orange liqueur 15 ml','Lime juice 30 ml','Orgeat 15 ml'],
+        methodZh:'加冰摇匀，倒入装有碎冰的古典杯。', methodEn:'Shake with ice and pour into a rocks glass filled with crushed ice.',
+        glassZh:'古典杯', glassEn:'Rocks glass', garnishZh:'薄荷 / 青柠', garnishEn:'Mint / lime',
+        profile:{sweet:3,sour:4,bitter:1,strong:4,fresh:4}, art:'rocks'
+      },
+      {
+        id:'pina-colada', popularity:57, zh:'椰林飘香', en:'Piña Colada', base:'rum', color:'#f0e5b6',
+        flavors:['sweet','fruity','creamy'], occasions:['summer','party'],
+        descZh:'椰奶和菠萝带来浓郁热带风味，甜、顺滑、度假感非常直接。',
+        descEn:'Creamy coconut and pineapple deliver an unmistakable tropical profile: sweet, lush, and unapologetically vacation-like.',
+        ingredientsZh:['白朗姆 50 ml','菠萝汁 90 ml','椰浆 30 ml'], ingredientsEn:['White rum 50 ml','Pineapple juice 90 ml','Coconut cream 30 ml'],
+        methodZh:'与冰一起搅打至顺滑，倒入高脚杯。', methodEn:'Blend with ice until smooth and pour into a tall glass.',
+        glassZh:'飓风杯', glassEn:'Hurricane glass', garnishZh:'菠萝 / 樱桃', garnishEn:'Pineapple / cherry',
+        profile:{sweet:5,sour:2,bitter:1,strong:2,fresh:3}, art:'highball'
+      },
+      {
+        id:'margarita', popularity:99, zh:'玛格丽特', en:'Margarita', base:'tequila', color:'#d8d59b',
+        flavors:['sour','refreshing'], occasions:['summer','party','date'],
+        descZh:'龙舌兰、橙味利口酒和青柠构成经典酸甜结构，清爽又有明显个性。',
+        descEn:'Tequila, orange liqueur, and lime form a classic sweet-tart structure that is bright, refreshing, and unmistakably expressive.',
+        ingredientsZh:['龙舌兰 50 ml','橙味利口酒 25 ml','青柠汁 25 ml'], ingredientsEn:['Tequila 50 ml','Orange liqueur 25 ml','Lime juice 25 ml'],
+        methodZh:'加冰摇匀，滤入盐边杯或装冰古典杯。', methodEn:'Shake with ice and strain into a salt-rimmed coupe or over ice in a rocks glass.',
+        glassZh:'玛格丽特杯 / 古典杯', glassEn:'Margarita glass / Rocks', garnishZh:'盐边 / 青柠', garnishEn:'Salt rim / lime',
+        profile:{sweet:2,sour:5,bitter:1,strong:3,fresh:5}, art:'coupe'
+      },
+      {
+        id:'paloma', popularity:93, zh:'帕洛玛', en:'Paloma', base:'tequila', color:'#e8b3a1',
+        flavors:['refreshing','fruity','bitter'], occasions:['summer','party'],
+        descZh:'葡萄柚的酸苦和龙舌兰很搭，轻盈、清爽，是非常适合夏天的高球。',
+        descEn:'Grapefruit’s tart bitterness pairs beautifully with tequila, making this one of the most refreshing warm-weather highballs.',
+        ingredientsZh:['龙舌兰 50 ml','葡萄柚汽水 100 ml','青柠汁 10 ml'], ingredientsEn:['Tequila 50 ml','Grapefruit soda 100 ml','Lime juice 10 ml'],
+        methodZh:'高球杯加冰，加入龙舌兰和青柠汁，补葡萄柚汽水。', methodEn:'Build over ice in a highball with tequila and lime, then top with grapefruit soda.',
+        glassZh:'高球杯', glassEn:'Highball', garnishZh:'葡萄柚角', garnishEn:'Grapefruit wedge',
+        profile:{sweet:2,sour:3,bitter:2,strong:2,fresh:5}, art:'highball'
+      },
+      {
+        id:'moscow-mule', popularity:85, zh:'莫斯科骡子', en:'Moscow Mule', base:'vodka', color:'#e7d494',
+        flavors:['refreshing','spicy','sour'], occasions:['party','summer'],
+        descZh:'伏特加本身很干净，姜啤和青柠负责辛辣与酸爽，整体非常清脆。',
+        descEn:'Vodka keeps the base clean while ginger beer and lime bring spice, citrus, and a sharp refreshing snap.',
+        ingredientsZh:['伏特加 50 ml','姜啤 100 ml','青柠汁 15 ml'], ingredientsEn:['Vodka 50 ml','Ginger beer 100 ml','Lime juice 15 ml'],
+        methodZh:'铜杯或高球杯加冰，加入伏特加和青柠汁，补姜啤。', methodEn:'Build over ice in a mug or highball with vodka and lime, then top with ginger beer.',
+        glassZh:'铜杯 / 高球杯', glassEn:'Copper mug / Highball', garnishZh:'青柠', garnishEn:'Lime wedge',
+        profile:{sweet:2,sour:3,bitter:1,strong:2,fresh:5}, art:'highball'
+      },
+      {
+        id:'cosmopolitan', popularity:84, zh:'大都会', en:'Cosmopolitan', base:'vodka', color:'#d85f7a',
+        flavors:['fruity','sour'], occasions:['date','party'],
+        descZh:'蔓越莓、青柠和橙味利口酒让伏特加变得轻快明亮，酸甜比很讨喜。',
+        descEn:'Cranberry, lime, and orange liqueur give vodka a bright, polished, sweet-tart profile with a vivid pink finish.',
+        ingredientsZh:['伏特加 40 ml','橙味利口酒 20 ml','蔓越莓汁 30 ml','青柠汁 15 ml'], ingredientsEn:['Vodka 40 ml','Orange liqueur 20 ml','Cranberry juice 30 ml','Lime juice 15 ml'],
+        methodZh:'所有材料加冰摇匀，双重过滤入冰镇鸡尾酒杯。', methodEn:'Shake all ingredients with ice and double-strain into a chilled cocktail glass.',
+        glassZh:'鸡尾酒杯', glassEn:'Cocktail glass', garnishZh:'橙皮', garnishEn:'Orange twist',
+        profile:{sweet:3,sour:4,bitter:1,strong:3,fresh:4}, art:'martini'
+      },
+      {
+        id:'espresso-martini', popularity:96, zh:'浓缩马天尼', en:'Espresso Martini', base:'vodka', color:'#6c4332',
+        flavors:['sweet','strong','creamy'], occasions:['after','date'],
+        descZh:'咖啡香气浓郁，甜中带苦，既像甜点又保留明显酒感，非常适合饭后。',
+        descEn:'Rich with coffee aroma, bittersweet and velvety, this after-dinner favorite lands somewhere between dessert and a proper cocktail.',
+        ingredientsZh:['伏特加 40 ml','咖啡利口酒 20 ml','浓缩咖啡 30 ml','糖浆 10 ml'], ingredientsEn:['Vodka 40 ml','Coffee liqueur 20 ml','Espresso 30 ml','Simple syrup 10 ml'],
+        methodZh:'所有材料加冰用力摇匀，双重过滤入冰镇鸡尾酒杯。', methodEn:'Shake hard with ice and double-strain into a chilled cocktail glass.',
+        glassZh:'鸡尾酒杯', glassEn:'Cocktail glass', garnishZh:'咖啡豆', garnishEn:'Coffee beans',
+        profile:{sweet:3,sour:1,bitter:3,strong:4,fresh:1}, art:'martini'
+      },
+      {
+        id:'aperol-spritz', popularity:94, zh:'阿佩罗橙光', en:'Aperol Spritz', base:'sparkling', color:'#e87e45',
+        flavors:['bitter','refreshing','fruity'], occasions:['aperitif','summer','party'],
+        descZh:'气泡、橙香和轻微苦味构成非常轻松的开胃酒，适合下午到傍晚。',
+        descEn:'Bubbly, orangey, and gently bitter, this low-effort aperitif is built for long afternoons and early evenings.',
+        ingredientsZh:['阿佩罗 60 ml','普罗塞克 90 ml','苏打水 30 ml'], ingredientsEn:['Aperol 60 ml','Prosecco 90 ml','Soda water 30 ml'],
+        methodZh:'大酒杯加冰，依次倒入材料并轻轻搅拌。', methodEn:'Build over ice in a large wine glass and stir gently.',
+        glassZh:'葡萄酒杯', glassEn:'Wine glass', garnishZh:'橙片', garnishEn:'Orange slice',
+        profile:{sweet:2,sour:1,bitter:3,strong:1,fresh:5}, art:'wine'
+      },
+      {
+        id:'sidecar', popularity:53, zh:'边车', en:'Sidecar', base:'brandy', color:'#d4a64f',
+        flavors:['sour','fruity','strong'], occasions:['date','after'],
+        descZh:'干邑、橙味利口酒和柠檬的经典酸酒结构，明亮、锋利，又带成熟的果香。',
+        descEn:'Cognac, orange liqueur, and lemon create a bright, elegant sour with mature fruit character and a dry, polished finish.',
+        ingredientsZh:['干邑 50 ml','橙味利口酒 25 ml','柠檬汁 25 ml'], ingredientsEn:['Cognac 50 ml','Orange liqueur 25 ml','Lemon juice 25 ml'],
+        methodZh:'所有材料加冰摇匀，双重过滤入冰镇鸡尾酒杯。', methodEn:'Shake with ice and double-strain into a chilled cocktail glass.',
+        glassZh:'鸡尾酒杯', glassEn:'Cocktail glass', garnishZh:'橙皮', garnishEn:'Orange twist',
+        profile:{sweet:2,sour:4,bitter:1,strong:4,fresh:3}, art:'coupe'
+      },
+      {
+        id:'americano', popularity:86, zh:'美式', en:'Americano', base:'other', color:'#b85d4d',
+        flavors:['bitter','herbal','refreshing'], occasions:['aperitif','summer'],
+        descZh:'金巴利和甜味美思加苏打，酒精度低、苦甜平衡，是尼格罗尼更轻松的亲戚。',
+        descEn:'Campari and sweet vermouth lengthened with soda: low in alcohol, bittersweet, and essentially a lighter cousin of the Negroni.',
+        ingredientsZh:['金巴利 30 ml','甜味美思 30 ml','苏打水 60 ml'], ingredientsEn:['Campari 30 ml','Sweet vermouth 30 ml','Soda water 60 ml'],
+        methodZh:'高球杯加冰，加入金巴利和甜味美思，补苏打水。', methodEn:'Build over ice in a highball with Campari and sweet vermouth, then top with soda.',
+        glassZh:'高球杯', glassEn:'Highball', garnishZh:'橙片', garnishEn:'Orange slice',
+        profile:{sweet:2,sour:1,bitter:4,strong:1,fresh:4}, art:'highball'
+      },
+      {
+        id:'bellini', popularity:54, zh:'贝里尼', en:'Bellini', base:'sparkling', color:'#e7b49b',
+        flavors:['fruity','sweet','refreshing'], occasions:['party','summer','date'],
+        descZh:'白桃果泥和起泡酒的轻盈组合，果香柔和，甜度不高，适合轻松的白天场合。',
+        descEn:'White peach purée and sparkling wine make a soft, fruit-led drink that feels light, elegant, and especially suited to daytime occasions.',
+        ingredientsZh:['白桃果泥 45 ml','普罗塞克 90 ml'], ingredientsEn:['White peach purée 45 ml','Prosecco 90 ml'],
+        methodZh:'白桃果泥倒入香槟杯，缓慢加入起泡酒并轻轻搅匀。', methodEn:'Add peach purée to a flute, slowly top with sparkling wine, and stir gently.',
+        glassZh:'香槟杯', glassEn:'Flute', garnishZh:'白桃片（可选）', garnishEn:'Peach slice (optional)',
+        profile:{sweet:3,sour:1,bitter:1,strong:1,fresh:4}, art:'flute'
+      },
+      {
+        id:'mimosa', popularity:80, zh:'含羞草', en:'Mimosa', base:'sparkling', color:'#e7bd61',
+        flavors:['fruity','refreshing','sweet'], occasions:['party','summer'],
+        descZh:'橙汁和起泡酒的轻松组合，低门槛、明亮、很适合 brunch 或白天聚会。',
+        descEn:'Orange juice and sparkling wine make a bright, easygoing brunch classic with almost no learning curve.',
+        ingredientsZh:['橙汁 75 ml','起泡酒 75 ml'], ingredientsEn:['Orange juice 75 ml','Sparkling wine 75 ml'],
+        methodZh:'香槟杯中先倒橙汁，再缓慢加入起泡酒。', methodEn:'Pour orange juice into a flute and gently top with sparkling wine.',
+        glassZh:'香槟杯', glassEn:'Flute', garnishZh:'橙片（可选）', garnishEn:'Orange slice (optional)',
+        profile:{sweet:3,sour:2,bitter:1,strong:1,fresh:4}, art:'flute'
+      },
+      {
+        id:"amaretto-sour",
+        zh:"杏仁酸",
+        en:"Amaretto Sour",
+        base:"other",
+        popularity:90,
+        color:"#b98557",
+        flavors:["sweet","sour","nutty"],
+        occasions:["after","party"],
+        descZh:"杏仁利口酒的甜香配上鲜柠檬，酸甜柔和；现代版本常加少量波本提升骨架。",
+        descEn:"Nutty amaretto meets fresh lemon in a soft sweet-sour balance; modern versions often add bourbon for structure.",
+        ingredientsZh:["杏仁利口酒 45 ml","波本 22.5 ml","柠檬汁 30 ml","糖浆 7.5 ml","蛋白（可选）"],
+        ingredientsEn:["Amaretto 45 ml","Bourbon 22.5 ml","Lemon juice 30 ml","Simple syrup 7.5 ml","Egg white (optional)"],
+        methodZh:"干摇后加冰再摇，过滤入古典杯。",
+        methodEn:"Dry-shake, then shake with ice and strain into a rocks glass.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"柠檬皮 / 樱桃",
+        garnishEn:"Lemon peel / cherry",
+        profile:{sweet:4,sour:4,bitter:1,strong:3,fresh:2},
+        art:"rocks"
+      },
+      {
+        id:"bloody-mary",
+        zh:"血腥玛丽",
+        en:"Bloody Mary",
+        base:"vodka",
+        popularity:87,
+        color:"#a75c5e",
+        flavors:["savory","spicy","refreshing"],
+        occasions:["party"],
+        descZh:"番茄、伏特加和香辛料组成的咸鲜系经典，常见于 brunch。",
+        descEn:"A savory brunch classic built on vodka, tomato, citrus, and spice.",
+        ingredientsZh:["伏特加 45 ml","番茄汁 90 ml","柠檬汁 15 ml","伍斯特酱 / 辣椒酱 / 盐胡椒"],
+        ingredientsEn:["Vodka 45 ml","Tomato juice 90 ml","Lemon juice 15 ml","Worcestershire, hot sauce, salt and pepper"],
+        methodZh:"加冰滚动混合或轻柔搅拌，倒入高球杯。",
+        methodEn:"Roll or gently stir with ice and pour into a highball.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"芹菜杆 / 柠檬",
+        garnishEn:"Celery / lemon",
+        profile:{sweet:1,sour:2,bitter:1,strong:2,fresh:3},
+        art:"highball"
+      },
+      {
+        id:"penicillin",
+        zh:"盘尼西林",
+        en:"Penicillin",
+        base:"whiskey",
+        popularity:81,
+        color:"#b87f49",
+        flavors:["smoky","spicy","sour"],
+        occasions:["winter","slow"],
+        descZh:"苏格兰威士忌、柠檬、蜂蜜与姜的组合，再以泥煤威士忌浮层增加烟熏香。",
+        descEn:"Scotch, lemon, honey, and ginger with a smoky peated-whisky float.",
+        ingredientsZh:["调和苏格兰威士忌 60 ml","柠檬汁 22.5 ml","蜂蜜姜糖浆 22.5 ml","泥煤威士忌 7.5 ml"],
+        ingredientsEn:["Blended Scotch 60 ml","Lemon juice 22.5 ml","Honey-ginger syrup 22.5 ml","Peated Scotch 7.5 ml"],
+        methodZh:"前三项加冰摇匀，倒入加冰古典杯，最后浮上泥煤威士忌。",
+        methodEn:"Shake the first three ingredients with ice, strain over fresh ice, then float peated Scotch.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"姜片 / 柠檬皮",
+        garnishEn:"Candied ginger / lemon peel",
+        profile:{sweet:3,sour:3,bitter:1,strong:4,fresh:2},
+        art:"rocks"
+      },
+      {
+        id:"pisco-sour",
+        zh:"皮斯科酸",
+        en:"Pisco Sour",
+        base:"brandy",
+        popularity:80,
+        color:"#d6c7a0",
+        flavors:["sour","floral","silky"],
+        occasions:["date","party"],
+        descZh:"皮斯科带来葡萄和花香，蛋白让柑橘酸味变得丝滑圆润。",
+        descEn:"Pisco brings grape and floral notes, while egg white softens the bright citrus into a silky sour.",
+        ingredientsZh:["皮斯科 60 ml","青柠汁 30 ml","糖浆 20 ml","蛋白 20 ml","苦精 3 dash"],
+        ingredientsEn:["Pisco 60 ml","Lime juice 30 ml","Simple syrup 20 ml","Egg white 20 ml","Bitters 3 dashes"],
+        methodZh:"先干摇，再加冰摇匀，双重过滤。",
+        methodEn:"Dry-shake, then shake with ice and double-strain.",
+        glassZh:"鸡尾酒杯",
+        glassEn:"Coupe",
+        garnishZh:"苦精点缀",
+        garnishEn:"Bitters",
+        profile:{sweet:3,sour:4,bitter:1,strong:3,fresh:3},
+        art:"coupe"
+      },
+      {
+        id:"clover-club",
+        zh:"三叶草俱乐部",
+        en:"Clover Club",
+        base:"gin",
+        popularity:79,
+        color:"#c97991",
+        flavors:["fruity","sour","silky"],
+        occasions:["date","party"],
+        descZh:"覆盆子、柠檬和金酒的优雅酸甜组合，蛋白赋予细腻泡沫。",
+        descEn:"An elegant gin sour with raspberry, lemon, and a silky egg-white foam.",
+        ingredientsZh:["金酒 45 ml","柠檬汁 22.5 ml","覆盆子糖浆 15 ml","蛋白 20 ml"],
+        ingredientsEn:["Gin 45 ml","Lemon juice 22.5 ml","Raspberry syrup 15 ml","Egg white 20 ml"],
+        methodZh:"干摇后加冰再摇，双重过滤入 coupe。",
+        methodEn:"Dry-shake, then shake with ice and double-strain into a coupe.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"覆盆子",
+        garnishEn:"Raspberry",
+        profile:{sweet:3,sour:4,bitter:1,strong:3,fresh:3},
+        art:"coupe"
+      },
+      {
+        id:"gin-fizz",
+        zh:"金菲士",
+        en:"Gin Fizz",
+        base:"gin",
+        popularity:76,
+        color:"#d6d3a1",
+        flavors:["sour","bubbly","refreshing"],
+        occasions:["summer","party"],
+        descZh:"金酒酸加上苏打，轻快、有气泡感，是非常经典的长饮。",
+        descEn:"A classic gin sour lengthened with soda for a bright, bubbly, easy-drinking highball.",
+        ingredientsZh:["金酒 45 ml","柠檬汁 30 ml","糖浆 15 ml","苏打水 60 ml"],
+        ingredientsEn:["Gin 45 ml","Lemon juice 30 ml","Simple syrup 15 ml","Soda water 60 ml"],
+        methodZh:"前三项加冰摇匀，倒入高球杯后补苏打。",
+        methodEn:"Shake the first three ingredients with ice, strain into a highball, and top with soda.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"柠檬片",
+        garnishEn:"Lemon wheel",
+        profile:{sweet:2,sour:4,bitter:1,strong:2,fresh:5},
+        art:"highball"
+      },
+      {
+        id:"pornstar-martini",
+        zh:"百香果马天尼",
+        en:"Pornstar Martini",
+        base:"vodka",
+        popularity:75,
+        color:"#d89b52",
+        flavors:["fruity","sweet","tropical"],
+        occasions:["party","date"],
+        descZh:"百香果和香草主导的现代经典，通常搭配一小杯起泡酒。",
+        descEn:"A modern crowd-pleaser led by passion fruit and vanilla, usually served with a small side of sparkling wine.",
+        ingredientsZh:["香草伏特加 45 ml","百香果利口酒 15 ml","百香果泥 30 ml","青柠汁 15 ml","香草糖浆 10 ml"],
+        ingredientsEn:["Vanilla vodka 45 ml","Passion fruit liqueur 15 ml","Passion fruit purée 30 ml","Lime juice 15 ml","Vanilla syrup 10 ml"],
+        methodZh:"加冰摇匀，双重过滤；另配一小杯起泡酒。",
+        methodEn:"Shake with ice, double-strain, and serve with a small side of sparkling wine.",
+        glassZh:"马天尼杯",
+        glassEn:"Martini glass",
+        garnishZh:"半颗百香果",
+        garnishEn:"Passion fruit half",
+        profile:{sweet:4,sour:3,bitter:1,strong:3,fresh:3},
+        art:"martini"
+      },
+      {
+        id:"gin-basil-smash",
+        zh:"罗勒金酒酸",
+        en:"Gin Basil Smash",
+        base:"gin",
+        popularity:74,
+        color:"#6d9a73",
+        flavors:["herbal","sour","refreshing"],
+        occasions:["summer","date"],
+        descZh:"大量新鲜罗勒让金酒酸变得青绿、芳香、非常清新。",
+        descEn:"Fresh basil turns a simple gin sour vivid, aromatic, and intensely refreshing.",
+        ingredientsZh:["金酒 60 ml","柠檬汁 30 ml","糖浆 20 ml","新鲜罗勒 8–10 片"],
+        ingredientsEn:["Gin 60 ml","Lemon juice 30 ml","Simple syrup 20 ml","Fresh basil 8–10 leaves"],
+        methodZh:"罗勒轻压后与其余材料加冰摇匀，双重过滤。",
+        methodEn:"Lightly muddle basil, shake with the remaining ingredients and ice, then double-strain.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"罗勒叶",
+        garnishEn:"Basil leaf",
+        profile:{sweet:2,sour:4,bitter:1,strong:3,fresh:5},
+        art:"rocks"
+      },
+      {
+        id:"vodka-martini",
+        zh:"伏特加马天尼",
+        en:"Vodka Martini",
+        base:"vodka",
+        popularity:73,
+        color:"#c7d1dc",
+        flavors:["dry","strong","clean"],
+        occasions:["date","slow"],
+        descZh:"比金酒马天尼更中性、干净，重点落在低温、稀释和味美思比例。",
+        descEn:"Cleaner and more neutral than a gin Martini, with the focus on chill, dilution, and vermouth balance.",
+        ingredientsZh:["伏特加 60 ml","干味美思 10 ml"],
+        ingredientsEn:["Vodka 60 ml","Dry vermouth 10 ml"],
+        methodZh:"加冰搅拌或摇匀，过滤入冰镇马天尼杯。",
+        methodEn:"Stir or shake with ice and strain into a chilled Martini glass.",
+        glassZh:"马天尼杯",
+        glassEn:"Martini glass",
+        garnishZh:"橄榄 / 柠檬皮",
+        garnishEn:"Olive / lemon twist",
+        profile:{sweet:1,sour:1,bitter:1,strong:5,fresh:2},
+        art:"martini"
+      },
+      {
+        id:"bees-knees",
+        zh:"蜜蜂膝盖",
+        en:"Bee’s Knees",
+        base:"gin",
+        popularity:72,
+        color:"#d7b96d",
+        flavors:["sour","floral","sweet"],
+        occasions:["date","summer"],
+        descZh:"蜂蜜让传统金酒酸多了一层花香与圆润感。",
+        descEn:"Honey gives this Prohibition-era gin sour a floral, rounded sweetness.",
+        ingredientsZh:["金酒 60 ml","柠檬汁 22.5 ml","蜂蜜糖浆 22.5 ml"],
+        ingredientsEn:["Gin 60 ml","Lemon juice 22.5 ml","Honey syrup 22.5 ml"],
+        methodZh:"加冰摇匀，双重过滤。",
+        methodEn:"Shake with ice and double-strain.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"柠檬皮",
+        garnishEn:"Lemon twist",
+        profile:{sweet:3,sour:4,bitter:1,strong:3,fresh:3},
+        art:"coupe"
+      },
+      {
+        id:"vesper",
+        zh:"维斯珀",
+        en:"Vesper",
+        base:"gin",
+        popularity:71,
+        color:"#c9d1bd",
+        flavors:["dry","strong","citrus"],
+        occasions:["date","slow"],
+        descZh:"金酒与伏特加的高酒精度组合，以芳香葡萄酒拉出冷冽的柑橘线条。",
+        descEn:"A high-proof mix of gin and vodka sharpened with aromatized wine and a cold citrus finish.",
+        ingredientsZh:["金酒 45 ml","伏特加 15 ml","Lillet Blanc 7.5 ml"],
+        ingredientsEn:["Gin 45 ml","Vodka 15 ml","Lillet Blanc 7.5 ml"],
+        methodZh:"充分冰镇后过滤入鸡尾酒杯。",
+        methodEn:"Chill thoroughly and strain into a cocktail glass.",
+        glassZh:"鸡尾酒杯",
+        glassEn:"Cocktail glass",
+        garnishZh:"柠檬皮",
+        garnishEn:"Lemon twist",
+        profile:{sweet:1,sour:1,bitter:1,strong:5,fresh:2},
+        art:"martini"
+      },
+      {
+        id:"last-word",
+        zh:"最后一句",
+        en:"Last Word",
+        base:"gin",
+        popularity:68,
+        color:"#9bad72",
+        flavors:["herbal","sour","complex"],
+        occasions:["date","slow"],
+        descZh:"金酒、绿查特酒、樱桃利口酒和青柠等量，酸、甜、草本高度平衡。",
+        descEn:"Equal parts gin, Green Chartreuse, maraschino, and lime make a sharp, intensely herbal modern classic.",
+        ingredientsZh:["金酒 22.5 ml","绿查特酒 22.5 ml","Maraschino 22.5 ml","青柠汁 22.5 ml"],
+        ingredientsEn:["Gin 22.5 ml","Green Chartreuse 22.5 ml","Maraschino 22.5 ml","Lime juice 22.5 ml"],
+        methodZh:"加冰摇匀，双重过滤。",
+        methodEn:"Shake with ice and double-strain.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"无 / 青柠皮",
+        garnishEn:"None / lime twist",
+        profile:{sweet:3,sour:4,bitter:2,strong:4,fresh:3},
+        art:"coupe"
+      },
+      {
+        id:"caipirinha",
+        zh:"卡皮里尼亚",
+        en:"Caipirinha",
+        base:"other",
+        popularity:67,
+        color:"#b9c878",
+        flavors:["citrus","refreshing","strong"],
+        occasions:["summer","party"],
+        descZh:"巴西经典：卡莎萨、整块青柠和糖，直接、清爽，又带一点果皮苦味。",
+        descEn:"Brazil’s classic mix of cachaça, muddled lime, and sugar: direct, bright, and slightly pithy.",
+        ingredientsZh:["卡莎萨 60 ml","青柠 1 个","砂糖 2 茶匙"],
+        ingredientsEn:["Cachaça 60 ml","1 lime","Sugar 2 tsp"],
+        methodZh:"青柠与糖轻压，加入卡莎萨和碎冰搅匀。",
+        methodEn:"Muddle lime with sugar, add cachaça and crushed ice, then stir.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"青柠块",
+        garnishEn:"Lime pieces",
+        profile:{sweet:2,sour:4,bitter:2,strong:4,fresh:5},
+        art:"rocks"
+      },
+      {
+        id:"mezcal-margarita",
+        zh:"梅斯卡尔玛格丽特",
+        en:"Mezcal Margarita",
+        base:"tequila",
+        popularity:66,
+        color:"#d2b17a",
+        flavors:["smoky","sour","citrus"],
+        occasions:["summer","date"],
+        descZh:"用梅斯卡尔替代全部或部分龙舌兰，让玛格丽特多出烟熏与矿物感。",
+        descEn:"A smoky, mineral-leaning Margarita variation made with mezcal in place of some or all of the tequila.",
+        ingredientsZh:["梅斯卡尔 50 ml","橙味利口酒 20 ml","青柠汁 25 ml"],
+        ingredientsEn:["Mezcal 50 ml","Orange liqueur 20 ml","Lime juice 25 ml"],
+        methodZh:"加冰摇匀，过滤入盐边杯。",
+        methodEn:"Shake with ice and strain into a salt-rimmed glass.",
+        glassZh:"古典杯 / coupe",
+        glassEn:"Rocks / coupe",
+        garnishZh:"盐边 / 青柠",
+        garnishEn:"Salt rim / lime",
+        profile:{sweet:2,sour:4,bitter:1,strong:4,fresh:3},
+        art:"coupe"
+      },
+      {
+        id:"aviation",
+        zh:"航空",
+        en:"Aviation",
+        base:"gin",
+        popularity:65,
+        color:"#9ba0c8",
+        flavors:["floral","sour","fruity"],
+        occasions:["date","slow"],
+        descZh:"紫罗兰、樱桃利口酒和柠檬让金酒呈现轻盈花香与淡淡果核气息。",
+        descEn:"Violet, maraschino, and lemon give gin a pale floral lift with a delicate stone-fruit edge.",
+        ingredientsZh:["金酒 45 ml","柠檬汁 15 ml","Maraschino 15 ml","紫罗兰利口酒 7.5 ml"],
+        ingredientsEn:["Gin 45 ml","Lemon juice 15 ml","Maraschino 15 ml","Crème de violette 7.5 ml"],
+        methodZh:"加冰摇匀，双重过滤。",
+        methodEn:"Shake with ice and double-strain.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"樱桃 / 柠檬皮",
+        garnishEn:"Cherry / lemon twist",
+        profile:{sweet:2,sour:3,bitter:1,strong:3,fresh:3},
+        art:"coupe"
+      },
+      {
+        id:"negroni-sbagliato",
+        zh:"错误尼格罗尼",
+        en:"Negroni Sbagliato",
+        base:"sparkling",
+        popularity:64,
+        color:"#b65e55",
+        flavors:["bitter","bubbly","herbal"],
+        occasions:["aperitif","party"],
+        descZh:"以起泡酒替代金酒，保留尼格罗尼的苦甜草本，却更轻盈有气泡。",
+        descEn:"Sparkling wine replaces gin, keeping Negroni-style bitterness and herbs while making the drink lighter and bubbly.",
+        ingredientsZh:["金巴利 30 ml","甜味美思 30 ml","起泡酒 60 ml"],
+        ingredientsEn:["Campari 30 ml","Sweet vermouth 30 ml","Sparkling wine 60 ml"],
+        methodZh:"杯中加冰，依次加入材料并轻搅。",
+        methodEn:"Build over ice and stir gently.",
+        glassZh:"葡萄酒杯",
+        glassEn:"Wine glass",
+        garnishZh:"橙片",
+        garnishEn:"Orange slice",
+        profile:{sweet:2,sour:1,bitter:4,strong:2,fresh:4},
+        art:"wine"
+      },
+      {
+        id:"scotch-sour",
+        zh:"苏格兰酸",
+        en:"Scotch Sour",
+        base:"whiskey",
+        popularity:63,
+        color:"#b99668",
+        flavors:["sour","malty","smoky"],
+        occasions:["winter","slow"],
+        descZh:"经典酸酒结构换成苏格兰威士忌，麦芽与烟熏会随基酒风格变化。",
+        descEn:"A Whiskey Sour template built on Scotch, bringing malt and optional smoke into the citrus balance.",
+        ingredientsZh:["苏格兰威士忌 60 ml","柠檬汁 30 ml","糖浆 20 ml","蛋白（可选）"],
+        ingredientsEn:["Scotch 60 ml","Lemon juice 30 ml","Simple syrup 20 ml","Egg white (optional)"],
+        methodZh:"加冰摇匀；使用蛋白时先干摇。",
+        methodEn:"Shake with ice; dry-shake first if using egg white.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"柠檬皮",
+        garnishEn:"Lemon peel",
+        profile:{sweet:2,sour:4,bitter:1,strong:4,fresh:2},
+        art:"rocks"
+      },
+      {
+        id:"brandy-crusta",
+        zh:"白兰地克鲁斯塔",
+        en:"Brandy Crusta",
+        base:"brandy",
+        popularity:62,
+        color:"#c18a59",
+        flavors:["citrus","sweet","aromatic"],
+        occasions:["date","slow"],
+        descZh:"白兰地、橙味和樱桃利口酒构成的历史经典，糖边与长柠檬皮是标志。",
+        descEn:"An ornate early classic of brandy, citrus, orange, and maraschino, known for its sugar rim and long lemon peel.",
+        ingredientsZh:["干邑 45 ml","橙味利口酒 7.5 ml","Maraschino 7.5 ml","柠檬汁 15 ml","苦精 2 dash"],
+        ingredientsEn:["Cognac 45 ml","Orange liqueur 7.5 ml","Maraschino 7.5 ml","Lemon juice 15 ml","Bitters 2 dashes"],
+        methodZh:"加冰摇匀，过滤入糖边杯。",
+        methodEn:"Shake with ice and strain into a sugar-rimmed glass.",
+        glassZh:"小酒杯",
+        glassEn:"Stemmed glass",
+        garnishZh:"长柠檬皮",
+        garnishEn:"Long lemon peel",
+        profile:{sweet:3,sour:3,bitter:1,strong:4,fresh:2},
+        art:"coupe"
+      },
+      {
+        id:"milano-torino",
+        zh:"米兰-都灵",
+        en:"Milano Torino",
+        base:"other",
+        popularity:61,
+        color:"#a94f4f",
+        flavors:["bitter","herbal","lowabv"],
+        occasions:["aperitif","slow"],
+        descZh:"金巴利与甜味美思一比一，是 Americano 与 Negroni 的重要前身。",
+        descEn:"Equal parts Campari and sweet vermouth: a minimalist aperitivo and a direct ancestor of the Americano and Negroni.",
+        ingredientsZh:["金巴利 45 ml","甜味美思 45 ml"],
+        ingredientsEn:["Campari 45 ml","Sweet vermouth 45 ml"],
+        methodZh:"加冰搅拌，倒入古典杯。",
+        methodEn:"Stir with ice and serve in a rocks glass.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"橙皮",
+        garnishEn:"Orange peel",
+        profile:{sweet:2,sour:1,bitter:5,strong:2,fresh:2},
+        art:"rocks"
+      },
+      {
+        id:"bramble",
+        zh:"荆棘",
+        en:"Bramble",
+        base:"gin",
+        popularity:60,
+        color:"#845e83",
+        flavors:["fruity","sour","berry"],
+        occasions:["summer","date"],
+        descZh:"金酒酸上漂黑莓利口酒，果香深色但整体仍然明亮清爽。",
+        descEn:"A gin sour finished with blackberry liqueur: dark-fruited in aroma, but bright and refreshing overall.",
+        ingredientsZh:["金酒 50 ml","柠檬汁 25 ml","糖浆 12.5 ml","黑莓利口酒 15 ml"],
+        ingredientsEn:["Gin 50 ml","Lemon juice 25 ml","Simple syrup 12.5 ml","Crème de mûre 15 ml"],
+        methodZh:"前三项加冰摇匀，倒入碎冰杯，最后淋黑莓利口酒。",
+        methodEn:"Shake the first three ingredients with ice, pour over crushed ice, and drizzle blackberry liqueur on top.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"黑莓 / 柠檬",
+        garnishEn:"Blackberry / lemon",
+        profile:{sweet:3,sour:4,bitter:1,strong:3,fresh:4},
+        art:"rocks"
+      },
+      {
+        id:"garibaldi",
+        zh:"加里波第",
+        en:"Garibaldi",
+        base:"other",
+        popularity:59,
+        color:"#d77b4c",
+        flavors:["bitter","citrus","refreshing"],
+        occasions:["aperitif","summer"],
+        descZh:"金巴利加蓬松鲜橙汁，苦甜、明亮、低酒精度，非常适合开胃。",
+        descEn:"Campari and fluffy fresh orange juice make a bright, bittersweet, lower-ABV aperitivo.",
+        ingredientsZh:["金巴利 45 ml","鲜橙汁 120 ml"],
+        ingredientsEn:["Campari 45 ml","Fresh orange juice 120 ml"],
+        methodZh:"高球杯加冰，加入金巴利与充分起泡的橙汁。",
+        methodEn:"Build over ice with Campari and well-aerated fresh orange juice.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"橙角",
+        garnishEn:"Orange wedge",
+        profile:{sweet:2,sour:2,bitter:4,strong:1,fresh:5},
+        art:"highball"
+      },
+      {
+        id:"champagne-cocktail",
+        zh:"香槟鸡尾酒",
+        en:"Champagne Cocktail",
+        base:"sparkling",
+        popularity:58,
+        color:"#d9cf9a",
+        flavors:["bubbly","dry","aromatic"],
+        occasions:["party","date"],
+        descZh:"方糖、苦精和香槟构成的老派庆祝酒款，简单而有仪式感。",
+        descEn:"A sugar cube, bitters, and Champagne make an old-school celebratory drink with elegant simplicity.",
+        ingredientsZh:["方糖 1 块","安格仕苦精 2–3 dash","香槟 120 ml"],
+        ingredientsEn:["1 sugar cube","Angostura bitters 2–3 dashes","Champagne 120 ml"],
+        methodZh:"方糖浸苦精后放入香槟杯，缓慢加入香槟。",
+        methodEn:"Soak the sugar cube with bitters, place in a flute, and slowly top with Champagne.",
+        glassZh:"香槟杯",
+        glassEn:"Flute",
+        garnishZh:"柠檬皮",
+        garnishEn:"Lemon twist",
+        profile:{sweet:2,sour:1,bitter:2,strong:2,fresh:5},
+        art:"flute"
+      },
+      {
+        id:"cuba-libre",
+        zh:"自由古巴",
+        en:"Cuba Libre",
+        base:"rum",
+        popularity:56,
+        color:"#795c54",
+        flavors:["sweet","citrus","refreshing"],
+        occasions:["party","summer"],
+        descZh:"朗姆可乐加一挤青柠，比普通 Rum & Coke 更有明确的柑橘骨架。",
+        descEn:"Rum and cola sharpened with fresh lime: familiar, easygoing, and brighter than a simple Rum & Coke.",
+        ingredientsZh:["白朗姆 50 ml","可乐 120 ml","青柠汁 10 ml"],
+        ingredientsEn:["White rum 50 ml","Cola 120 ml","Lime juice 10 ml"],
+        methodZh:"高球杯加冰直接构建，轻搅。",
+        methodEn:"Build over ice in a highball and stir gently.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"青柠角",
+        garnishEn:"Lime wedge",
+        profile:{sweet:4,sour:2,bitter:1,strong:2,fresh:4},
+        art:"highball"
+      },
+      {
+        id:"vieux-carre",
+        zh:"老广场",
+        en:"Vieux Carré",
+        base:"whiskey",
+        popularity:55,
+        color:"#8f654e",
+        flavors:["strong","herbal","spicy"],
+        occasions:["after","slow","winter"],
+        descZh:"黑麦、干邑、甜味美思和本尼迪克丁层次复杂，是典型的新奥尔良慢饮。",
+        descEn:"Rye, cognac, sweet vermouth, and Bénédictine create a layered New Orleans slow-sipper.",
+        ingredientsZh:["黑麦威士忌 30 ml","干邑 30 ml","甜味美思 30 ml","本尼迪克丁 7.5 ml","苦精"],
+        ingredientsEn:["Rye 30 ml","Cognac 30 ml","Sweet vermouth 30 ml","Bénédictine 7.5 ml","Bitters"],
+        methodZh:"加冰搅拌，过滤入加冰古典杯。",
+        methodEn:"Stir with ice and strain over fresh ice in a rocks glass.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"柠檬皮",
+        garnishEn:"Lemon twist",
+        profile:{sweet:3,sour:1,bitter:2,strong:5,fresh:1},
+        art:"rocks"
+      },
+      {
+        id:"east-8-holdup",
+        zh:"East 8 Hold-Up",
+        en:"East 8 Hold-Up",
+        base:"vodka",
+        popularity:52,
+        color:"#d98962",
+        flavors:["fruity","sour","bitter"],
+        occasions:["party","date"],
+        descZh:"伏特加、百香果、阿佩罗与青柠形成明亮的现代酸酒。",
+        descEn:"Vodka, passion fruit, Aperol, and lime make a vivid contemporary sour with a bittersweet edge.",
+        ingredientsZh:["伏特加 45 ml","阿佩罗 15 ml","百香果糖浆 15 ml","青柠汁 22.5 ml","菠萝汁 15 ml"],
+        ingredientsEn:["Vodka 45 ml","Aperol 15 ml","Passion fruit syrup 15 ml","Lime juice 22.5 ml","Pineapple juice 15 ml"],
+        methodZh:"加冰摇匀，双重过滤。",
+        methodEn:"Shake with ice and double-strain.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"青柠皮",
+        garnishEn:"Lime twist",
+        profile:{sweet:3,sour:4,bitter:2,strong:3,fresh:4},
+        art:"coupe"
+      },
+      {
+        id:"southside",
+        zh:"南区",
+        en:"Southside",
+        base:"gin",
+        popularity:51,
+        color:"#9cb686",
+        flavors:["herbal","sour","refreshing"],
+        occasions:["summer","party"],
+        descZh:"可以理解为没有苏打的金酒薄荷酸，干净、清凉、非常适合夏夜。",
+        descEn:"Think of it as a minty gin sour without soda: clean, cooling, and ideal for summer evenings.",
+        ingredientsZh:["金酒 60 ml","青柠汁 22.5 ml","糖浆 15 ml","薄荷叶 8 片"],
+        ingredientsEn:["Gin 60 ml","Lime juice 22.5 ml","Simple syrup 15 ml","Mint leaves 8"],
+        methodZh:"薄荷轻压，与其余材料加冰摇匀，双重过滤。",
+        methodEn:"Lightly muddle mint, shake with the remaining ingredients and ice, then double-strain.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"薄荷叶",
+        garnishEn:"Mint leaf",
+        profile:{sweet:2,sour:4,bitter:1,strong:3,fresh:5},
+        art:"coupe"
+      },
+      {
+        id:"naked-famous",
+        zh:"赤裸与名声",
+        en:"Naked & Famous",
+        base:"tequila",
+        popularity:50,
+        color:"#d59b61",
+        flavors:["smoky","herbal","sour"],
+        occasions:["date","slow"],
+        descZh:"梅斯卡尔、阿佩罗、黄查特酒与青柠等量，烟熏、草本、酸甜同时存在。",
+        descEn:"Equal parts mezcal, Aperol, Yellow Chartreuse, and lime: smoky, herbal, tart, and bright all at once.",
+        ingredientsZh:["梅斯卡尔 22.5 ml","阿佩罗 22.5 ml","黄查特酒 22.5 ml","青柠汁 22.5 ml"],
+        ingredientsEn:["Mezcal 22.5 ml","Aperol 22.5 ml","Yellow Chartreuse 22.5 ml","Lime juice 22.5 ml"],
+        methodZh:"加冰摇匀，双重过滤。",
+        methodEn:"Shake with ice and double-strain.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"无",
+        garnishEn:"None",
+        profile:{sweet:3,sour:4,bitter:2,strong:4,fresh:3},
+        art:"coupe"
+      },
+      {
+        id:"zombie",
+        zh:"僵尸",
+        en:"Zombie",
+        base:"rum",
+        popularity:77.5,
+        color:"#b76a4b",
+        flavors:["tropical","strong","spicy"],
+        occasions:["party","summer"],
+        descZh:"多种朗姆、柑橘和香料组成的 tiki 经典，层次丰富且酒精度很高。",
+        descEn:"A tiki classic layering multiple rums, citrus, and spice; complex, tropical, and famously potent.",
+        ingredientsZh:["白朗姆 30 ml","深色朗姆 30 ml","高酒精度朗姆 15 ml","青柠汁 20 ml","葡萄柚汁 15 ml","肉桂糖浆 15 ml"],
+        ingredientsEn:["White rum 30 ml","Dark rum 30 ml","Overproof rum 15 ml","Lime juice 20 ml","Grapefruit juice 15 ml","Cinnamon syrup 15 ml"],
+        methodZh:"加冰摇匀，倒入装满碎冰的高杯。",
+        methodEn:"Shake with ice and pour into a tall glass packed with crushed ice.",
+        glassZh:"高球杯",
+        glassEn:"Tall glass",
+        garnishZh:"薄荷 / 水果",
+        garnishEn:"Mint / fruit",
+        profile:{sweet:3,sour:3,bitter:1,strong:5,fresh:3},
+        art:"highball"
+      },
+      {
+        id:"white-russian",
+        zh:"白俄罗斯",
+        en:"White Russian",
+        base:"vodka",
+        popularity:49,
+        color:"#c9b596",
+        flavors:["creamy","sweet","coffee"],
+        occasions:["after","winter"],
+        descZh:"伏特加、咖啡利口酒和奶油组成的甜点型经典，顺滑厚实。",
+        descEn:"Vodka, coffee liqueur, and cream make a rich, dessert-like classic.",
+        ingredientsZh:["伏特加 45 ml","咖啡利口酒 30 ml","淡奶油 30 ml"],
+        ingredientsEn:["Vodka 45 ml","Coffee liqueur 30 ml","Cream 30 ml"],
+        methodZh:"古典杯加冰，加入伏特加和咖啡利口酒，最后缓慢加入奶油。",
+        methodEn:"Build over ice with vodka and coffee liqueur, then float or stir in cream.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"无",
+        garnishEn:"None",
+        profile:{sweet:4,sour:1,bitter:1,strong:3,fresh:1},
+        art:"rocks"
+      },
+      {
+        id:"black-russian",
+        zh:"黑俄罗斯",
+        en:"Black Russian",
+        base:"vodka",
+        popularity:48,
+        color:"#5b4f50",
+        flavors:["sweet","coffee","strong"],
+        occasions:["after","slow"],
+        descZh:"只有伏特加和咖啡利口酒，比白俄罗斯更直接、更酒感。",
+        descEn:"Just vodka and coffee liqueur: darker, drier, and more spirit-forward than a White Russian.",
+        ingredientsZh:["伏特加 50 ml","咖啡利口酒 25 ml"],
+        ingredientsEn:["Vodka 50 ml","Coffee liqueur 25 ml"],
+        methodZh:"古典杯加冰直接构建并搅匀。",
+        methodEn:"Build over ice in a rocks glass and stir.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"无",
+        garnishEn:"None",
+        profile:{sweet:3,sour:1,bitter:2,strong:4,fresh:1},
+        art:"rocks"
+      },
+      {
+        id:"long-island-iced-tea",
+        zh:"长岛冰茶",
+        en:"Long Island Iced Tea",
+        base:"other",
+        popularity:47,
+        color:"#8e735b",
+        flavors:["strong","citrus","sweet"],
+        occasions:["party"],
+        descZh:"多种烈酒加柠檬和可乐，外表像冰茶，实际酒精度很高。",
+        descEn:"Several clear spirits, citrus, and cola create a deceptively easy-drinking but very strong highball.",
+        ingredientsZh:["伏特加 15 ml","金酒 15 ml","白朗姆 15 ml","龙舌兰 15 ml","橙味利口酒 15 ml","柠檬汁 25 ml","可乐适量"],
+        ingredientsEn:["Vodka 15 ml","Gin 15 ml","White rum 15 ml","Tequila 15 ml","Orange liqueur 15 ml","Lemon juice 25 ml","Cola to top"],
+        methodZh:"加冰构建并补可乐。",
+        methodEn:"Build over ice and top with cola.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"柠檬片",
+        garnishEn:"Lemon wedge",
+        profile:{sweet:3,sour:3,bitter:1,strong:5,fresh:3},
+        art:"highball"
+      },
+      {
+        id:"sex-on-the-beach",
+        zh:"激情海滩",
+        en:"Sex on the Beach",
+        base:"vodka",
+        popularity:46,
+        color:"#d8837a",
+        flavors:["fruity","sweet","tropical"],
+        occasions:["party","summer"],
+        descZh:"桃子、蔓越莓和橙汁主导的果味长饮，甜而易入口。",
+        descEn:"A fruity, easygoing vodka highball led by peach, cranberry, and orange.",
+        ingredientsZh:["伏特加 40 ml","桃味利口酒 20 ml","橙汁 40 ml","蔓越莓汁 40 ml"],
+        ingredientsEn:["Vodka 40 ml","Peach schnapps 20 ml","Orange juice 40 ml","Cranberry juice 40 ml"],
+        methodZh:"高球杯加冰构建并轻搅。",
+        methodEn:"Build over ice in a highball and stir gently.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"橙片",
+        garnishEn:"Orange slice",
+        profile:{sweet:4,sour:2,bitter:1,strong:2,fresh:4},
+        art:"highball"
+      },
+      {
+        id:"tequila-sunrise",
+        zh:"龙舌兰日出",
+        en:"Tequila Sunrise",
+        base:"tequila",
+        popularity:45,
+        color:"#e69a57",
+        flavors:["fruity","sweet","citrus"],
+        occasions:["party","summer"],
+        descZh:"橙汁、龙舌兰和石榴糖浆形成标志性的日出渐层。",
+        descEn:"Tequila, orange juice, and grenadine form the iconic sunrise gradient.",
+        ingredientsZh:["龙舌兰 45 ml","橙汁 90 ml","石榴糖浆 15 ml"],
+        ingredientsEn:["Tequila 45 ml","Orange juice 90 ml","Grenadine 15 ml"],
+        methodZh:"高球杯加冰，加入龙舌兰和橙汁，最后缓慢加入石榴糖浆。",
+        methodEn:"Build tequila and orange juice over ice, then slowly add grenadine.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"橙片 / 樱桃",
+        garnishEn:"Orange / cherry",
+        profile:{sweet:4,sour:2,bitter:1,strong:2,fresh:4},
+        art:"highball"
+      },
+      {
+        id:"dark-n-stormy",
+        zh:"黑暗风暴",
+        en:"Dark ’n’ Stormy",
+        base:"rum",
+        popularity:44,
+        color:"#85624f",
+        flavors:["spicy","refreshing","citrus"],
+        occasions:["summer","party"],
+        descZh:"深色朗姆、姜啤和青柠，辛辣清爽又有焦糖感。",
+        descEn:"Dark rum, ginger beer, and lime make a spicy, refreshing highball with molasses depth.",
+        ingredientsZh:["深色朗姆 60 ml","姜啤 100 ml","青柠汁 15 ml"],
+        ingredientsEn:["Dark rum 60 ml","Ginger beer 100 ml","Lime juice 15 ml"],
+        methodZh:"高球杯加冰构建，朗姆可最后浮在表面。",
+        methodEn:"Build over ice; the rum may be floated on top.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"青柠角",
+        garnishEn:"Lime wedge",
+        profile:{sweet:2,sour:2,bitter:1,strong:3,fresh:5},
+        art:"highball"
+      },
+      {
+        id:"mint-julep",
+        zh:"薄荷朱莉普",
+        en:"Mint Julep",
+        base:"whiskey",
+        popularity:43,
+        color:"#a98762",
+        flavors:["herbal","refreshing","strong"],
+        occasions:["summer","slow"],
+        descZh:"波本、糖和大量薄荷配碎冰，清凉却保持明显威士忌骨架。",
+        descEn:"Bourbon, sugar, mint, and crushed ice: cooling and aromatic while still unmistakably whiskey-forward.",
+        ingredientsZh:["波本 60 ml","糖浆 10 ml","薄荷叶 10–12 片"],
+        ingredientsEn:["Bourbon 60 ml","Simple syrup 10 ml","Mint leaves 10–12"],
+        methodZh:"薄荷轻压，加波本与碎冰充分搅拌。",
+        methodEn:"Lightly muddle mint, add bourbon and crushed ice, and churn well.",
+        glassZh:"朱莉普杯",
+        glassEn:"Julep cup",
+        garnishZh:"大量薄荷",
+        garnishEn:"Mint bouquet",
+        profile:{sweet:2,sour:1,bitter:1,strong:4,fresh:5},
+        art:"highball"
+      },
+      {
+        id:"sazerac",
+        zh:"萨泽拉克",
+        en:"Sazerac",
+        base:"whiskey",
+        popularity:42,
+        color:"#a36c45",
+        flavors:["strong","spicy","aromatic"],
+        occasions:["after","slow","winter"],
+        descZh:"黑麦威士忌、苦精和茴香酒洗杯组成的新奥尔良老派经典。",
+        descEn:"A New Orleans classic of rye, bitters, sugar, and an absinthe rinse: dry, aromatic, and spirit-forward.",
+        ingredientsZh:["黑麦威士忌 60 ml","糖浆 7.5 ml","Peychaud’s 苦精 3 dash","苦艾酒洗杯"],
+        ingredientsEn:["Rye 60 ml","Simple syrup 7.5 ml","Peychaud’s bitters 3 dashes","Absinthe rinse"],
+        methodZh:"杯壁以苦艾酒润洗；其余材料加冰搅拌后滤入无冰杯。",
+        methodEn:"Rinse the glass with absinthe; stir the rest with ice and strain into the empty glass.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"柠檬皮",
+        garnishEn:"Lemon peel",
+        profile:{sweet:1,sour:1,bitter:2,strong:5,fresh:1},
+        art:"rocks"
+      },
+      {
+        id:"irish-coffee",
+        zh:"爱尔兰咖啡",
+        en:"Irish Coffee",
+        base:"whiskey",
+        popularity:41,
+        color:"#7a5b4b",
+        flavors:["coffee","creamy","sweet"],
+        occasions:["after","winter"],
+        descZh:"热咖啡、爱尔兰威士忌、糖和浮奶油组成的经典热饮。",
+        descEn:"Hot coffee, Irish whiskey, sugar, and floating cream make a warming after-dinner classic.",
+        ingredientsZh:["爱尔兰威士忌 40 ml","热咖啡 90 ml","红糖 2 茶匙","淡奶油 30 ml"],
+        ingredientsEn:["Irish whiskey 40 ml","Hot coffee 90 ml","Brown sugar 2 tsp","Cream 30 ml"],
+        methodZh:"咖啡与威士忌、糖混合，顶部缓慢浮奶油。",
+        methodEn:"Combine coffee, whiskey, and sugar, then gently float cream on top.",
+        glassZh:"爱尔兰咖啡杯",
+        glassEn:"Irish coffee glass",
+        garnishZh:"奶油",
+        garnishEn:"Cream",
+        profile:{sweet:3,sour:1,bitter:2,strong:2,fresh:1},
+        art:"wine"
+      },
+      {
+        id:"singapore-sling",
+        zh:"新加坡司令",
+        en:"Singapore Sling",
+        base:"gin",
+        popularity:40,
+        color:"#c66a6d",
+        flavors:["fruity","herbal","tropical"],
+        occasions:["party","summer"],
+        descZh:"金酒与樱桃、菠萝、草本利口酒的长饮，复杂而果香明显。",
+        descEn:"A long, layered gin drink with cherry, pineapple, citrus, and herbal liqueurs.",
+        ingredientsZh:["金酒 30 ml","樱桃利口酒 15 ml","菠萝汁 60 ml","青柠汁 15 ml","本尼迪克丁 7.5 ml","石榴糖浆 10 ml"],
+        ingredientsEn:["Gin 30 ml","Cherry liqueur 15 ml","Pineapple juice 60 ml","Lime juice 15 ml","Bénédictine 7.5 ml","Grenadine 10 ml"],
+        methodZh:"加冰摇匀，倒入高球杯。",
+        methodEn:"Shake with ice and strain into a highball.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"菠萝 / 樱桃",
+        garnishEn:"Pineapple / cherry",
+        profile:{sweet:4,sour:3,bitter:1,strong:3,fresh:4},
+        art:"highball"
+      },
+      {
+        id:"hurricane",
+        zh:"飓风",
+        en:"Hurricane",
+        base:"rum",
+        popularity:39,
+        color:"#c66a55",
+        flavors:["tropical","fruity","sweet"],
+        occasions:["party","summer"],
+        descZh:"多朗姆、百香果与柑橘构成的新奥尔良热带长饮。",
+        descEn:"A New Orleans tropical classic of rum, passion fruit, and citrus.",
+        ingredientsZh:["深色朗姆 60 ml","白朗姆 30 ml","百香果糖浆 30 ml","柠檬汁 30 ml"],
+        ingredientsEn:["Dark rum 60 ml","White rum 30 ml","Passion fruit syrup 30 ml","Lemon juice 30 ml"],
+        methodZh:"加冰摇匀，倒入装满碎冰的飓风杯。",
+        methodEn:"Shake with ice and pour into a Hurricane glass filled with crushed ice.",
+        glassZh:"飓风杯",
+        glassEn:"Hurricane glass",
+        garnishZh:"橙片 / 樱桃",
+        garnishEn:"Orange / cherry",
+        profile:{sweet:4,sour:3,bitter:1,strong:4,fresh:3},
+        art:"wine"
+      },
+      {
+        id:"painkiller",
+        zh:"止痛药",
+        en:"Painkiller",
+        base:"rum",
+        popularity:38,
+        color:"#d8b779",
+        flavors:["tropical","creamy","sweet"],
+        occasions:["summer","party"],
+        descZh:"深色朗姆、菠萝、橙汁与椰浆，浓郁、热带、柔滑。",
+        descEn:"Dark rum, pineapple, orange, and coconut make a rich, creamy tropical drink.",
+        ingredientsZh:["深色朗姆 60 ml","菠萝汁 120 ml","橙汁 30 ml","椰浆 30 ml"],
+        ingredientsEn:["Dark rum 60 ml","Pineapple juice 120 ml","Orange juice 30 ml","Cream of coconut 30 ml"],
+        methodZh:"加冰摇匀，倒入碎冰杯。",
+        methodEn:"Shake with ice and pour over crushed ice.",
+        glassZh:"高球杯",
+        glassEn:"Tall glass",
+        garnishZh:"肉豆蔻",
+        garnishEn:"Nutmeg",
+        profile:{sweet:5,sour:1,bitter:1,strong:3,fresh:3},
+        art:"highball"
+      },
+      {
+        id:"ramos-gin-fizz",
+        zh:"拉莫斯金菲士",
+        en:"Ramos Gin Fizz",
+        base:"gin",
+        popularity:37,
+        color:"#d8d2c2",
+        flavors:["creamy","floral","bubbly"],
+        occasions:["date","summer"],
+        descZh:"金酒、柑橘、奶油、蛋白与橙花水组成，泡沫绵密、香气细腻。",
+        descEn:"Gin, citrus, cream, egg white, and orange blossom water create a famously silky, foamy fizz.",
+        ingredientsZh:["金酒 45 ml","柠檬汁 15 ml","青柠汁 15 ml","糖浆 20 ml","奶油 30 ml","蛋白 20 ml","橙花水 2 dash","苏打水"],
+        ingredientsEn:["Gin 45 ml","Lemon juice 15 ml","Lime juice 15 ml","Simple syrup 20 ml","Cream 30 ml","Egg white 20 ml","Orange blossom water 2 dashes","Soda water"],
+        methodZh:"充分摇匀至细腻起泡，倒入高球杯后补苏打。",
+        methodEn:"Shake thoroughly until very foamy, strain into a highball, and top with soda.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"无",
+        garnishEn:"None",
+        profile:{sweet:3,sour:3,bitter:1,strong:2,fresh:3},
+        art:"highball"
+      },
+      {
+        id:"corpse-reviver-2",
+        zh:"亡者复苏二号",
+        en:"Corpse Reviver No. 2",
+        base:"gin",
+        popularity:36,
+        color:"#c8c49c",
+        flavors:["citrus","herbal","dry"],
+        occasions:["aperitif","date"],
+        descZh:"金酒、橙味利口酒、Lillet 与柠檬等量，以少量苦艾酒增加草本气息。",
+        descEn:"Equal parts gin, orange liqueur, Lillet, and lemon with an absinthe accent: bright, dry, and aromatic.",
+        ingredientsZh:["金酒 22.5 ml","橙味利口酒 22.5 ml","Lillet Blanc 22.5 ml","柠檬汁 22.5 ml","苦艾酒洗杯"],
+        ingredientsEn:["Gin 22.5 ml","Orange liqueur 22.5 ml","Lillet Blanc 22.5 ml","Lemon juice 22.5 ml","Absinthe rinse"],
+        methodZh:"加冰摇匀，过滤入苦艾酒润洗过的杯中。",
+        methodEn:"Shake with ice and strain into an absinthe-rinsed glass.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"橙皮",
+        garnishEn:"Orange twist",
+        profile:{sweet:2,sour:4,bitter:1,strong:4,fresh:3},
+        art:"coupe"
+      },
+      {
+        id:"rusty-nail",
+        zh:"锈钉",
+        en:"Rusty Nail",
+        base:"whiskey",
+        popularity:35,
+        color:"#a67a4d",
+        flavors:["sweet","herbal","strong"],
+        occasions:["after","winter","slow"],
+        descZh:"苏格兰威士忌与蜂蜜草本利口酒 Drambuie 的两料经典。",
+        descEn:"A two-ingredient Scotch classic softened by the honeyed, herbal sweetness of Drambuie.",
+        ingredientsZh:["苏格兰威士忌 45 ml","Drambuie 25 ml"],
+        ingredientsEn:["Scotch 45 ml","Drambuie 25 ml"],
+        methodZh:"加冰搅拌，倒入古典杯。",
+        methodEn:"Stir with ice and serve in a rocks glass.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"柠檬皮",
+        garnishEn:"Lemon twist",
+        profile:{sweet:3,sour:1,bitter:1,strong:5,fresh:1},
+        art:"rocks"
+      },
+      {
+        id:"french-connection",
+        zh:"法国连接",
+        en:"French Connection",
+        base:"brandy",
+        popularity:34,
+        color:"#9c704c",
+        flavors:["sweet","nutty","strong"],
+        occasions:["after","slow"],
+        descZh:"干邑和杏仁利口酒的两料组合，圆润、坚果香明显。",
+        descEn:"Cognac and amaretto make a simple, rounded, nutty after-dinner drink.",
+        ingredientsZh:["干邑 45 ml","杏仁利口酒 30 ml"],
+        ingredientsEn:["Cognac 45 ml","Amaretto 30 ml"],
+        methodZh:"古典杯加冰构建并轻搅。",
+        methodEn:"Build over ice in a rocks glass and stir gently.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"无",
+        garnishEn:"None",
+        profile:{sweet:4,sour:1,bitter:1,strong:4,fresh:1},
+        art:"rocks"
+      },
+      {
+        id:"godfather",
+        zh:"教父",
+        en:"Godfather",
+        base:"whiskey",
+        popularity:33,
+        color:"#8f6a4b",
+        flavors:["sweet","nutty","strong"],
+        occasions:["after","slow"],
+        descZh:"苏格兰威士忌配杏仁利口酒，简单、甜润、酒感明确。",
+        descEn:"Scotch and amaretto make a simple, sweet, spirit-forward nightcap.",
+        ingredientsZh:["苏格兰威士忌 45 ml","杏仁利口酒 25 ml"],
+        ingredientsEn:["Scotch 45 ml","Amaretto 25 ml"],
+        methodZh:"古典杯加冰构建并轻搅。",
+        methodEn:"Build over ice and stir gently.",
+        glassZh:"古典杯",
+        glassEn:"Rocks glass",
+        garnishZh:"无",
+        garnishEn:"None",
+        profile:{sweet:3,sour:1,bitter:1,strong:4,fresh:1},
+        art:"rocks"
+      },
+      {
+        id:"grasshopper",
+        zh:"蚱蜢",
+        en:"Grasshopper",
+        base:"other",
+        popularity:32,
+        color:"#85a985",
+        flavors:["creamy","sweet","minty"],
+        occasions:["after","winter"],
+        descZh:"薄荷利口酒、可可利口酒与奶油组成的复古甜点酒。",
+        descEn:"A retro dessert cocktail of mint liqueur, crème de cacao, and cream.",
+        ingredientsZh:["绿色薄荷利口酒 30 ml","白可可利口酒 30 ml","淡奶油 30 ml"],
+        ingredientsEn:["Green crème de menthe 30 ml","White crème de cacao 30 ml","Cream 30 ml"],
+        methodZh:"加冰摇匀，过滤入 coupe。",
+        methodEn:"Shake with ice and strain into a coupe.",
+        glassZh:"碟形杯",
+        glassEn:"Coupe",
+        garnishZh:"巧克力碎",
+        garnishEn:"Chocolate shavings",
+        profile:{sweet:5,sour:1,bitter:1,strong:2,fresh:2},
+        art:"coupe"
+      },
+      {
+        id:"blue-lagoon",
+        zh:"蓝色珊瑚礁",
+        en:"Blue Lagoon",
+        base:"vodka",
+        popularity:31,
+        color:"#5d91bd",
+        flavors:["citrus","sweet","refreshing"],
+        occasions:["party","summer"],
+        descZh:"伏特加、蓝橙酒和柠檬汽水组成的明亮复古长饮。",
+        descEn:"A bright retro highball of vodka, blue curaçao, and lemon soda.",
+        ingredientsZh:["伏特加 45 ml","蓝橙酒 20 ml","柠檬汽水 100 ml"],
+        ingredientsEn:["Vodka 45 ml","Blue curaçao 20 ml","Lemon soda 100 ml"],
+        methodZh:"高球杯加冰构建并轻搅。",
+        methodEn:"Build over ice in a highball and stir gently.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"柠檬片",
+        garnishEn:"Lemon wheel",
+        profile:{sweet:4,sour:2,bitter:1,strong:2,fresh:5},
+        art:"highball"
+      },
+      {
+        id:"sea-breeze",
+        zh:"海风",
+        en:"Sea Breeze",
+        base:"vodka",
+        popularity:30,
+        color:"#bb7180",
+        flavors:["fruity","refreshing","citrus"],
+        occasions:["summer","party"],
+        descZh:"伏特加、蔓越莓与葡萄柚的轻松果味长饮。",
+        descEn:"A light, tart vodka highball with cranberry and grapefruit.",
+        ingredientsZh:["伏特加 45 ml","蔓越莓汁 90 ml","葡萄柚汁 30 ml"],
+        ingredientsEn:["Vodka 45 ml","Cranberry juice 90 ml","Grapefruit juice 30 ml"],
+        methodZh:"高球杯加冰直接构建。",
+        methodEn:"Build over ice in a highball.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"青柠角",
+        garnishEn:"Lime wedge",
+        profile:{sweet:3,sour:3,bitter:1,strong:2,fresh:5},
+        art:"highball"
+      },
+      {
+        id:"screwdriver",
+        zh:"螺丝刀",
+        en:"Screwdriver",
+        base:"vodka",
+        popularity:29,
+        color:"#d99a55",
+        flavors:["citrus","fruity","refreshing"],
+        occasions:["summer","party"],
+        descZh:"伏特加加橙汁，极其简单直接的经典长饮。",
+        descEn:"Vodka and orange juice: one of the simplest and most familiar long drinks.",
+        ingredientsZh:["伏特加 45 ml","橙汁 120 ml"],
+        ingredientsEn:["Vodka 45 ml","Orange juice 120 ml"],
+        methodZh:"高球杯加冰构建并轻搅。",
+        methodEn:"Build over ice and stir gently.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"橙片",
+        garnishEn:"Orange slice",
+        profile:{sweet:3,sour:2,bitter:1,strong:2,fresh:4},
+        art:"highball"
+      },
+      {
+        id:"harvey-wallbanger",
+        zh:"哈维撞墙",
+        en:"Harvey Wallbanger",
+        base:"vodka",
+        popularity:28,
+        color:"#d59c5f",
+        flavors:["citrus","herbal","sweet"],
+        occasions:["party","summer"],
+        descZh:"螺丝刀上加入 Galliano 草本香草利口酒，带来复古的香草茴香气息。",
+        descEn:"A Screwdriver finished with Galliano, adding a retro vanilla-herbal accent.",
+        ingredientsZh:["伏特加 45 ml","橙汁 90 ml","Galliano 15 ml"],
+        ingredientsEn:["Vodka 45 ml","Orange juice 90 ml","Galliano 15 ml"],
+        methodZh:"伏特加和橙汁加冰构建，最后浮 Galliano。",
+        methodEn:"Build vodka and orange juice over ice, then float Galliano.",
+        glassZh:"高球杯",
+        glassEn:"Highball",
+        garnishZh:"橙片",
+        garnishEn:"Orange slice",
+        profile:{sweet:3,sour:2,bitter:1,strong:2,fresh:4},
+        art:"highball"
+      }
+    ];
+
+    const labels = {
+      zh: {
+        brand:'今晚喝什么？', navRandom:'随机一杯', navLibrary:'全部酒款',
+        heroEyebrow:'Personal Cocktail Guide', heroTitle:'今晚喝什么？',
+        heroSubtitle:'从基酒、风味和场景里找一杯，或者直接交给随机。一本适合夜晚慢慢翻的双语鸡尾酒图鉴。',
+        heroRandom:'🎲 随机摇一杯', heroExplore:'浏览全部酒款', randomTitle:'随机一杯',
+        randomIntro:'有些夜晚不需要计划。交给一点运气，从当前酒单里抽出今晚与你最有缘的一杯。',
+        libraryTitle:'今晚的酒单', libraryIntro:'按基酒、风味或场景慢慢找，也可以直接搜索酒名或配料。酒款与搜索结果默认按流行度排序。',
+        search:'搜索酒名、基酒或配料', base:'按基酒', flavor:'按风味', occasion:'按场景', clear:'清除筛选',
+        shakeAgain:'换一杯', details:'查看详情', recipe:'主要配方', method:'制作方法', serving:'杯型 / 装饰', profile:'风味强度', bestFor:'适合场景',
+        modal:'Cocktail Details', empty:'没有找到符合条件的酒款。试试清除部分筛选条件。',
+        results:n=>`共 ${n} 款`, footer:'Tonight’s Pour · 自用 / 小范围分享的双语鸡尾酒图鉴', responsibility:'请理性饮酒。本页面内容仅供达到当地法定饮酒年龄的成年人参考。',
+        all:'全部',
+        bases:{gin:'金酒',whiskey:'威士忌',rum:'朗姆',tequila:'龙舌兰',vodka:'伏特加',brandy:'白兰地',sparkling:'起泡酒',other:'其他'},
+        flavors:{sweet:'甜',sour:'酸',bitter:'苦',fruity:'果味',herbal:'草本',refreshing:'清爽',strong:'浓烈',creamy:'奶油感',dry:'干爽',spicy:'辛香',smoky:'烟熏',floral:'花香',savory:'咸鲜',citrus:'柑橘',tropical:'热带',coffee:'咖啡',bubbly:'气泡',lowabv:'低酒精',nutty:'坚果',silky:'丝滑',clean:'纯净',complex:'复杂',malty:'麦芽',berry:'莓果',aromatic:'芳香',minty:'薄荷'},
+        occasions:{aperitif:'晚餐前',after:'晚餐后',party:'聚会',date:'约会',summer:'夏天',winter:'冬天',slow:'一个人慢慢喝'},
+        profileLabels:{sweet:'甜度',sour:'酸度',bitter:'苦度',strong:'酒感',fresh:'清爽'}
+      },
+      en: {
+        brand:'Cocktail Field Guide', navRandom:'Pick a Drink', navLibrary:'Browse',
+        heroEyebrow:'Personal Cocktail Guide', heroTitle:'What are we drinking tonight?',
+        heroSubtitle:'Browse by spirit, flavor, or occasion — or leave tonight’s pour entirely to chance. A simple, thoughtfully designed cocktail field guide.',
+        heroRandom:'🎲 Pick a random drink', heroExplore:'Browse all cocktails', randomTitle:'Tonight’s Pick',
+        randomIntro:'Some nights are better left unplanned. Let chance choose one drink from the menu currently in front of you.',
+        libraryTitle:'The Night Menu', libraryIntro:'Browse by spirit, flavor, or occasion, or search by name and ingredient. Results are ordered by popularity by default.',
+        search:'Search cocktail, spirit, or ingredient', base:'By spirit', flavor:'By flavor', occasion:'By occasion', clear:'Clear filters',
+        shakeAgain:'Pick another', details:'View details', recipe:'Recipe', method:'Method', serving:'Glass / Garnish', profile:'Flavor profile', bestFor:'Best for',
+        modal:'Cocktail Details', empty:'No cocktails match these filters. Try clearing one or two selections.',
+        results:n=>`${n} cocktail${n===1?'':'s'}`, footer:'Cocktail Field Guide · A bilingual personal cocktail reference', responsibility:'Please enjoy responsibly. This site is intended for adults of legal drinking age in their jurisdiction.',
+        all:'All',
+        bases:{gin:'Gin',whiskey:'Whiskey',rum:'Rum',tequila:'Tequila',vodka:'Vodka',brandy:'Brandy',sparkling:'Sparkling Wine',other:'Other'},
+        flavors:{sweet:'Sweet',sour:'Sour',bitter:'Bitter',fruity:'Fruity',herbal:'Herbal',refreshing:'Refreshing',strong:'Spirit-forward',creamy:'Creamy',dry:'Dry',spicy:'Spicy',smoky:'Smoky',floral:'Floral',savory:'Savory',citrus:'Citrusy',tropical:'Tropical',coffee:'Coffee',bubbly:'Bubbly',lowabv:'Low-ABV',nutty:'Nutty',silky:'Silky',clean:'Clean',complex:'Complex',malty:'Malty',berry:'Berry',aromatic:'Aromatic',minty:'Minty'},
+        occasions:{aperitif:'Aperitif',after:'After Dinner',party:'Party',date:'Date Night',summer:'Summer',winter:'Winter',slow:'Slow Sipping'},
+        profileLabels:{sweet:'Sweet',sour:'Sour',bitter:'Bitter',strong:'Strength',fresh:'Refreshing'}
+      }
+    };
+
+    let lang = 'zh';
+    let activeBase = 'all';
+    let activeFlavor = 'all';
+    let activeOccasion = 'all';
+    let searchTerm = '';
+    let moreFiltersOpen = false;
+    let randomCocktail = [...cocktails].sort((a,b)=>(b.popularity||0)-(a.popularity||0))[0];
+
+    const $ = s => document.querySelector(s);
+    const esc = (s='') => s.replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+
+    function artSVG(c, large=false) {
+      const color = c.color;
+      const size = large ? 1 : .78;
+      const common = `stroke="#dce6f3" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"`;
+      if (c.art === 'martini') return `<svg viewBox="0 0 120 160" style="transform:scale(${size});transform-origin:center center" aria-hidden="true"><path d="M18 28H102L60 86L18 28Z" fill="${color}" fill-opacity=".78" ${common}/><path d="M60 86V132M40 132H80" ${common}/><circle cx="67" cy="54" r="7" fill="#5f6b4c"/><path d="M70 49L84 36" ${common}/></svg>`;
+      if (c.art === 'coupe') return `<svg viewBox="0 0 120 160" style="transform:scale(${size});transform-origin:center center" aria-hidden="true"><path d="M20 45C24 78 39 92 60 92C81 92 96 78 100 45H20Z" fill="${color}" fill-opacity=".78" ${common}/><path d="M60 92V132M40 132H80" ${common}/></svg>`;
+      if (c.art === 'highball') return `<svg viewBox="0 0 120 160" style="transform:scale(${size});transform-origin:center center" aria-hidden="true"><path d="M34 24H86L81 132H39L34 24Z" fill="white" fill-opacity=".2" ${common}/><path d="M39 55H81L78 126H42L39 55Z" fill="${color}" fill-opacity=".74"/><path d="M45 42L53 52M66 37L72 51M78 45L71 58" ${common}/></svg>`;
+      if (c.art === 'flute') return `<svg viewBox="0 0 120 160" style="transform:scale(${size});transform-origin:center center" aria-hidden="true"><path d="M42 22H78L72 96C70 111 50 111 48 96L42 22Z" fill="${color}" fill-opacity=".74" ${common}/><path d="M60 109V137M43 137H77" ${common}/><circle cx="54" cy="48" r="2.3" fill="#fff"/><circle cx="65" cy="63" r="2" fill="#fff"/><circle cx="58" cy="78" r="2" fill="#fff"/></svg>`;
+      if (c.art === 'wine') return `<svg viewBox="0 0 120 160" style="transform:scale(${size});transform-origin:center center" aria-hidden="true"><path d="M35 28H85C83 69 77 94 60 94C43 94 37 69 35 28Z" fill="${color}" fill-opacity=".74" ${common}/><path d="M60 94V132M39 132H81" ${common}/><circle cx="70" cy="56" r="8" fill="#d77936"/></svg>`;
+      return `<svg viewBox="0 0 120 160" style="transform:scale(${size});transform-origin:center center" aria-hidden="true"><path d="M28 40H92L86 130H34L28 40Z" fill="white" fill-opacity=".2" ${common}/><path d="M34 70H86L82 124H38L34 70Z" fill="${color}" fill-opacity=".78"/><rect x="44" y="64" width="17" height="17" rx="3" fill="#fff" fill-opacity=".35"/><path d="M69 61C79 55 87 52 93 42" ${common}/></svg>`;
+    }
+
+    function visibleCocktails() {
+      const q = searchTerm.trim().toLowerCase();
+      return cocktails.filter(c => {
+        const baseOk = activeBase === 'all' || c.base === activeBase;
+        const flavorOk = activeFlavor === 'all' || c.flavors.includes(activeFlavor);
+        const occasionOk = activeOccasion === 'all' || c.occasions.includes(activeOccasion);
+        const tagText = c.flavors.flatMap(f => [labels.zh.flavors[f] || '', labels.en.flavors[f] || '']);
+        const occasionText = c.occasions.flatMap(o => [labels.zh.occasions[o] || '', labels.en.occasions[o] || '']);
+        const hay = [c.zh,c.en,c.descZh,c.descEn,...c.ingredientsZh,...c.ingredientsEn,labels.zh.bases[c.base],labels.en.bases[c.base],...tagText,...occasionText].join(' ').toLowerCase();
+        const searchOk = !q || hay.includes(q);
+        return baseOk && flavorOk && occasionOk && searchOk;
+      }).sort((a,b) => (b.popularity || 0) - (a.popularity || 0));
+    }
+
+    function renderFilters() {
+      const L = labels[lang];
+      const commonBases = ['all','gin','whiskey','rum','tequila','vodka'];
+      const extraBases = ['brandy','sparkling','other'];
+      const commonFlavors = ['all','refreshing','citrus','bitter','sweet','sour','strong','herbal'];
+      const extraFlavors = ['fruity','creamy','dry','spicy','smoky','floral','savory','tropical','coffee','bubbly','lowabv','nutty','silky','clean','complex','malty','berry','aromatic','minty'];
+      const occasionKeys = ['all','aperitif','after','party','date','summer','winter','slow'];
+      const makeBtns = (keys,type,map) => keys.map(k => `<button class="filter-btn ${(type==='base'?activeBase:type==='flavor'?activeFlavor:activeOccasion)===k?'active':''}" data-type="${type}" data-value="${k}">${k==='all'?L.all:map[k]}</button>`).join('');
+      $('#baseFilters').innerHTML = makeBtns(commonBases,'base',L.bases);
+      $('#moreBaseFilters').innerHTML = makeBtns(extraBases,'base',L.bases);
+      $('#flavorFilters').innerHTML = makeBtns(commonFlavors,'flavor',L.flavors);
+      $('#moreFlavorFilters').innerHTML = makeBtns(extraFlavors,'flavor',L.flavors);
+      $('#occasionFilters').innerHTML = makeBtns(occasionKeys,'occasion',L.occasions);
+      $('#moreFilters').classList.toggle('open',moreFiltersOpen);
+      $('#moreToggle').classList.toggle('open',moreFiltersOpen);
+      $('#moreToggle').textContent = lang==='zh' ? (moreFiltersOpen?'收起筛选':'更多筛选') : (moreFiltersOpen?'Fewer Filters':'More Filters');
+      $('#moreFlavorLabel').textContent = lang==='zh' ? '更多风味' : 'More Flavor';
+      $('#moreBaseLabel').textContent = lang==='zh' ? '更多基酒' : 'More Spirits';
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.onclick = () => {
+        const {type,value} = btn.dataset;
+        if (type==='base') activeBase = value;
+        if (type==='flavor') activeFlavor = value;
+        if (type==='occasion') activeOccasion = value;
+        if (extraBases.includes(activeBase) || extraFlavors.includes(activeFlavor)) moreFiltersOpen = true;
+        renderFilters(); renderLibrary();
+      });
+    }
+
+
+    const notePalettes = [
+      {bg:'#728594', bg2:'#5f7181', line:'rgba(226,236,244,.15)', ink:'#f0f4f7', meta:'#cad7e1'},
+      {bg:'#667f7d', bg2:'#536b6b', line:'rgba(226,240,237,.15)', ink:'#f0f5f3', meta:'#c8d9d5'},
+      {bg:'#7c7389', bg2:'#686176', line:'rgba(238,232,246,.15)', ink:'#f4f0f7', meta:'#d5cce0'},
+      {bg:'#846f78', bg2:'#705e68', line:'rgba(244,232,237,.15)', ink:'#f6f0f3', meta:'#dccbd2'},
+      {bg:'#68788b', bg2:'#566579', line:'rgba(231,237,245,.15)', ink:'#f0f3f7', meta:'#cbd5e1'},
+      {bg:'#817b72', bg2:'#6e6961', line:'rgba(242,237,229,.14)', ink:'#f5f2ec', meta:'#d8d1c6'}
+    ]
+    const noteShapes = ['note-a','note-b','note-c','note-d','note-e','note-f'];
+    const noteAttachments = ['pin-top','tape-top','pin-left','tape-cross','pin-right','tape-corner'];
+    const noteTilts = ['-2.4deg','1.9deg','-1.4deg','2.3deg','-.9deg','1.2deg'];
+    function getNoteMeta(index){
+      const p = notePalettes[index % notePalettes.length];
+      return {shape:noteShapes[index % noteShapes.length],attach:noteAttachments[index % noteAttachments.length],tilt:noteTilts[index % noteTilts.length],...p};
+    }
+
+
+    function titleDecoration(index){
+      const variants = [
+        `<svg class="title-deco" viewBox="0 0 260 34" aria-hidden="true"><path class="ink-stroke" d="M4 21 C36 7,72 29,111 18 S183 9,256 19"/><path class="ink-faint" d="M178 16 C192 8,206 8,220 16 S246 24,256 17"/><path class="ink-faint" d="M224 8 l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg>`,
+        `<svg class="title-deco" viewBox="0 0 260 34" aria-hidden="true"><path class="ink-stroke" d="M5 22 C42 30,77 8,119 18 C161 28,205 10,255 18"/><path class="ink-faint" d="M10 18 C24 11,39 10,55 18"/><path class="ink-faint" d="M66 8 l1.6 4 4 1.6-4 1.6-1.6 4-1.6-4-4-1.6 4-1.6 1.6-4Z"/></svg>`,
+        `<svg class="title-deco" viewBox="0 0 260 34" aria-hidden="true"><path class="ink-stroke" d="M4 20 C55 10,94 28,142 17 S215 12,256 20"/><path class="ink-faint" d="M162 20 C177 10,191 9,207 16 S236 23,250 17"/><path class="ink-faint" d="M149 8 l1.4 3.8 3.8 1.4-3.8 1.4-1.4 3.8-1.4-3.8-3.8-1.4 3.8-1.4 1.4-3.8Z"/></svg>`,
+        `<svg class="title-deco" viewBox="0 0 260 34" aria-hidden="true"><path class="ink-stroke" d="M4 19 C32 31,72 6,113 18 S195 31,256 16"/><path class="ink-faint" d="M15 22 C34 17,47 8,63 15 S89 22,102 16"/><path class="ink-faint" d="M226 11 l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5 1.5-4Z"/></svg>`,
+        `<svg class="title-deco" viewBox="0 0 260 34" aria-hidden="true"><path class="ink-stroke" d="M5 22 C46 6,84 27,128 17 C174 7,212 26,255 17"/><path class="ink-faint" d="M106 18 C118 8,131 8,144 18 S169 28,182 18"/><path class="ink-faint" d="M188 8 l1.6 4 4 1.6-4 1.6-1.6 4-1.6-4-4-1.6 4-1.6 1.6-4Z"/></svg>`,
+        `<svg class="title-deco" viewBox="0 0 260 34" aria-hidden="true"><path class="ink-stroke" d="M4 20 C43 27,83 10,127 18 S209 27,256 17"/><path class="ink-faint" d="M49 15 C63 8,76 8,91 16 S118 24,131 18"/><path class="ink-faint" d="M24 10 l1.4 3.8 3.8 1.4-3.8 1.4-1.4 3.8-1.4-3.8-3.8-1.4 3.8-1.4 1.4-3.8Z"/></svg>`
+      ];
+      return variants[index % variants.length];
+    }
+
+
+    let revealObserver;
+    function ensureRevealObserver(){
+      if(revealObserver || !('IntersectionObserver' in window)) return;
+      revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+    }
+    function observeRevealTargets(root=document){
+      ensureRevealObserver();
+      root.querySelectorAll?.('.reveal-on-scroll:not(.is-visible), .motion-card:not(.is-visible)').forEach(el => {
+        if(revealObserver) revealObserver.observe(el); else el.classList.add('is-visible');
+      });
+    }
+    function setupStaticScrollReveals(){
+      document.querySelectorAll('#random .section-head,#library .section-head,#randomCard,.controls,footer .footer-inner').forEach(el=>el.classList.add('reveal-on-scroll'));
+      observeRevealTargets(document);
+    }
+
+    function renderLibrary() {
+      const L = labels[lang];
+      const list = visibleCocktails();
+      $('#resultCount').textContent = L.results(list.length);
+      $('#emptyState').hidden = list.length > 0;
+      $('#emptyState').textContent = L.empty;
+      $('#cocktailGrid').innerHTML = list.map((c,index) => {
+        const name = lang==='zh' ? c.zh : c.en;
+        const sub = lang==='zh' ? c.en : L.bases[c.base];
+        const desc = lang==='zh' ? c.descZh : c.descEn;
+        const folio = `No. ${String(index+1).padStart(2,'0')}`;
+        const note = getNoteMeta(index);
+        return `<article class="cocktail-card motion-card ${note.shape} ${note.attach}" data-id="${c.id}" data-folio="${folio}" style="--card-accent:${c.color};--tilt:${note.tilt};--note-bg:${note.bg};--note-bg2:${note.bg2};--note-line:${note.line};--note-ink:${note.ink};--note-meta:${note.meta};--reveal-delay:${Math.min(index%9,8)*65}ms" tabindex="0">
+          <span class="note-pin" aria-hidden="true"></span>
+          <span class="note-tape tape-one" aria-hidden="true"></span>
+          <span class="note-tape tape-two" aria-hidden="true"></span>
+          <div class="card-art">${artSVG(c)}</div>
+          <div class="card-title"><h3>${esc(name)}</h3>${titleDecoration(index)}<span class="base-label">${esc(L.bases[c.base])}</span></div>
+          <div class="card-en">${esc(sub)}</div>
+          <div class="tags">${c.flavors.slice(0,3).map(f=>`<span class="tag">${esc(L.flavors[f])}</span>`).join('')}</div>
+          <div class="card-desc">${esc(desc)}</div>
+        </article>`;
+      }).join('');
+      document.querySelectorAll('.cocktail-card').forEach(card => {
+        const open = () => openModal(cocktails.find(c=>c.id===card.dataset.id));
+        card.onclick = open;
+        card.onkeydown = e => { if(e.key==='Enter'||e.key===' '){e.preventDefault();open();} };
+      });
+      observeRevealTargets($('#cocktailGrid'));
+    }
+
+    function renderRandom() {
+      const L = labels[lang];
+      const c = randomCocktail;
+      const name = lang==='zh' ? `${c.en} ${c.zh}` : c.en;
+      const desc = lang==='zh' ? c.descZh : c.descEn;
+      const ingredients = lang==='zh' ? c.ingredientsZh : c.ingredientsEn;
+      $('#randomCard').style.setProperty('--card-accent', c.color);
+      $('#randomCard').innerHTML = `
+        <div class="random-illustration">${artSVG(c,true)}</div>
+        <div class="random-copy">
+          <div class="subtitle">${esc(L.bases[c.base])}</div>
+          <h3>${esc(name)}</h3>
+          <div class="tags">${c.flavors.slice(0,4).map(f=>`<span class="tag">${esc(L.flavors[f])}</span>`).join('')}</div>
+          <p>${esc(desc)}</p>
+          <strong>${L.recipe}</strong>
+          <ul class="recipe-mini">${ingredients.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+          <div class="hero-actions">
+            <button class="primary-btn" id="shakeAgain">${L.shakeAgain}</button>
+            <button class="secondary-btn" id="randomDetails">${L.details}</button>
+          </div>
+        </div>`;
+      $('#shakeAgain').onclick = () => pickRandom(true);
+      $('#randomDetails').onclick = () => openModal(c);
+      const rc = $('#randomCard');
+      rc.classList.remove('random-refresh');
+      void rc.offsetWidth;
+      rc.classList.add('random-refresh');
+    }
+
+    function pickRandom(shouldScroll=true) {
+      const pool = visibleCocktails();
+      const source = pool.length ? pool : cocktails;
+      let next = source[Math.floor(Math.random()*source.length)];
+      if (source.length > 1 && next.id === randomCocktail.id) next = source[(source.indexOf(next)+1)%source.length];
+      randomCocktail = next;
+      renderRandom();
+      if (shouldScroll) {
+        document.querySelector('#random').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+      }
+    }
+
+    function dots(value) {
+      return `<span class="dots">${Array.from({length:5},(_,i)=>`<span class="${i<value?'':'off'}">●</span>`).join('')}</span>`;
+    }
+
+    function openModal(c) {
+      const L = labels[lang];
+      $('#modalLabel').textContent = L.modal;
+      const ingredients = lang==='zh' ? c.ingredientsZh : c.ingredientsEn;
+      const method = lang==='zh' ? c.methodZh : c.methodEn;
+      const desc = lang==='zh' ? c.descZh : c.descEn;
+      const mainName = lang==='zh' ? c.zh : c.en;
+      const secondary = lang==='zh' ? c.en : L.bases[c.base];
+      const glass = lang==='zh' ? c.glassZh : c.glassEn;
+      const garnish = lang==='zh' ? c.garnishZh : c.garnishEn;
+      const noteTitle = lang==='zh' ? 'House Notes' : 'House Notes';
+      const serviceGlass = lang==='zh' ? '杯型' : 'Glass';
+      const serviceGarnish = lang==='zh' ? '装饰' : 'Garnish';
+      const serviceBase = lang==='zh' ? '基酒' : 'Base';
+      const issue = lang==='zh' ? '夜间酒单' : 'Night Menu';
+      const folio = `${lang==='zh' ? 'Selection' : 'Selection'} · ${String(c.popularity || 0).padStart(2,'0')}`;
+      $('#modalBody').innerHTML = `
+        <div class="modal-art">
+          ${artSVG(c,true)}
+          <div class="modal-side-note">${esc(issue)}</div>
+        </div>
+        <div class="modal-copy">
+          <div class="modal-kicker"><span>${esc(folio)}</span><span>${esc(L.bases[c.base])}</span></div>
+          <h3 id="modalTitle">${esc(mainName)}</h3>
+          <div class="modal-en">${esc(secondary)}</div>
+          <div class="tags">${c.flavors.map(f=>`<span class="tag">${esc(L.flavors[f])}</span>`).join('')}</div>
+          <p class="modal-intro">${esc(desc)}</p>
+          <div class="modal-rule">✦</div>
+          <div class="detail-grid">
+            <div class="detail-box">
+              <h4>${L.recipe}</h4>
+              <ul>${ingredients.map(i=>`<li><span>${esc(i)}</span></li>`).join('')}</ul>
+              <div class="recipe-note">${lang==='zh' ? '经典配方在不同酒吧会略有变化。' : 'Specs may vary slightly from bar to bar.'}</div>
+            </div>
+            <div class="detail-box">
+              <h4>${L.serving}</h4>
+              <div class="service-list">
+                <div class="service-row"><span>${serviceGlass}</span><div>${esc(glass)}</div></div>
+                <div class="service-row"><span>${serviceGarnish}</span><div>${esc(garnish)}</div></div>
+                <div class="service-row"><span>${serviceBase}</span><div>${esc(L.bases[c.base])}</div></div>
+              </div>
+            </div>
+            <div class="detail-box full">
+              <h4>${L.method}</h4>
+              <p>${esc(method)}</p>
+            </div>
+            <div class="detail-box">
+              <h4>${L.bestFor}</h4>
+              <div class="occasion-cloud">${c.occasions.map(o=>`<span class="tag">${esc(L.occasions[o])}</span>`).join('')}</div>
+            </div>
+            <div class="detail-box">
+              <h4>${noteTitle}</h4>
+              <p>${lang==='zh' ? '这杯酒的风格关键词是 ' : 'This drink leans toward '}${c.flavors.map(f=>L.flavors[f]).join(lang==='zh' ? '、' : ', ')}${lang==='zh' ? '。适合在夜晚慢慢喝，或作为一轮酒单里的风格参照。' : '. It works beautifully as a slow evening pour or as a reference point for exploring similar drinks.'}</p>
+            </div>
+            <div class="detail-box full">
+              <h4>${L.profile}</h4>
+              <div class="flavor-list">${Object.entries(c.profile).map(([k,v])=>`<div class="flavor-row"><span>${esc(L.profileLabels[k])}</span>${dots(v)}</div>`).join('')}</div>
+            </div>
+          </div>
+        </div>`;
+      $('.modal').style.setProperty('--modal-accent', c.color);
+      $('#modalBackdrop').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() { const backdrop=$('#modalBackdrop'); backdrop.classList.add('closing'); backdrop.classList.remove('open'); setTimeout(()=>{backdrop.classList.remove('closing');},300); document.body.style.overflow=''; }
+
+    function applyLanguage() {
+      const L = labels[lang];
+      document.documentElement.lang = lang==='zh' ? 'zh-CN' : 'en';
+      document.title = lang==='zh' ? '今晚喝什么？ | Cocktail Field Guide' : 'Cocktail Field Guide | What are we drinking tonight?';
+      $('#brandTitle').textContent=L.brand; $('#navRandom').textContent=L.navRandom; $('#navLibrary').textContent=L.navLibrary;
+      $('#heroEyebrow').textContent=L.heroEyebrow; $('#heroTitle').textContent=L.heroTitle; $('#heroSubtitle').textContent=L.heroSubtitle;
+      $('#heroRandomBtn').textContent=L.heroRandom; $('#heroExploreBtn').textContent=L.heroExplore;
+      $('#randomTitle').textContent=L.randomTitle; $('#randomIntro').textContent=L.randomIntro; $('#libraryTitle').textContent=L.libraryTitle; $('#libraryIntro').textContent=L.libraryIntro;
+      $('#searchInput').placeholder=L.search; $('#baseLabel').textContent=L.base; $('#flavorLabel').textContent=L.flavor; $('#occasionLabel').textContent=L.occasion; $('#clearFilters').textContent=L.clear;
+      $('#footerNote').textContent=L.footer; $('#responsibilityNote').textContent=L.responsibility;
+      $('#langZh').classList.toggle('active',lang==='zh'); $('#langEn').classList.toggle('active',lang==='en');
+      renderFilters(); renderLibrary(); renderRandom();
+    }
+
+    $('#searchInput').addEventListener('input', e => { searchTerm=e.target.value; renderLibrary(); });
+    $('#moreToggle').onclick = () => { moreFiltersOpen = !moreFiltersOpen; renderFilters(); };
+    $('#clearFilters').onclick = () => { activeBase='all'; activeFlavor='all'; activeOccasion='all'; searchTerm=''; $('#searchInput').value=''; renderFilters(); renderLibrary(); };
+    $('#heroRandomBtn').onclick = () => pickRandom(true);
+    $('#langZh').onclick = () => { lang='zh'; applyLanguage(); };
+    $('#langEn').onclick = () => { lang='en'; applyLanguage(); };
+    $('#closeModal').onclick = closeModal;
+    $('#modalBackdrop').onclick = e => { if(e.target.id==='modalBackdrop') closeModal(); };
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+    setupStaticScrollReveals();
+    requestAnimationFrame(()=>document.body.classList.add('motion-loaded'));
+    applyLanguage();
+    pickRandom(false);
+  </script>
+</body>
+</html>

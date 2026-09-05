@@ -50,51 +50,6 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 
 ---
 
-### 3. Temporal Avian Contact Networks — Community Detection & Epidemic Simulation
-
-**Focus:** Network Science · Community Detection · Temporal Networks · Epidemic Simulation
-
-Analyzed temporal contact networks of wild birds to investigate how network structure and node importance influence disease transmission. Using the **Aves Wildbird Network (AWN)** dataset, we studied both single-layer and multilayer community structures and evaluated their relationship with simulated disease outbreaks.
-
-The project combined **Louvain and Leiden community detection**, multilayer **WSSNMTF**, temporal centrality measures, and infection simulations. We also developed **Time-Weighted Degree Centrality (TWDC)** and a recursive version with temporal decay to better capture the importance of nodes in dynamic networks.
-
-**My contributions**
-
-* Led the **community detection** component of the project
-* Implemented and evaluated **Louvain and Leiden** algorithms
-* Investigated single-layer vs. multilayer community structures
-* Applied **WSSNMTF** to identify communities across temporal network layers
-* Analyzed the relationship between community structure, modularity, and epidemic spread
-* Contributed to methodology and data analysis
-
-**Tech:** Python · NetworkX · Community Detection · Louvain · Leiden · NMTF · Centrality Measures · Epidemic Simulation
-
-📄 **[Download the Full Report (PDF)](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)**
-
----
-
-### 4. Artificial Painting Toolbox — Image Processing in MATLAB
-
-**Focus:** Image Processing · Computer Vision · Mathematical Modeling
-
-Developed an image-processing toolbox that transforms photographs into different artistic styles, including **pencil sketch, comic, oil painting, Van Gogh-inspired strokes, and Cubism-like effects**.
-
-The project explored how classical image-processing techniques can reproduce visual characteristics of traditional artistic media without relying on deep learning or neural style transfer.
-
-**My contributions**
-
-* Implemented and analyzed the **oil painting effect**
-* Used local RGB histograms to identify dominant colors and generate brush-like regions
-* Investigated improvements to reduce artifacts around sharp edges and uniform regions
-* Contributed to the initial development and evaluation of the **Van Gogh-inspired stroke effect**
-* Applied image-processing techniques including filtering, color manipulation, and local neighborhood analysis
-
-**Tech:** MATLAB · Image Processing · Histogram Analysis · Filtering · Edge Detection · Color Manipulation
-
-📄 **[Download the Full Report (PDF)](./projects/mathematical-imaging/Artificial_Painting_Toolbox.pdf)**
-
----
-
 ### 5. California · Stanford Move-in Trip — Bilingual Travel Dashboard
 
 **Focus:** Front-End Development · Product Design · Time-Zone-Aware Scheduling · Data Privacy · Deployment
@@ -122,6 +77,52 @@ The project was designed around real travel constraints, including fixed flight 
 💻 **[View the Project Repository](./projects/california-stanford-trip/)**
 
 ![California Stanford Move-in Trip Preview](./projects/trip-organizer/assets/preview.png)
+
+---
+
+### 4. Temporal Avian Contact Networks — Community Detection & Epidemic Simulation
+
+**Focus:** Network Science · Community Detection · Temporal Networks · Epidemic Simulation
+
+Analyzed temporal contact networks of wild birds to investigate how network structure and node importance influence disease transmission. Using the **Aves Wildbird Network (AWN)** dataset, we studied both single-layer and multilayer community structures and evaluated their relationship with simulated disease outbreaks.
+
+The project combined **Louvain and Leiden community detection**, multilayer **WSSNMTF**, temporal centrality measures, and infection simulations. We also developed **Time-Weighted Degree Centrality (TWDC)** and a recursive version with temporal decay to better capture the importance of nodes in dynamic networks.
+
+**My contributions**
+
+* Led the **community detection** component of the project
+* Implemented and evaluated **Louvain and Leiden** algorithms
+* Investigated single-layer vs. multilayer community structures
+* Applied **WSSNMTF** to identify communities across temporal network layers
+* Analyzed the relationship between community structure, modularity, and epidemic spread
+* Contributed to methodology and data analysis
+
+**Tech:** Python · NetworkX · Community Detection · Louvain · Leiden · NMTF · Centrality Measures · Epidemic Simulation
+
+📄 **[Download the Full Report (PDF)](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)**
+
+---
+
+### 5. Artificial Painting Toolbox — Image Processing in MATLAB
+
+**Focus:** Image Processing · Computer Vision · Mathematical Modeling
+
+Developed an image-processing toolbox that transforms photographs into different artistic styles, including **pencil sketch, comic, oil painting, Van Gogh-inspired strokes, and Cubism-like effects**.
+
+The project explored how classical image-processing techniques can reproduce visual characteristics of traditional artistic media without relying on deep learning or neural style transfer.
+
+**My contributions**
+
+* Implemented and analyzed the **oil painting effect**
+* Used local RGB histograms to identify dominant colors and generate brush-like regions
+* Investigated improvements to reduce artifacts around sharp edges and uniform regions
+* Contributed to the initial development and evaluation of the **Van Gogh-inspired stroke effect**
+* Applied image-processing techniques including filtering, color manipulation, and local neighborhood analysis
+
+**Tech:** MATLAB · Image Processing · Histogram Analysis · Filtering · Edge Detection · Color Manipulation
+
+📄 **[Download the Full Report (PDF)](./projects/mathematical-imaging/Artificial_Painting_Toolbox.pdf)**
+
 ---
 
 ## Technical Interests
@@ -137,7 +138,7 @@ The project was designed around real travel constraints, including fixed flight 
 
 **Python:** NumPy · Pandas · scikit-learn · NetworkX · PyTorch · TensorFlow/Keras · Gensim · Plotly
 
-**Other:** MATLAB · R · SQL · Mathematica
+**Other:** MATLAB · R · SQL · Mathematica · HTML
 
 ## About
 

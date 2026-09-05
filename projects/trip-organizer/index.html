@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#f5efe4" name="theme-color"/>
+<title>California · Stanford Move-in Trip · Sep 13–22, 2026</title>
+<style>
+:root {
+  --bg:#f5efe4; --paper:#fffaf1; --ink:#21332c; --muted:#6b756f;
+  --line:#d9d2c4; --accent:#9b1b30; --accent2:#446e62;
+  --shadow:0 10px 35px rgba(50,40,25,.08); --warn:#a45817; --ok:#2b6c4e;
+  --d1:#c96d57; --d2:#cf963b; --d3:#5d8f72; --d4:#5d7da8; --d5:#8c6da8;
+  --d6:#d16685; --d7:#4b9da1; --d8:#6b8e4e; --d9:#6f7581;
+}
+html.dark {
+  --bg:#111816; --paper:#17201d; --ink:#eef5f1; --muted:#aebbb5;
+  --line:#33413b; --accent:#ff8da0; --accent2:#8fc8b6;
+  --shadow:0 10px 35px rgba(0,0,0,.22); --warn:#f0b76b; --ok:#8ed2ad;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:920px;margin:auto;padding:18px 14px 70px}
+.hero{padding:20px 18px 12px}
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1{font-family:Georgia,"Songti SC","STSong",serif;font-size:clamp(28px,7vw,52px);line-height:1.06;margin:6px 0 8px}
+.sub{color:var(--muted);font-size:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);margin:14px 0;padding:18px}
+.section-title{display:flex;align-items:center;gap:10px;margin:2px 0 14px}
+.section-title h2{font-size:21px;margin:0}
+.section-title .num{width:30px;height:30px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:700 14px Georgia}
+.focus{position:relative;overflow:hidden}
+.focus:after{content:"";position:absolute;inset:auto -30px -55px auto;width:160px;height:160px;border:28px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:50%}
+.focus-label{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.08em}
+#next-title{font-size:20px;font-weight:800;margin-top:5px;max-width:680px}
+#next-time{font-size:13px;color:var(--muted);margin-top:3px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px;position:relative;z-index:1}
+.count-unit{text-align:center;border:1px solid var(--line);border-radius:15px;padding:10px 3px;background:color-mix(in srgb,var(--paper) 82%,var(--bg))}
+.count-unit strong{font-size:clamp(25px,7vw,42px);font-variant-numeric:tabular-nums;display:block;line-height:1}
+.count-unit span{font-size:11px;color:var(--muted)}
+.micro{font-size:12px;color:var(--muted);margin-top:10px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.legend span{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:4px 8px}
+.route-map{width:100%;height:auto;display:block}
+.hand{filter:url(#rough)}
+svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;fill:var(--ink)}
+.res-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.res{border:1px solid var(--line);border-radius:16px;padding:13px}
+.res h3{font-size:15px;margin:0 0 5px}
+.res .meta{font-size:13px;color:var(--muted)}
+.badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;border-radius:999px;padding:3px 7px;border:1px solid currentColor;margin-right:5px}
+.badge.ok{color:var(--ok)} .badge.book{color:var(--warn)} .badge.plan{color:var(--accent2)}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:700;background:transparent}
+.btn:hover{border-color:var(--accent2)}
+.day{padding:0;overflow:hidden}
+.day-head{padding:15px 17px;display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line)}
+.day-title{font-size:17px;font-weight:850} .day-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.day-dot{width:11px;height:11px;border-radius:50%;flex:none}
+.timeline{padding:6px 16px 15px}
+.row{display:grid;grid-template-columns:82px 1fr;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.time{font-weight:850;font-size:13px;white-space:nowrap}
+.tz{display:block;font-size:10px;color:var(--muted);font-weight:600}
+.item-title{font-weight:780}
+.item-note{font-size:12px;color:var(--muted);margin-top:3px}
+.alert{border-left:4px solid var(--warn);padding:9px 11px;background:color-mix(in srgb,var(--warn) 8%,transparent);border-radius:10px;margin:8px 0;font-size:12px}
+details.route{border-top:1px solid var(--line);padding:0 16px 14px}
+details.route summary{cursor:pointer;padding:12px 0;font-size:13px;font-weight:800}
+.mini-map{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--paper) 70%,var(--bg));margin:0}
+.todo{margin:0;padding-left:21px}
+.todo li{padding:7px 0;border-bottom:1px dashed var(--line)}
+.todo li:last-child{border:0}
+.tip-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tip{border:1px solid var(--line);border-radius:16px;padding:13px}
+.tip b{display:block;margin-bottom:3px}
+.source{font-size:11px;color:var(--muted)}
+footer{font-size:11px;color:var(--muted);padding:14px 4px;text-align:center}
+@media(max-width:650px){
+  .res-grid,.tip-grid{grid-template-columns:1fr}
+  .row{grid-template-columns:72px 1fr}
+  .wrap{padding:8px 10px 55px}
+  .card{border-radius:18px;padding:15px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.lang-toggle{
+  position:fixed;right:14px;top:14px;z-index:9999;
+  display:flex;gap:4px;padding:4px;
+  border:1px solid var(--line);border-radius:999px;
+  background:color-mix(in srgb,var(--paper) 92%,transparent);
+  backdrop-filter:blur(12px);box-shadow:var(--shadow)
+}
+.lang-toggle button{
+  border:0;background:transparent;color:var(--muted);
+  border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800;cursor:pointer
+}
+.lang-toggle button.active{background:var(--ink);color:var(--paper)}
+@media(max-width:650px){.lang-toggle{right:9px;top:9px}.lang-toggle button{padding:6px 8px}}
+
+.map-shell{position:relative;margin:2px 0 10px;border-radius:14px;overflow:hidden}
+.map-shell .mini-map,.map-shell .route-map{touch-action:none;user-select:none;cursor:grab}
+.map-shell.dragging .mini-map,.map-shell.dragging .route-map{cursor:grabbing}
+.map-controls{
+  position:absolute;right:10px;top:10px;z-index:5;display:grid;gap:5px;
+  background:color-mix(in srgb,var(--paper) 92%,transparent);
+  border:1px solid var(--line);border-radius:12px;padding:5px;
+  backdrop-filter:blur(10px)
+}
+.map-controls button{
+  width:36px;height:36px;border:1px solid var(--line);border-radius:9px;
+  background:var(--paper);color:var(--ink);font-size:19px;font-weight:800;
+  cursor:pointer;display:grid;place-items:center
+}
+.map-controls button:last-child{font-size:12px}
+.map-help{
+  position:absolute;left:10px;bottom:9px;z-index:5;
+  padding:5px 8px;border:1px solid var(--line);border-radius:999px;
+  background:color-mix(in srgb,var(--paper) 91%,transparent);
+  color:var(--muted);font-size:10px;font-weight:700;pointer-events:none
+}
+.map-label,.map-city-label{paint-order:stroke;stroke:var(--paper);stroke-width:3px;stroke-linejoin:round}
+.map-route{vector-effect:non-scaling-stroke}
+.map-marker{vector-effect:non-scaling-stroke}
+.map-bg-grid{vector-effect:non-scaling-stroke}
+
+.map-mode{
+  position:absolute;left:10px;top:10px;z-index:8;display:flex;gap:2px;
+  padding:4px;border:1px solid var(--line);border-radius:999px;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(10px)
+}
+.map-mode button{
+  min-height:34px;border:0;border-radius:999px;padding:6px 10px;
+  background:transparent;color:var(--muted);font-size:11px;font-weight:800;cursor:pointer
+}
+.map-mode button.active{background:var(--ink);color:var(--paper)}
+.satellite-map{
+  display:none;width:100%;min-height:260px;border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;background:#d9dddc
+}
+.map-shell.satellite-mode .satellite-map{display:block}
+.map-shell.satellite-mode > svg{display:none}
+.map-shell.satellite-mode .map-controls{display:none}
+.map-shell.satellite-mode .map-help{display:none}
+.map-shell .satellite-status{
+  display:none;position:absolute;left:50%;bottom:12px;z-index:1000;
+  transform:translateX(-50%);max-width:calc(100% - 30px);
+  padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.55);
+  background:rgba(20,26,24,.78);color:white;font-size:10px;font-weight:700;
+  backdrop-filter:blur(8px);text-align:center
+}
+.map-shell.satellite-mode .satellite-status.show{display:block}
+.map-shell .leaflet-container{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}
+.map-shell .leaflet-tooltip.trip-label{
+  background:rgba(255,255,255,.92);color:#17201d;border:0;border-radius:8px;
+  box-shadow:0 1px 6px rgba(0,0,0,.22);padding:4px 7px;font-size:11px;font-weight:800
+}
+.map-shell .leaflet-tooltip.trip-label:before{display:none}
+.map-shell .leaflet-control-attribution{font-size:8px;line-height:1.2;max-width:78%;white-space:normal}
+@media(max-width:650px){
+  .map-mode{left:8px;top:8px}
+  .map-mode button{padding:6px 9px}
+  .satellite-map{min-height:230px}
+  .map-shell .leaflet-control-attribution{font-size:7px}
+}
+
+.trip-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px}
+.trip-stat{border:1px solid var(--line);border-radius:14px;padding:10px 8px;background:color-mix(in srgb,var(--paper) 72%,transparent);text-align:center}
+.trip-stat strong{display:block;font-size:17px;line-height:1.1}
+.trip-stat span{display:block;margin-top:3px;font-size:10px;color:var(--muted);font-weight:700}
+.legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0 14px}
+.legend .journey-chip{display:flex;align-items:center;gap:9px;min-width:0;border:1px solid var(--line);border-radius:14px;padding:9px 10px;background:color-mix(in srgb,var(--paper) 78%,var(--bg))}
+.journey-chip .day-pill{min-width:34px;height:28px;border-radius:999px;display:grid;place-items:center;font-size:11px;font-weight:900;border:1px solid currentColor}
+.journey-chip .journey-main{min-width:0;flex:1}
+.journey-chip .journey-route{font-size:12px;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.journey-chip .journey-meta{font-size:10px;color:var(--muted);margin-top:2px}
+.journey-chip .journey-icon{font-size:16px;line-height:1}
+.overview-note{display:flex;align-items:flex-start;gap:9px;margin-top:10px;padding:10px 11px;border:1px dashed var(--line);border-radius:13px;background:color-mix(in srgb,var(--paper) 60%,transparent)}
+.overview-note .icon{font-size:15px;line-height:1.2}
+.overview-note .text{font-size:11px;color:var(--muted)}
+.section-title:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent);margin-left:2px}
+@media(max-width:650px){.trip-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.legend{grid-template-columns:1fr}.journey-chip .journey-route{white-space:normal}}
+
+html{scroll-behavior:smooth}
+.quick-nav{margin:0 0 12px;padding:9px 10px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--paper) 88%,transparent);display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none}
+.quick-nav::-webkit-scrollbar{display:none}
+.quick-nav .quick-label{flex:0 0 auto;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:0 4px}
+.quick-nav a{flex:0 0 auto;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:var(--paper);font-size:11px;font-weight:800}
+.quick-nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+section[id]{scroll-margin-top:18px}
+.resource-box{margin-top:8px;padding:9px 10px;border:1px solid var(--line);border-radius:13px;background:color-mix(in srgb,var(--paper) 68%,transparent)}
+.resource-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+.resource-title{font-size:10px;font-weight:900;letter-spacing:.04em;color:var(--muted)}
+.resource-note{font-size:9px;color:var(--muted)}
+.resource-links{display:flex;flex-wrap:wrap;gap:6px}
+.resource-link{display:inline-flex;align-items:center;gap:5px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 9px;background:var(--paper);color:var(--ink);font-size:10px;font-weight:800}
+.resource-link .score{font-size:9px;color:var(--muted);font-weight:700}
+.resource-link.yelp:before{content:"Yelp";font-size:8px;font-weight:900;color:#d32323}
+.resource-link.maplink:before{content:"Map";font-size:8px;font-weight:900;color:var(--accent)}
+@media(max-width:650px){.resource-head{align-items:flex-start;flex-direction:column;gap:2px}}
+
+/* Quick Nav polish */
+.quick-nav{
+  position:relative;
+  padding:10px 12px;
+  gap:9px;
+  border-radius:18px;
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb,var(--paper) 94%,transparent),
+      color-mix(in srgb,var(--bg) 55%,var(--paper)));
+  box-shadow:0 6px 18px rgba(0,0,0,.045);
+  border:1px solid color-mix(in srgb,var(--line) 82%,transparent);
+}
+.quick-nav:before{
+  content:"";
+  position:absolute;inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:
+    radial-gradient(circle at 12% 20%,color-mix(in srgb,var(--accent) 12%,transparent) 0 2px,transparent 3px),
+    radial-gradient(circle at 88% 75%,color-mix(in srgb,var(--accent) 9%,transparent) 0 2px,transparent 3px);
+  opacity:.7;
+}
+.quick-nav .quick-label{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:6px 8px;
+  border-radius:999px;
+  background:color-mix(in srgb,var(--accent) 10%,var(--paper));
+  color:color-mix(in srgb,var(--ink) 82%,var(--accent));
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+  letter-spacing:.07em;
+}
+.quick-nav .quick-label:before{content:"✨";font-size:11px;line-height:1}
+.quick-nav a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 11px;
+  min-height:36px;
+  border-radius:999px;
+  background:linear-gradient(180deg,var(--paper),color-mix(in srgb,var(--paper) 88%,var(--bg)));
+  border:1px solid color-mix(in srgb,var(--line) 82%,transparent);
+  box-shadow:0 2px 5px rgba(0,0,0,.035);
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease;
+}
+.quick-nav a:before{font-size:13px;line-height:1}
+.quick-nav a[href="#now"]:before{content:"⏱️"}
+.quick-nav a[href="#overview"]:before{content:"🧭"}
+.quick-nav a[href="#reservations"]:before{content:"🎫"}
+.quick-nav a[href="#itinerary"]:before{content:"🗓️"}
+.quick-nav a[href="#todo"]:before{content:"📌"}
+.quick-nav a[href="#tips"]:before{content:"💡"}
+@media(hover:hover) and (pointer:fine){
+  .quick-nav a:hover{
+    transform:translateY(-1px);
+    border-color:color-mix(in srgb,var(--accent) 38%,var(--line));
+    box-shadow:0 5px 12px rgba(0,0,0,.07);
+    background:color-mix(in srgb,var(--accent) 6%,var(--paper));
+  }
+}
+.quick-nav a:active{transform:translateY(0) scale(.98)}
+.quick-nav a:focus-visible{
+  outline:2px solid color-mix(in srgb,var(--accent) 72%,white);
+  outline-offset:2px
+}
+@media(max-width:650px){
+  .quick-nav{padding:9px 10px;gap:7px}
+  .quick-nav a{padding:8px 10px}
+}
+
+/* Unified external Google Maps buttons */
+a[href*="google.com/maps"]{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+a[href*="google.com/maps"] .map-emoji{
+  font-size:13px;
+  line-height:1;
+}
+
+/* Illustrated trip stats */
+.trip-stats{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-top:14px
+}
+.trip-stat{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:8px;
+  min-height:82px;
+  text-align:left;
+  padding:12px 12px 11px 12px;
+  border:1px solid color-mix(in srgb,var(--line) 82%,transparent);
+  border-radius:16px;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb,var(--paper) 86%,transparent),
+      color-mix(in srgb,var(--paper) 72%,var(--bg)));
+  box-shadow:0 5px 16px rgba(0,0,0,.035)
+}
+.trip-stat:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 16% 22%,color-mix(in srgb,var(--accent) 10%,transparent) 0 2px,transparent 3px),
+    radial-gradient(circle at 88% 78%,color-mix(in srgb,var(--accent) 7%,transparent) 0 2px,transparent 3px);
+  opacity:.65
+}
+.trip-stat .stat-copy{
+  position:relative;
+  z-index:1;
+  min-width:0
+}
+.trip-stat strong{
+  display:block;
+  font-size:18px;
+  line-height:1.05;
+  letter-spacing:-.02em
+}
+.trip-stat span{
+  display:block;
+  margin-top:4px;
+  font-size:10px;
+  color:var(--muted);
+  font-weight:700
+}
+.trip-illustration{
+  position:relative;
+  z-index:1;
+  width:58px;
+  height:58px;
+  flex:0 0 58px;
+  opacity:.92
+}
+.trip-illustration svg{
+  width:100%;
+  height:100%;
+  display:block
+}
+.trip-illustration .bg{
+  fill:none;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round
+}
+.trip-illustration .fill{
+  opacity:.15
+}
+.trip-stat.stat-days .trip-illustration{color:var(--d1)}
+.trip-stat.stat-nights .trip-illustration{color:var(--d6)}
+.trip-stat.stat-travelers .trip-illustration{color:var(--d4)}
+.trip-stat.stat-trips .trip-illustration{color:var(--d8)}
+.trip-stat .trip-illustration .bg{
+  stroke:currentColor
+}
+.trip-stat .trip-illustration .fill{
+  fill:currentColor
+}
+@media(max-width:650px){
+  .trip-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .trip-stat{min-height:78px;padding:11px}
+  .trip-illustration{width:52px;height:52px;flex-basis:52px}
+}
+
+/* Refined stat illustrations */
+.trip-stat{
+  align-items:center;
+}
+.trip-illustration{
+  width:56px;
+  height:56px;
+  flex:0 0 56px;
+  display:grid;
+  place-items:center;
+  opacity:.95;
+}
+.trip-illustration svg{
+  width:52px;
+  height:52px;
+  overflow:visible;
+}
+.trip-illustration .bg{
+  stroke-width:1.9;
+}
+.trip-illustration .soft{
+  fill:currentColor;
+  opacity:.08;
+}
+.trip-illustration .dot{
+  fill:currentColor;
+  opacity:.82;
+}
+@media(max-width:650px){
+  .trip-illustration{width:50px;height:50px;flex-basis:50px}
+  .trip-illustration svg{width:47px;height:47px}
+}
+
+/* Unified status / badge system */
+.badge{
+  --status-bg:color-mix(in srgb,var(--paper) 78%,var(--bg));
+  --status-fg:var(--ink);
+  --status-border:var(--line);
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  min-height:25px;
+  padding:5px 8px;
+  border:1px solid var(--status-border);
+  border-radius:999px;
+  background:var(--status-bg);
+  color:var(--status-fg);
+  font-size:9px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.045em;
+  white-space:nowrap;
+  vertical-align:middle;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28);
+}
+.badge:before{
+  display:inline-grid;
+  place-items:center;
+  width:14px;
+  height:14px;
+  flex:0 0 14px;
+  border-radius:50%;
+  font-size:9px;
+  font-weight:900;
+  line-height:1;
+}
+.badge.status-confirmed{
+  --status-bg:color-mix(in srgb,#6ea47e 15%,var(--paper));
+  --status-fg:color-mix(in srgb,#39734d 78%,var(--ink));
+  --status-border:color-mix(in srgb,#6ea47e 42%,var(--line));
+}
+.badge.status-confirmed:before{content:"✓";background:color-mix(in srgb,#6ea47e 20%,transparent)}
+.badge.status-pending{
+  --status-bg:color-mix(in srgb,#c6a45c 14%,var(--paper));
+  --status-fg:color-mix(in srgb,#8b6a24 78%,var(--ink));
+  --status-border:color-mix(in srgb,#c6a45c 42%,var(--line));
+}
+.badge.status-pending:before{content:"…";background:color-mix(in srgb,#c6a45c 20%,transparent)}
+.badge.status-action{
+  --status-bg:color-mix(in srgb,#d28a54 14%,var(--paper));
+  --status-fg:color-mix(in srgb,#9a5729 80%,var(--ink));
+  --status-border:color-mix(in srgb,#d28a54 42%,var(--line));
+}
+.badge.status-action:before{content:"!";background:color-mix(in srgb,#d28a54 20%,transparent)}
+.badge.status-book{
+  --status-bg:color-mix(in srgb,#7d84c6 13%,var(--paper));
+  --status-fg:color-mix(in srgb,#565da0 80%,var(--ink));
+  --status-border:color-mix(in srgb,#7d84c6 40%,var(--line));
+}
+.badge.status-book:before{content:"↗";background:color-mix(in srgb,#7d84c6 19%,transparent)}
+.badge.status-required{
+  --status-bg:color-mix(in srgb,#c96d76 13%,var(--paper));
+  --status-fg:color-mix(in srgb,#9d4650 82%,var(--ink));
+  --status-border:color-mix(in srgb,#c96d76 40%,var(--line));
+}
+.badge.status-required:before{content:"★";background:color-mix(in srgb,#c96d76 18%,transparent)}
+
+.status-key{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin:8px 0 13px;
+  align-items:center
+}
+.status-key .status-key-label{
+  margin-right:2px;
+  color:var(--muted);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.04em
+}
+@media(max-width:650px){
+  .badge{font-size:8.5px;padding:5px 7px}
+}
+
+/* Manual light / dark mode control */
+.top-controls{
+  position:fixed;
+  right:14px;
+  top:14px;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  gap:7px
+}
+.top-controls .lang-toggle{
+  position:static;
+  right:auto;
+  top:auto;
+  z-index:auto
+}
+.theme-toggle{
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px 4px 8px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:color-mix(in srgb,var(--paper) 92%,transparent);
+  color:var(--ink);
+  backdrop-filter:blur(12px);
+  box-shadow:var(--shadow);
+  font:800 11px/1 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;
+  cursor:pointer;
+  transition:transform .16s ease,border-color .16s ease,background .16s ease
+}
+.theme-toggle #theme-icon{
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:color-mix(in srgb,var(--accent) 10%,var(--paper));
+  font-size:13px
+}
+@media(hover:hover) and (pointer:fine){
+  .theme-toggle:hover{
+    transform:translateY(-1px);
+    border-color:color-mix(in srgb,var(--accent) 40%,var(--line));
+    background:color-mix(in srgb,var(--accent) 5%,var(--paper))
+  }
+}
+.theme-toggle:active{transform:scale(.98)}
+.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:650px){
+  .top-controls{right:9px;top:9px;gap:5px}
+  .theme-toggle{min-height:34px;padding:4px 8px}
+  .theme-toggle #theme-label{display:none}
+  .theme-toggle #theme-icon{width:24px;height:24px}
+}
+</style>
+</head>
+<body><div class="top-controls"><button aria-label="Toggle light and dark mode" class="theme-toggle" id="theme-toggle" title="Toggle light / dark mode" type="button"><span aria-hidden="true" id="theme-icon">🌙</span><span id="theme-label">Dark</span></button><div aria-label="Language switcher" class="lang-toggle"><button class="active" id="lang-zh" type="button">中文</button><button id="lang-en" type="button">EN</button></div></div>
+<div class="wrap">
+<header class="hero">
+<div class="kicker">California · 2 travelers · 8 nights</div>
+<h1>Stanford Move‑in Trip</h1>
+<div class="sub"><span data-en="Hangzhou → Los Angeles → San Diego → Bakersfield → Stanford · Sep 13–22, 2026" data-zh="杭州 → 洛杉矶 → 圣地亚哥 → 贝克斯菲尔德 → 斯坦福 · 2026/09/13–09/22">杭州 → 洛杉矶 → 圣地亚哥 → 贝克斯菲尔德 → 斯坦福 · 2026/09/13–09/22</span></div>
+<div class="trip-stats"><div class="trip-stat stat-days"><div class="stat-copy"><strong>9</strong><span data-en="Days" data-zh="天">天</span></div><div aria-hidden="true" class="trip-illustration">
+<svg fill="none" viewbox="0 0 64 64">
+<rect class="soft" height="34" rx="7" width="38" x="11" y="12"></rect>
+<rect class="bg" height="34" rx="7" width="38" x="11" y="12"></rect>
+<path class="bg" d="M18 9v8M42 9v8M11 21h38"></path>
+<circle class="dot" cx="20" cy="29" r="2.1"></circle>
+<circle class="dot" cx="30" cy="29" r="2.1"></circle>
+<circle class="dot" cx="40" cy="29" r="2.1"></circle>
+<circle class="dot" cx="20" cy="37" r="2.1"></circle>
+<circle class="dot" cx="30" cy="37" r="2.1"></circle>
+<circle class="dot" cx="40" cy="37" r="2.1"></circle>
+</svg>
+</div></div><div class="trip-stat stat-nights"><div class="stat-copy"><strong>8</strong><span data-en="Nights" data-zh="晚">晚</span></div><div aria-hidden="true" class="trip-illustration">
+<svg fill="none" viewbox="0 0 64 64">
+<g transform="translate(1 3)">
+<!-- Thick, fully closed crescent -->
+<path class="soft" d="M31 9
+         C20 11 13 19 13 30
+         C13 42 22 50 34 49
+         C27 44 23 37 23 29
+         C23 21 26 15 31 9
+         Z"></path>
+<path class="bg" d="M31 9
+         C20 11 13 19 13 30
+         C13 42 22 50 34 49
+         C27 44 23 37 23 29
+         C23 21 26 15 31 9
+         Z"></path>
+<!-- Compact lodging motif -->
+<rect class="soft" height="14" rx="3.5" width="19" x="34" y="29"></rect>
+<rect class="bg" height="14" rx="3.5" width="19" x="34" y="29"></rect>
+<path class="bg" d="M38 29v-4a5.5 5.5 0 0 1 11 0v4"></path>
+<path class="bg" d="M38 36h10"></path>
+</g>
+</svg>
+</div></div><div class="trip-stat stat-travelers"><div class="stat-copy"><strong>2</strong><span data-en="Travelers" data-zh="位旅客">位旅客</span></div><div aria-hidden="true" class="trip-illustration">
+<svg fill="none" viewbox="0 0 64 64">
+<g transform="translate(2 4)">
+<circle class="soft" cx="19" cy="17" r="5.5"></circle>
+<circle class="bg" cx="19" cy="17" r="5.5"></circle>
+<circle class="soft" cx="35" cy="17" r="5.5"></circle>
+<circle class="bg" cx="35" cy="17" r="5.5"></circle>
+<path class="bg" d="M10 36c0-7 4-11 9-11s9 4 9 11"></path>
+<path class="bg" d="M26 36c0-7 4-11 9-11s9 4 9 11"></path>
+<rect class="soft" height="15" rx="2.5" width="10" x="45" y="31"></rect>
+<rect class="bg" height="15" rx="2.5" width="10" x="45" y="31"></rect>
+<path class="bg" d="M48 31v-3a2 2 0 0 1 4 0v3"></path>
+<circle class="dot" cx="48" cy="48" r="1.4"></circle>
+<circle class="dot" cx="52" cy="48" r="1.4"></circle>
+</g>
+</svg>
+</div></div><div class="trip-stat stat-trips"><div class="stat-copy"><strong>3</strong><span data-en="Day trips" data-zh="周边日游">周边日游</span></div><div aria-hidden="true" class="trip-illustration">
+<svg fill="none" viewbox="0 0 64 64">
+<g transform="translate(3 10)">
+<path class="soft" d="M10 35h37a4 4 0 0 0 4-4v-2.5c0-2.2-1.3-4.2-3.3-5.1l-4.2-1.9-4.2-7.2a4.5 4.5 0 0 0-3.9-2.3H21.5a5 5 0 0 0-4.3 2.5l-4 7-3 1.2A4.6 4.6 0 0 0 7 27v4a4 4 0 0 0 3 3.9z"></path>
+<path class="bg" d="M10 35h37a4 4 0 0 0 4-4v-2.5c0-2.2-1.3-4.2-3.3-5.1l-4.2-1.9-4.2-7.2a4.5 4.5 0 0 0-3.9-2.3H21.5a5 5 0 0 0-4.3 2.5l-4 7-3 1.2A4.6 4.6 0 0 0 7 27v4a4 4 0 0 0 3 3.9z"></path>
+<path class="bg" d="M18 21.5h9.5v-5.7H21.8a2.6 2.6 0 0 0-2.2 1.3z"></path>
+<path class="bg" d="M30.5 15.8h5.2a2.4 2.4 0 0 1 2 1.1l2.8 4.6H30.5z"></path>
+<path class="bg" d="M15.5 27.2h24" opacity=".72"></path>
+<circle class="soft" cx="18.5" cy="36.5" r="4.2"></circle>
+<circle class="bg" cx="18.5" cy="36.5" r="4.2"></circle>
+<circle class="soft" cx="40.5" cy="36.5" r="4.2"></circle>
+<circle class="bg" cx="40.5" cy="36.5" r="4.2"></circle>
+<circle class="dot" cx="18.5" cy="36.5" r="1.5"></circle>
+<circle class="dot" cx="40.5" cy="36.5" r="1.5"></circle>
+</g>
+</svg>
+</div></div></div></header><nav aria-label="Quick navigation" class="quick-nav"><span class="quick-label" data-en="Quick Nav" data-zh="快速导航">快速导航</span><a href="#now"><span data-en="Now" data-zh="现在">现在</span></a><a href="#overview"><span data-en="Overview" data-zh="总览">总览</span></a><a href="#reservations"><span data-en="Reservations" data-zh="订单">订单</span></a><a href="#itinerary"><span data-en="Itinerary" data-zh="逐日行程">逐日行程</span></a><a href="#todo"><span data-en="To-do" data-zh="待办">待办</span></a><a href="#tips"><span data-en="Tips" data-zh="贴士">贴士</span></a></nav>
+<section class="card focus" id="now">
+<div class="focus-label"><span data-en="NEXT EVENT" data-zh="此刻关注 · NEXT EVENT">此刻关注 · NEXT EVENT</span></div>
+<div id="next-title"><span data-en="Calculating the next event…" data-zh="正在计算下一项行程…">正在计算下一项行程…</span></div>
+<div id="next-time"></div>
+<div aria-label="countdown" class="countdown">
+<div class="count-unit"><strong id="cd-d">--</strong><span><span data-en="Days" data-zh="天">天</span></span></div>
+<div class="count-unit"><strong id="cd-h">--</strong><span><span data-en="Hours" data-zh="时">时</span></span></div>
+<div class="count-unit"><strong id="cd-m">--</strong><span><span data-en="Min" data-zh="分">分</span></span></div>
+<div class="count-unit"><strong id="cd-s">--</strong><span><span data-en="Sec" data-zh="秒">秒</span></span></div>
+</div>
+<div class="micro" id="clock-note"><span data-en="All countdowns use the event’s own time zone, so opening this page in another time zone will not change the result." data-zh="所有倒计时按事件本身时区换算；跨时区打开不会改变结果。">所有倒计时按事件本身时区换算；跨时区打开不会改变结果。</span></div>
+</section>
+<section class="card" id="overview">
+<div class="section-title"><span class="num">2</span><h2><span data-en="Trip Overview Map" data-zh="行程总览地图">行程总览地图</span></h2></div>
+<div class="legend"><div class="journey-chip"><div class="day-pill" style="color:var(--d1)">D1</div><div class="journey-icon">✈️🚗</div><div class="journey-main"><div class="journey-route">HGH → HKG → LAX → San Diego</div><div class="journey-meta"><span data-en="Flight day · drive ≈ 2h45" data-zh="航班日 · 驾车约 2小时45分">航班日 · 驾车约 2小时45分</span></div></div></div><div class="journey-chip"><div class="day-pill" style="color:var(--d2)">D2</div><div class="journey-icon">📦🚗</div><div class="journey-main"><div class="journey-route">San Diego → Storage → Bakersfield</div><div class="journey-meta"><span data-en="Move-out · drive ≈ 4h30" data-zh="搬仓库 · 驾车约 4小时30分">搬仓库 · 驾车约 4小时30分</span></div></div></div><div class="journey-chip"><div class="day-pill" style="color:var(--d3)">D3</div><div class="journey-icon">🚗</div><div class="journey-main"><div class="journey-route">Bakersfield → Fremont</div><div class="journey-meta"><span data-en="Northbound · drive ≈ 4h15" data-zh="北上 · 驾车约 4小时15分">北上 · 驾车约 4小时15分</span></div></div></div><div class="journey-chip"><div class="day-pill" style="color:var(--d4)">D4</div><div class="journey-icon">🏠</div><div class="journey-main"><div class="journey-route">Fremont → Stanford EVGR</div><div class="journey-meta"><span data-en="Move-in · drive ≈ 45 min" data-zh="入住日 · 驾车约 45分钟">入住日 · 驾车约 45分钟</span></div></div></div><div class="journey-chip"><div class="day-pill" style="color:var(--d5)">D5</div><div class="journey-icon">🔑🚗</div><div class="journey-main"><div class="journey-route">Stanford → Palo Alto → Stanford</div><div class="journey-meta"><span data-en="Return minivan · switch cars" data-zh="还 minivan · 换小车">还 minivan · 换小车</span></div></div></div><div class="journey-chip"><div class="day-pill" style="color:var(--d6)">D6</div><div class="journey-icon">🌉</div><div class="journey-main"><div class="journey-route">Stanford ↔ San Francisco</div><div class="journey-meta"><span data-en="Day trip · ≈ 1h each way" data-zh="旧金山日游 · 单程约 1小时">旧金山日游 · 单程约 1小时</span></div></div></div><div class="journey-chip"><div class="day-pill" style="color:var(--d7)">D7</div><div class="journey-icon">🌊</div><div class="journey-main"><div class="journey-route">Stanford ↔ Monterey / Carmel</div><div class="journey-meta"><span data-en="Coast day · ≈ 1h45 each way" data-zh="海岸日游 · 单程约 1小时45分">海岸日游 · 单程约 1小时45分</span></div></div></div><div class="journey-chip"><div class="day-pill" style="color:var(--d8)">D8</div><div class="journey-icon">🌲</div><div class="journey-main"><div class="journey-route">Stanford ↔ Muir Woods / Sausalito</div><div class="journey-meta"><span data-en="Redwoods · ≈ 1h40 each way" data-zh="红杉林日游 · 单程约 1小时40分">红杉林日游 · 单程约 1小时40分</span></div></div></div><div class="journey-chip"><div class="day-pill" style="color:var(--d9)">D9</div><div class="journey-icon">🧳✈️</div><div class="journey-main"><div class="journey-route">Stanford → SFO</div><div class="journey-meta"><span data-en="Airport drop-off · ≈ 45 min" data-zh="SFO 送机 · 驾车约 45分钟">SFO 送机 · 驾车约 45分钟</span></div></div></div></div>
+<div class="overview-note"><div class="icon">🧭</div><div class="text"><span data-en="Driving times are normal-traffic estimates for judging daily intensity; use live Google Maps traffic before departure." data-zh="驾驶时间用于快速判断每天强度，按正常交通估算；真正出发前仍以 Google Maps 实时路况为准。">驾驶时间用于快速判断每天强度，按正常交通估算；真正出发前仍以 Google Maps 实时路况为准。</span></div></div><div class="map-shell" data-route='{"points":[["LAX",33.9416,-118.4085],["San Diego",32.8338,-117.174],["Bakersfield",35.3733,-119.0187],["Fremont",37.488,-121.945],["Stanford EVGR",37.42681,-122.1592],["San Francisco",37.80292,-122.44839],["Monterey",36.618,-121.9019],["Carmel",36.5552,-121.9233],["Muir Woods",37.89658,-122.580805]],"segments":[[0,1],[1,2],[2,3],[3,4],[4,5],[4,6,7,4],[4,8,4]]}' data-route-key="overview"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="California itinerary map with geographically scaled locations" class="route-map" data-base-viewbox="" data-map-kind="overview" role="img" viewbox="0 0 780 560"><defs><filter id="rough"><feturbulence basefrequency=".018" numoctaves="2" result="noise" seed="8" type="fractalNoise"></feturbulence><fedisplacementmap in="SourceGraphic" in2="noise" scale="1.6"></fedisplacementmap></filter></defs><path class="hand" d="M106.5 -248.9 L386.8 -248.9 L386.8 -12.1 L415.8 66.8 L460.9 145.8 L564.0 303.7 L732.8 303.7 L765.0 358.9 L727.0 483.7 L572.3 497.9 L551.1 445.8 L486.6 382.6 L386.8 347.1 L332.0 276.1 L274.0 197.1 L241.8 118.2 L228.9 62.9 L193.5 -12.1 L112.9 -118.7 L106.5 -248.9 Z" fill="color-mix(in srgb,var(--paper) 55%,var(--bg))" stroke="var(--line)" stroke-width="2"></path><text class="map-label" data-base-font-size="10" font-size="10" font-weight="650" text-anchor="middle" x="98.0" y="290.0">PACIFIC</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="650" text-anchor="middle" x="98.0" y="306.0">OCEAN</text><text class="map-label" data-base-font-size="14" font-size="14" font-weight="800" text-anchor="middle" x="610.0" y="255.0">CALIFORNIA</text><path class="map-route" d="M489.3 387.2 Q522.1 437.3 568.9 474.7" fill="none" opacity=".92" stroke="var(--d1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path><path class="map-route" d="M568.9 474.7 Q525.5 364.9 450.0 274.2" fill="none" opacity=".92" stroke="var(--d2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path><path class="map-route" d="M450.0 274.2 Q369.1 175.7 261.5 107.3" fill="none" opacity=".92" stroke="var(--d3)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path><path class="map-route" d="M261.5 107.3 Q254.2 108.6 247.7 112.1" fill="none" opacity=".92" stroke="var(--d4)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path><path class="map-route" d="M247.7 112.1 Q240.7 95.8 229.0 82.4" fill="none" opacity=".92" stroke="var(--d6)" stroke-dasharray="8 8" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path><path class="map-route" d="M247.7 112.1 C250.4 122.7 261.7 164.4 264.2 175.9 C266.7 187.4 265.6 191.5 262.9 180.9 C260.1 170.3 250.2 123.6 247.7 112.1" fill="none" opacity=".92" stroke="var(--d7)" stroke-dasharray="8 8" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path><path class="map-route" d="M247.7 112.1 C243.2 105.9 220.5 75.0 220.5 75.0 C220.5 75.0 243.2 105.9 247.7 112.1" fill="none" opacity=".92" stroke="var(--d8)" stroke-dasharray="8 8" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path><circle class="map-marker" cx="489.3" cy="387.2" fill="var(--ink)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="end" x="477.3" y="375.2">LAX</text><circle class="map-marker" cx="568.9" cy="474.7" fill="var(--ink)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="start" x="580.9" y="492.7">San Diego</text><circle class="map-marker" cx="450.0" cy="274.2" fill="var(--ink)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="start" x="462.0" y="264.2">Bakersfield</text><circle class="map-marker" cx="261.5" cy="107.3" fill="var(--ink)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="start" x="273.5" y="127.3">Fremont</text><circle class="map-marker" cx="247.7" cy="112.1" fill="var(--accent)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="start" x="259.7" y="102.1">Stanford · EVGR</text><circle class="map-marker" cx="229.0" cy="82.4" fill="var(--ink)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="end" x="219.0" y="70.4">San Francisco</text><circle class="map-marker" cx="264.2" cy="175.9" fill="var(--ink)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="end" x="254.2" y="163.9">Monterey</text><circle class="map-marker" cx="262.9" cy="180.9" fill="var(--ink)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="start" x="274.9" y="199.9">Carmel</text><circle class="map-marker" cx="220.5" cy="75.0" fill="var(--ink)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="760" text-anchor="end" x="210.5" y="63.0">Muir Woods</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="735.0" y="46.0">N</text><path d="M735.0 73.0 L735.0 53.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M735.0 49.0 L731.0 57.0 L739.0 57.0 Z" fill="var(--muted)"></path><path d="M58 520 L128.9 520" stroke="var(--muted)" stroke-width="2"></path><path d="M58 516 L58 524 M128.9 516 L128.9 524" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="93.5" y="513.0">≈ 100 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro"></div>
+<div class="micro"><span data-en="Schematic only, not a navigation map. Expand each day to open its multi-stop Google Maps route. Dashed lines indicate day trips." data-zh="示意图不是导航地图；每天展开后可直接打开 Google Maps 多点路线。虚线为往返周边游。">示意图不是导航地图；每天展开后可直接打开 Google Maps 多点路线。虚线为往返周边游。</span></div>
+</section>
+<section class="card" id="reservations">
+<div class="section-title"><span class="num">3</span><h2><span data-en="Confirmed Reservations" data-zh="已确认订单">已确认订单</span></h2><div aria-label="Status key" class="status-key"><span class="status-key-label" data-en="Status" data-zh="状态">状态</span><span class="badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span class="badge status-pending" data-status="pending"><span data-en="Pending" data-zh="待确认">待确认</span></span><span class="badge status-action" data-status="action"><span data-en="Action Needed" data-zh="需要处理">需要处理</span></span><span class="badge status-book" data-status="book"><span data-en="Book Ahead" data-zh="建议预订">建议预订</span></span><span class="badge status-required" data-status="required"><span data-en="Reservation Required" data-zh="必须预约">必须预约</span></span></div></div>
+<div class="res-grid">
+<div class="res">
+<h3><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="Cathay Pacific · Outbound" data-zh="国泰航空 · 去程">国泰航空 · 去程</span></h3>
+<div class="meta">9/13 · CX965 HGH 08:00 → HKG 10:40<br/>9/13 · CX884 HKG 12:45 → LAX 11:15<br/><span data-en="Hangzhou/Hong Kong: UTC+8 · Los Angeles: PDT (UTC−7)" data-zh="杭州/香港：UTC+8 · 洛杉矶：PDT (UTC−7)">杭州/香港：UTC+8 · 洛杉矶：PDT (UTC−7)</span></div>
+</div>
+<div class="res">
+<h3><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span>Hertz · Minivan</h3>
+<div class="meta"><span data-en="Pick-up Sep 13, 14:00 PDT · LAX" data-zh="取车 9/13 14:00 PDT · LAX">取车 9/13 14:00 PDT · LAX</span><br/>5251 W 98th St, Los Angeles, CA 90045<br/>+1 310‑568‑5100<br/><span data-en="Return Sep 17, 14:00 PDT · Palo Alto" data-zh="还车 9/17 14:00 PDT · Palo Alto">还车 9/17 14:00 PDT · Palo Alto</span></div>
+<div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Hertz%20LAX%2C%205251%20W%2098th%20St%2C%20Los%20Angeles%2C%20CA%2090045"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Hertz%2C%20625%20El%20Camino%20Real%2C%20Palo%20Alto%2C%20CA%2094301"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div>
+</div>
+<div class="res">
+<h3><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span>California Suites Hotel</h3>
+<div class="meta"><span data-en="Check-in Sep 13 · Check-out Sep 14" data-zh="入住 9/13 · 退房 9/14">入住 9/13 · 退房 9/14</span><br/>5415 Clairemont Mesa Blvd, San Diego, CA 92117<br/>+1 858‑560‑0545</div>
+<div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=California%20Suites%20Hotel%2C%205415%20Clairemont%20Mesa%20Blvd%2C%20San%20Diego%2C%20CA%2092117"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div>
+</div>
+<div class="res">
+<h3><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span>Hyatt Place Bakersfield</h3>
+<div class="meta"><span data-en="Check-in Sep 14 · Check-out Sep 15" data-zh="入住 9/14 · 退房 9/15">入住 9/14 · 退房 9/15</span><br/>310 Coffee Rd, Bakersfield, CA 93309<br/><span data-en="+1 661‑885‑6300 · Breakfast included" data-zh="+1 661‑885‑6300 · 含早餐">+1 661‑885‑6300 · 含早餐</span></div>
+<div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Hyatt%20Place%20Bakersfield%2C%20310%20Coffee%20Rd%2C%20Bakersfield%2C%20CA%2093309"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div>
+</div>
+<div class="res">
+<h3><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span>Hyatt Place Fremont/Silicon Valley</h3>
+<div class="meta"><span data-en="Check-in Sep 15 · Check-out Sep 16" data-zh="入住 9/15 · 退房 9/16">入住 9/15 · 退房 9/16</span><br/>3101 W Warren Ave, Fremont, CA 94538<br/><span data-en="+1 510‑623‑6000 · Breakfast included" data-zh="+1 510‑623‑6000 · 含早餐">+1 510‑623‑6000 · 含早餐</span></div>
+<div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Hyatt%20Place%20Fremont%20Silicon%20Valley%2C%203101%20W%20Warren%20Ave%2C%20Fremont%2C%20CA%2094538"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div>
+</div>
+<div class="res">
+<h3><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span>Stanford EVGR · Check‑in</h3>
+<div class="meta">9/16 15:00 PDT<br/>EVGR Housing Service Center<br/>735 Campus Drive, Suite 100, Stanford<br/><span data-en="Residence: EVGR Building C · 4th floor (exact apartment confirmed at check-in)" data-zh="住宿：EVGR Building C · 4F（房号现场确认）">住宿：EVGR Building C · 4F（房号现场确认）</span><br/>+1 650‑497‑7995</div>
+<div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=EVGR%20Housing%20Service%20Center%2C%20735%20Campus%20Drive%2C%20Stanford%2C%20CA%2094305"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div>
+</div>
+<div class="res">
+<h3><span class="badge badge status-pending" data-status="pending"><span data-en="Pending" data-zh="待确认">待确认</span></span><span data-en="Second compact rental car" data-zh="第二辆小型租车">第二辆小型租车</span></h3>
+<div class="meta"><span data-en="Planned pick-up after returning the minivan on Sep 17. Reservation not finalized yet; vehicle, location, and pick-up/return times will be added later." data-zh="计划 9/17 归还 minivan 后衔接提车。订单尚未 finalize；后续补入车型、门店、取还时间。">计划 9/17 归还 minivan 后衔接提车。订单尚未 finalize；后续补入车型、门店、取还时间。</span></div>
+</div>
+<div class="res">
+<h3><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="Mom · Return flights" data-zh="妈妈 · 回程航班">妈妈 · 回程航班</span></h3>
+<div class="meta">9/22 00:35 PDT · SFO → WUH · CZ660<br/>9/23 07:50 CST · WUH → PVG · CZ3823<br/><span data-en="Arrive Shanghai Sep 23, 10:00 CST" data-zh="9/23 10:00 CST 抵达上海">9/23 10:00 CST 抵达上海</span></div>
+<div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=San%20Francisco%20International%20Airport%20%28SFO%29"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div>
+</div>
+</div>
+<div class="alert"><span data-en="This public page intentionally excludes passport/ID numbers, EVUS/SEVIS numbers, PNRs, e-ticket numbers, booking IDs, card information, storage unit number, and gate code." data-zh="公开页面已主动排除：护照/证件号、EVUS/SEVIS、PNR、电子票号、Booking ID、银行卡信息、storage unit 编号与门禁 code。">公开页面已主动排除：护照/证件号、EVUS/SEVIS、PNR、电子票号、Booking ID、银行卡信息、storage unit 编号与门禁 code。</span></div>
+</section>
+<section id="itinerary">
+<div class="card" style="margin-bottom:10px"><div class="section-title"><span class="num">4</span><h2><span data-en="Daily Itinerary" data-zh="逐日行程">逐日行程</span></h2></div><div class="micro"><span data-en="“Confirmed” marks fixed reservation anchors; “Plan” marks suggested timing that can flex with traffic and energy. All U.S. times are PDT (UTC−7)." data-zh="“确认”=订单硬锚点；“计划”=建议时段，可按路况/体力调整。所有美国境内时间均为 PDT (UTC−7)。">“确认”=订单硬锚点；“计划”=建议时段，可按路况/体力调整。所有美国境内时间均为 PDT (UTC−7)。</span></div></div>
+<article class="card day">
+<div class="day-head"><div><div class="day-title"><span data-en="D1 · Sep 13 Sun · Hangzhou → LAX → San Diego" data-zh="D1 · 9/13 Sun · 杭州 → LAX → San Diego">D1 · 9/13 Sun · 杭州 → LAX → San Diego</span></div><div class="day-sub"><span data-en="Long-haul flight + immigration + rental car + drive south · Transfer day only" data-zh="国际长途 + 入境 + 取车 + 南下 · 纯转移日">国际长途 + 入境 + 取车 + 南下 · 纯转移日</span></div></div><span class="day-dot" style="background:var(--d1)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">08:00<span class="tz">CST · UTC+8</span></div><div><div class="item-title"><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="CX965 departs Hangzhou" data-zh="CX965 杭州起飞">CX965 杭州起飞</span></div><div class="item-note"><span data-en="HGH → HKG, arriving Hong Kong at 10:40." data-zh="HGH → HKG，10:40 抵达香港。">HGH → HKG，10:40 抵达香港。</span></div></div></div>
+<div class="row"><div class="time">12:45<span class="tz">HKT · UTC+8</span></div><div><div class="item-title"><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="CX884 departs Hong Kong" data-zh="CX884 香港起飞">CX884 香港起飞</span></div><div class="item-note"><span data-en="Cross the International Date Line; arrive LAX at 11:15 local time." data-zh="跨国际日期变更线，当地 11:15 抵达 LAX。">跨国际日期变更线，当地 11:15 抵达 LAX。</span></div></div></div>
+<div class="row"><div class="time">11:15<span class="tz">PDT · UTC−7</span></div><div><div class="item-title"><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="Arrive at LAX" data-zh="抵达 LAX">抵达 LAX</span></div><div class="item-note"><span data-en="Allow time for immigration, baggage claim, customs, and reaching the rental-car shuttle area." data-zh="预留入境、取行李、海关和前往租车接驳区的时间。">预留入境、取行李、海关和前往租车接驳区的时间。</span></div></div></div>
+<div class="row"><div class="time">14:00<span class="tz">PDT · UTC−7</span></div><div><div class="item-title"><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="Pick up minivan at Hertz LAX" data-zh="Hertz LAX 取 minivan">Hertz LAX 取 minivan</span></div><div class="item-note"><span data-en="International-flight delays or immigration queues may affect pick-up. Contact the rental company if arrival will be substantially late." data-zh="国际航班延误/入境排队可能影响取车；若明显晚于预约时间，及时联系租车方。">国际航班延误/入境排队可能影响取车；若明显晚于预约时间，及时联系租车方。</span></div></div></div>
+<div class="row"><div class="time">15:00–19:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title">LAX → San Diego</div><div class="item-note"><span data-en="Normally about 2.5–3 hours; southbound I‑5 may take longer on Sunday afternoon. No sightseeing planned today." data-zh="正常约 2.5–3 小时；周日下午南向 I‑5 可能更久。当天不再安排景点。">正常约 2.5–3 小时；周日下午南向 I‑5 可能更久。当天不再安排景点。</span></div></div></div>
+<div class="row"><div class="time"><span data-en="Evening" data-zh="晚间">晚间</span><span class="tz">PDT</span></div><div><div class="item-title"><span data-en="Check in at California Suites Hotel" data-zh="入住 California Suites Hotel">入住 California Suites Hotel</span></div><div class="item-note"><span data-en="Prioritize rest after arrival. A very late arrival should still be communicated to the hotel by phone." data-zh="到店后优先休息；酒店规定最晚入住风险较低，但如异常晚到建议先电话告知。">到店后优先休息；酒店规定最晚入住风险较低，但如异常晚到建议先电话告知。</span></div></div></div>
+</div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["LAX / Hertz",33.9416,-118.4085],["San Diego hotel",32.8338,-117.174]],"segments":[[0,1]]}' data-route-key="D1"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M293.1 63.9 Q340.2 134.1 406.9 186.1" fill="none" opacity=".9" stroke="var(--d1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="293.1" cy="63.9" fill="var(--d1)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="303.1" y="82.9">LAX / Hertz</text><circle class="map-marker" cx="406.9" cy="186.1" fill="var(--d1)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="416.9" y="176.1">San Diego hotel</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L133.1 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M133.1 224 L133.1 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="83.6" y="221.0">≈ 100 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=Hertz%20LAX%2C%205251%20W%2098th%20St%2C%20Los%20Angeles%2C%20CA%2090045&amp;destination=California%20Suites%20Hotel%2C%205415%20Clairemont%20Mesa%20Blvd%2C%20San%20Diego%2C%20CA%2092117"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+<article class="card day">
+<div class="day-head"><div><div class="day-title"><span data-en="D2 · Sep 14 Mon · Storage move-out → Bakersfield" data-zh="D2 · 9/14 Mon · Storage 搬家 → Bakersfield">D2 · 9/14 Mon · Storage 搬家 → Bakersfield</span></div><div class="day-sub"><span data-en="Only two priorities today: move out + drive north" data-zh="当天核心只有两件事：搬出 + 北上">当天核心只有两件事：搬出 + 北上</span></div></div><span class="day-dot" style="background:var(--d2)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">08:00–09:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Breakfast, pack, and check out" data-zh="早餐、整理、退房">早餐、整理、退房</span></div><div class="item-note"><span data-en="Hotel check-out is before 11:00; leave early to preserve a buffer for the storage move." data-zh="酒店 11:00 前退房；建议早走，给 storage 搬运留 buffer。">酒店 11:00 前退房；建议早走，给 storage 搬运留 buffer。</span></div></div></div>
+<div class="row"><div class="time">09:15–12:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Golden Triangle Self Storage · Move out" data-zh="Golden Triangle Self Storage · 搬出">Golden Triangle Self Storage · 搬出</span></div><div class="item-note"><span data-en="10345 Sorrento Valley Rd, San Diego. Self check-out is available; unit and gate code are not stored on this public page." data-zh="10345 Sorrento Valley Rd, San Diego。已知可自助 checkout；公开页不保存 unit / gate code。">10345 Sorrento Valley Rd, San Diego。已知可自助 checkout；公开页不保存 unit / gate code。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Golden%20Triangle%20Self%20Storage%2C%2010345%20Sorrento%20Valley%20Rd%2C%20San%20Diego%2C%20CA%2092121"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div></div></div>
+<div class="row"><div class="time">12:00–17:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title">San Diego → Bakersfield</div><div class="item-note"><span data-en="Pure driving is typically about 4–5 hours. Take at least one break; Los Angeles-area traffic can substantially extend total travel time." data-zh="净驾驶通常约 4–5 小时；建议中途至少休息一次。Los Angeles 周边交通会显著拉长总时长。">净驾驶通常约 4–5 小时；建议中途至少休息一次。Los Angeles 周边交通会显著拉长总时长。</span></div></div></div>
+<div class="row"><div class="time"><span data-en="Late afternoon / evening" data-zh="傍晚">傍晚</span><span class="tz">PDT</span></div><div><div class="item-title"><span data-en="Check in at Hyatt Place Bakersfield" data-zh="入住 Hyatt Place Bakersfield">入住 Hyatt Place Bakersfield</span></div><div class="item-note"><span data-en="No sightseeing. Eat, rest, and continue north the next day." data-zh="不安排景点；吃饭、休息、第二天继续北上。">不安排景点；吃饭、休息、第二天继续北上。</span></div><div class="resource-box"><div class="resource-head"><div class="resource-title"><span data-en="Bakersfield dinner · high-rated picks" data-zh="Bakersfield 晚餐 · 高分推荐">Bakersfield 晚餐 · 高分推荐</span></div><div class="resource-note"><span data-en="Ratings can change; re-check hours before going." data-zh="评分会变化，出发前再确认营业时间。">评分会变化，出发前再确认营业时间。</span></div></div><div class="resource-links"><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Punjabi+Dhaba&amp;find_loc=Bakersfield%2C+CA" rel="noopener noreferrer" target="_blank"><span>Punjabi Dhaba</span><span class="score">★ 4.7</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Firestone+Grill&amp;find_loc=Bakersfield%2C+CA" rel="noopener noreferrer" target="_blank"><span>Firestone Grill</span><span class="score">★ 4.4</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Heart+of+India&amp;find_loc=Bakersfield%2C+CA" rel="noopener noreferrer" target="_blank"><span>Heart of India</span><span class="score">★ 4.4</span></a></div></div></div></div>
+</div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["San Diego hotel",32.8338,-117.174],["Storage",32.89166,-117.21086],["Bakersfield",35.3733,-119.0187]],"segments":[[0,1,2]]}' data-route-key="D2"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M386.8 186.1 C386.6 185.6 397.6 203.7 385.3 183.3 C373.0 162.9 325.2 83.8 313.2 63.9" fill="none" opacity=".9" stroke="var(--d2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="386.8" cy="186.1" fill="var(--d2)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="396.8" y="176.1">Hotel</text><circle class="map-marker" cx="385.3" cy="183.3" fill="var(--d2)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="395.3" y="173.3">Storage</text><circle class="map-marker" cx="313.2" cy="63.9" fill="var(--d2)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="323.2" y="82.9">Bakersfield</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L38.3 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M38.3 224 L38.3 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="36.2" y="221.0">≈ 10 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=California%20Suites%20Hotel%2C%205415%20Clairemont%20Mesa%20Blvd%2C%20San%20Diego%2C%20CA%2092117&amp;destination=Hyatt%20Place%20Bakersfield%2C%20310%20Coffee%20Rd%2C%20Bakersfield%2C%20CA%2093309&amp;waypoints=Golden%20Triangle%20Self%20Storage%2C%2010345%20Sorrento%20Valley%20Rd%2C%20San%20Diego%2C%20CA%2092121"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+<article class="card day">
+<div class="day-head"><div><div class="day-title">D3 · 9/15 Tue · Bakersfield → Fremont</div><div class="day-sub"><span data-en="Continue north without over-scheduling" data-zh="继续北上，避免过度安排">继续北上，避免过度安排</span></div></div><span class="day-dot" style="background:var(--d3)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">08:00–09:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Hotel breakfast + check-out" data-zh="酒店早餐 + 退房">酒店早餐 + 退房</span></div></div></div>
+<div class="row"><div class="time">09:00–14:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title">Bakersfield → Fremont</div><div class="item-note"><span data-en="Pure driving is usually about 4–4.5 hours; with a rest stop and lunch, plan closer to 5 hours." data-zh="净驾驶通常约 4–4.5 小时；安排服务区休息和午饭后更接近 5 小时。">净驾驶通常约 4–4.5 小时；安排服务区休息和午饭后更接近 5 小时。</span></div><div class="resource-box"><div class="resource-head"><div class="resource-title"><span data-en="Road-trip lunch · choose by progress" data-zh="路上午饭 · 按进度选择">路上午饭 · 按进度选择</span></div><div class="resource-note"><span data-en="Keep lunch flexible so it does not disrupt the northbound drive." data-zh="不固定餐厅，避免为了吃饭打乱北上节奏。">不固定餐厅，避免为了吃饭打乱北上节奏。</span></div></div><div class="resource-links"><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Restaurants&amp;find_loc=Kettleman+City%2C+CA" rel="noopener noreferrer" target="_blank"><span>Kettleman City</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Restaurants&amp;find_loc=Santa+Nella%2C+CA" rel="noopener noreferrer" target="_blank"><span>Santa Nella</span></a></div></div></div></div>
+<div class="row"><div class="time"><span data-en="Afternoon" data-zh="下午">下午</span><span class="tz">PDT</span></div><div><div class="item-title"><span data-en="Check in at Hyatt Place Fremont/Silicon Valley" data-zh="入住 Hyatt Place Fremont/Silicon Valley">入住 Hyatt Place Fremont/Silicon Valley</span></div><div class="item-note"><span data-en="Rest early and save energy for Stanford check-in at 15:00 the next day." data-zh="早点休息，为第二天 15:00 Stanford check‑in 留体力。">早点休息，为第二天 15:00 Stanford check‑in 留体力。</span></div><div class="resource-box"><div class="resource-head"><div class="resource-title"><span data-en="Fremont dinner · high-rated picks" data-zh="Fremont 晚餐 · 高分推荐">Fremont 晚餐 · 高分推荐</span></div><div class="resource-note"><span data-en="Ratings can change; re-check hours before going." data-zh="评分会变化，出发前再确认营业时间。">评分会变化，出发前再确认营业时间。</span></div></div><div class="resource-links"><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Home+Eat+Fremont&amp;find_loc=Fremont%2C+CA" rel="noopener noreferrer" target="_blank"><span>Home Eat 汉家宴</span><span class="score">★ 4.7</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Special+Noodle+Fremont&amp;find_loc=Fremont%2C+CA" rel="noopener noreferrer" target="_blank"><span>Special Noodle 四姐</span><span class="score">★ 4.7</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Haidilao+Fremont&amp;find_loc=Fremont%2C+CA" rel="noopener noreferrer" target="_blank"><span>Haidilao</span><span class="score">★ 4.6</span></a></div></div></div></div>
+</div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["Bakersfield",35.3733,-119.0187],["Fremont hotel",37.488,-121.945]],"segments":[[0,1]]}' data-route-key="D3"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M418.0 186.1 Q359.8 114.1 282.0 63.9" fill="none" opacity=".9" stroke="var(--d3)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="418.0" cy="186.1" fill="var(--d3)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="428.0" y="176.1">Bakersfield</text><circle class="map-marker" cx="282.0" cy="63.9" fill="var(--d3)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="292.0" y="82.9">Fremont hotel</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L39.2 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M39.2 224 L39.2 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="36.6" y="221.0">≈ 10 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=Hyatt%20Place%20Bakersfield%2C%20310%20Coffee%20Rd%2C%20Bakersfield%2C%20CA%2093309&amp;destination=Hyatt%20Place%20Fremont%20Silicon%20Valley%2C%203101%20W%20Warren%20Ave%2C%20Fremont%2C%20CA%2094538"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+<article class="card day">
+<div class="day-head"><div><div class="day-title"><span data-en="D4 · Sep 16 Wed · Stanford Move-in" data-zh="D4 · 9/16 Wed · Stanford 正式入住">D4 · 9/16 Wed · Stanford 正式入住</span></div><div class="day-sub"><span data-en="15:00 is the fixed anchor · Move-in comes first" data-zh="15:00 是当天硬锚点 · 搬家优先">15:00 是当天硬锚点 · 搬家优先</span></div></div><span class="day-dot" style="background:var(--d4)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">09:00–10:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Breakfast, check out, load the car" data-zh="早餐、退房、装车">早餐、退房、装车</span></div></div></div>
+<div class="row"><div class="time">10:00–11:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title">Fremont → Stanford</div><div class="item-note"><span data-en="Weekday Bay Area traffic varies considerably; do not plan to arrive at the last minute." data-zh="工作日跨湾/南湾交通浮动明显，建议不要卡点。">工作日跨湾/南湾交通浮动明显，建议不要卡点。</span></div></div></div>
+<div class="row"><div class="time">11:00–14:15<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Lunch + essentials shopping + buffer near campus" data-zh="午饭 + 必需品采购 + 校园附近缓冲">午饭 + 必需品采购 + 校园附近缓冲</span></div><div class="item-note"><span data-en="Do not unload large items at the HSC in advance. The final apartment number and mailing address are confirmed at check-in." data-zh="不要提前把大件行李卸在 HSC。正式房号/邮寄地址要到 check‑in 才最终确认。">不要提前把大件行李卸在 HSC。正式房号/邮寄地址要到 check‑in 才最终确认。</span></div></div></div>
+<div class="row"><div class="time">14:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Arrive near EVGR Housing Service Center" data-zh="抵达 EVGR Housing Service Center 附近">抵达 EVGR Housing Service Center 附近</span></div><div class="item-note"><span data-en="Sep 16 is a Wednesday during the EVGR/Quillen parking-lot construction period, so parking and moving-vehicle access will be limited." data-zh="9/16 为周三，EVGR/Quillen 停车场施工期内，停车和搬家车辆通行受限。">9/16 为周三，EVGR/Quillen 停车场施工期内，停车和搬家车辆通行受限。</span></div></div></div>
+<div class="row"><div class="time">15:00<span class="tz">PDT · UTC−7</span></div><div><div class="item-title"><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="Official EVGR check-in" data-zh="EVGR 正式 check‑in">EVGR 正式 check‑in</span></div><div class="item-note"><span data-en="735 Campus Drive, Suite 100. Bring photo ID; collect/confirm keys and the exact apartment on the 4th floor of Building C." data-zh="735 Campus Drive, Suite 100。带 photo ID；领取/确认钥匙、Building C 四楼的具体 apartment。">735 Campus Drive, Suite 100。带 photo ID；领取/确认钥匙、Building C 四楼的具体 apartment。</span></div></div></div>
+<div class="row"><div class="time">15:30–18:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Move luggage in + settle down" data-zh="搬运行李 + 安顿">搬运行李 + 安顿</span></div><div class="item-note"><span data-en="The HSC has hand trucks/dollies available for short-term use on a first-come, first-served basis. No formal sightseeing after dinner." data-zh="HSC 有手推车/小推车可短时借用，先到先得。当天晚饭后不安排正式景点。">HSC 有手推车/小推车可短时借用，先到先得。当天晚饭后不安排正式景点。</span></div></div></div>
+<div class="alert"><span data-en="Stanford resident parking: if the second car will be parked overnight or kept in a campus residential area, a resident student must purchase a RES permit. Your eligible residential area appears in the permit system after Stanford Transportation receives confirmation of your active housing contract. ES and EVF are separate permit areas and are not interchangeable. Residential lots are enforced 24/7." data-zh="Stanford resident parking：如果第二辆车会在校园住宅区过夜/长期停放，入住学生需要购买 RES residential permit。你的可购买区域会在 Stanford Transportation 收到有效 housing contract 数据后出现在 permit system；ES 与 EVF 是不同 permit area，不能互用。住宅停车位 24/7 执法。">Stanford resident parking：如果第二辆车会在校园住宅区过夜/长期停放，入住学生需要购买 RES residential permit。你的可购买区域会在 Stanford Transportation 收到有效 housing contract 数据后出现在 permit system；ES 与 EVF 是不同 permit area，不能互用。住宅停车位 24/7 执法。</span></div></div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["Fremont hotel",37.488,-121.945],["Stanford EVGR",37.42681,-122.1592]],"segments":[[0,1]]}' data-route-key="D4"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M519.8 63.9 Q342.6 104.3 180.2 186.1" fill="none" opacity=".9" stroke="var(--d4)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="519.8" cy="63.9" fill="var(--d4)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="end" x="509.8" y="82.9">Fremont hotel</text><circle class="map-marker" cx="180.2" cy="186.1" fill="var(--accent)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="190.2" y="176.1">Stanford EVGR</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L123.7 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M123.7 224 L123.7 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="78.9" y="221.0">≈ 5 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=Hyatt%20Place%20Fremont%20Silicon%20Valley%2C%203101%20W%20Warren%20Ave%2C%20Fremont%2C%20CA%2094538&amp;destination=EVGR%20Housing%20Service%20Center%2C%20735%20Campus%20Drive%2C%20Stanford%2C%20CA%2094305"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+<article class="card day">
+<div class="day-head"><div><div class="day-title"><span data-en="D5 · Sep 17 Thu · Settle in + switch cars + Stanford" data-zh="D5 · 9/17 Thu · 安顿 + 换车 + Stanford">D5 · 9/17 Thu · 安顿 + 换车 + Stanford</span></div><div class="day-sub"><span data-en="Recovery day · Stay local" data-zh="恢复日 · 不出远门">恢复日 · 不出远门</span></div></div><span class="day-dot" style="background:var(--d5)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">09:30–12:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Organize the room / shop for essentials" data-zh="宿舍整理 / 生活用品采购">宿舍整理 / 生活用品采购</span></div></div></div>
+<div class="row"><div class="time">13:15<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Leave EVGR for Palo Alto Hertz" data-zh="从 EVGR 出发去 Palo Alto Hertz">从 EVGR 出发去 Palo Alto Hertz</span></div><div class="item-note"><span data-en="Allow time for refueling, vehicle inspection, and counter procedures." data-zh="留出加油、检查车辆和门店手续时间。">留出加油、检查车辆和门店手续时间。</span></div></div></div>
+<div class="row"><div class="time">14:00<span class="tz">PDT · UTC−7</span></div><div><div class="item-title"><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="Return the minivan" data-zh="归还 minivan">归还 minivan</span></div><div class="item-note"><span data-en="625 El Camino Real, Palo Alto. The location is closed for lunch from 12:00–13:00." data-zh="625 El Camino Real, Palo Alto。门店中午 12:00–13:00 休息。">625 El Camino Real, Palo Alto。门店中午 12:00–13:00 休息。</span></div></div></div>
+<div class="row"><div class="time"><span data-en="After 14:00" data-zh="14:00 后">14:00 后</span><span class="tz"><span data-en="PDT · TBD" data-zh="PDT · 待定">PDT · 待定</span></span></div><div><div class="item-title"><span class="badge badge status-pending" data-status="pending"><span data-en="Pending" data-zh="待确认">待确认</span></span><span data-en="Pick up second compact rental car" data-zh="提第二辆小型租车">提第二辆小型租车</span></div><div class="item-note"><span data-en="Try to make the second pick-up connect seamlessly with the minivan return." data-zh="尽量与还车门店/时间无缝衔接。">尽量与还车门店/时间无缝衔接。</span></div></div></div>
+<div class="row"><div class="time"><span data-en="After pick-up" data-zh="提车后">提车后</span><span class="tz"><span data-en="PDT · If parking" data-zh="PDT · 如需停车">PDT · 如需停车</span></span></div><div><div class="item-title"><span class="badge badge status-action" data-status="action"><span data-en="Action Needed" data-zh="需要处理">需要处理</span></span> Stanford RES resident parking</div><div class="item-note"><span data-en="If the compact car will use EVGR residential parking, first purchase a RES permit in Stanford’s Parking Permit Management System. Resident permits are available by day, calendar month, or academic year; effective Sep 1, 2026, residential permits are $8.25/day or $49/month. For a rental of only a few days, daily permits will usually fit better, but decide based on the actual number of parking days." data-zh="如果小车会停在 EVGR 住宅停车位，先在 Stanford Parking Permit Management System 购买 RES permit。Resident permit 可按日、月或 academic year 购买；2026/9/1 起 residential daily $8.25、monthly $49。这次只租几天，daily permit 通常更匹配，但最终按你的停车天数决定。">如果小车会停在 EVGR 住宅停车位，先在 Stanford Parking Permit Management System 购买 RES permit。Resident permit 可按日、月或 academic year 购买；2026/9/1 起 residential daily $8.25、monthly $49。这次只租几天，daily permit 通常更匹配，但最终按你的停车天数决定。</span></div></div></div><div class="row"><div class="time">16:00–18:00<span class="tz"><span data-en="PDT · Optional" data-zh="PDT · 可选">PDT · 可选</span></span></div><div><div class="item-title">Cantor Arts Center + Rodin Sculpture Garden</div><div class="item-note"><span data-en="Open until 20:00 on Thursdays; general admission is free and no reservation is required. Low-effort and convenient after the car switch." data-zh="周四开放至 20:00；常规入场免费、无需预约。强度低，适合换车后顺路。">周四开放至 20:00；常规入场免费、无需预约。强度低，适合换车后顺路。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cantor%20Arts%20Center%2C%20328%20Lomita%20Dr%2C%20Stanford%2C%20CA%2094305"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div></div></div>
+</div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["EVGR",37.42681,-122.1592],["Palo Alto Hertz",37.4387,-122.1619],["Cantor Arts Center",37.4329,-122.1704]],"segments":[[0,1,2]]}' data-route-key="D5"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M374.9 158.3 C372.9 147.2 371.2 97.4 362.9 91.7 C354.6 86.0 331.4 118.8 325.1 124.2" fill="none" opacity=".9" stroke="var(--d5)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="374.9" cy="158.3" fill="var(--accent)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="384.9" y="148.3">EVGR</text><circle class="map-marker" cx="362.9" cy="91.7" fill="var(--d5)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="372.9" y="81.7">Hertz</text><circle class="map-marker" cx="325.1" cy="124.2" fill="var(--d5)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="335.1" y="114.2">Cantor</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L134.6 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M134.6 224 L134.6 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="84.3" y="221.0">≈ 2 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=EVGR%20Building%20C%2C%20Stanford%2C%20CA&amp;destination=Cantor%20Arts%20Center%2C%20328%20Lomita%20Dr%2C%20Stanford%2C%20CA%2094305&amp;waypoints=Hertz%2C%20625%20El%20Camino%20Real%2C%20Palo%20Alto%2C%20CA%2094301"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+<article class="card day">
+<div class="day-head"><div><div class="day-title"><span data-en="D6 · Sep 18 Fri · Easy San Francisco Day" data-zh="D6 · 9/18 Fri · San Francisco 轻松一日">D6 · 9/18 Fri · San Francisco 轻松一日</span></div><div class="day-sub"><span data-en="Landmarks + bay views · Minimize backtracking" data-zh="地标 + 海湾景色 · 少走回头路">地标 + 海湾景色 · 少走回头路</span></div></div><span class="day-dot" style="background:var(--d6)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">09:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Depart Stanford" data-zh="Stanford 出发">Stanford 出发</span></div><div class="item-note"><span data-en="Allow roughly 1–1.5 hours to enter the city on a weekday; follow live traffic." data-zh="工作日进城建议预留约 1–1.5 小时；实时路况优先。">工作日进城建议预留约 1–1.5 小时；实时路况优先。</span></div></div></div>
+<div class="row"><div class="time">10:30–11:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title">Palace of Fine Arts</div><div class="item-note"><span data-en="Easy walk and photos; no rush." data-zh="轻松散步、拍照，不赶时间。">轻松散步、拍照，不赶时间。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Palace%20of%20Fine%20Arts%2C%20San%20Francisco%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div></div></div>
+<div class="row"><div class="time">11:45–12:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title">Golden Gate Overlook / Presidio</div><div class="item-note"><span data-en="Bring a light layer for the wind. If parking is tight, do not wait indefinitely for one viewpoint." data-zh="海风大，带薄外套。停车位紧张时不要为一个观景点死等。">海风大，带薄外套。停车位紧张时不要为一个观景点死等。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Golden%20Gate%20Overlook%2C%20San%20Francisco%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div></div></div>
+<div class="row"><div class="time">13:15–15:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Lunch at Ferry Building + Embarcadero" data-zh="Ferry Building 午饭 + Embarcadero">Ferry Building 午饭 + Embarcadero</span></div><div class="item-note"><span data-en="Use a proper garage if possible and leave nothing visible inside the car." data-zh="停车建议直接进正规车库，车内不要留任何可见物品。">停车建议直接进正规车库，车内不要留任何可见物品。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ferry%20Building%2C%20San%20Francisco%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div><div class="resource-box"><div class="resource-head"><div class="resource-title"><span data-en="Lunch near Ferry Building" data-zh="Ferry Building 附近午饭">Ferry Building 附近午饭</span></div><div class="resource-note"><span data-en="Ratings can change; re-check hours before going." data-zh="评分会变化，出发前再确认营业时间。">评分会变化，出发前再确认营业时间。</span></div></div><div class="resource-links"><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Hog+Island+Oyster+Co+Ferry+Building&amp;find_loc=San+Francisco%2C+CA" rel="noopener noreferrer" target="_blank"><span>Hog Island Oyster Co.</span><span class="score">★ 4.4</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Restaurants&amp;find_loc=Ferry+Building%2C+San+Francisco%2C+CA" rel="noopener noreferrer" target="_blank"><span>更多 Ferry Building 餐厅</span></a></div></div></div></div>
+<div class="row"><div class="time">15:15–17:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Choose Chinatown or North Beach for an easy stroll" data-zh="Chinatown / North Beach 二选一慢逛">Chinatown / North Beach 二选一慢逛</span></div><div class="item-note"><span data-en="Cut stops based on energy; there is no need to check every box." data-zh="根据当天体力删减，不追求“打卡全套”。">根据当天体力删减，不追求“打卡全套”。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Chinatown%2C%20San%20Francisco%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div></div></div>
+<div class="row"><div class="time">17:00–18:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Return to Stanford" data-zh="返回 Stanford">返回 Stanford</span></div></div></div>
+</div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["Stanford",37.42681,-122.1592],["Palace of Fine Arts",37.80292,-122.44839],["Golden Gate Overlook",37.8297,-122.4867],["Ferry Building",37.79554,-122.39343],["Chinatown",37.7941,-122.4078]],"segments":[[0,1,2,3,4,0]]}' data-route-key="D6"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M389.3 186.1 C377.7 167.1 333.0 92.4 319.9 72.0 C306.8 51.6 308.5 63.5 310.7 63.9 C312.9 64.3 330.0 72.5 333.1 74.3 C336.2 76.1 320.2 56.1 329.6 74.7 C339.0 93.3 379.4 167.5 389.3 186.1" fill="none" opacity=".9" stroke="var(--d6)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="389.3" cy="186.1" fill="var(--accent)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="399.3" y="176.1">Stanford</text><circle class="map-marker" cx="319.9" cy="72.0" fill="var(--d6)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="329.9" y="91.0">Palace of Fine Arts</text><circle class="map-marker" cx="310.7" cy="63.9" fill="var(--d6)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="320.7" y="82.9">Golden Gate</text><circle class="map-marker" cx="333.1" cy="74.3" fill="var(--d6)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="343.1" y="93.3">Ferry Building</text><circle class="map-marker" cx="329.6" cy="74.7" fill="var(--d6)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="339.6" y="93.7">Chinatown</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L170.3 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M170.3 224 L170.3 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="102.1" y="221.0">≈ 50 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=Stanford%20University%2C%20Stanford%2C%20CA&amp;destination=Stanford%20University%2C%20Stanford%2C%20CA&amp;waypoints=Palace%20of%20Fine%20Arts%2C%20San%20Francisco%2C%20CA%7CGolden%20Gate%20Overlook%2C%20San%20Francisco%2C%20CA%7CFerry%20Building%2C%20San%20Francisco%2C%20CA%7CChinatown%2C%20San%20Francisco%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+<article class="card day">
+<div class="day-head"><div><div class="day-title">D7 · 9/19 Sat · Monterey + Carmel</div><div class="day-sub"><span data-en="Coast day · Aquarium optional, advance tickets recommended" data-zh="海岸日 · Aquarium 可选但建议提前买票">海岸日 · Aquarium 可选但建议提前买票</span></div></div><span class="day-dot" style="background:var(--d7)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">08:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Depart Stanford" data-zh="Stanford 出发">Stanford 出发</span></div><div class="item-note"><span data-en="Usually about 1.5–2 hours; weekend and coastal traffic can add variability." data-zh="通常约 1.5–2 小时；周末和海岸活动会增加波动。">通常约 1.5–2 小时；周末和海岸活动会增加波动。</span></div></div></div>
+<div class="row"><div class="time">10:15–13:15<span class="tz"><span data-en="PDT · Optional" data-zh="PDT · 可选">PDT · 可选</span></span></div><div><div class="item-title"><span class="badge badge status-book" data-status="book"><span data-en="Book Ahead" data-zh="建议预订">建议预订</span></span>Monterey Bay Aquarium</div><div class="item-note"><span data-en="Official tickets are on sale through Dec 31, 2026. Sep 8–20 is the Monterey County resident free-admission period, and Sep 19 is its final weekend, so crowd risk is elevated." data-zh="官方门票已开放售至 2026/12/31。9/8–9/20 正值 Monterey County residents 免费活动，9/19 又是最后一个周末，客流风险高。">官方门票已开放售至 2026/12/31。9/8–9/20 正值 Monterey County residents 免费活动，9/19 又是最后一个周末，客流风险高。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Monterey%20Bay%20Aquarium%2C%20Monterey%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a><a class="btn" href="https://www.montereybayaquarium.org/visit/admission-tickets"><span data-en="Official tickets" data-zh="官方购票">官方购票</span></a></div></div></div>
+<div class="row"><div class="time">13:15–14:15<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Lunch in Monterey" data-zh="Monterey 午饭">Monterey 午饭</span></div><div class="resource-box"><div class="resource-head"><div class="resource-title"><span data-en="Monterey / Carmel lunch" data-zh="Monterey / Carmel 午饭">Monterey / Carmel 午饭</span></div><div class="resource-note"><span data-en="On aquarium day, keep lunch fairly efficient so Carmel time is not squeezed." data-zh="Aquarium 当天建议选快一点的午饭，避免压缩 Carmel 时间。">Aquarium 当天建议选快一点的午饭，避免压缩 Carmel 时间。</span></div></div><div class="resource-links"><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Pangaea+on+Ocean+Ave&amp;find_loc=Carmel-by-the-Sea%2C+CA" rel="noopener noreferrer" target="_blank"><span>Pangaea on Ocean Ave</span><span class="score">★ 4.5</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Brophy%27s+Tavern&amp;find_loc=Carmel-by-the-Sea%2C+CA" rel="noopener noreferrer" target="_blank"><span>Brophy's Tavern</span><span class="score">★ 4.3</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Old+Fisherman%27s+Grotto&amp;find_loc=Monterey%2C+CA" rel="noopener noreferrer" target="_blank"><span>Old Fisherman's Grotto</span><span class="score">★ 4.1</span></a></div></div></div></div>
+<div class="row"><div class="time">14:30–17:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title">Carmel‑by‑the‑Sea + Carmel Beach</div><div class="item-note"><span data-en="Focus on a relaxed town-and-beach visit; do not add a long Big Sur extension." data-zh="以慢逛小镇和海边为主；当天不再额外塞 Big Sur 长线。">以慢逛小镇和海边为主；当天不再额外塞 Big Sur 长线。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Carmel-by-the-Sea%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div></div></div>
+<div class="row"><div class="time">17:30–19:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Return to Stanford" data-zh="返回 Stanford">返回 Stanford</span></div></div></div>
+</div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["Stanford",37.42681,-122.1592],["Monterey Bay Aquarium",36.618,-121.9019],["Carmel",36.5552,-121.9233]],"segments":[[0,1,2,0]]}' data-route-key="D7"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M335.6 63.9 C340.4 82.8 360.0 156.9 364.4 177.3 C368.8 197.7 366.8 205.0 362.0 186.1 C357.2 167.2 340.0 84.3 335.6 63.9" fill="none" opacity=".9" stroke="var(--d7)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="335.6" cy="63.9" fill="var(--accent)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="345.6" y="82.9">Stanford</text><circle class="map-marker" cx="364.4" cy="177.3" fill="var(--d7)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="374.4" y="167.3">Monterey Aquarium</text><circle class="map-marker" cx="362.0" cy="186.1" fill="var(--d7)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="372.0" y="176.1">Carmel</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L160.0 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M160.0 224 L160.0 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="97.0" y="221.0">≈ 100 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=Stanford%20University%2C%20Stanford%2C%20CA&amp;destination=Stanford%20University%2C%20Stanford%2C%20CA&amp;waypoints=Monterey%20Bay%20Aquarium%2C%20Monterey%2C%20CA%7CCarmel-by-the-Sea%2C%20CA%7CCarmel%20Beach%2C%20Carmel-by-the-Sea%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+<article class="card day">
+<div class="day-head"><div><div class="day-title">D8 · 9/20 Sun · Muir Woods + Sausalito</div><div class="day-sub"><span data-en="Redwoods + bay town · Light walking" data-zh="红杉林 + 海湾小镇 · 轻量徒步">红杉林 + 海湾小镇 · 轻量徒步</span></div></div><span class="day-dot" style="background:var(--d8)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">08:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Depart Stanford" data-zh="Stanford 出发">Stanford 出发</span></div><div class="item-note"><span data-en="Heading north through San Francisco usually takes at least 1.5 hours; keep a buffer on Sunday." data-zh="跨旧金山向北，通常至少 1.5 小时，周日应继续留 buffer。">跨旧金山向北，通常至少 1.5 小时，周日应继续留 buffer。</span></div></div></div>
+<div class="row"><div class="time">09:30–12:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span class="badge badge status-required" data-status="required"><span data-en="Reservation Required" data-zh="必须预约">必须预约</span></span>Muir Woods</div><div class="item-note"><span data-en="Driving in requires an advance parking reservation; weekends/holidays often sell out. Cell service is poor, so download the parking pass in advance." data-zh="驾车进入必须提前预约 parking；周末/节假日经常售罄。园区手机信号差，务必提前下载 parking pass。">驾车进入必须提前预约 parking；周末/节假日经常售罄。园区手机信号差，务必提前下载 parking pass。</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Muir%20Woods%20National%20Monument%2C%20Mill%20Valley%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a><a class="btn" href="https://gomuirwoods.com/"><span data-en="Parking reservation" data-zh="停车预约">停车预约</span></a></div></div></div>
+<div class="row"><div class="time">12:30–15:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Lunch + easy waterfront stroll in Sausalito" data-zh="Sausalito 午饭 + 海边慢逛">Sausalito 午饭 + 海边慢逛</span></div><div class="btnrow"><a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sausalito%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a></div><div class="resource-box"><div class="resource-head"><div class="resource-title"><span data-en="Sausalito dining · high-rated picks" data-zh="Sausalito 吃饭 · 高分推荐">Sausalito 吃饭 · 高分推荐</span></div><div class="resource-note"><span data-en="Ratings can change; re-check hours before going." data-zh="评分会变化，出发前再确认营业时间。">评分会变化，出发前再确认营业时间。</span></div></div><div class="resource-links"><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Scoma%27s+of+Sausalito&amp;find_loc=Sausalito%2C+CA" rel="noopener noreferrer" target="_blank"><span>Scoma's</span><span class="score">★ 4.5</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Sandrino+Pizza+%26+Vino&amp;find_loc=Sausalito%2C+CA" rel="noopener noreferrer" target="_blank"><span>Sandrino Pizza &amp; Vino</span><span class="score">★ 4.5</span></a><a class="resource-link yelp" href="https://www.yelp.com/search?find_desc=Napa+Valley+Burger+Company&amp;find_loc=Sausalito%2C+CA" rel="noopener noreferrer" target="_blank"><span>Napa Valley Burger Co.</span><span class="score">★ 4.5</span></a></div></div></div></div>
+<div class="row"><div class="time">15:00–17:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Return to Stanford" data-zh="返回 Stanford">返回 Stanford</span></div><div class="item-note"><span data-en="Keep the evening for rest; no second long-distance attraction." data-zh="傍晚留作休息，不安排第二个远途景点。">傍晚留作休息，不安排第二个远途景点。</span></div></div></div>
+<div class="row"><div class="time"><span data-en="Backup" data-zh="备选">备选</span><span class="tz">PDT</span></div><div><div class="item-title"><span data-en="If Muir Woods is unavailable: Half Moon Bay + Pacifica" data-zh="若 Muir Woods 预约不到：Half Moon Bay + Pacifica">若 Muir Woods 预约不到：Half Moon Bay + Pacifica</span></div><div class="item-note"><span data-en="A more relaxed, reservation-free Plan B for poor weather or unavailable parking." data-zh="更轻松、无需预订，作为天气/停车预约失败时的 B 方案。">更轻松、无需预订，作为天气/停车预约失败时的 B 方案。</span></div></div></div>
+</div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["Stanford",37.42681,-122.1592],["Muir Woods",37.89658,-122.580805],["Sausalito",37.8578,-122.4853]],"segments":[[0,1,2,0]]}' data-route-key="D8"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M393.4 186.1 C378.9 165.7 317.8 82.6 306.6 63.9 C295.4 45.2 311.8 53.6 326.3 74.0 C340.8 94.4 382.2 167.4 393.4 186.1" fill="none" opacity=".9" stroke="var(--d8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="393.4" cy="186.1" fill="var(--accent)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="403.4" y="176.1">Stanford</text><circle class="map-marker" cx="306.6" cy="63.9" fill="var(--d8)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="316.6" y="82.9">Muir Woods</text><circle class="map-marker" cx="326.3" cy="74.0" fill="var(--d8)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="336.3" y="93.0">Sausalito</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L150.9 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M150.9 224 L150.9 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="92.4" y="221.0">≈ 50 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=Stanford%20University%2C%20Stanford%2C%20CA&amp;destination=Stanford%20University%2C%20Stanford%2C%20CA&amp;waypoints=Muir%20Woods%20National%20Monument%2C%20Mill%20Valley%2C%20CA%7CSausalito%2C%20CA"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+<article class="card day">
+<div class="day-head"><div><div class="day-title"><span data-en="D9 · Sep 21 Mon · Stanford/Palo Alto + SFO Drop-off" data-zh="D9 · 9/21 Mon · Stanford/Palo Alto + SFO 送机">D9 · 9/21 Mon · Stanford/Palo Alto + SFO 送机</span></div><div class="day-sub"><span data-en="Stay local on the final day · Leave a generous flight buffer" data-zh="最后一天不出远门 · 晚上为航班留足余量">最后一天不出远门 · 晚上为航班留足余量</span></div></div><span class="day-dot" style="background:var(--d9)"></span></div>
+<div class="timeline">
+<div class="row"><div class="time">09:30–12:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Easy Stanford campus walk / Palo Alto" data-zh="Stanford 校园慢逛 / Palo Alto">Stanford 校园慢逛 / Palo Alto</span></div><div class="item-note"><span data-en="Choose Main Quad, Bookstore, campus cafés, etc. based on energy; the Visitor Center resumes regular weekday hours from Sep 14." data-zh="Main Quad、Bookstore、校园咖啡等按体力选择；Visitor Center 9/14 起恢复常规工作日开放。">Main Quad、Bookstore、校园咖啡等按体力选择；Visitor Center 9/14 起恢复常规工作日开放。</span></div></div></div>
+<div class="row"><div class="time">12:00–17:30<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Lunch + rest at EVGR + Mom packs" data-zh="午饭 + 回 EVGR 休息 + 妈妈整理行李">午饭 + 回 EVGR 休息 + 妈妈整理行李</span></div><div class="item-note"><span data-en="No more long-distance trips such as Napa or Monterey." data-zh="不再安排 Napa、Monterey 等远途。">不再安排 Napa、Monterey 等远途。</span></div></div></div>
+<div class="row"><div class="time">18:00–19:15<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title"><span data-en="Eat dinner early and do a final document/baggage check" data-zh="提前吃晚饭，最后确认证件与行李">提前吃晚饭，最后确认证件与行李</span></div></div></div>
+<div class="row"><div class="time">20:00<span class="tz"><span data-en="PDT · Plan" data-zh="PDT · 计划">PDT · 计划</span></span></div><div><div class="item-title">Stanford → SFO</div><div class="item-note"><span data-en="Aim to arrive around 20:45–21:15, leaving at least 3 hours for the 00:35 international departure." data-zh="计划 20:45–21:15 左右抵达，给 00:35 国际航班预留 ≥3 小时。">计划 20:45–21:15 左右抵达，给 00:35 国际航班预留 ≥3 小时。</span></div></div></div>
+<div class="row"><div class="time">00:35<span class="tz">9/22 · PDT</span></div><div><div class="item-title"><span class="badge badge status-confirmed" data-status="confirmed"><span data-en="Confirmed" data-zh="已确认">已确认</span></span><span data-en="Mom’s CZ660 departs SFO" data-zh="妈妈 CZ660 从 SFO 起飞">妈妈 CZ660 从 SFO 起飞</span></div><div class="item-note"><span data-en="You return to Stanford and begin the new academic year." data-zh="你返回 Stanford，正式开始新学期生活。">你返回 Stanford，正式开始新学期生活。</span></div></div></div>
+</div>
+<details class="route"><summary><span data-en="Expand today’s route" data-zh="展开当日路线图">展开当日路线图</span></summary>
+<div class="map-shell" data-route='{"points":[["Stanford",37.42681,-122.1592],["SFO",37.6213,-122.379]],"segments":[[0,1]]}' data-route-key="D9"><div aria-label="Map style" class="map-mode" role="group"><button class="active" data-map-mode="vector" type="button"><span data-en="Map" data-zh="Map">Map</span></button><button data-map-mode="satellite" type="button"><span data-en="Satellite" data-zh="Satellite">Satellite</span></button></div><div aria-label="Map controls" class="map-controls"><button aria-label="Zoom in" data-map-action="in" title="Zoom in" type="button">+</button><button aria-label="Zoom out" data-map-action="out" title="Zoom out" type="button">−</button><button aria-label="Reset map" data-map-action="reset" title="Reset map" type="button">↺</button></div><svg aria-label="Geographically scaled itinerary map" class="mini-map" data-base-viewbox="" data-map-kind="daily" role="img" viewbox="0 0 700 250"><path class="map-bg-grid" d="M175.0 20 L175.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 62.5 L680 62.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M350.0 20 L350.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 125.0 L680 125.0" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M525.0 20 L525.0 230" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-bg-grid" d="M20 187.5 L680 187.5" opacity=".55" stroke="var(--line)" stroke-dasharray="3 7" stroke-width=".7"></path><path class="map-route" d="M404.8 186.1 Q359.8 116.2 295.2 63.9" fill="none" opacity=".9" stroke="var(--d9)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5"></path><circle class="map-marker" cx="404.8" cy="186.1" fill="var(--accent)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="414.8" y="176.1">Stanford</text><circle class="map-marker" cx="295.2" cy="63.9" fill="var(--d9)" r="6.5" stroke="var(--paper)" stroke-width="2"></circle><text class="map-label" data-base-font-size="11" font-size="11" font-weight="750" text-anchor="start" x="305.2" y="82.9">SFO</text><text class="map-label" data-base-font-size="10" font-size="10" font-weight="800" text-anchor="middle" x="669.0" y="28.0">N</text><path d="M669.0 55.0 L669.0 35.0" stroke="var(--muted)" stroke-width="1.4"></path><path d="M669.0 31.0 L665.0 39.0 L673.0 39.0 Z" fill="var(--muted)"></path><path d="M34 228 L175.1 228" stroke="var(--muted)" stroke-width="2"></path><path d="M34 224 L34 232 M175.1 224 L175.1 232" stroke="var(--muted)" stroke-width="1.5"></path><text class="map-label" data-base-font-size="9" font-size="9" font-weight="650" text-anchor="middle" x="104.6" y="221.0">≈ 25 km</text></svg><div class="map-help"><span data-en="Drag to pan · Double-click to zoom" data-zh="拖动平移 · 双击放大">拖动平移 · 双击放大</span></div><div aria-label="Satellite map" class="satellite-map"></div><div aria-live="polite" class="satellite-status"></div></div><div class="micro geo-note"><span data-en="Locations and relative distances are projected from real coordinates at a consistent scale. Curved connectors improve readability and aesthetics; they show directional relationships between stops, not exact road geometry. Drag/zoom to explore and use Google Maps below for actual navigation." data-zh="地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。">地点位置与相对距离按真实经纬度等比例投影；曲线用于提升可读性和美感，只表达行程点之间的方向关系，不代表真实公路线型。可拖动/缩放查看，实际导航请使用下方 Google Maps。</span></div>
+<a aria-label="Open in Google Maps" class="btn" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=EVGR%20Building%20C%2C%20Stanford%2C%20CA&amp;destination=San%20Francisco%20International%20Airport%20%28SFO%29"><span aria-hidden="true" class="map-emoji">🗺️</span><span data-en="Map" data-zh="Map">Map</span></a>
+</details>
+</article>
+</section>
+<section class="card" id="todo">
+<div class="section-title"><span class="num">5</span><h2><span data-en="To-do List" data-zh="待办清单">待办清单</span></h2></div>
+<ul class="todo">
+<li><b><span data-en="Finalize the second compact rental car" data-zh="Finalize 第二辆小型租车">Finalize 第二辆小型租车</span></b><span data-en=": Aim for a seamless pick-up after returning the minivan at 14:00 on Sep 17." data-zh="：9/17 14:00 还 minivan 后尽量无缝提车。">：9/17 14:00 还 minivan 后尽量无缝提车。</span></li>
+<li><b><span data-en="Stanford move-in documents" data-zh="Stanford 入住证件">Stanford 入住证件</span></b><span data-en=": Bring photo ID to Sep 16 check-in; confirm Stanford ID/photo is handled." data-zh="：9/16 check‑in 随身带 photo ID；确认 Stanford ID / photo 已处理。">：9/16 check‑in 随身带 photo ID；确认 Stanford ID / photo 已处理。</span></li><li><b><span data-en="Stanford parking permit for the second car" data-zh="Stanford 第二辆车停车 permit">Stanford 第二辆车停车 permit</span></b><span data-en=": If the compact car will stay overnight in EVGR residential parking after Sep 17, buy the appropriate RES permit; do not buy an A/C commuter permit." data-zh="：若 9/17 后小车需要在 EVGR 住宅停车位过夜，购买对应 RES permit；不要买 A/C commuter permit。">：若 9/17 后小车需要在 EVGR 住宅停车位过夜，购买对应 RES permit；不要买 A/C commuter permit。</span></li>
+<li><b><span data-en="EVGR move-in parking" data-zh="EVGR 搬家停车">EVGR 搬家停车</span></b><span data-en=": Sep 16 falls during EVGR/Quillen lot construction; allow extra time for parking and unloading." data-zh="：9/16 处于 EVGR/Quillen 停车场施工期，预留找车位和搬运时间。">：9/16 处于 EVGR/Quillen 停车场施工期，预留找车位和搬运时间。</span></li>
+<li><b><span data-en="Record final apartment number/mailing address after check-in" data-zh="入住后记录正式房号/邮寄地址">入住后记录正式房号/邮寄地址</span></b><span data-en=": The public page only shows Building C · 4F, not the exact apartment number." data-zh="：公开网页只写 Building C · 4F，不公开具体 apartment number。">：公开网页只写 Building C · 4F，不公开具体 apartment number。</span></li>
+<li><b><span data-en="Sep 14 storage self check-out" data-zh="9/14 Storage 自助 checkout">9/14 Storage 自助 checkout</span></b><span data-en=": After moving out, confirm the account/rental is actually closed." data-zh="：完成搬出后确认账户/租期确实关闭。">：完成搬出后确认账户/租期确实关闭。</span></li>
+<li><b><span data-en="If visiting Monterey Bay Aquarium" data-zh="若去 Monterey Bay Aquarium">若去 Monterey Bay Aquarium</span></b><span data-en=": Buy Sep 19 tickets in advance." data-zh="：建议提前买 9/19 门票。">：建议提前买 9/19 门票。</span></li>
+<li><b><span data-en="If visiting Muir Woods" data-zh="若去 Muir Woods">若去 Muir Woods</span></b><span data-en=": Reserve Sep 20 parking in advance and download the voucher beforehand." data-zh="：必须提前订 9/20 parking，并提前下载 voucher。">：必须提前订 9/20 parking，并提前下载 voucher。</span></li>
+<li><b><span data-en="Sep 21 airport drop-off" data-zh="9/21 送机">9/21 送机</span></b><span data-en=": Aim to leave Stanford around 20:00 and reach SFO around 21:00." data-zh="：目标 20:00 左右从 Stanford 出发，21:00 前后抵达 SFO。">：目标 20:00 左右从 Stanford 出发，21:00 前后抵达 SFO。</span></li>
+</ul>
+</section>
+<section class="card" id="tips">
+<div class="section-title"><span class="num">6</span><h2><span data-en="Practical Tips" data-zh="实用贴士">实用贴士</span></h2></div>
+<div class="tip-grid">
+<div class="tip"><b><span data-en="🚗 Do not rush the first three driving days" data-zh="🚗 前三天驾驶不要贪快">🚗 前三天驾驶不要贪快</span></b><span class="source"><span data-en="LAX→San Diego, San Diego→Bakersfield, and Bakersfield→Fremont are all long transfers. LA/Bay Area traffic can greatly affect actual time; the page shows planning ranges, not guaranteed durations." data-zh="LAX→San Diego、San Diego→Bakersfield、Bakersfield→Fremont 都是长距离转移；实际用时受 LA / Bay Area 交通影响很大，页面给的是规划区间，不是承诺时长。">LAX→San Diego、San Diego→Bakersfield、Bakersfield→Fremont 都是长距离转移；实际用时受 LA / Bay Area 交通影响很大，页面给的是规划区间，不是承诺时长。</span></span></div>
+<div class="tip"><b><span data-en="🅿️ Stanford Parking" data-zh="🅿️ Stanford 停车">🅿️ Stanford 停车</span></b><span class="source"><span data-en="Resident students parking in residential areas must have a RES permit; residential lots are enforced 24/7. The permit system shows the eligible residential area based on your active housing contract; ES and EVF permits are not interchangeable. A Daily RES permit is valid in residential permit spaces, and resident students are not eligible for A/C commuter permits." data-zh="住校学生把车停在住宅区必须有 RES permit；residential lots 24/7 执法。permit system 会根据你的有效 housing contract 显示可购买的 residential area；ES 和 EVF 不能互用。Daily RES permit 可用于各 residential permit spaces；resident student 不符合 A/C commuter permit 资格。">住校学生把车停在住宅区必须有 RES permit；residential lots 24/7 执法。permit system 会根据你的有效 housing contract 显示可购买的 residential area；ES 和 EVF 不能互用。Daily RES permit 可用于各 residential permit spaces；resident student 不符合 A/C commuter permit 资格。</span></span><div class="btnrow"><a class="btn" href="https://transportation.stanford.edu/parking-stanford/purchase-parking/student-parking/resident-student-parking"><span data-en="Stanford official parking guide" data-zh="Stanford 官方停车说明">Stanford 官方停车说明</span></a></div></div>
+<div class="tip"><b>🌲 Muir Woods</b><span class="source"><span data-en="Open year-round, but all drivers need a parking reservation. Weekends often sell out, and cell service near the park is poor." data-zh="全年开放，但所有驾车游客都需要 parking reservation；周末容易售罄，且园区附近手机信号差。">全年开放，但所有驾车游客都需要 parking reservation；周末容易售罄，且园区附近手机信号差。</span></span></div>
+<div class="tip"><b>🐠 Monterey Aquarium</b><span class="source"><span data-en="Sep 19 falls on the final weekend of the Sep 8–20 Monterey County resident free-admission period, so it is likely to be busier than a typical Saturday; buy tickets in advance." data-zh="9/19 处于当地居民 9/8–9/20 免费入馆活动的最后一个周末，预计比普通周六更拥挤，建议提前购票。">9/19 处于当地居民 9/8–9/20 免费入馆活动的最后一个周末，预计比普通周六更拥挤，建议提前购票。</span></span></div>
+<div class="tip"><b>🏛️ Cantor Arts Center</b><span class="source"><span data-en="Sep 17 is a Thursday; official hours are 11:00–20:00. General admission is free and no advance reservation is required, making it a good fit for the settling-in day." data-zh="9/17 是周四，官方开放 11:00–20:00；普通入场免费且不要求 advance reservation，很适合安顿日。">9/17 是周四，官方开放 11:00–20:00；普通入场免费且不要求 advance reservation，很适合安顿日。</span></span></div>
+<div class="tip"><b><span data-en="🧳 Public-page privacy" data-zh="🧳 公共网页隐私">🧳 公共网页隐私</span></b><span class="source"><span data-en="Do not put confirmation numbers, ID numbers, apartment numbers, or access codes on any public page. Keep them separately in your local reservations/phone." data-zh="不要把确认号、证件号、房号、门禁码写入任何公开页面；这些信息单独存在你的本地订单/手机里。">不要把确认号、证件号、房号、门禁码写入任何公开页面；这些信息单独存在你的本地订单/手机里。</span></span></div>
+<div class="tip"><b><span data-en="🌁 Driving in San Francisco" data-zh="🌁 旧金山用车">🌁 旧金山用车</span></b><span class="source"><span data-en="Use proper garages when possible. When leaving the car, make the cabin look completely empty and do not leave luggage inside." data-zh="尽量停正规车库；下车时车厢保持“看起来完全是空的”，行李不要留车内。">尽量停正规车库；下车时车厢保持“看起来完全是空的”，行李不要留车内。</span></span></div>
+<div class="tip"><b><span data-en="🕒 Time Zones" data-zh="🕒 时区">🕒 时区</span></b><span class="source"><span data-en="China/Hong Kong are UTC+8; California is PDT (UTC−7) during this trip. The countdown uses absolute timestamps and does not depend on the device time zone." data-zh="中国/香港为 UTC+8；加州行程期间为 PDT (UTC−7)。页面倒计时使用绝对时间戳，不依赖打开页面的设备时区。">中国/香港为 UTC+8；加州行程期间为 PDT (UTC−7)。页面倒计时使用绝对时间戳，不依赖打开页面的设备时区。</span></span></div>
+</div>
+<div class="source" style="margin-top:14px">
+<span data-en="Sources checked: Stanford R&amp;DE Tips for Arrival; Stanford Transportation; Cantor Arts Center; NPS Muir Woods; Monterey Bay Aquarium; Hyatt official hotel information. Google Maps links are only for live navigation; offline viewing of this guide does not depend on them." data-zh="核对来源：Stanford R&amp;DE Tips for Arrival；Stanford Transportation；Cantor Arts Center；NPS Muir Woods；Monterey Bay Aquarium；Hyatt 官方酒店信息。Google Maps 链接仅用于实时导航，离线查看手册不依赖其加载。">核对来源：Stanford R&amp;DE Tips for Arrival；Stanford Transportation；Cantor Arts Center；NPS Muir Woods；Monterey Bay Aquarium；Hyatt 官方酒店信息。Google Maps 链接仅用于实时导航，离线查看手册不依赖其加载。</span>
+</div>
+</section>
+<footer>California · Stanford Move‑in Trip · Sep 13–22, 2026<br/><span data-en="The page automatically switches between day and night themes based on the device’s local time." data-zh="页面自动根据设备当地时间切换日/夜配色。">页面自动根据设备当地时间切换日/夜配色。</span></footer>
+</div>
+<script>
+let currentLang = localStorage.getItem("tripLang") || "zh";
+
+const events = [
+  {zh:"CX965 · 杭州 HGH 起飞", en:"CX965 · Depart Hangzhou HGH", iso:"2026-09-13T08:00:00+08:00", labelZh:"2026/09/13 08:00 · CST (UTC+8)", labelEn:"Sep 13, 2026 08:00 · CST (UTC+8)"},
+  {zh:"CX965 · 抵达香港 HKG", en:"CX965 · Arrive Hong Kong HKG", iso:"2026-09-13T10:40:00+08:00", labelZh:"2026/09/13 10:40 · HKT (UTC+8)", labelEn:"Sep 13, 2026 10:40 · HKT (UTC+8)"},
+  {zh:"CX884 · 香港 HKG 起飞", en:"CX884 · Depart Hong Kong HKG", iso:"2026-09-13T12:45:00+08:00", labelZh:"2026/09/13 12:45 · HKT (UTC+8)", labelEn:"Sep 13, 2026 12:45 · HKT (UTC+8)"},
+  {zh:"CX884 · 抵达洛杉矶 LAX", en:"CX884 · Arrive Los Angeles LAX", iso:"2026-09-13T11:15:00-07:00", labelZh:"2026/09/13 11:15 · PDT (UTC−7)", labelEn:"Sep 13, 2026 11:15 · PDT (UTC−7)"},
+  {zh:"Hertz LAX · 取 minivan", en:"Hertz LAX · Pick up minivan", iso:"2026-09-13T14:00:00-07:00", labelZh:"2026/09/13 14:00 · PDT (UTC−7)", labelEn:"Sep 13, 2026 14:00 · PDT (UTC−7)"},
+  {zh:"Storage 搬出日 · 建议开始", en:"Storage move-out · Suggested start", iso:"2026-09-14T09:15:00-07:00", labelZh:"2026/09/14 09:15 · PDT (计划)", labelEn:"Sep 14, 2026 09:15 · PDT (Plan)"},
+  {zh:"Bakersfield → Fremont · 建议出发", en:"Bakersfield → Fremont · Suggested departure", iso:"2026-09-15T09:00:00-07:00", labelZh:"2026/09/15 09:00 · PDT (计划)", labelEn:"Sep 15, 2026 09:00 · PDT (Plan)"},
+  {zh:"Stanford EVGR · 正式 Check‑in", en:"Stanford EVGR · Official Check-in", iso:"2026-09-16T15:00:00-07:00", labelZh:"2026/09/16 15:00 · PDT (UTC−7)", labelEn:"Sep 16, 2026 15:00 · PDT (UTC−7)"},
+  {zh:"Palo Alto Hertz · 归还 minivan", en:"Palo Alto Hertz · Return minivan", iso:"2026-09-17T14:00:00-07:00", labelZh:"2026/09/17 14:00 · PDT (UTC−7)", labelEn:"Sep 17, 2026 14:00 · PDT (UTC−7)"},
+  {zh:"San Francisco 一日游 · 建议出发", en:"San Francisco day trip · Suggested departure", iso:"2026-09-18T09:00:00-07:00", labelZh:"2026/09/18 09:00 · PDT (计划)", labelEn:"Sep 18, 2026 09:00 · PDT (Plan)"},
+  {zh:"Monterey + Carmel · 建议出发", en:"Monterey + Carmel · Suggested departure", iso:"2026-09-19T08:30:00-07:00", labelZh:"2026/09/19 08:30 · PDT (计划)", labelEn:"Sep 19, 2026 08:30 · PDT (Plan)"},
+  {zh:"Muir Woods + Sausalito · 建议出发", en:"Muir Woods + Sausalito · Suggested departure", iso:"2026-09-20T08:00:00-07:00", labelZh:"2026/09/20 08:00 · PDT (计划)", labelEn:"Sep 20, 2026 08:00 · PDT (Plan)"},
+  {zh:"SFO 送机 · 建议从 Stanford 出发", en:"SFO airport drop-off · Suggested Stanford departure", iso:"2026-09-21T20:00:00-07:00", labelZh:"2026/09/21 20:00 · PDT (计划)", labelEn:"Sep 21, 2026 20:00 · PDT (Plan)"},
+  {zh:"CZ660 · 妈妈从 SFO 起飞", en:"CZ660 · Mom departs SFO", iso:"2026-09-22T00:35:00-07:00", labelZh:"2026/09/22 00:35 · PDT (UTC−7)", labelEn:"Sep 22, 2026 00:35 · PDT (UTC−7)"}
+].map(e => ({...e, t:new Date(e.iso).getTime()}));
+
+function pad(n){return String(n).padStart(2,"0")}
+
+function setLanguage(lang){
+  currentLang = lang;
+  localStorage.setItem("tripLang", lang);
+  document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+  document.querySelectorAll("[data-zh][data-en]").forEach(el=>{
+    el.textContent = lang === "en" ? el.dataset.en : el.dataset.zh;
+  });
+  document.getElementById("lang-zh").classList.toggle("active", lang==="zh");
+  document.getElementById("lang-en").classList.toggle("active", lang==="en");
+  tick();
+  applyTheme();
+}
+
+function tick(){
+  const now = Date.now();
+  const next = events.find(e => e.t > now);
+  if(!next){
+    document.getElementById("next-title").textContent =
+      currentLang === "en" ? "Trip complete · Welcome to Stanford" : "行程已结束 · Welcome to Stanford";
+    document.getElementById("next-time").textContent =
+      currentLang === "en" ? "Next chapter: the new academic year" : "下一阶段：新学期";
+    ["cd-d","cd-h","cd-m","cd-s"].forEach(id=>document.getElementById(id).textContent="00");
+    return;
+  }
+  let diff = Math.max(0,next.t-now);
+  const d = Math.floor(diff/86400000); diff%=86400000;
+  const h = Math.floor(diff/3600000); diff%=3600000;
+  const m = Math.floor(diff/60000); diff%=60000;
+  const s = Math.floor(diff/1000);
+  document.getElementById("next-title").textContent = currentLang==="en" ? next.en : next.zh;
+  document.getElementById("next-time").textContent = currentLang==="en" ? next.labelEn : next.labelZh;
+  document.getElementById("cd-d").textContent = pad(d);
+  document.getElementById("cd-h").textContent = pad(h);
+  document.getElementById("cd-m").textContent = pad(m);
+  document.getElementById("cd-s").textContent = pad(s);
+}
+
+function applyTheme(){
+  const saved = localStorage.getItem("tripTheme");
+  const autoDark = new Date().getHours() < 7 || new Date().getHours() >= 19;
+  const isDark = saved === "dark" ? true : saved === "light" ? false : autoDark;
+
+  document.documentElement.classList.toggle("dark", isDark);
+
+  const icon = document.getElementById("theme-icon");
+  const label = document.getElementById("theme-label");
+  const btn = document.getElementById("theme-toggle");
+  if(icon) icon.textContent = isDark ? "☀️" : "🌙";
+  if(label) label.textContent = currentLang === "en"
+    ? (isDark ? "Light" : "Dark")
+    : (isDark ? "浅色" : "深色");
+  if(btn){
+    btn.setAttribute("aria-label", currentLang === "en"
+      ? (isDark ? "Switch to light mode" : "Switch to dark mode")
+      : (isDark ? "切换到浅色模式" : "切换到深色模式"));
+    btn.setAttribute("title", btn.getAttribute("aria-label"));
+    btn.setAttribute("aria-pressed", isDark ? "true" : "false");
+  }
+
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "local";
+  const manual = saved === "dark" || saved === "light";
+  const themeNoteEn = manual
+    ? "Theme is manually set to " + (isDark ? "dark" : "light") + " mode."
+    : "Day/night colors follow the device’s local time.";
+  const themeNoteZh = manual
+    ? "当前为手动" + (isDark ? "深色" : "浅色") + "模式。"
+    : "日/夜配色按设备当地时间自动切换。";
+
+  document.getElementById("clock-note").textContent = currentLang==="en"
+    ? "Countdowns use absolute event times. Current device time zone: " + tz + ". " + themeNoteEn
+    : "倒计时按事件绝对时间换算；当前设备时区：" + tz + "。" + themeNoteZh;
+}
+
+function initMap(svg){
+  const base = (svg.dataset.baseViewbox || svg.getAttribute("viewBox") || "").trim().split(/\s+/).map(Number);
+  if(base.length!==4 || base.some(v=>!Number.isFinite(v))) return;
+  let [bx,by,bw,bh]=base;
+  let state={x:bx,y:by,w:bw,h:bh};
+  const minW=bw/6, minH=bh/6, maxW=bw, maxH=bh;
+  const shell=svg.closest(".map-shell");
+  let drag=null;
+
+  function clamp(){
+    state.w=Math.min(maxW,Math.max(minW,state.w));
+    state.h=Math.min(maxH,Math.max(minH,state.h));
+    state.x=Math.min(bx+bw-state.w,Math.max(bx,state.x));
+    state.y=Math.min(by+bh-state.h,Math.max(by,state.y));
+  }
+  function render(){
+    clamp();
+    svg.setAttribute("viewBox",`${state.x} ${state.y} ${state.w} ${state.h}`);
+    const scale=bw/state.w;
+    svg.querySelectorAll(".map-label").forEach(t=>{
+      const baseSize=parseFloat(t.dataset.baseFontSize || t.getAttribute("font-size") || 11);
+      t.setAttribute("font-size",(baseSize/Math.sqrt(scale)).toFixed(2));
+    });
+  }
+  function zoom(factor,cx=state.x+state.w/2,cy=state.y+state.h/2){
+    const nw=state.w/factor, nh=state.h/factor;
+    const rx=(cx-state.x)/state.w, ry=(cy-state.y)/state.h;
+    state.x=cx-rx*nw; state.y=cy-ry*nh; state.w=nw; state.h=nh;
+    render();
+  }
+  function pointFromEvent(e){
+    const r=svg.getBoundingClientRect();
+    return {
+      x:state.x+(e.clientX-r.left)/r.width*state.w,
+      y:state.y+(e.clientY-r.top)/r.height*state.h
+    };
+  }
+
+  shell.querySelector('[data-map-action="in"]').addEventListener("click",()=>zoom(1.45));
+  shell.querySelector('[data-map-action="out"]').addEventListener("click",()=>zoom(1/1.45));
+  shell.querySelector('[data-map-action="reset"]').addEventListener("click",()=>{
+    state={x:bx,y:by,w:bw,h:bh}; render();
+  });
+  svg.addEventListener("dblclick",e=>{ e.preventDefault(); const p=pointFromEvent(e); zoom(1.7,p.x,p.y); });
+  svg.addEventListener("wheel",e=>{
+    if(!e.ctrlKey && !e.metaKey) return; // preserve normal page scroll
+    e.preventDefault();
+    const p=pointFromEvent(e);
+    zoom(e.deltaY<0?1.25:0.8,p.x,p.y);
+  },{passive:false});
+  svg.addEventListener("pointerdown",e=>{
+    if(e.button!==0) return;
+    svg.setPointerCapture(e.pointerId);
+    drag={id:e.pointerId,sx:e.clientX,sy:e.clientY,x:state.x,y:state.y};
+    shell.classList.add("dragging");
+  });
+  svg.addEventListener("pointermove",e=>{
+    if(!drag || drag.id!==e.pointerId) return;
+    const r=svg.getBoundingClientRect();
+    state.x=drag.x-(e.clientX-drag.sx)/r.width*state.w;
+    state.y=drag.y-(e.clientY-drag.sy)/r.height*state.h;
+    render();
+  });
+  function endDrag(e){
+    if(drag && drag.id===e.pointerId){drag=null;shell.classList.remove("dragging");}
+  }
+  svg.addEventListener("pointerup",endDrag);
+  svg.addEventListener("pointercancel",endDrag);
+  render();
+}
+
+
+let leafletPromise = null;
+const satelliteMaps = new WeakMap();
+
+function loadLeafletOnDemand(){
+  if(window.L) return Promise.resolve(window.L);
+  if(leafletPromise) return leafletPromise;
+
+  leafletPromise = new Promise((resolve,reject)=>{
+    const cssId="leaflet-css-on-demand";
+    if(!document.getElementById(cssId)){
+      const link=document.createElement("link");
+      link.id=cssId;
+      link.rel="stylesheet";
+      link.href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+      link.integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=";
+      link.crossOrigin="";
+      document.head.appendChild(link);
+    }
+    const existing=document.getElementById("leaflet-js-on-demand");
+    if(existing){
+      existing.addEventListener("load",()=>resolve(window.L),{once:true});
+      existing.addEventListener("error",()=>reject(new Error("Leaflet failed to load")),{once:true});
+      return;
+    }
+    const s=document.createElement("script");
+    s.id="leaflet-js-on-demand";
+    s.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    s.integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=";
+    s.crossOrigin="";
+    s.onload=()=>resolve(window.L);
+    s.onerror=()=>reject(new Error("Leaflet failed to load"));
+    document.head.appendChild(s);
+  });
+  return leafletPromise;
+}
+
+function satMessage(shell,zh,en,timeout=2800){
+  const el=shell.querySelector(".satellite-status");
+  if(!el) return;
+  el.textContent=currentLang==="en"?en:zh;
+  el.classList.add("show");
+  clearTimeout(el._hideTimer);
+  if(timeout>0) el._hideTimer=setTimeout(()=>el.classList.remove("show"),timeout);
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+}
+
+async function ensureSatelliteMap(shell){
+  if(satelliteMaps.has(shell)){
+    const entry=satelliteMaps.get(shell);
+    setTimeout(()=>entry.map.invalidateSize(),40);
+    return entry;
+  }
+
+  satMessage(shell,"正在联网加载卫星图…","Loading satellite map…",0);
+
+  let L;
+  try{
+    L=await loadLeafletOnDemand();
+  }catch(err){
+    satMessage(shell,"卫星图加载失败，请检查网络连接。","Satellite map failed to load. Check your internet connection.",5000);
+    throw err;
+  }
+
+  const container=shell.querySelector(".satellite-map");
+  const route=JSON.parse(shell.dataset.route || '{"points":[],"segments":[]}');
+  const map=L.map(container,{
+    zoomControl:true,
+    attributionControl:true,
+    scrollWheelZoom:false,
+    doubleClickZoom:true,
+    tap:true
+  });
+
+  const attribution='Tiles &copy; Esri — Esri, Vantor, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, &copy; OpenStreetMap contributors, TomTom, Garmin, FAO, NOAA, and the GIS User Community';
+
+  const tiles=L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {maxZoom:19,attribution}
+  ).addTo(map);
+
+  let tileErrorShown=false;
+  tiles.on("tileerror",()=>{
+    if(!tileErrorShown){
+      tileErrorShown=true;
+      satMessage(shell,"部分卫星影像未能加载；可切回 Map 模式。","Some satellite tiles could not load; you can switch back to Map mode.",4500);
+    }
+  });
+
+  const bounds=[];
+  const markers=[];
+  route.points.forEach((p,i)=>{
+    const [name,lat,lon]=p;
+    bounds.push([lat,lon]);
+    const marker=L.circleMarker([lat,lon],{
+      radius:6,weight:2,color:"#ffffff",fillColor:"#9b1b30",fillOpacity:1
+    }).addTo(map);
+    marker.bindTooltip(escapeHtml(name),{
+      permanent:true,direction:i%2===0?"top":"bottom",offset:[0,i%2===0?-7:7],className:"trip-label"
+    });
+    markers.push(marker);
+  });
+
+  route.segments.forEach((seg,segIndex)=>{
+    const ll=seg.map(idx=>[route.points[idx][1],route.points[idx][2]]);
+    L.polyline(ll,{
+      color:["#c96d57","#cf963b","#5d8f72","#5d7da8","#d16685","#4b9da1","#6b8e4e"][segIndex%7],
+      weight:4,opacity:.9,lineCap:"round",lineJoin:"round",dashArray:segIndex>=4?"7 7":null
+    }).addTo(map);
+  });
+
+  if(bounds.length===1) map.setView(bounds[0],13);
+  else map.fitBounds(bounds,{padding:[32,32],maxZoom:13});
+
+  satelliteMaps.set(shell,{map,tiles,markers});
+  setTimeout(()=>map.invalidateSize(),80);
+  satMessage(shell,"Satellite 已加载 · 可拖动/缩放","Satellite loaded · Drag / zoom",1800);
+  return satelliteMaps.get(shell);
+}
+
+async function setMapMode(shell,mode){
+  const vectorBtn=shell.querySelector('[data-map-mode="vector"]');
+  const satBtn=shell.querySelector('[data-map-mode="satellite"]');
+  const vector=mode!=="satellite";
+  vectorBtn.classList.toggle("active",vector);
+  satBtn.classList.toggle("active",!vector);
+
+  if(vector){
+    shell.classList.remove("satellite-mode");
+    return;
+  }
+
+  shell.classList.add("satellite-mode");
+  try{
+    const entry=await ensureSatelliteMap(shell);
+    setTimeout(()=>entry.map.invalidateSize(),50);
+  }catch(err){
+    shell.classList.remove("satellite-mode");
+    vectorBtn.classList.add("active");
+    satBtn.classList.remove("active");
+  }
+}
+
+function initMapModeToggles(){
+  document.querySelectorAll(".map-shell").forEach(shell=>{
+    const vb=shell.querySelector('[data-map-mode="vector"]');
+    const sb=shell.querySelector('[data-map-mode="satellite"]');
+    if(!vb||!sb) return;
+    vb.addEventListener("click",()=>setMapMode(shell,"vector"));
+    sb.addEventListener("click",()=>setMapMode(shell,"satellite"));
+  });
+}
+
+document.getElementById("theme-toggle").addEventListener("click",()=>{
+  const currentlyDark = document.documentElement.classList.contains("dark");
+  localStorage.setItem("tripTheme", currentlyDark ? "light" : "dark");
+  applyTheme();
+});
+document.getElementById("lang-zh").addEventListener("click",()=>setLanguage("zh"));
+document.getElementById("lang-en").addEventListener("click",()=>setLanguage("en"));
+document.querySelectorAll(".map-shell svg").forEach(initMap);
+initMapModeToggles();
+setLanguage(currentLang);
+setInterval(tick,1000);
+setInterval(applyTheme,60000);
+</script></body>
+</html>

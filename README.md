@@ -50,27 +50,32 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 
 ---
 
-### 5. California · Stanford Move-in Trip — Bilingual Travel Dashboard
+### 3. California · Stanford Move-in Trip — Bilingual Travel Dashboard
 
-**Focus:** Front-End Development · Product Design · Time-Zone-Aware Scheduling · Data Privacy · Deployment
+**Focus:** Front-End Development · Product Design · Interactive Maps · Time-Zone-Aware Scheduling · Deployment
 
-Designed and deployed a bilingual, mobile-first travel dashboard for a real California relocation and Stanford move-in journey. The site consolidates international flights, rental cars, hotel stays, moving logistics, university housing check-in, parking reminders, and Bay Area day trips into a single lightweight web application.
+Designed and deployed a bilingual, mobile-first travel dashboard for a real California relocation and Stanford move-in journey. The site consolidates international flights, rental cars, hotel stays, moving logistics, university housing check-in, shopping, dining, sightseeing, and airport transportation into a single interactive interface.
 
-The project was designed around real travel constraints, including fixed flight times, cross-time-zone scheduling, long-distance driving, university move-in logistics, attraction reservations, and public-facing privacy requirements.
+The project was built around real travel constraints, including fixed flight schedules, cross-time-zone timing, long-distance driving, university move-in logistics, advance reservations, public-facing privacy requirements, and the need for fast mobile access while traveling.
 
-**My contributions**
+**Key features**
 
-* Designed the overall information architecture and mobile-first interface
-* Implemented a live **next-event countdown** with time-zone-safe timestamps
-* Built a **Chinese / English language switch** with persistent browser preferences
-* Created custom **inline SVG route visualizations** and daily itinerary maps
-* Integrated one-click **Google Maps navigation** for locations and multi-stop routes
-* Implemented automatic **light / dark theme switching** based on local device time
-* Structured confirmed reservations, tentative plans, and action items into a clear travel workflow
-* Designed the public version to exclude sensitive information such as booking references, ID numbers, access codes, and exact apartment details
-* Connected the repository to **Cloudflare Workers** for automatic deployment from GitHub
+* Built a live **next-event countdown** using explicit time-zone-aware timestamps across China, Hong Kong, and California
+* Designed an interactive **California itinerary map** using geographically scaled coordinates and day-specific route overlays
+* Added **Map / Satellite switching**, with an offline vector map by default and satellite imagery loaded on demand
+* Implemented interactive **zooming, panning, and map reset controls** for both the trip overview and individual daily routes
+* Integrated one-click **Google Maps navigation** for destinations, hotels, rental-car locations, shopping, and multi-stop routes
+* Added location-aware **Yelp restaurant recommendations** and nearby grocery / shopping links directly within relevant itinerary entries
+* Built a persistent **Chinese / English language switch** across the full interface
+* Implemented both automatic and manual **light / dark mode**, with user preferences saved locally
+* Added a mobile-friendly **Quick Nav** for jumping directly to current status, overview, reservations, daily itinerary, to-do items, and travel tips
+* Created a unified **status system** for confirmed reservations, pending items, action items, recommended bookings, and required reservations
+* Designed custom lightweight **inline SVG illustrations** for trip statistics and route visualization
+* Structured the interface around mobile readability, fast access, clear information hierarchy, and minimal interaction overhead
+* Designed the public-facing version to exclude sensitive information such as passport details, reservation numbers, access codes, payment information, and exact residential unit information
+* Connected GitHub to **Cloudflare Workers** for automatic deployment whenever the repository is updated
 
-**Tech:** HTML · CSS · Vanilla JavaScript · SVG · Google Maps · GitHub · Cloudflare Workers
+**Tech:** HTML · CSS · Vanilla JavaScript · SVG · Leaflet · Esri World Imagery · Google Maps · Yelp · GitHub · Cloudflare Workers
 
 🌐 **[View the Live Site](https://california-trip-2026.xiangdi-lin.workers.dev)**
 

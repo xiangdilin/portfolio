@@ -55,8 +55,6 @@ Using survey data from MyLymeData, we applied Non-Negative Matrix Factorization 
 
 - Explored and reproduced machine learning algorithms from the research literature for Lyme disease data analysis
 - Implemented and evaluated **NMF-based methods** for latent pattern discovery
-- Developed two helper functions based on **feature similarity** to improve upon Neural NMF
-- Applied **semi-supervised NMF** to analyze anomalous patient groups
 - Constructed and analyzed a **patient similarity network**
 - Implemented a **multiplex community detection algorithm** to identify interpretable patient communities
 

@@ -61,7 +61,7 @@ I implemented and evaluated **Semi-NMF, Convex NMF, SSNMF, and Kernel SSNMF**, i
 
 **Tech:** Python · Machine Learning · Dimensionality Reduction · Kernel Methods · LLM Embeddings · SVM
 
-📄 **[Download the Full Report (PDF)](./projects/ai-for-justice/REU_2024_AI_for_Justice.pdf)** · 🔒 **Code is not public due to data sensitivity.**
+📄 **[Download the Full Report (PDF)](./projects/ai-for-justice/REU_2024_AI_for_Justice.pdf)** · 📦 **[kernel-ssnmf Package](./projects/ai-for-justice/kernel_ssnmf)** (algorithms only, synthetic data) · 🔒 **Case-data code is not public due to data sensitivity.**
 
 ---
 

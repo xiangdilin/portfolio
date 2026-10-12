@@ -2,7 +2,7 @@
 
 Welcome! I'm Dakota, an M.S. student at **Stanford University Institute for Computational and Mathematical Engineering (ICME)** graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
 
-My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions. This repository showcases selected projects spanning machine learning, natural language processing, network analysis, image processing, and data-driven modeling.
+My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions. This repository showcases selected projects spanning machine learning, natural language processing, network analysis, image processing, remote sensing, and data-driven modeling.
 
 It also includes interactive web applications I built out of personal interest and for my own use.
 
@@ -10,15 +10,39 @@ It also includes interactive web applications I built out of personal interest a
 
 ## 🔬 Projects
 
-> **Research & coursework.** Each project includes a full writeup (PDF), and some include code.
+> **Research & coursework.** Each project includes a full writeup (PDF), and some include code. 🚧 marks ongoing work.
 
 | # | Project | Area | Key Methods |
 |---|---------|------|-------------|
+| 🚧 | [Mapping Global Aquaculture Ponds](#mapping-global-aquaculture-ponds--satellite-imagery--machine-learning-in-progress) *(in progress)* | Remote Sensing · Computer Vision | Sentinel-1/2, Earth Foundation Models, Multimodal LLM Validation |
 | 1 | [AI for Justice: Detecting Patterns in Wrongful Convictions](#1-ai-for-justice-detecting-patterns-in-wrongful-convictions) | NLP · Classification | Kernel SSNMF, LLM Embeddings, SVM |
 | 2 | [Machine Learning Analysis of Lyme Disease Data](#2-machine-learning-analysis-of-lyme-disease-data) | Health ML · Network Analysis | NMF, Anomaly Detection, Community Detection |
 | 3 | [Predicting Health Insurance Premiums](#3-predicting-health-insurance-premiums--regression-modeling--feature-selection) | Regression · Feature Selection | Lasso, RFE, SVR, Neural Networks, Clustered Linear Regression |
 | 4 | [Temporal Avian Contact Networks](#4-temporal-avian-contact-networks--community-detection--epidemic-simulation) | Network Science | Louvain, Leiden, WSSNMTF, Epidemic Simulation |
 | 5 | [Artificial Painting Toolbox](#5-artificial-painting-toolbox--image-processing-in-matlab) | Image Processing | Histogram Analysis, Filtering, Edge Detection |
+
+---
+
+### Mapping Global Aquaculture Ponds — Satellite Imagery & Machine Learning (In Progress)
+
+🚧 **Status: In progress (Fall 2026, ICME Xplore)**
+
+**Focus:** Remote Sensing · Machine Learning · Computer Vision · Earth Foundation Models · Multimodal LLMs
+
+Part of a three-person team developing a scalable machine learning workflow to detect and map **land-based aquaculture ponds** from satellite imagery, under the guidance of mentors from the Stanford Doerr School of Sustainability. Aquaculture supplies a growing share of the world's aquatic food, but the global spatial distribution of its ponds remains poorly documented, which limits our ability to track its expansion and its relationships with land-use change, biodiversity, and water resources.
+
+The project aims to produce a **high-resolution global map of aquaculture ponds** with confidence estimates and a reproducible pipeline, building on existing aquaculture datasets, **Sentinel-1 and Sentinel-2** imagery, and representations from **Earth foundation models**.
+
+**What we're building**
+
+* Training labels built from **pixel-level agreement** across existing aquaculture maps, with disagreements flagged for review
+* A baseline using spectral, temporal, and geometric features, followed by an **Earth foundation model** for pond detection and segmentation
+* A **multimodal LLM validation stage** to reduce false positives from look-alike features such as rice fields, salt pans, and reservoirs
+* Evaluation on **geographically separated regions** using precision, recall, F1 score, and IoU
+
+**Tech:** Remote Sensing · Sentinel-1/2 · Earth Foundation Models · Image Segmentation · Multimodal LLMs
+
+📄 **[Read the Project Proposal (PDF)](./projects/aquaculture-mapping/Project_Proposal.pdf)**
 
 ---
 

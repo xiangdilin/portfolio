@@ -21,7 +21,7 @@ It also includes interactive web applications I built out of personal interest a
 
 ---
 
-### Mapping Global Aquaculture Ponds — Satellite Imagery & Machine Learning (In Progress)
+### 0. Mapping Global Aquaculture Ponds — Satellite Imagery & Machine Learning (In Progress)
 
 🚧 **Status: In progress (Fall 2026, ICME Xplore)**
 

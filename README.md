@@ -6,7 +6,7 @@ My work combines mathematical methods with practical computational tools to extr
 
 It also includes interactive web applications I built out of personal interest and for my own use.
 
-## 🔬 Projects
+## Projects
 
 > **Research & coursework.** Each project includes a full writeup (PDF), and some include code. 🚧 marks ongoing work.
 
@@ -152,7 +152,7 @@ The project explored how classical image-processing techniques can reproduce vis
 
 ---
 
-## 🌐 Live Sites
+## Live Sites
 
 > **Personal web apps.** Unlike the research projects above, these are interactive tools I designed and built for my own use. Click a site name to open it.
 

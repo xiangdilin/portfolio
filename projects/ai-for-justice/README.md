@@ -60,19 +60,18 @@ The dataset contains 140 murder cases from 39 U.S. states, including both exoner
 
 ## Technologies & Methods
 
-## Technologies & Methods
+**Programming:** Python
 
-**Programming**: Python
+**Machine Learning:** Semi-NMF, Convex NMF, SSNMF, Kernel SSNMF, Support Vector Machine (SVM)
 
-**Machine Learning**: Semi-NMF, Convex NMF, SSNMF, Kernel SSNMF, Support Vector Machine (SVM)
+**Natural Language Processing:** Legal document embeddings, LLM embeddings
 
-**Natural Language Processing**: Legal document embeddings, LLM embeddings
+**Mathematical Methods:** Non-Negative Matrix Factorization, Kernel methods, Matrix reconstruction, Convergence analysis
 
-**Mathematical Methods**: Non-Negative Matrix Factorization, Kernel methods, Matrix reconstruction, Convergence analysis
-
-**Datasets**: Exonerated and non-exonerated legal cases, UCI Genomic Data, GEMLeR Colon Kidney Data
+**Datasets:** Exonerated and non-exonerated legal cases, UCI Genomic Data, GEMLeR Colon Kidney Data
 
 ## Results
+
 Our experiments evaluated the proposed Kernel SSNMF method on publicly available high-dimensional datasets and legal text embeddings. The results showed that Kernel SSNMF consistently achieved better classification performance than both SSNMF and Convex NMF.
 
 In particular, **polynomial kernels produced consistently higher accuracy across different numbers of topics**. These results demonstrate the potential of Kernel SSNMF for classification tasks involving high-dimensional data, including LLM-based legal document embeddings.
@@ -80,9 +79,14 @@ In particular, **polynomial kernels produced consistently higher accuracy across
 We also identified several limitations, including dataset size and coverage. Future work could expand the dataset, improve representation of legal case information, and further investigate methods for improving model interpretability and fairness.
 
 ## Contributors
-**Team:** Anshuman Singh, Dakota Lin, Shreya Balaji, Kyle Torres. 
 
-Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Minxin Zhang (UCLA Math), and our consultants Mike Semanchik ([The Innocence Center](https://theinnocencecenter.org/)) and Marissa Bluestine ([Quattrone at UPenn Law](https://www.law.upenn.edu/institutes/quattronecenter/)). 
+**Team:** Anshuman Singh, Dakota Lin, Shreya Balaji, Kyle Torres.
+
+Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Minxin Zhang (UCLA Math), and our consultants Mike Semanchik ([The Innocence Center](https://theinnocencecenter.org/)) and Marissa Bluestine ([Quattrone at UPenn Law](https://www.law.upenn.edu/institutes/quattronecenter/)).
+
+## Code Availability
+
+The code for this project is **not publicly released** due to the sensitive nature of the case data used in this work. The full algorithms are documented in the project report, including pseudocode for Semi-NMF and Convex NMF, the Kernel SSNMF extension, and convergence proofs, along with the experimental setup and results on the publicly available benchmark datasets.
 
 ## Report
 

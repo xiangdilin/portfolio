@@ -77,11 +77,11 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 
 * Developed helper functions based on feature similarity to improve the method
 * Constructed and analyzed a **patient similarity network**
-* Implemented a **multiplex community detection algorithm** to identify interpretable patient communities
+* Implemented a **multiplex community detection algorithm** (WSSNMTF) to identify interpretable patient communities, and later packaged it as a standalone Python library, [`wssnmtf`](./projects/ai-for-health/wssnmtf)
 
 **Tech:** Python · NMF · Neural NMF · Anomaly Detection · Logistic Regression · Classification · Network Analysis
 
-📄 **[Download the Full Report (PDF)](./projects/ai-for-health/REU_2023_AI_for_Health.pdf)** · 🔒 **Code is not public due to data sensitivity.**
+📄 **[Download the Full Report (PDF)](./projects/ai-for-health/REU_2023_AI_for_Health.pdf)** · 📦 **[wssnmtf Package](./projects/ai-for-health/wssnmtf)** (community detection only, synthetic data) · 🔒 **Analysis code is not public due to data sensitivity.**
 
 ---
 

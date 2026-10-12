@@ -62,15 +62,15 @@ Using survey data from MyLymeData, we applied Non-Negative Matrix Factorization 
 
 **Programming:** Python
 
-**Machine Learning**: Non-Negative Matrix Factorization (NMF), Semi-Supervised NMF (SSNMF), Neural NMF, Logistic Regression, Support Vector Machine (SVM)
+**Machine Learning:** Non-Negative Matrix Factorization (NMF), Semi-Supervised NMF (SSNMF), Neural NMF, Logistic Regression, Support Vector Machine (SVM)
 
-**Anomaly Detection**: Isolation Forest, Local Outlier Factor (LOF)
+**Anomaly Detection:** Isolation Forest, Local Outlier Factor (LOF)
 
-**Network Analysis**: Patient Similarity Networks, Community Detection, Multiplex Networks
+**Network Analysis:** Patient Similarity Networks, Community Detection, Multiplex Networks
 
-**Fair Machine Learning**: Fair NMF, Fair Dimensionality Reduction, Subgroup Loss Analysis
+**Fair Machine Learning:** Fair NMF, Fair Dimensionality Reduction, Subgroup Loss Analysis
 
-**Data**: [MyLymeData](https://www.lymedisease.org/mylymedata-lyme-disease-research/)
+**Data:** [MyLymeData](https://www.lymedisease.org/mylymedata-lyme-disease-research/)
 
 ## Results
 
@@ -81,11 +81,16 @@ Anomaly detection methods identified patients with unusual symptom profiles, whi
 For fair dimensionality reduction, the proposed **Fair NMF** algorithm demonstrated improved subgroup convergence and lower-rank representations compared with vanilla NMF and early stopping. Together, these results demonstrate the potential of combining matrix factorization, classification, anomaly detection, network analysis, and fairness-aware dimensionality reduction for analyzing complex Lyme disease data.
 
 ## Contributors
+
 Xinyu Dong, Haowen Geng, Nika Jafar Nia, Abby Hultquist, Aoxi Li, Dakota Lin, Jingyi Liu, Chelsea Nguyen.
 
 > Listed in alphabetical order by last name.
 
-Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Lara Kassab (UCLA Math), and consultant CEO Lorraine Johnson ([LymeDisease.org](https://www.lymedisease.org/)). 
+Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Lara Kassab (UCLA Math), and consultant CEO Lorraine Johnson ([LymeDisease.org](https://www.lymedisease.org/)).
+
+## Code Availability
+
+The code for this project is **not publicly released** due to the sensitive nature of the patient survey data used in this work. The methods are documented in detail in the project report, including pseudocode for the NMF-based algorithms and the multiplex community detection procedure, along with the experimental setup and results.
 
 ## Report
 

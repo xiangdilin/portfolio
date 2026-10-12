@@ -14,15 +14,15 @@ It also includes interactive web applications I built out of personal interest a
 
 | # | Project | Area | Key Methods |
 |---|---------|------|-------------|
-| 1 | [AI for Justice](#1-ai-for-justice--llm-embeddings--semi-supervised-nmf) | NLP · Classification | Kernel SSNMF, LLM Embeddings, SVM |
-| 2 | [Lyme Disease Data Analysis](#2-lyme-disease-data-analysis--machine-learning--matrix-factorization) | Health ML · Network Analysis | NMF, Anomaly Detection, Community Detection |
+| 1 | [AI for Justice: Detecting Patterns in Wrongful Convictions](#1-ai-for-justice-detecting-patterns-in-wrongful-convictions) | NLP · Classification | Kernel SSNMF, LLM Embeddings, SVM |
+| 2 | [Machine Learning Analysis of Lyme Disease Data](#2-machine-learning-analysis-of-lyme-disease-data) | Health ML · Network Analysis | NMF, Anomaly Detection, Community Detection |
 | 3 | [Predicting Health Insurance Premiums](#3-predicting-health-insurance-premiums--regression-modeling--feature-selection) | Regression · Feature Selection | Lasso, RFE, SVR, Neural Networks, Clustered Linear Regression |
 | 4 | [Temporal Avian Contact Networks](#4-temporal-avian-contact-networks--community-detection--epidemic-simulation) | Network Science | Louvain, Leiden, WSSNMTF, Epidemic Simulation |
 | 5 | [Artificial Painting Toolbox](#5-artificial-painting-toolbox--image-processing-in-matlab) | Image Processing | Histogram Analysis, Filtering, Edge Detection |
 
 ---
 
-### 1. AI for Justice — LLM Embeddings & Semi-Supervised NMF
+### 1. AI for Justice: Detecting Patterns in Wrongful Convictions
 
 **Focus:** Machine Learning · NLP · LLM Embeddings · Dimensionality Reduction · Classification
 
@@ -43,7 +43,7 @@ I implemented and evaluated **Semi-NMF, Convex NMF, SSNMF, and Kernel SSNMF**, i
 
 ---
 
-### 2. Lyme Disease Data Analysis — Machine Learning & Matrix Factorization
+### 2. Machine Learning Analysis of Lyme Disease Data
 
 **Focus:** Machine Learning · NMF · Classification · Anomaly Detection · Network Analysis
 

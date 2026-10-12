@@ -56,7 +56,7 @@ Using survey data from MyLymeData, we applied Non-Negative Matrix Factorization 
 - Explored and reproduced machine learning algorithms from the research literature for Lyme disease data analysis
 - Implemented and evaluated **NMF-based methods** for latent pattern discovery
 - Constructed and analyzed a **patient similarity network**
-- Implemented a **multiplex community detection algorithm** to identify interpretable patient communities
+- Implemented a **multiplex community detection algorithm** (WSSNMTF) to identify interpretable patient communities, and later packaged it as a standalone Python library, [`wssnmtf`](./wssnmtf) ([v0.1.0 release](https://github.com/xiangdilin/portfolio/releases/tag/wssnmtf-v0.1.0))
 
 ## Technologies & Methods
 
@@ -88,9 +88,32 @@ Xinyu Dong, Haowen Geng, Nika Jafar Nia, Abby Hultquist, Aoxi Li, Dakota Lin, Ji
 
 Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Lara Kassab (UCLA Math), and consultant CEO Lorraine Johnson ([LymeDisease.org](https://www.lymedisease.org/)).
 
+## Software Package: `wssnmtf`
+
+A general-purpose implementation of the multiplex community detection algorithm used in this project, **Weighted Simultaneous Symmetric Non-negative Matrix Tri-Factorization (WSSNMTF)**, is available as a Python package in [`wssnmtf/`](./wssnmtf). It finds a shared community indicator matrix across multiple network layers over the same set of nodes.
+
+- Latest release: [`wssnmtf-v0.1.0`](https://github.com/xiangdilin/portfolio/releases/tag/wssnmtf-v0.1.0)
+- Includes synthetic multilayer-network generators, plotting helpers, clustering metrics, and unit tests
+- See the [package README](./wssnmtf/README.md) for the full API and usage
+
+```bash
+pip install "git+https://github.com/xiangdilin/portfolio.git#subdirectory=projects/ai-for-health/wssnmtf"
+```
+
+```python
+import wssnmtf as ws
+
+division = [[0, 49], [50, 99], [100, 149]]
+layers = {i: ws.synthetic_layer(150, division, max_entry=5, random_seed=i) for i in range(2)}
+H, S = ws.WSSNMTF(layers, k=3, weights="all", n_init=10)
+labels = ws.actual_assignment(H)
+```
+
 ## Code Availability
 
-The code for this project is **not publicly released** due to the sensitive nature of the patient survey data used in this work. The methods are documented in detail in the project report, including pseudocode for the NMF-based algorithms and the multiplex community detection procedure, along with the experimental setup and results.
+The code used to analyze the patient survey data is **not publicly released** due to the sensitive nature of the data. The methods are documented in detail in the project report, including pseudocode for the NMF-based algorithms and the multiplex community detection procedure, along with the experimental setup and results.
+
+The standalone [`wssnmtf`](./wssnmtf) package is the exception: it implements the community detection algorithm only, contains **no patient data**, and is demonstrated on synthetic networks. Note that it is a later, refactored version of the algorithm with additional options, not the exact analysis code used on the survey data.
 
 ## Report
 

@@ -81,7 +81,7 @@ We compared **k-NN, Linear Regression, Support Vector Regression, Neural Network
 
 **Tech:** Python · scikit-learn · TensorFlow/Keras · Lasso · RFE · PCA · SVR · k-NN · Clustered Linear Regression · Community Detection
 
-📄 **[Download the Full Report (PDF)](./projects/predicting-insurance-premiums/Project_Report.pdf)** · 💻 **[View the Code (Jupyter Notebook)](./projects/predicting-insurance-premiums/predicting_premiums.ipynb)**
+📄 **[Download the Full Report (PDF)](./projects/insurance-premiums-prediction/Project_Report.pdf)** · 💻 **[View the Code (Jupyter Notebook)](./projects/insurance-premiums-prediction/predicting_premiums.ipynb)**
 
 ---
 
@@ -126,7 +126,7 @@ The project explored how classical image-processing techniques can reproduce vis
 
 **Tech:** MATLAB · Image Processing · Histogram Analysis · Filtering · Edge Detection · Color Manipulation
 
-📄 **[Download the Full Report (PDF)](./projects/insurance-premiums-prediction/Project_Report.pdf)** · 💻 **[View the Code (Jupyter Notebook)](./projects/insurance-premiums-prediction/predicting_premiums.ipynb)**
+📄 **[Download the Full Report (PDF)](./projects/mathematical-imaging/Artificial_Painting_Toolbox.pdf)** · 💻 **[Browse the Code](./projects/mathematical-imaging/code_files)**
 
 ---
 

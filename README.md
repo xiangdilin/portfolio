@@ -104,7 +104,7 @@ The project combined **Louvain and Leiden community detection**, multilayer **WS
 
 **Tech:** Python · NetworkX · Community Detection · Louvain · Leiden · NMTF · Centrality Measures · Epidemic Simulation
 
-📄 **[Download the Full Report (PDF)](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)**
+📄 **[Download the Full Report (PDF)](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)** · 💻 **[Browse the Code](./projects/network-analysis/code_files)**
 
 ---
 

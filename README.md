@@ -39,7 +39,7 @@ I implemented and evaluated **Semi-NMF, Convex NMF, SSNMF, and Kernel SSNMF**, i
 
 **Tech:** Python · Machine Learning · Dimensionality Reduction · Kernel Methods · LLM Embeddings · SVM
 
-📄 **[Download the Full Report (PDF)](./projects/ai-for-justice/REU_2024_AI_for_Justice.pdf)**
+📄 **[Download the Full Report (PDF)](./projects/ai-for-justice/REU_2024_AI_for_Justice.pdf)** · 🔒 **Code is not public due to data sensitivity.**
 
 ---
 
@@ -59,7 +59,7 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 
 **Tech:** Python · NMF · Neural NMF · Anomaly Detection · Logistic Regression · Classification · Network Analysis
 
-📄 **[Download the Full Report (PDF)](./projects/ai-for-health/REU_2023_AI_for_Health.pdf)**
+📄 **[Download the Full Report (PDF)](./projects/ai-for-health/REU_2023_AI_for_Health.pdf)** · 🔒 **Code is not public due to data sensitivity.**
 
 ---
 

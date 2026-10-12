@@ -2,7 +2,7 @@
 
 A course project (UCLA PIC 16B) that explores which factors drive health insurance charges in the US and compares machine learning models for predicting premiums.
 
-**You can find the project writeup PDF in this repo through either the navigation sidebar or a link at the end of this README.**
+**You can find the project code (Jupyter notebook) and the project writeup PDF in this repo through either the navigation sidebar or the links at the end of this README.**
 
 ## Overview
 
@@ -104,6 +104,12 @@ At the same time, the analysis highlighted important limitations. Because the pr
 Anshika Khandelwal, Dakota Lin, Sarah Ward.
 
 > Listed in alphabetical order by last name.
+
+## Code
+
+[💻 View the Jupyter Notebook](./predicting_premiums.ipynb)
+
+> The notebook contains the full pipeline: data preprocessing, visualization, feature selection, model training and evaluation, PCA, and network community detection.
 
 ## Report
 

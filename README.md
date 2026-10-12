@@ -6,8 +6,6 @@ My work combines mathematical methods with practical computational tools to extr
 
 It also includes interactive web applications I built out of personal interest and for my own use.
 
-**📌 For the best viewing experience of the project writeups, please download the PDFs.**
-
 ## 🔬 Projects
 
 > **Research & coursework.** Each project includes a full writeup (PDF), and some include code. 🚧 marks ongoing work.

@@ -1,6 +1,6 @@
 # Dakota Lin's Portfolio
 
-Welcome! I’m Dakota, a M.S. student at **Stanford University Institute for Computational and Mathematical Engineering (ICME)** graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
+Welcome! I'm Dakota, an M.S. student at **Stanford University Institute for Computational and Mathematical Engineering (ICME)** graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
 
 My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions. This repository showcases selected projects spanning machine learning, natural language processing, network analysis, image processing, and data-driven modeling.
 
@@ -8,7 +8,19 @@ It also includes interactive web applications I built out of personal interest a
 
 **📌 For the best viewing experience of the project writeups, please download the PDFs.**
 
-## Projects
+## 🔬 Projects
+
+> **Research & coursework.** Each project includes a full writeup (PDF), and some include code.
+
+| # | Project | Area | Key Methods |
+|---|---------|------|-------------|
+| 1 | [AI for Justice](#1-ai-for-justice--llm-embeddings--semi-supervised-nmf) | NLP · Classification | Kernel SSNMF, LLM Embeddings, SVM |
+| 2 | [Lyme Disease Data Analysis](#2-lyme-disease-data-analysis--machine-learning--matrix-factorization) | Health ML · Network Analysis | NMF, Anomaly Detection, Community Detection |
+| 3 | [Predicting Health Insurance Premiums](#3-predicting-health-insurance-premiums--regression-modeling--feature-selection) | Regression · Feature Selection | Lasso, RFE, SVR, Neural Networks, Clustered Linear Regression |
+| 4 | [Temporal Avian Contact Networks](#4-temporal-avian-contact-networks--community-detection--epidemic-simulation) | Network Science | Louvain, Leiden, WSSNMTF, Epidemic Simulation |
+| 5 | [Artificial Painting Toolbox](#5-artificial-painting-toolbox--image-processing-in-matlab) | Image Processing | Histogram Analysis, Filtering, Edge Detection |
+
+---
 
 ### 1. AI for Justice — LLM Embeddings & Semi-Supervised NMF
 
@@ -42,7 +54,6 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 **My contributions**
 
 * Developed helper functions based on feature similarity to improve the method
-* Contributed to network-based analysis using patient similarity and community structure
 * Constructed and analyzed a **patient similarity network**
 * Implemented a **multiplex community detection algorithm** to identify interpretable patient communities
 
@@ -52,7 +63,29 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 
 ---
 
-### 3. Temporal Avian Contact Networks — Community Detection & Epidemic Simulation
+### 3. Predicting Health Insurance Premiums — Regression Modeling & Feature Selection
+
+**Focus:** Machine Learning · Regression · Feature Selection · Data Visualization · Network Analysis
+
+Analyzed a Kaggle dataset of US health insurance records to understand which factors drive premium charges and to compare models for predicting them. Working with a **10,000-record sample** of the original one-million-row dataset, we combined exploratory visualization, feature selection, and a range of regression models.
+
+We compared **k-NN, Linear Regression, Support Vector Regression, Neural Networks, and Clustered Linear Regression**, with Clustered Linear Regression performing best (**R² ≈ 0.995**) and revealing a two-cluster structure in the data. To test how realistic the synthetic dataset was, we also analyzed real **CMS Medicare spending data**, which showed regional cost differences that the primary dataset failed to capture.
+
+**My contributions**
+
+* Created visualizations of charges against BMI, smoking status, gender, and medical history
+* Performed supplementary analysis of **CMS National Health Expenditure data** with interactive choropleth maps
+* Prepared the data for modeling, including feature encoding, standardization, and train/test splitting
+* Applied **Lasso and Recursive Feature Elimination (RFE)** to select the top 21 of 30 features and studied the effect of feature count on accuracy
+* Implemented the **WSSNMTF** multilayer community detection algorithm from the literature to explore clustering structure
+
+**Tech:** Python · scikit-learn · TensorFlow/Keras · Lasso · RFE · PCA · SVR · k-NN · Clustered Linear Regression · Community Detection
+
+📄 **[Download the Full Report (PDF)](./projects/predicting-insurance-premiums/Project_Report.pdf)** · 💻 **[View the Code (Jupyter Notebook)](./projects/predicting-insurance-premiums/predicting_premiums.ipynb)**
+
+---
+
+### 4. Temporal Avian Contact Networks — Community Detection & Epidemic Simulation
 
 **Focus:** Network Science · Community Detection · Temporal Networks · Epidemic Simulation
 
@@ -75,7 +108,7 @@ The project combined **Louvain and Leiden community detection**, multilayer **WS
 
 ---
 
-### 4. Artificial Painting Toolbox — Image Processing in MATLAB
+### 5. Artificial Painting Toolbox — Image Processing in MATLAB
 
 **Focus:** Image Processing · Computer Vision · Mathematical Modeling
 
@@ -97,73 +130,21 @@ The project explored how classical image-processing techniques can reproduce vis
 
 ---
 
-## Live Sites
+## 🌐 Live Sites
 
-### 1. California · Stanford Move-in Trip — Bilingual Travel Dashboard
+> **Personal web apps.** Unlike the research projects above, these are interactive tools I designed and built for my own use. Click a site name to open it.
 
-**Focus:** Front-End Development · Product Design · Interactive Maps · Time-Zone-Aware Scheduling · Deployment
-
-Designed and deployed a bilingual, mobile-first travel dashboard for a real California relocation and Stanford move-in journey. The site consolidates international flights, rental cars, hotel stays, moving logistics, university housing check-in, shopping, dining, sightseeing, and airport transportation into a single interactive interface.
-
-The project was built around real travel constraints, including fixed flight schedules, cross-time-zone timing, long-distance driving, university move-in logistics, advance reservations, public-facing privacy requirements, and the need for fast mobile access while traveling.
-
-**Key features**
-
-* Built a live **next-event countdown** using explicit time-zone-aware timestamps across China, Hong Kong, and California
-* Designed an interactive **California itinerary map** using geographically scaled coordinates and day-specific route overlays
-* Added **Map / Satellite switching**, with an offline vector map by default and satellite imagery loaded on demand
-* Implemented interactive **zooming, panning, and map reset controls** for both the trip overview and individual daily routes
-* Integrated one-click **Google Maps navigation** for destinations, hotels, rental-car locations, shopping, and multi-stop routes
-* Added location-aware **Yelp restaurant recommendations** and nearby grocery / shopping links directly within relevant itinerary entries
-* Built a persistent **Chinese / English language switch** across the full interface
-* Implemented both automatic and manual **light / dark mode**, with user preferences saved locally
-* Added a mobile-friendly **Quick Nav** for jumping directly to current status, overview, reservations, daily itinerary, to-do items, and travel tips
-* Created a unified **status system** for confirmed reservations, pending items, action items, recommended bookings, and required reservations
-* Designed custom lightweight **inline SVG illustrations** for trip statistics and route visualization
-* Structured the interface around mobile readability, fast access, clear information hierarchy, and minimal interaction overhead
-* Designed the public-facing version to exclude sensitive information such as passport details, reservation numbers, access codes, payment information, and exact residential unit information
-* Connected GitHub to **Cloudflare Workers** for automatic deployment whenever the repository is updated
-
-**Tech:** HTML · CSS · Vanilla JavaScript · SVG · Leaflet · Esri World Imagery · Google Maps · Yelp · GitHub · Cloudflare Workers
-
-🌐 **[View the Live Site](https://california-trip-2026.xiangdi-lin.workers.dev)**
-
----
-
-### 2. Cocktail Field Guide — Bilingual Interactive Cocktail Menu
-
-**Focus:** Front-End Development · Product Design · Information Architecture · Interactive Filtering · Visual Design · Deployment
-
-Designed and deployed a bilingual interactive cocktail guide for exploring classic and modern drinks by base spirit, flavor profile, and occasion. The site combines structured cocktail information with a vintage-inspired midnight editorial aesthetic, presenting each drink through an irregular pinned-note layout with custom illustrations, decorative typography, and animated interactions.
-
-The project was built as a lightweight personal-use web tool, with an emphasis on fast browsing, visual discovery, responsive design, and a consistent bilingual experience without requiring a backend or database.
-
-**Key features**
-
-* Curated and structured a collection of **70+ classic and modern cocktails** with recipes, preparation methods, glassware, garnish, flavor profiles, and recommended occasions
-* Implemented **popularity-based ordering** so more widely recognized cocktails appear earlier in both the main menu and search results
-* Added multi-dimensional filtering by **base spirit, flavor, and occasion**, with expandable secondary filters for less common categories
-* Built a **random cocktail selector** for quickly deciding what to drink
-* Implemented search across cocktail names, ingredients, spirits, flavor tags, and occasion tags
-* Built a persistent **Chinese / English language switch**, with a Chinese-English mixed interface and a fully English version
-* Designed custom lightweight **SVG cocktail illustrations** for multiple glass styles
-* Created an irregular **pinned-note / scrapbook layout** using varied paper tones, tape, pushpins, decorative strokes, and editorial typography
-* Added detailed cocktail views with recipes, serving information, preparation steps, recommended occasions, and visual flavor ratings
-* Implemented scroll-triggered reveal animations, staggered card entrances, modal transitions, and subtle hand-drawn decoration effects
-* Designed the interface to remain fully responsive and usable across desktop and mobile
-* Kept the project lightweight using only static front-end technologies with no authentication, database, or external API dependency
-* Connected GitHub to **Cloudflare Workers** for public deployment
-
-**Tech:** HTML · CSS · Vanilla JavaScript · SVG · Google Fonts · GitHub · Cloudflare Workers
-
-🌐 **[View the Live Site](https://my-cocktails.xiangdi-lin.workers.dev/)**
+| Site | What it does | Built with |
+|------|--------------|------------|
+| 🧳 **[California · Stanford Move-in Trip](https://california-trip-2026.xiangdi-lin.workers.dev)** | A bilingual, mobile-first travel dashboard for my relocation to Stanford. It brings flights, hotels, rental cars, and move-in logistics into one place, with a live time-zone-aware countdown, interactive route maps with satellite view, one-click Google Maps navigation, and a Chinese / English switch. The public version excludes all sensitive details. | HTML · CSS · JavaScript · SVG · Leaflet · Cloudflare Workers |
+| 🍸 **[Cocktail Field Guide](https://my-cocktails.xiangdi-lin.workers.dev/)** | A bilingual interactive guide to 70+ classic and modern cocktails, filterable by base spirit, flavor, and occasion, with search, a random-pick button, and custom SVG illustrations in a vintage pinned-note layout. Fully static, with no backend or database. | HTML · CSS · JavaScript · SVG · Cloudflare Workers |
 
 ---
 
 ## Technical Interests
 
-* **Machine Learning:** Supervised Learning · Semi-Supervised Learning · Matrix Factorization · Classification · Anomaly Detection
-* **Data Science:** Exploratory Data Analysis · Statistical Modeling · Feature Engineering · Data Visualization
+* **Machine Learning:** Supervised Learning · Semi-Supervised Learning · Matrix Factorization · Classification · Regression · Anomaly Detection
+* **Data Science:** Exploratory Data Analysis · Statistical Modeling · Feature Engineering · Feature Selection · Data Visualization
 * **Natural Language Processing:** LLM Embeddings · Topic Modeling · Representation Learning
 * **Network Science:** Community Detection · Centrality · Temporal Networks · Network Epidemiology
 * **Computational Methods:** Numerical Methods · Optimization · Mathematical Modeling
@@ -177,6 +158,6 @@ The project was built as a lightweight personal-use web tool, with an emphasis o
 
 ## About
 
-I’m particularly interested in applying **mathematical and computational methods to real-world data problems**, with current interests spanning machine learning, data science, and quantitative modeling.
+I'm particularly interested in applying **mathematical and computational methods to real-world data problems**, with current interests spanning machine learning, data science, and quantitative modeling.
 
 More projects and updates will be added as I continue developing my portfolio.

@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wssnmtf"
+version = "0.1.0"
+description = "Weighted Simultaneous Symmetric Non-negative Matrix Tri-Factorization for multilayer network community detection"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["community detection", "multilayer network", "NMTF", "matrix factorization", "network science"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = ["numpy>=1.22"]
+
+[project.optional-dependencies]
+plot = ["matplotlib", "networkx"]
+metrics = ["scikit-learn"]
+dev = ["pytest", "matplotlib", "networkx", "scikit-learn", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/xiangdilin/portfolio/tree/main/projects/ai-for-health/wssnmtf"
+Issues = "https://github.com/xiangdilin/portfolio/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+wssnmtf = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore:WSSNMTF did not converge:RuntimeWarning"]

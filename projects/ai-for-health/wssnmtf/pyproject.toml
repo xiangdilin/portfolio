@@ -9,7 +9,7 @@ description = "Weighted Simultaneous Symmetric Non-negative Matrix Tri-Factoriza
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
-authors = [{ name = "Your Name", email = "you@example.com" }]
+authors = [{ name = "Dakota Lin", email = "xdlin@stanford.edu" }]
 keywords = ["community detection", "multilayer network", "NMTF", "matrix factorization", "network science"]
 classifiers = [
     "Development Status :: 3 - Alpha",

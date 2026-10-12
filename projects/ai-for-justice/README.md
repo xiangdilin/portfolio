@@ -51,7 +51,7 @@ The dataset contains 140 murder cases from 39 U.S. states, including both exoner
 ## My Contributions
 
 - Implemented and reproduced existing **Semi-NMF, Convex NMF, and SSNMF** algorithms
-- Developed **Kernel SSNMF**, extending semi-supervised NMF with kernel methods
+- Developed **Kernel SSNMF**, extending semi-supervised NMF with kernel methods, and later packaged the algorithms as a standalone Python library, [`kernel-ssnmf`](./kernel_ssnmf)
 - Contributed to theoretical analysis and **convergence proofs**
 - Applied NMF-based methods to **LLM embeddings** and legal case data
 - Evaluated learned representations using **SVM classification**
@@ -84,9 +84,23 @@ We also identified several limitations, including dataset size and coverage. Fut
 
 Special thanks to our PI Prof. Deanna Needell (UCLA Math), Mentor Dr. Minxin Zhang (UCLA Math), and our consultants Mike Semanchik ([The Innocence Center](https://theinnocencecenter.org/)) and Marissa Bluestine ([Quattrone at UPenn Law](https://www.law.upenn.edu/institutes/quattronecenter/)).
 
+## Software Package: `kernel-ssnmf`
+
+A general-purpose implementation of the algorithms used in this project is available as a Python package in [`kernel_ssnmf/`](./kernel_ssnmf): **Semi-NMF, Convex NMF, SSNMF, and Convex Kernel SSNMF** for mixed-sign data, together with the feature-matrix reconstruction used to classify held-out data, and SVM evaluation helpers.
+
+- Latest release: [`kernel-ssnmf-v0.1.0`](https://github.com/xiangdilin/portfolio/releases/tag/kernel-ssnmf-v0.1.0)
+- Includes unit tests and a demo on synthetic data
+- See the [package README](./kernel_ssnmf/README.md) for the full API and usage
+
+```bash
+pip install "git+https://github.com/xiangdilin/portfolio.git#subdirectory=projects/ai-for-justice/kernel_ssnmf"
+```
+
 ## Code Availability
 
-The code for this project is **not publicly released** due to the sensitive nature of the case data used in this work. The full algorithms are documented in the project report, including pseudocode for Semi-NMF and Convex NMF, the Kernel SSNMF extension, and convergence proofs, along with the experimental setup and results on the publicly available benchmark datasets.
+The code used to analyze the case data is **not publicly released** due to the sensitive nature of the data. The full algorithms are documented in the project report, including pseudocode for Semi-NMF and Convex NMF, the Kernel SSNMF extension, and convergence proofs, along with the experimental setup and results on the publicly available benchmark datasets.
+
+The standalone [`kernel-ssnmf`](./kernel_ssnmf) package is the exception: it implements the algorithms only, contains **no case data**, and is demonstrated on synthetic data. It is a later, refactored version of the project code with some additional options, not the exact scripts used for the reported experiments.
 
 ## Report
 

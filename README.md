@@ -158,8 +158,8 @@ The project explored how classical image-processing techniques can reproduce vis
 
 | Site | What it does | Built with |
 |------|--------------|------------|
-| 🧳 **[California · Stanford Move-in Trip](https://california-trip-2026.xiangdi-lin.workers.dev)** | A bilingual, mobile-first travel dashboard for my relocation to Stanford. It brings flights, hotels, rental cars, and move-in logistics into one place, with a live time-zone-aware countdown, interactive route maps with satellite view, one-click Google Maps navigation, and a Chinese / English switch. The public version excludes all sensitive details. | HTML · CSS · JavaScript · SVG · Leaflet · Cloudflare Workers |
-| 🍸 **[Cocktail Field Guide](https://my-cocktails.xiangdi-lin.workers.dev/)** | A bilingual interactive guide to 70+ classic and modern cocktails, filterable by base spirit, flavor, and occasion, with search, a random-pick button, and custom SVG illustrations in a vintage pinned-note layout. Fully static, with no backend or database. | HTML · CSS · JavaScript · SVG · Cloudflare Workers |
+| **[California · Stanford Move-in Trip](https://california-trip-2026.xiangdi-lin.workers.dev)** | A bilingual, mobile-first travel dashboard for my relocation to Stanford. It brings flights, hotels, rental cars, and move-in logistics into one place, with a live time-zone-aware countdown, interactive route maps with satellite view, one-click Google Maps navigation, and a Chinese / English switch. The public version excludes all sensitive details. | HTML · CSS · JavaScript · SVG · Leaflet · Cloudflare Workers |
+| **[Cocktail Field Guide](https://my-cocktails.xiangdi-lin.workers.dev/)** | A bilingual interactive guide to 70+ classic and modern cocktails, filterable by base spirit, flavor, and occasion, with search, a random-pick button, and custom SVG illustrations in a vintage pinned-note layout. Fully static, with no backend or database. | HTML · CSS · JavaScript · SVG · Cloudflare Workers |
 
 ---
 

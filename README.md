@@ -40,7 +40,7 @@ The project aims to produce a **high-resolution global map of aquaculture ponds*
 
 **Tech:** Remote Sensing · Sentinel-1/2 · Earth Foundation Models · Image Segmentation · Multimodal LLMs
 
-📄 **[Read the Project Proposal](./projects/aquaculture-mapping/Project_Proposal.pdf)**
+📁 **[Project Folder](https://github.com/xiangdilin/portfolio/tree/main/projects/aquaculture-mapping)** · 📄 **[Read the Project Proposal](./projects/aquaculture-mapping/Project_Proposal.pdf)**
 
 ---
 
@@ -61,7 +61,7 @@ I implemented and evaluated **Semi-NMF, Convex NMF, SSNMF, and Kernel SSNMF**, i
 
 **Tech:** Python · Machine Learning · Dimensionality Reduction · Kernel Methods · LLM Embeddings · SVM
 
-📄 **[Read the Report](./projects/ai-for-justice/REU_2024_AI_for_Justice.pdf)** · 📦 **[kernel-ssnmf Package](./projects/ai-for-justice/kernel_ssnmf)** (algorithms only, synthetic data) · 🔒 **Case-data code is not public due to data sensitivity.**
+📁 **[Project Folder](https://github.com/xiangdilin/portfolio/tree/main/projects/ai-for-justice)** · 📄 **[Read the Report](./projects/ai-for-justice/REU_2024_AI_for_Justice.pdf)** · 📦 **[kernel-ssnmf Package](./projects/ai-for-justice/kernel_ssnmf)** (algorithms only, synthetic data) · 🔒 **Case-data code is not public due to data sensitivity.**
 
 ---
 
@@ -81,7 +81,7 @@ NMF was used to uncover latent patterns in symptoms and identify factors associa
 
 **Tech:** Python · NMF · Neural NMF · Anomaly Detection · Logistic Regression · Classification · Network Analysis
 
-📄 **[Read the Report](./projects/ai-for-health/REU_2023_AI_for_Health.pdf)** · 📦 **[wssnmtf Package](./projects/ai-for-health/wssnmtf)** (community detection only, synthetic data) · 🔒 **Analysis code is not public due to data sensitivity.**
+📁 **[Project Folder](https://github.com/xiangdilin/portfolio/tree/main/projects/ai-for-health)** · 📄 **[Read the Report](./projects/ai-for-health/REU_2023_AI_for_Health.pdf)** · 📦 **[wssnmtf Package](./projects/ai-for-health/wssnmtf)** (community detection only, synthetic data) · 🔒 **Analysis code is not public due to data sensitivity.**
 
 ---
 
@@ -103,7 +103,7 @@ We compared **k-NN, Linear Regression, Support Vector Regression, Neural Network
 
 **Tech:** Python · scikit-learn · TensorFlow/Keras · Lasso · RFE · PCA · SVR · k-NN · Clustered Linear Regression · Community Detection
 
-📄 **[Read the Report](./projects/insurance-premiums-prediction/Project_Report.pdf)** · 💻 **[View the Code (Jupyter Notebook)](./projects/insurance-premiums-prediction/predicting_premiums.ipynb)**
+📁 **[Project Folder](https://github.com/xiangdilin/portfolio/tree/main/projects/insurance-premiums-prediction)** · 📄 **[Read the Report](./projects/insurance-premiums-prediction/Project_Report.pdf)** · 💻 **[View the Code (Jupyter Notebook)](./projects/insurance-premiums-prediction/predicting_premiums.ipynb)**
 
 ---
 
@@ -126,7 +126,7 @@ The project combined **Louvain and Leiden community detection**, multilayer **WS
 
 **Tech:** Python · NetworkX · Community Detection · Louvain · Leiden · NMTF · Centrality Measures · Epidemic Simulation
 
-📄 **[Read the Report](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)** · 💻 **[Browse the Code](./projects/network-analysis/code_files)**
+📁 **[Project Folder](https://github.com/xiangdilin/portfolio/tree/main/projects/network-analysis)** · 📄 **[Read the Report](./projects/network-analysis/Temporal_Avian_Contact_Networks_for_Epidemic_Simulation_and_Prediction.pdf)** · 💻 **[Browse the Code](./projects/network-analysis/code_files)**
 
 ---
 
@@ -148,7 +148,7 @@ The project explored how classical image-processing techniques can reproduce vis
 
 **Tech:** MATLAB · Image Processing · Histogram Analysis · Filtering · Edge Detection · Color Manipulation
 
-📄 **[Read the Report](./projects/mathematical-imaging/Artificial_Painting_Toolbox.pdf)** · 💻 **[Browse the Code](./projects/mathematical-imaging/code_files)**
+📁 **[Project Folder](https://github.com/xiangdilin/portfolio/tree/main/projects/mathematical-imaging)** · 📄 **[Read the Report](./projects/mathematical-imaging/Artificial_Painting_Toolbox.pdf)** · 💻 **[Browse the Code](./projects/mathematical-imaging/code_files)**
 
 ---
 

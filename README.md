@@ -1,6 +1,6 @@
-# Dakota Lin's Portfolio
+# DL's Portfolio
 
-Welcome! I'm Dakota, an M.S. student at **Stanford University Institute for Computational and Mathematical Engineering (ICME)** graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
+Welcome! I'm Dakota Lin, an M.S. student at **Stanford University Institute for Computational and Mathematical Engineering (ICME)** graduating in 2028, with a background in applied mathematics, machine learning, and computational research.
 
 My work combines mathematical methods with practical computational tools to extract patterns from complex datasets and build interpretable solutions. This repository showcases selected projects spanning machine learning, natural language processing, network analysis, image processing, remote sensing, and data-driven modeling.
 

@@ -116,3 +116,7 @@ Anshika Khandelwal, Dakota Lin, Sarah Ward.
 [📄 Download the Full Report (PDF)](./Project_Report.pdf)
 
 > For the best viewing experience, please download the PDF.
+
+## License
+
+This project is licensed under the MIT License.
